@@ -1,0 +1,43 @@
+tabular_number,row_number,cell_number,cell_latex,cell_text
+1,1,1,System,System
+1,1,2,Adaptation / input,Adaptation / input
+1,1,3,Accuracy,Accuracy
+1,1,4,Supported F1,Supported F1
+1,2,1,\multicolumn{4}{l}{\textit{Trained label interface and original discriminative controls}},Trained label interface and original discriminative controls
+1,3,1,"Q-LACE, three random seeds","Q-LACE, three random seeds"
+1,3,2,"2,048 weak rows / finding query","2,048 weak rows / finding query"
+1,3,3,0.579$\pm$0.014,0.579±0.014
+1,3,4,0.548$\pm$0.014,0.548±0.014
+1,4,1,"Finding-blind, three random seeds","Finding-blind, three random seeds"
+1,4,2,Recorded recipe / finding removed,Recorded recipe / finding removed
+1,4,3,0.512$\pm$0.040,0.512±0.040
+1,4,4,0.428$\pm$0.037,0.428±0.037
+1,5,1,"MedGemma, historical prompt-only \cite{sellergren2025medgemma}","MedGemma, historical prompt-only [sellergren2025medgemma]"
+1,5,2,None / four-label interface,None / four-label interface
+1,5,3,0.336,0.336
+1,5,4,0.287,0.287
+1,6,1,BioViL-T \cite{bannur2023biovilt},BioViL-T [bannur2023biovilt]
+1,6,2,Frozen encoder / full-pool head,Frozen encoder / full-pool head
+1,6,3,0.554,0.554
+1,6,4,0.527,0.527
+1,7,1,MedSigLIP \cite{sellergren2025medgemmaTech},MedSigLIP [sellergren2025medgemmaTech]
+1,7,2,Frozen encoder / full-pool head,Frozen encoder / full-pool head
+1,7,3,0.544,0.544
+1,7,4,0.492,0.492
+1,8,1,TorchXRayVision DenseNet \cite{cohen2022xrv},TorchXRayVision DenseNet [cohen2022xrv]
+1,8,2,Frozen encoder / full-pool head,Frozen encoder / full-pool head
+1,8,3,0.520,0.520
+1,8,4,0.459,0.459
+1,9,1,Finding-majority prior,Finding-majority prior
+1,9,2,Input-free finding shortcut,Input-free finding shortcut
+1,9,3,0.488,0.488
+1,9,4,0.458,0.458
+1,10,1,"\multicolumn{4}{l}{\textit{Fixed user-only three-option interface, native preprocessing}}","Fixed user-only three-option interface, native preprocessing"
+1,11,1,"MedGemma, prompt-only","MedGemma, prompt-only"
+1,11,2,None / same native MCQ,None / same native MCQ
+1,11,3,0.305,0.305
+1,11,4,0.278,0.278
+1,12,1,"Q-LACE, same three existing adapters","Q-LACE, same three existing adapters"
+1,12,2,No new training / same native MCQ,No new training / same native MCQ
+1,12,3,0.570$\pm$0.003,0.570±0.003
+1,12,4,0.515$\pm$0.021,0.515±0.021

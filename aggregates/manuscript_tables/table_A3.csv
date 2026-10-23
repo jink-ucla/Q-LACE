@@ -1,0 +1,29 @@
+tabular_number,row_number,cell_number,cell_latex,cell_text
+1,1,1,Report phrase pattern,Report phrase pattern
+1,1,2,Example finding,Example finding
+1,1,3,Weak label,Weak label
+1,1,4,Handling,Handling
+1,2,1,``decreased'' / ``improved'' finding,"""decreased"" / ""improved"" finding"
+1,2,2,edema,edema
+1,2,3,\texttt{improving},improving
+1,2,4,keep if mapped to one of the five benchmark heads,keep if mapped to one of the five benchmark heads
+1,3,1,``stable'' / ``unchanged'' finding,"""stable"" / ""unchanged"" finding"
+1,3,2,pleural effusion,pleural effusion
+1,3,3,\texttt{stable},stable
+1,3,4,keep as supported no-material-change evidence,keep as supported no-material-change evidence
+1,4,1,``increased'' / ``worsened'' / ``new'' finding,"""increased"" / ""worsened"" / ""new"" finding"
+1,4,2,pneumothorax,pneumothorax
+1,4,3,\texttt{worsening},worsening
+1,4,4,keep unless the change cue is negated; negated change cues are filtered,keep unless the change cue is negated; negated change cues are filtered
+1,5,1,``no interval change in'' finding,"""no interval change in"" finding"
+1,5,2,any benchmark finding,any benchmark finding
+1,5,3,\texttt{stable},stable
+1,5,4,keep when the queried finding is explicitly supported,keep when the queried finding is explicitly supported
+1,6,1,``no evidence of worsening'' / negated change cue,"""no evidence of worsening"" / negated change cue"
+1,6,2,any benchmark finding,any benchmark finding
+1,6,3,filtered,filtered
+1,6,4,drop non-stable change sentence rather than create a negative row,drop non-stable change sentence rather than create a negative row
+1,7,1,conflicting improving and worsening cues for same head,conflicting improving and worsening cues for same head
+1,7,2,any benchmark finding,any benchmark finding
+1,7,3,filtered,filtered
+1,7,4,"drop ambiguous rows; when multiple non-conflicting tuples map to one pair/head, select a deterministic representative tuple","drop ambiguous rows; when multiple non-conflicting tuples map to one pair/head, select a deterministic representative tuple"

@@ -1,0 +1,96 @@
+tabular_number,row_number,cell_number,cell_latex,cell_text
+1,1,1,Diagnostic,Diagnostic
+1,1,2,Count,Count
+1,1,3,Acc.,Acc.
+1,1,4,Supp. F1,Supp. F1
+1,2,1,"Q-LACE, primary raw outputs","Q-LACE, primary raw outputs"
+1,2,2,1326,1326
+1,2,3,0.592,0.592
+1,2,4,0.561,0.561
+1,3,1,BioViL-T prior/current,BioViL-T prior/current
+1,3,2,1326,1326
+1,3,3,0.554,0.554
+1,3,4,0.527,0.527
+1,4,1,Both correct,Both correct
+1,4,2,636,636
+1,4,3,--,--
+1,4,4,--,--
+1,5,1,Q-LACE correct / BioViL-T wrong,Q-LACE correct / BioViL-T wrong
+1,5,2,149,149
+1,5,3,--,--
+1,5,4,--,--
+1,6,1,BioViL-T correct / Q-LACE wrong,BioViL-T correct / Q-LACE wrong
+1,6,2,98,98
+1,6,3,--,--
+1,6,4,--,--
+1,7,1,"Both wrong, same prediction","Both wrong, same prediction"
+1,7,2,359,359
+1,7,3,--,--
+1,7,4,--,--
+1,8,1,"Both wrong, different prediction","Both wrong, different prediction"
+1,8,2,84,84
+1,8,3,--,--
+1,8,4,--,--
+1,9,1,Oracle over both (test-label upper bound),Oracle over both (test-label upper bound)
+1,9,2,1326,1326
+1,9,3,0.666,0.666
+1,9,4,--,--
+2,1,1,Comparison,Comparison
+2,1,2,$\Delta$ Acc. [95\% CI],Δ Acc. [95% CI]
+2,1,3,$\Delta$ supp. F1 [95\% CI],Δ supp. F1 [95% CI]
+2,2,1,3 random-seed mean vs BioViL-T,3 random-seed mean vs BioViL-T
+2,2,2,"+0.0259 [0.0046, 0.0477]","+0.0259 [0.0046, 0.0477]"
+2,2,3,"+0.0209 [$-0.0021$, 0.0449]","+0.0209 [-0.0021, 0.0449]"
+2,3,1,3 random-seed full vs generic query,3 random-seed full vs generic query
+2,3,2,"+0.0671 [0.0454, 0.0893]","+0.0671 [0.0454, 0.0893]"
+2,3,3,"+0.1195 [0.0976, 0.1413]","+0.1195 [0.0976, 0.1413]"
+3,1,1,Training rows,Training rows
+3,1,2,Status,Status
+3,1,3,All-test acc.,All-test acc.
+3,1,4,All-test supp. F1,All-test supp. F1
+3,1,5,Same-view supp. F1,Same-view supp. F1
+3,2,1,512,512
+3,2,2,completed,completed
+3,2,3,0.480,0.480
+3,2,4,0.475,0.475
+3,2,5,0.462,0.462
+3,3,1,"2{,}048","2,048"
+3,3,2,completed,completed
+3,3,3,0.592,0.592
+3,3,4,0.561,0.561
+3,3,5,0.554,0.554
+3,4,1,"8{,}192","8,192"
+3,4,2,completed,completed
+3,4,3,0.590,0.590
+3,4,4,0.569,0.569
+3,4,5,0.560,0.560
+4,1,1,Comparator,Comparator
+4,1,2,Rows,Rows
+4,1,3,all-test acc.,all-test acc.
+4,1,4,all-test F1,all-test F1
+4,1,5,same-view acc.,same-view acc.
+4,1,6,same-view F1,same-view F1
+4,2,1,MedSigLIP prior/current,MedSigLIP prior/current
+4,2,2,full,full
+4,2,3,0.544,0.544
+4,2,4,0.492,0.492
+4,2,5,0.532,0.532
+4,2,6,0.481,0.481
+4,3,1,MedSigLIP prior/current,MedSigLIP prior/current
+4,3,2,"2{,}048/512","2,048/512"
+4,3,3,0.487,0.487
+4,3,4,0.462,0.462
+4,3,5,0.477,0.477
+4,3,6,0.454,0.454
+4,4,1,BioViL-T prior/current,BioViL-T prior/current
+4,4,2,full,full
+4,4,3,0.554,0.554
+4,4,4,0.527,0.527
+4,4,5,0.536,0.536
+4,4,6,0.512,0.512
+4,5,1,BioViL-T prior/current,BioViL-T prior/current
+4,5,2,"2{,}048/512","2,048/512"
+4,5,3,0.527,0.527
+4,5,4,0.485,0.485
+4,5,5,0.513,0.513
+4,5,6,0.476,0.476

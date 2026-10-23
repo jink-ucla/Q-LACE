@@ -1,0 +1,64 @@
+tabular_number,row_number,cell_number,cell_latex,cell_text
+1,1,1,System,System
+1,1,2,Baseline F1,Baseline F1
+1,1,3,Prior-drop F1,Prior-drop F1
+1,1,4,$\Delta$ prior-drop,Δ prior-drop
+1,1,5,Random-prior F1,Random-prior F1
+1,1,6,Duplicate stable rate,Duplicate stable rate
+1,1,7,TRC,TRC
+1,2,1,MedSigLIP current-only,MedSigLIP current-only
+1,2,2,0.432,0.432
+1,2,3,0.432,0.432
+1,2,4,+0.000,+0.000
+1,2,5,0.432,0.432
+1,2,6,0.431,0.431
+1,2,7,0.422,0.422
+1,3,1,MedSigLIP prior/current,MedSigLIP prior/current
+1,3,2,0.492,0.492
+1,3,3,0.310,0.310
+1,3,4,-0.182,-0.182
+1,3,5,0.388,0.388
+1,3,6,0.741,0.741
+1,3,7,0.444,0.444
+1,4,1,BioViL-T current-only,BioViL-T current-only
+1,4,2,0.474,0.474
+1,4,3,0.474,0.474
+1,4,4,+0.000,+0.000
+1,4,5,0.474,0.474
+1,4,6,0.290,0.290
+1,4,7,0.343,0.343
+1,5,1,BioViL-T prior/current,BioViL-T prior/current
+1,5,2,0.527,0.527
+1,5,3,0.453,0.453
+1,5,4,-0.074,-0.074
+1,5,5,0.424,0.424
+1,5,6,0.319,0.319
+1,5,7,0.509,0.509
+1,6,1,DenseNet current-only,DenseNet current-only
+1,6,2,0.453,0.453
+1,6,3,0.453,0.453
+1,6,4,+0.000,+0.000
+1,6,5,0.453,0.453
+1,6,6,0.339,0.339
+1,6,7,0.364,0.364
+1,7,1,DenseNet prior/current,DenseNet prior/current
+1,7,2,0.459,0.459
+1,7,3,0.299,0.299
+1,7,4,-0.160,-0.160
+1,7,5,0.376,0.376
+1,7,6,0.851,0.851
+1,7,7,0.492,0.492
+1,8,1,MedGemma historical prompt-only,MedGemma historical prompt-only
+1,8,2,0.279,0.279
+1,8,3,0.286,0.286
+1,8,4,+0.007,+0.007
+1,8,5,0.278,0.278
+1,8,6,0.039,0.039
+1,8,7,0.241,0.241
+1,9,1,Q-LACE primary run,Q-LACE primary run
+1,9,2,0.558,0.558
+1,9,3,0.408,0.408
+1,9,4,-0.150,-0.150
+1,9,5,0.414,0.414
+1,9,6,0.582,0.582
+1,9,7,0.603,0.603

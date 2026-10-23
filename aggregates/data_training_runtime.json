@@ -1,0 +1,965 @@
+{
+  "benchmark_reference_counts": {
+    "ms_cxr_t_longitudinal_stage1": {
+      "manifest_sha256": "79a805751dfc76a4fc2ca7d5fc46a713659ce661b41df7034e6ac182abb2debc",
+      "patients": 800,
+      "physical_image_pairs": 1045,
+      "rows": 1326
+    },
+    "ms_cxr_t_longitudinal_stage1_same_view": {
+      "manifest_sha256": "799b91a184baaabb626ae794ad1b2faada1729f4b780075b2c26fdd3fb1ed784",
+      "patients": 684,
+      "physical_image_pairs": 881,
+      "rows": 1137
+    }
+  },
+  "configured_trainability": {
+    "base_input_output_weights_tied": true,
+    "base_unique_parameters": 4300079472,
+    "live_unique_parameters_including_frozen_copies": 5681082224,
+    "method": "local config -> meta model -> PEFT -> named_parameters requires_grad",
+    "parameters_by_category": {
+      "full_embed_tokens": 671252480,
+      "full_lm_head": 671252480,
+      "text_lora": 29802496,
+      "vision_lora": 8695296
+    },
+    "peft_version": "0.17.1",
+    "qualification": "Reconstruction verifies trainability semantics; archived optimizer per-parameter state is unavailable, so no historical per-tensor gradient claim is made.",
+    "trainable_unique_parameters": 1381002752,
+    "transformers_version": "4.57.0.dev0"
+  },
+  "distribution_provenance": {
+    "primary_reconstructed_sample": {
+      "consolidation": {
+        "improving": 51,
+        "stable": 37,
+        "worsening": 105
+      },
+      "edema": {
+        "improving": 214,
+        "stable": 137,
+        "worsening": 191
+      },
+      "pleural effusion": {
+        "improving": 208,
+        "stable": 396,
+        "worsening": 375
+      },
+      "pneumonia": {
+        "improving": 50,
+        "stable": 30,
+        "worsening": 114
+      },
+      "pneumothorax": {
+        "improving": 39,
+        "stable": 66,
+        "worsening": 35
+      }
+    },
+    "training_population_finding_by_change": {
+      "consolidation": {
+        "improving": 719,
+        "stable": 618,
+        "worsening": 1190
+      },
+      "edema": {
+        "improving": 2560,
+        "stable": 1546,
+        "worsening": 2290
+      },
+      "pleural effusion": {
+        "improving": 2744,
+        "stable": 4566,
+        "worsening": 4559
+      },
+      "pneumonia": {
+        "improving": 604,
+        "stable": 479,
+        "worsening": 1627
+      },
+      "pneumothorax": {
+        "improving": 500,
+        "stable": 827,
+        "worsening": 432
+      }
+    }
+  },
+  "distributions": [
+    {
+      "finding_counts": {
+        "consolidation": 2533,
+        "edema": 6419,
+        "pleural effusion": 11907,
+        "pneumonia": 2717,
+        "pneumothorax": 1759
+      },
+      "label_counts": {
+        "improving": 7153,
+        "stable": 8055,
+        "worsening": 10127
+      },
+      "label_status_counts": {
+        "weak_candidate": 25335
+      },
+      "name": "Weak Stage-1 train",
+      "patients": 7284,
+      "rows": 25335,
+      "study_based_pair_keys": 21562
+    },
+    {
+      "finding_counts": {
+        "consolidation": 535,
+        "edema": 1374,
+        "pleural effusion": 2498,
+        "pneumonia": 603,
+        "pneumothorax": 468
+      },
+      "label_counts": {
+        "improving": 1571,
+        "stable": 1699,
+        "worsening": 2208
+      },
+      "label_status_counts": {
+        "weak_candidate": 5478
+      },
+      "name": "Weak Stage-1 validation",
+      "patients": 1589,
+      "rows": 5478,
+      "study_based_pair_keys": 4673
+    },
+    {
+      "finding_counts": {
+        "consolidation": 547,
+        "edema": 1475,
+        "pleural effusion": 2560,
+        "pneumonia": 615,
+        "pneumothorax": 325
+      },
+      "label_counts": {
+        "improving": 1532,
+        "stable": 1726,
+        "worsening": 2264
+      },
+      "label_status_counts": {
+        "weak_candidate": 5522
+      },
+      "name": "Weak Stage-1 test-heldout",
+      "patients": 1589,
+      "rows": 5522,
+      "study_based_pair_keys": 4621
+    },
+    {
+      "finding_counts": {
+        "consolidation": 201,
+        "edema": 266,
+        "pleural effusion": 411,
+        "pneumonia": 237,
+        "pneumothorax": 211
+      },
+      "label_counts": {
+        "improving": 241,
+        "stable": 530,
+        "worsening": 555
+      },
+      "label_status_counts": {
+        "ms_cxr_t_disagreement": 164,
+        "ms_cxr_t_multiple_experts": 208,
+        "ms_cxr_t_one_expert": 954
+      },
+      "name": "MS-CXR-T all_test",
+      "patients": 800,
+      "rows": 1326,
+      "study_based_pair_keys": 1035
+    },
+    {
+      "finding_counts": {
+        "consolidation": 181,
+        "edema": 233,
+        "pleural effusion": 355,
+        "pneumonia": 199,
+        "pneumothorax": 169
+      },
+      "label_counts": {
+        "improving": 202,
+        "stable": 472,
+        "worsening": 463
+      },
+      "label_status_counts": {
+        "ms_cxr_t_disagreement": 150,
+        "ms_cxr_t_multiple_experts": 180,
+        "ms_cxr_t_one_expert": 807
+      },
+      "name": "MS-CXR-T same_view",
+      "patients": 684,
+      "rows": 1137,
+      "study_based_pair_keys": 872
+    },
+    {
+      "finding_counts": {
+        "consolidation": 100,
+        "edema": 100,
+        "pleural effusion": 100,
+        "pneumonia": 100,
+        "pneumothorax": 100
+      },
+      "label_counts": {
+        "no_supported_evidence": 500
+      },
+      "label_status_counts": {
+        "synthetic_nse_candidate_requires_audit": 500
+      },
+      "name": "Synthetic NSE stress balanced",
+      "patients": 363,
+      "rows": 500,
+      "study_based_pair_keys": 411
+    }
+  ],
+  "frozen_components": "All original backbone weights outside the active full lm_head/input-embedding copies remain frozen, including vision/text base linear weights, normalization weights, and the multimodal projector.",
+  "historical_compute": {
+    "adapter_run_count": 14,
+    "adapter_single_gpu_hours": 60.28336483333334,
+    "additional_component_hours": {
+      "clean_prompt_wrapper": 0.48277777777777775,
+      "frozen_head_components": 14.510833333333334,
+      "postload_prompt_lower_bound": 0.3250807822222222
+    },
+    "exclusions": [
+      "adapted Q-LACE benchmark inference, multi-seed evaluation, query interventions, and temporal-control evaluation",
+      "BioViL-T current-only benchmark inference rerun",
+      "MedGemma prompt-only prior/current inference",
+      "Qwen2.5-VL prior/current inference",
+      "Lingshu-7B prior/current and blank-prior inference",
+      "Lingshu-I-8B prior/current and blank-prior inference",
+      "HuatuoGPT-Vision-7B prior/current and blank-prior inference",
+      "SmolVLM2-2.2B prior/current and blank-prior inference",
+      "fixed-prompt NSE and transfer diagnostics without complete start/end timing",
+      "failed/retried development runs not represented by a clean interval"
+    ],
+    "frozen_head_hardware": {
+      "known_hardware_component_hours": {
+        "NVIDIA L40S": 6.111944444444444
+      },
+      "measurement_definition": "Seconds from timestamped train-process launch through the first benchmark-eval launch, plus completed timestamped benchmark-inference intervals. CPU-only 4-label scoring is excluded. This is single-GPU component wall time, not measured device utilization.",
+      "run_component_count": 8,
+      "unknown_hardware_component_hours": 8.398888888888889
+    },
+    "groups": {
+      "finding_conditioned_seeds": {
+        "run_count": 3,
+        "single_gpu_hours": 16.617563333333333,
+        "train_runtime_seconds": 59823.228
+      },
+      "matched_finding_blind_controls": {
+        "run_count": 3,
+        "single_gpu_hours": 2.819738222222222,
+        "train_runtime_seconds": 10151.0576
+      },
+      "scale_points": {
+        "run_count": 3,
+        "single_gpu_hours": 11.756677527777779,
+        "train_runtime_seconds": 42324.0391
+      },
+      "synthetic_nse_variants": {
+        "run_count": 5,
+        "single_gpu_hours": 29.08938575,
+        "train_runtime_seconds": 104721.7887
+      }
+    },
+    "hardware_qualification": "Per-run accelerator models are not uniformly recorded; no H100- or L40S-equivalent total is inferred.",
+    "heterogeneous_documented_lower_bound_single_gpu_hours": 75.60205672666667,
+    "primary_and_matched_control_single_gpu_hours": 19.437301555555557,
+    "qualification": "This lower bound adds trainer-reported adapter runtime, timestamped frozen-head component wall time, one clean fixed-prompt wrapper interval, and one post-load filesystem-derived prompt lower bound. It mixes measurement mechanisms, is not hardware-normalized, and is not a complete project-compute estimate.",
+    "scope": "Logged training time for the reported runs and separately documented baseline components; additional test runs are outside this scoped total.",
+    "source_scope": "Only this file's compute block is used; its older benchmark metric exports are superseded"
+  },
+  "historical_training_membership_certified": false,
+  "later_three_option_compute_as_reported": {
+    "five_full_passes_gpu_allocated_hours": 2.232,
+    "four_row_smoke_gpu_allocated_hours": 0.049,
+    "recomputation": "Publication snapshot; raw timing logs are not bundled",
+    "scope": "Published rounded allocated-job times include loading, hashing and scoring",
+    "source": "sections/historical_provenance.tex",
+    "source_sha256": "5a7cda60216ebe63bbdf97499d2ad0a3b683ceb848981f25439a0d67b9e681bf"
+  },
+  "overlap_audits": {
+    "discarded_preview": {
+      "any_identifier": {
+        "benchmark_rows_with_shared_values": 1,
+        "benchmark_unique_values": 9897,
+        "local_rows_with_shared_values": 17,
+        "local_unique_values": 390,
+        "shared_unique_values": 9
+      },
+      "categories": {
+        "image_basenames": {
+          "benchmark_rows_with_shared_values": 1,
+          "benchmark_unique_values": 2018,
+          "local_rows_with_shared_values": 11,
+          "local_unique_values": 74,
+          "shared_unique_values": 2
+        },
+        "image_paths": {
+          "benchmark_rows_with_shared_values": 1,
+          "benchmark_unique_values": 2018,
+          "local_rows_with_shared_values": 11,
+          "local_unique_values": 74,
+          "shared_unique_values": 2
+        },
+        "images": {
+          "benchmark_rows_with_shared_values": 1,
+          "benchmark_unique_values": 2018,
+          "local_rows_with_shared_values": 6,
+          "local_unique_values": 74,
+          "shared_unique_values": 2
+        },
+        "pairs": {
+          "benchmark_rows_with_shared_values": 0,
+          "benchmark_unique_values": 1035,
+          "local_rows_with_shared_values": 0,
+          "local_unique_values": 84,
+          "shared_unique_values": 0
+        },
+        "patients": {
+          "benchmark_rows_with_shared_values": 1,
+          "benchmark_unique_values": 800,
+          "local_rows_with_shared_values": 17,
+          "local_unique_values": 10,
+          "shared_unique_values": 1
+        },
+        "studies": {
+          "benchmark_rows_with_shared_values": 1,
+          "benchmark_unique_values": 2008,
+          "local_rows_with_shared_values": 6,
+          "local_unique_values": 74,
+          "shared_unique_values": 2
+        }
+      },
+      "records": {
+        "benchmark": 1045,
+        "local": 148
+      }
+    },
+    "full_weak_pool": {
+      "any_identifier": {
+        "benchmark_rows_with_shared_values": 0,
+        "benchmark_unique_values": 9897,
+        "local_rows_with_shared_values": 0,
+        "local_unique_values": 178397,
+        "shared_unique_values": 0
+      },
+      "categories": {
+        "image_basenames": {
+          "benchmark_rows_with_shared_values": 0,
+          "benchmark_unique_values": 2018,
+          "local_rows_with_shared_values": 0,
+          "local_unique_values": 50372,
+          "shared_unique_values": 0
+        },
+        "image_paths": {
+          "benchmark_rows_with_shared_values": 0,
+          "benchmark_unique_values": 2018,
+          "local_rows_with_shared_values": 0,
+          "local_unique_values": 50372,
+          "shared_unique_values": 0
+        },
+        "images": {
+          "benchmark_rows_with_shared_values": 0,
+          "benchmark_unique_values": 2018,
+          "local_rows_with_shared_values": 0,
+          "local_unique_values": 0,
+          "shared_unique_values": 0
+        },
+        "pairs": {
+          "benchmark_rows_with_shared_values": 0,
+          "benchmark_unique_values": 1035,
+          "local_rows_with_shared_values": 0,
+          "local_unique_values": 67191,
+          "shared_unique_values": 0
+        },
+        "patients": {
+          "benchmark_rows_with_shared_values": 0,
+          "benchmark_unique_values": 800,
+          "local_rows_with_shared_values": 0,
+          "local_unique_values": 10462,
+          "shared_unique_values": 0
+        },
+        "studies": {
+          "benchmark_rows_with_shared_values": 0,
+          "benchmark_unique_values": 2008,
+          "local_rows_with_shared_values": 0,
+          "local_unique_values": 0,
+          "shared_unique_values": 0
+        }
+      },
+      "records": {
+        "benchmark": 1045,
+        "local": 36335
+      }
+    },
+    "strict_weak_pool": {
+      "any_identifier": {
+        "benchmark_rows_with_shared_values": 0,
+        "benchmark_unique_values": 9897,
+        "local_rows_with_shared_values": 0,
+        "local_unique_values": 177806,
+        "shared_unique_values": 0
+      },
+      "categories": {
+        "image_basenames": {
+          "benchmark_rows_with_shared_values": 0,
+          "benchmark_unique_values": 2018,
+          "local_rows_with_shared_values": 0,
+          "local_unique_values": 50201,
+          "shared_unique_values": 0
+        },
+        "image_paths": {
+          "benchmark_rows_with_shared_values": 0,
+          "benchmark_unique_values": 2018,
+          "local_rows_with_shared_values": 0,
+          "local_unique_values": 50201,
+          "shared_unique_values": 0
+        },
+        "images": {
+          "benchmark_rows_with_shared_values": 0,
+          "benchmark_unique_values": 2018,
+          "local_rows_with_shared_values": 0,
+          "local_unique_values": 0,
+          "shared_unique_values": 0
+        },
+        "pairs": {
+          "benchmark_rows_with_shared_values": 0,
+          "benchmark_unique_values": 1035,
+          "local_rows_with_shared_values": 0,
+          "local_unique_values": 66980,
+          "shared_unique_values": 0
+        },
+        "patients": {
+          "benchmark_rows_with_shared_values": 0,
+          "benchmark_unique_values": 800,
+          "local_rows_with_shared_values": 0,
+          "local_unique_values": 10424,
+          "shared_unique_values": 0
+        },
+        "studies": {
+          "benchmark_rows_with_shared_values": 0,
+          "benchmark_unique_values": 2008,
+          "local_rows_with_shared_values": 0,
+          "local_unique_values": 0,
+          "shared_unique_values": 0
+        }
+      },
+      "records": {
+        "benchmark": 1045,
+        "local": 36224
+      }
+    }
+  },
+  "pair_count_definition": "study_based_pair_keys can collapse distinct priors; manuscript physical-pair counts use actual prior/current images",
+  "ptx_primary": {
+    "all": {
+      "all_image_paths_exist": true,
+      "confusion": {
+        "improving": {
+          "improving": 0,
+          "no_supported_evidence": 0,
+          "stable": 30,
+          "worsening": 1
+        },
+        "stable": {
+          "improving": 0,
+          "no_supported_evidence": 0,
+          "stable": 111,
+          "worsening": 6
+        },
+        "worsening": {
+          "improving": 0,
+          "no_supported_evidence": 0,
+          "stable": 57,
+          "worsening": 6
+        }
+      },
+      "exact_image_pairs": 211,
+      "gold_labels": {
+        "improving": 31,
+        "stable": 117,
+        "worsening": 63
+      },
+      "patients": 148,
+      "predictions": {
+        "stable": 198,
+        "worsening": 13
+      },
+      "rows": 211,
+      "time_bins": {
+        "1_7_days": 126,
+        "8_30_days": 5,
+        "over_90_days": 7,
+        "same_day": 73
+      },
+      "time_gap_days": {
+        "max": 446,
+        "mean": 8.497630331753555,
+        "median": 1,
+        "min": 0,
+        "n": 211
+      },
+      "view_pairs": {
+        "AP->AP": 143,
+        "AP->PA": 26,
+        "PA->AP": 16,
+        "PA->PA": 26
+      }
+    },
+    "gold_worsening": {
+      "all_image_paths_exist": true,
+      "confusion": {
+        "improving": {
+          "improving": 0,
+          "no_supported_evidence": 0,
+          "stable": 0,
+          "worsening": 0
+        },
+        "stable": {
+          "improving": 0,
+          "no_supported_evidence": 0,
+          "stable": 0,
+          "worsening": 0
+        },
+        "worsening": {
+          "improving": 0,
+          "no_supported_evidence": 0,
+          "stable": 57,
+          "worsening": 6
+        }
+      },
+      "exact_image_pairs": 63,
+      "gold_labels": {
+        "worsening": 63
+      },
+      "patients": 54,
+      "predictions": {
+        "stable": 57,
+        "worsening": 6
+      },
+      "rows": 63,
+      "time_bins": {
+        "1_7_days": 36,
+        "8_30_days": 1,
+        "over_90_days": 4,
+        "same_day": 22
+      },
+      "time_gap_days": {
+        "max": 446,
+        "mean": 16.158730158730158,
+        "median": 1,
+        "min": 0,
+        "n": 63
+      },
+      "view_pairs": {
+        "AP->AP": 46,
+        "AP->PA": 7,
+        "PA->AP": 2,
+        "PA->PA": 8
+      }
+    },
+    "interpretation": "Metadata patterns are descriptive associations. No finding visibility, clinical cause, or weak-label precision is established.",
+    "worsening_recall": 0.09523809523809523,
+    "worsening_to_stable": {
+      "all_image_paths_exist": true,
+      "confusion": {
+        "improving": {
+          "improving": 0,
+          "no_supported_evidence": 0,
+          "stable": 0,
+          "worsening": 0
+        },
+        "stable": {
+          "improving": 0,
+          "no_supported_evidence": 0,
+          "stable": 0,
+          "worsening": 0
+        },
+        "worsening": {
+          "improving": 0,
+          "no_supported_evidence": 0,
+          "stable": 57,
+          "worsening": 0
+        }
+      },
+      "exact_image_pairs": 57,
+      "gold_labels": {
+        "worsening": 57
+      },
+      "patients": 48,
+      "predictions": {
+        "stable": 57
+      },
+      "rows": 57,
+      "time_bins": {
+        "1_7_days": 35,
+        "over_90_days": 3,
+        "same_day": 19
+      },
+      "time_gap_days": {
+        "max": 446,
+        "mean": 15.649122807017545,
+        "median": 1,
+        "min": 0,
+        "n": 57
+      },
+      "view_pairs": {
+        "AP->AP": 42,
+        "AP->PA": 6,
+        "PA->AP": 2,
+        "PA->PA": 7
+      }
+    }
+  },
+  "reconstructed_training_runs": [
+    {
+      "dense_modules": [
+        {
+          "name": "base_model.model.lm_head.weight",
+          "parameters": 671252480,
+          "shape": [
+            262208,
+            2560
+          ]
+        },
+        {
+          "name": "base_model.model.model.language_model.embed_tokens.weight",
+          "parameters": 671252480,
+          "shape": [
+            262208,
+            2560
+          ]
+        }
+      ],
+      "finding_by_change_label": {
+        "consolidation": {
+          "improving": 51,
+          "stable": 37,
+          "worsening": 105
+        },
+        "edema": {
+          "improving": 214,
+          "stable": 137,
+          "worsening": 191
+        },
+        "pleural effusion": {
+          "improving": 208,
+          "stable": 396,
+          "worsening": 375
+        },
+        "pneumonia": {
+          "improving": 50,
+          "stable": 30,
+          "worsening": 114
+        },
+        "pneumothorax": {
+          "improving": 39,
+          "stable": 66,
+          "worsening": 35
+        }
+      },
+      "lora_alpha": 16,
+      "lora_dropout": 0.05,
+      "lora_modules_by_category": {
+        "text_lora": 238,
+        "vision_lora": 162
+      },
+      "lora_r": 16,
+      "modules_to_save": [
+        "lm_head",
+        "embed_tokens"
+      ],
+      "pairs": 2017,
+      "parameters_by_category": {
+        "full_embed_tokens": 671252480,
+        "full_lm_head": 671252480,
+        "text_lora": 29802496,
+        "vision_lora": 8695296
+      },
+      "patients": 1569,
+      "quantized_training": false,
+      "run": "Run 1",
+      "saved_parameter_count": 1381002752,
+      "saved_tensor_count": 802,
+      "train_rows": 2048,
+      "view_pair_counts": {
+        "AP->AP": 1776,
+        "PA->PA": 272
+      }
+    },
+    {
+      "dense_modules": [
+        {
+          "name": "base_model.model.lm_head.weight",
+          "parameters": 671252480,
+          "shape": [
+            262208,
+            2560
+          ]
+        },
+        {
+          "name": "base_model.model.model.language_model.embed_tokens.weight",
+          "parameters": 671252480,
+          "shape": [
+            262208,
+            2560
+          ]
+        }
+      ],
+      "finding_by_change_label": {
+        "consolidation": {
+          "improving": 75,
+          "stable": 53,
+          "worsening": 100
+        },
+        "edema": {
+          "improving": 192,
+          "stable": 124,
+          "worsening": 179
+        },
+        "pleural effusion": {
+          "improving": 213,
+          "stable": 378,
+          "worsening": 371
+        },
+        "pneumonia": {
+          "improving": 39,
+          "stable": 53,
+          "worsening": 135
+        },
+        "pneumothorax": {
+          "improving": 33,
+          "stable": 64,
+          "worsening": 39
+        }
+      },
+      "lora_alpha": 16,
+      "lora_dropout": 0.05,
+      "lora_modules_by_category": {
+        "text_lora": 238,
+        "vision_lora": 162
+      },
+      "lora_r": 16,
+      "modules_to_save": [
+        "lm_head",
+        "embed_tokens"
+      ],
+      "pairs": 2018,
+      "parameters_by_category": {
+        "full_embed_tokens": 671252480,
+        "full_lm_head": 671252480,
+        "text_lora": 29802496,
+        "vision_lora": 8695296
+      },
+      "patients": 1577,
+      "quantized_training": false,
+      "run": "Run 2",
+      "saved_parameter_count": 1381002752,
+      "saved_tensor_count": 802,
+      "train_rows": 2048,
+      "view_pair_counts": {
+        "AP->AP": 1809,
+        "PA->PA": 239
+      }
+    },
+    {
+      "dense_modules": [
+        {
+          "name": "base_model.model.lm_head.weight",
+          "parameters": 671252480,
+          "shape": [
+            262208,
+            2560
+          ]
+        },
+        {
+          "name": "base_model.model.model.language_model.embed_tokens.weight",
+          "parameters": 671252480,
+          "shape": [
+            262208,
+            2560
+          ]
+        }
+      ],
+      "finding_by_change_label": {
+        "consolidation": {
+          "improving": 59,
+          "stable": 48,
+          "worsening": 104
+        },
+        "edema": {
+          "improving": 206,
+          "stable": 107,
+          "worsening": 198
+        },
+        "pleural effusion": {
+          "improving": 229,
+          "stable": 355,
+          "worsening": 371
+        },
+        "pneumonia": {
+          "improving": 68,
+          "stable": 29,
+          "worsening": 134
+        },
+        "pneumothorax": {
+          "improving": 47,
+          "stable": 66,
+          "worsening": 27
+        }
+      },
+      "lora_alpha": 16,
+      "lora_dropout": 0.05,
+      "lora_modules_by_category": {
+        "text_lora": 238,
+        "vision_lora": 162
+      },
+      "lora_r": 16,
+      "modules_to_save": [
+        "lm_head",
+        "embed_tokens"
+      ],
+      "pairs": 2024,
+      "parameters_by_category": {
+        "full_embed_tokens": 671252480,
+        "full_lm_head": 671252480,
+        "text_lora": 29802496,
+        "vision_lora": 8695296
+      },
+      "patients": 1573,
+      "quantized_training": false,
+      "run": "Run 3",
+      "saved_parameter_count": 1381002752,
+      "saved_tensor_count": 802,
+      "train_rows": 2048,
+      "view_pair_counts": {
+        "AP->AP": 1752,
+        "PA->PA": 296
+      }
+    }
+  ],
+  "runtime_integrity": {
+    "actual_import_versions": {
+      "PIL": {
+        "version": "12.3.0"
+      },
+      "numpy": {
+        "version": "2.5.1"
+      },
+      "packaging": {
+        "version": "26.2"
+      },
+      "sentencepiece": {
+        "version": "0.2.2"
+      },
+      "torch": {
+        "version": "2.9.0+cu128"
+      },
+      "transformers": {
+        "version": "4.57.0.dev0"
+      },
+      "typing_extensions": {
+        "version": null
+      }
+    },
+    "all_invalids_correct_absolute_accuracy_upper_gain": 0.01885369532428356,
+    "correct_recovery_accuracy_gain": 0.006787330316742082,
+    "diagnostic_only_explicit_final_correct": 9,
+    "diagnostic_only_explicit_final_recovered": 21,
+    "eos_observed_all_rows": 1324,
+    "identity_or_gold_error_count": 0,
+    "installed_distribution_versions": {
+      "numpy": "2.5.1",
+      "pillow": "12.3.0",
+      "torch": "2.9.0",
+      "transformers": "5.0.0.dev0"
+    },
+    "invalid_categories": {
+      "terminated_explanatory_or_noncontract": 23,
+      "truncated": 2
+    },
+    "matched_metadata_images": 2018,
+    "n_manifest": 1326,
+    "n_predictions": 1326,
+    "n_reference": 1326,
+    "original_csv_rows": 1045,
+    "processor_reconstruction": {
+      "batch_keys": [
+        "attention_mask",
+        "input_ids",
+        "pixel_values",
+        "token_type_ids"
+      ],
+      "begin_image_count": 2,
+      "end_image_count": 2,
+      "expected_image_placeholder_count": 512,
+      "image_placeholder_count": 512,
+      "image_processor_class": "Gemma3ImageProcessorFast",
+      "model_weights_loaded": false,
+      "pixel_finite": true,
+      "pixel_order_matches_explicit_prior_current": true,
+      "pixel_range": [
+        -1.0,
+        1.0
+      ],
+      "prior_current_pixels_differ": true,
+      "processor_class": "Gemma3Processor",
+      "render_matches_saved_prompt": true,
+      "tensor_shapes": {
+        "attention_mask": [
+          1,
+          603
+        ],
+        "input_ids": [
+          1,
+          603
+        ],
+        "pixel_values": [
+          2,
+          3,
+          896,
+          896
+        ],
+        "token_type_ids": [
+          1,
+          603
+        ]
+      },
+      "token_type_ids_match_image_positions": true,
+      "token_type_ids_present": true
+    },
+    "recorded_pixel_shapes": {
+      "[2, 3, 896, 896]": 1326
+    },
+    "strict_invalid_fraction": 0.01885369532428356,
+    "strict_invalids": 25,
+    "study_date_order_row_counts": {
+      "prior_date_before_current": 1069,
+      "same_date": 257
+    },
+    "study_datetime_order_row_counts": {
+      "prior_before_current": 1326
+    },
+    "truncated_all_rows": 2
+  },
+  "scope": "Aggregate protocol, reconstructed training, configured trainability, PTX, input/runtime and compute records",
+  "source_sha256": {
+    "artifacts/cmig_validation/catalogue_raw/report.json": "7072126858252b97fa7c1cffb6b8a769f80c7e80dee74efbac280539c9fe9b0f",
+    "artifacts/cmig_validation/query_interventions/report.json": "3ef70c49ed073fa7e23df75f32f9536e23b45e242edba0adcdd9da340e2a8812",
+    "artifacts/cmig_validation/runtime_integrity/audit.json": "7c1ab9a547b57ec77fd6a9f0199e52a7fbf35145c7481bc385f7461fcf618548",
+    "artifacts/cmig_validation/secondary_raw/report.json": "cc8ca48cbec5139b246e51f046678dca3ca33dbc02c347f6520f004a1c9f44aa",
+    "artifacts/cmig_validation/temporal/report.json": "7ca2b65d8e2cd90c9dff7682409b7fee5931ff9bc22b7f6dfafb1df7dbd080ae",
+    "artifacts/cmig_validation/trainability_ptx/report.json": "b6606b17535ba285c397bb14d06a3e3036cc39eb0fcb6637187de49c19fa16fd",
+    "artifacts/compute_provenance/additional_audit.json": "abf5f88f66ff8e2de31f17b85f89d97079da021a88baba5fe965c67ccc1c03d2",
+    "artifacts/label_distributions/summary.json": "d3f630da9e1dd3048ab61ea5b05186eea10eda78a4294065fb888c9c06aa8bbb",
+    "artifacts/rebuttal_analyses/three_random_seeds_results.json": "1e8b5abd9197f8eef84e435ab8b039ab005d22f02590dfafd60c46e2e481da2f",
+    "share_data/combined_longitudinal_eval_exclusions/overlap_stage1_vs_ms_cxr_t.json": "47575f9c2a0d86fbb9e564b27da59a64124bd35d48f41c49e7b0acd6772d4235",
+    "share_data/ms_cxr_t_longitudinal_stage1/overlap_vs_full_stage1_benchmark_ms_cxr_t_excluded.json": "c0bc87b6f59dcae59ad8a0d0b03db3870165e93f4ee2d2ceee29afbd4fe67b2d",
+    "share_data/ms_cxr_t_longitudinal_stage1/overlap_vs_local_previews.json": "451874fc68286516b3189ff0db2e74771a558591fce6f776fbd287ab28f1aaa4"
+  }
+}

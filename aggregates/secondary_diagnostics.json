@@ -1,0 +1,864 @@
+{
+  "primary_raw_reference": {
+    "accuracy": 0.5920060331825038,
+    "confusion_matrix": {
+      "improving": {
+        "improving": 109,
+        "stable": 99,
+        "worsening": 33
+      },
+      "stable": {
+        "improving": 75,
+        "stable": 249,
+        "worsening": 206
+      },
+      "worsening": {
+        "improving": 41,
+        "stable": 87,
+        "worsening": 427
+      }
+    },
+    "correct_count": 785,
+    "count": 1326,
+    "false_abstention_count": 0,
+    "false_abstention_rate": 0.0,
+    "gold_counts": {
+      "improving": 241,
+      "stable": 530,
+      "worsening": 555
+    },
+    "per_class": {
+      "improving": {
+        "f1": 0.46781115879828333,
+        "precision": 0.48444444444444446,
+        "pred_count": 225,
+        "recall": 0.45228215767634855,
+        "support": 241
+      },
+      "no_supported_evidence": {
+        "f1": 0.0,
+        "precision": 0.0,
+        "pred_count": 0,
+        "recall": 0.0,
+        "support": 0
+      },
+      "stable": {
+        "f1": 0.5160621761658031,
+        "precision": 0.5724137931034483,
+        "pred_count": 435,
+        "recall": 0.469811320754717,
+        "support": 530
+      },
+      "worsening": {
+        "f1": 0.6994266994266994,
+        "precision": 0.6411411411411412,
+        "pred_count": 666,
+        "recall": 0.7693693693693694,
+        "support": 555
+      }
+    },
+    "prediction_counts": {
+      "improving": 225,
+      "stable": 435,
+      "worsening": 666
+    },
+    "supported_macro_f1": 0.5611000114635952
+  },
+  "scope": "Supported-task performance, synthetic candidate behavior and descriptive projected transfer",
+  "synthetic_candidates_adjudicated": false,
+  "synthetic_variants": {
+    "10% synthetic NSE": {
+      "accuracy": 0.5196078431372549,
+      "candidate_behavior": {
+        "abstention_count": 145,
+        "abstention_rate": 0.29,
+        "count": 500,
+        "prediction_counts": {
+          "improving": 60,
+          "no_supported_evidence": 145,
+          "stable": 54,
+          "worsening": 241
+        },
+        "supported_output_count": 355,
+        "supported_output_rate": 0.71
+      },
+      "confusion_matrix": {
+        "improving": {
+          "improving": 88,
+          "no_supported_evidence": 15,
+          "stable": 68,
+          "worsening": 70
+        },
+        "stable": {
+          "improving": 65,
+          "no_supported_evidence": 75,
+          "stable": 180,
+          "worsening": 210
+        },
+        "worsening": {
+          "improving": 30,
+          "no_supported_evidence": 40,
+          "stable": 64,
+          "worsening": 421
+        }
+      },
+      "correct_count": 689,
+      "count": 1326,
+      "false_abstention_count": 130,
+      "false_abstention_rate": 0.09803921568627451,
+      "gold_counts": {
+        "improving": 241,
+        "stable": 530,
+        "worsening": 555
+      },
+      "per_class": {
+        "improving": {
+          "f1": 0.41509433962264153,
+          "precision": 0.4808743169398907,
+          "pred_count": 183,
+          "recall": 0.3651452282157676,
+          "support": 241
+        },
+        "no_supported_evidence": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "pred_count": 130,
+          "recall": 0.0,
+          "support": 0
+        },
+        "stable": {
+          "f1": 0.4275534441805226,
+          "precision": 0.5769230769230769,
+          "pred_count": 312,
+          "recall": 0.33962264150943394,
+          "support": 530
+        },
+        "worsening": {
+          "f1": 0.6703821656050956,
+          "precision": 0.6005706134094151,
+          "pred_count": 701,
+          "recall": 0.7585585585585586,
+          "support": 555
+        }
+      },
+      "prediction_counts": {
+        "improving": 183,
+        "no_supported_evidence": 130,
+        "stable": 312,
+        "worsening": 701
+      },
+      "supported_macro_f1": 0.5043433164694199
+    },
+    "2% synthetic NSE": {
+      "accuracy": 0.5497737556561086,
+      "candidate_behavior": {
+        "abstention_count": 0,
+        "abstention_rate": 0.0,
+        "count": 500,
+        "prediction_counts": {
+          "improving": 166,
+          "stable": 122,
+          "worsening": 212
+        },
+        "supported_output_count": 500,
+        "supported_output_rate": 1.0
+      },
+      "confusion_matrix": {
+        "improving": {
+          "improving": 92,
+          "stable": 90,
+          "worsening": 59
+        },
+        "stable": {
+          "improving": 93,
+          "stable": 210,
+          "worsening": 227
+        },
+        "worsening": {
+          "improving": 57,
+          "stable": 71,
+          "worsening": 427
+        }
+      },
+      "correct_count": 729,
+      "count": 1326,
+      "false_abstention_count": 0,
+      "false_abstention_rate": 0.0,
+      "gold_counts": {
+        "improving": 241,
+        "stable": 530,
+        "worsening": 555
+      },
+      "per_class": {
+        "improving": {
+          "f1": 0.38095238095238093,
+          "precision": 0.38016528925619836,
+          "pred_count": 242,
+          "recall": 0.3817427385892116,
+          "support": 241
+        },
+        "no_supported_evidence": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "pred_count": 0,
+          "recall": 0.0,
+          "support": 0
+        },
+        "stable": {
+          "f1": 0.46614872364039955,
+          "precision": 0.5660377358490566,
+          "pred_count": 371,
+          "recall": 0.39622641509433965,
+          "support": 530
+        },
+        "worsening": {
+          "f1": 0.6735015772870663,
+          "precision": 0.5988779803646563,
+          "pred_count": 713,
+          "recall": 0.7693693693693694,
+          "support": 555
+        }
+      },
+      "prediction_counts": {
+        "improving": 242,
+        "stable": 371,
+        "worsening": 713
+      },
+      "supported_macro_f1": 0.5068675606266156
+    },
+    "5% synthetic NSE": {
+      "accuracy": 0.5648567119155354,
+      "candidate_behavior": {
+        "abstention_count": 59,
+        "abstention_rate": 0.118,
+        "count": 500,
+        "prediction_counts": {
+          "improving": 110,
+          "no_supported_evidence": 59,
+          "stable": 75,
+          "worsening": 256
+        },
+        "supported_output_count": 441,
+        "supported_output_rate": 0.882
+      },
+      "confusion_matrix": {
+        "improving": {
+          "improving": 100,
+          "no_supported_evidence": 1,
+          "stable": 69,
+          "worsening": 71
+        },
+        "stable": {
+          "improving": 81,
+          "no_supported_evidence": 15,
+          "stable": 194,
+          "worsening": 240
+        },
+        "worsening": {
+          "improving": 36,
+          "no_supported_evidence": 10,
+          "stable": 54,
+          "worsening": 455
+        }
+      },
+      "correct_count": 749,
+      "count": 1326,
+      "false_abstention_count": 26,
+      "false_abstention_rate": 0.0196078431372549,
+      "gold_counts": {
+        "improving": 241,
+        "stable": 530,
+        "worsening": 555
+      },
+      "per_class": {
+        "improving": {
+          "f1": 0.43668122270742354,
+          "precision": 0.4608294930875576,
+          "pred_count": 217,
+          "recall": 0.4149377593360996,
+          "support": 241
+        },
+        "no_supported_evidence": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "pred_count": 26,
+          "recall": 0.0,
+          "support": 0
+        },
+        "stable": {
+          "f1": 0.45808736717827625,
+          "precision": 0.61198738170347,
+          "pred_count": 317,
+          "recall": 0.3660377358490566,
+          "support": 530
+        },
+        "worsening": {
+          "f1": 0.6888720666161997,
+          "precision": 0.5939947780678851,
+          "pred_count": 766,
+          "recall": 0.8198198198198198,
+          "support": 555
+        }
+      },
+      "prediction_counts": {
+        "improving": 217,
+        "no_supported_evidence": 26,
+        "stable": 317,
+        "worsening": 766
+      },
+      "supported_macro_f1": 0.5278802188339665
+    },
+    "Balanced synthetic NSE": {
+      "accuracy": 0.39819004524886875,
+      "candidate_behavior": {
+        "abstention_count": 325,
+        "abstention_rate": 0.65,
+        "count": 500,
+        "prediction_counts": {
+          "improving": 42,
+          "no_supported_evidence": 325,
+          "stable": 41,
+          "worsening": 92
+        },
+        "supported_output_count": 175,
+        "supported_output_rate": 0.35
+      },
+      "confusion_matrix": {
+        "improving": {
+          "improving": 106,
+          "no_supported_evidence": 41,
+          "stable": 62,
+          "worsening": 32
+        },
+        "stable": {
+          "improving": 74,
+          "no_supported_evidence": 159,
+          "stable": 155,
+          "worsening": 142
+        },
+        "worsening": {
+          "improving": 45,
+          "no_supported_evidence": 187,
+          "stable": 56,
+          "worsening": 267
+        }
+      },
+      "correct_count": 528,
+      "count": 1326,
+      "false_abstention_count": 387,
+      "false_abstention_rate": 0.2918552036199095,
+      "gold_counts": {
+        "improving": 241,
+        "stable": 530,
+        "worsening": 555
+      },
+      "per_class": {
+        "improving": {
+          "f1": 0.45493562231759654,
+          "precision": 0.4711111111111111,
+          "pred_count": 225,
+          "recall": 0.43983402489626555,
+          "support": 241
+        },
+        "no_supported_evidence": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "pred_count": 387,
+          "recall": 0.0,
+          "support": 0
+        },
+        "stable": {
+          "f1": 0.38605230386052297,
+          "precision": 0.5677655677655677,
+          "pred_count": 273,
+          "recall": 0.29245283018867924,
+          "support": 530
+        },
+        "worsening": {
+          "f1": 0.5361445783132531,
+          "precision": 0.6054421768707483,
+          "pred_count": 441,
+          "recall": 0.4810810810810811,
+          "support": 555
+        }
+      },
+      "prediction_counts": {
+        "improving": 225,
+        "no_supported_evidence": 387,
+        "stable": 273,
+        "worsening": 441
+      },
+      "supported_macro_f1": 0.4590441681637909
+    },
+    "Natural synthetic NSE": {
+      "accuracy": 0.0,
+      "candidate_behavior": {
+        "abstention_count": 500,
+        "abstention_rate": 1.0,
+        "count": 500,
+        "prediction_counts": {
+          "no_supported_evidence": 500
+        },
+        "supported_output_count": 0,
+        "supported_output_rate": 0.0
+      },
+      "confusion_matrix": {
+        "improving": {
+          "no_supported_evidence": 241
+        },
+        "stable": {
+          "no_supported_evidence": 530
+        },
+        "worsening": {
+          "no_supported_evidence": 555
+        }
+      },
+      "correct_count": 0,
+      "count": 1326,
+      "false_abstention_count": 1326,
+      "false_abstention_rate": 1.0,
+      "gold_counts": {
+        "improving": 241,
+        "stable": 530,
+        "worsening": 555
+      },
+      "per_class": {
+        "improving": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "pred_count": 0,
+          "recall": 0.0,
+          "support": 241
+        },
+        "no_supported_evidence": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "pred_count": 1326,
+          "recall": 0.0,
+          "support": 0
+        },
+        "stable": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "pred_count": 0,
+          "recall": 0.0,
+          "support": 530
+        },
+        "worsening": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "pred_count": 0,
+          "recall": 0.0,
+          "support": 555
+        }
+      },
+      "prediction_counts": {
+        "no_supported_evidence": 1326
+      },
+      "supported_macro_f1": 0.0
+    }
+  },
+  "transfer": {
+    "BioViL-T current-only": {
+      "accuracy": 0.5348837209302325,
+      "confusion_matrix": {
+        "improving": {
+          "improving": 22,
+          "stable": 10,
+          "worsening": 10
+        },
+        "stable": {
+          "improving": 16,
+          "stable": 29,
+          "worsening": 37
+        },
+        "worsening": {
+          "improving": 12,
+          "stable": 15,
+          "worsening": 64
+        }
+      },
+      "correct_count": 115,
+      "count": 215,
+      "false_abstention_count": 0,
+      "false_abstention_rate": 0.0,
+      "gold_counts": {
+        "improving": 42,
+        "stable": 82,
+        "worsening": 91
+      },
+      "patient_pair_count": 152,
+      "per_class": {
+        "improving": {
+          "f1": 0.4782608695652174,
+          "precision": 0.44,
+          "pred_count": 50,
+          "recall": 0.5238095238095238,
+          "support": 42
+        },
+        "no_supported_evidence": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "pred_count": 0,
+          "recall": 0.0,
+          "support": 0
+        },
+        "stable": {
+          "f1": 0.42647058823529416,
+          "precision": 0.5370370370370371,
+          "pred_count": 54,
+          "recall": 0.35365853658536583,
+          "support": 82
+        },
+        "worsening": {
+          "f1": 0.6336633663366337,
+          "precision": 0.5765765765765766,
+          "pred_count": 111,
+          "recall": 0.7032967032967034,
+          "support": 91
+        }
+      },
+      "prediction_counts": {
+        "improving": 50,
+        "stable": 54,
+        "worsening": 111
+      },
+      "supported_macro_f1": 0.5127982747123817
+    },
+    "BioViL-T prior/current": {
+      "accuracy": 0.5581395348837209,
+      "confusion_matrix": {
+        "improving": {
+          "improving": 25,
+          "stable": 9,
+          "worsening": 8
+        },
+        "stable": {
+          "improving": 11,
+          "stable": 24,
+          "worsening": 47
+        },
+        "worsening": {
+          "improving": 11,
+          "stable": 9,
+          "worsening": 71
+        }
+      },
+      "correct_count": 120,
+      "count": 215,
+      "false_abstention_count": 0,
+      "false_abstention_rate": 0.0,
+      "gold_counts": {
+        "improving": 42,
+        "stable": 82,
+        "worsening": 91
+      },
+      "patient_pair_count": 152,
+      "per_class": {
+        "improving": {
+          "f1": 0.5617977528089887,
+          "precision": 0.5319148936170213,
+          "pred_count": 47,
+          "recall": 0.5952380952380952,
+          "support": 42
+        },
+        "no_supported_evidence": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "pred_count": 0,
+          "recall": 0.0,
+          "support": 0
+        },
+        "stable": {
+          "f1": 0.3870967741935484,
+          "precision": 0.5714285714285714,
+          "pred_count": 42,
+          "recall": 0.2926829268292683,
+          "support": 82
+        },
+        "worsening": {
+          "f1": 0.6543778801843317,
+          "precision": 0.5634920634920635,
+          "pred_count": 126,
+          "recall": 0.7802197802197802,
+          "support": 91
+        }
+      },
+      "prediction_counts": {
+        "improving": 47,
+        "stable": 42,
+        "worsening": 126
+      },
+      "supported_macro_f1": 0.5344241357289562
+    },
+    "MedGemma historical prompt-only": {
+      "accuracy": 0.3302325581395349,
+      "confusion_matrix": {
+        "improving": {
+          "improving": 19,
+          "no_supported_evidence": 8,
+          "stable": 5,
+          "worsening": 10
+        },
+        "stable": {
+          "improving": 6,
+          "no_supported_evidence": 41,
+          "stable": 5,
+          "worsening": 30
+        },
+        "worsening": {
+          "improving": 3,
+          "no_supported_evidence": 38,
+          "stable": 3,
+          "worsening": 47
+        }
+      },
+      "correct_count": 71,
+      "count": 215,
+      "false_abstention_count": 87,
+      "false_abstention_rate": 0.4046511627906977,
+      "gold_counts": {
+        "improving": 42,
+        "stable": 82,
+        "worsening": 91
+      },
+      "patient_pair_count": 152,
+      "per_class": {
+        "improving": {
+          "f1": 0.5428571428571429,
+          "precision": 0.6785714285714286,
+          "pred_count": 28,
+          "recall": 0.4523809523809524,
+          "support": 42
+        },
+        "no_supported_evidence": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "pred_count": 87,
+          "recall": 0.0,
+          "support": 0
+        },
+        "stable": {
+          "f1": 0.10526315789473685,
+          "precision": 0.38461538461538464,
+          "pred_count": 13,
+          "recall": 0.06097560975609756,
+          "support": 82
+        },
+        "worsening": {
+          "f1": 0.5280898876404494,
+          "precision": 0.5402298850574713,
+          "pred_count": 87,
+          "recall": 0.5164835164835165,
+          "support": 91
+        }
+      },
+      "prediction_counts": {
+        "improving": 28,
+        "no_supported_evidence": 87,
+        "stable": 13,
+        "worsening": 87
+      },
+      "supported_macro_f1": 0.392070062797443
+    },
+    "MedSigLIP current-only": {
+      "accuracy": 0.5302325581395348,
+      "confusion_matrix": {
+        "improving": {
+          "improving": 20,
+          "stable": 3,
+          "worsening": 19
+        },
+        "stable": {
+          "improving": 12,
+          "stable": 33,
+          "worsening": 37
+        },
+        "worsening": {
+          "improving": 14,
+          "stable": 16,
+          "worsening": 61
+        }
+      },
+      "correct_count": 114,
+      "count": 215,
+      "false_abstention_count": 0,
+      "false_abstention_rate": 0.0,
+      "gold_counts": {
+        "improving": 42,
+        "stable": 82,
+        "worsening": 91
+      },
+      "patient_pair_count": 152,
+      "per_class": {
+        "improving": {
+          "f1": 0.4545454545454545,
+          "precision": 0.43478260869565216,
+          "pred_count": 46,
+          "recall": 0.47619047619047616,
+          "support": 42
+        },
+        "no_supported_evidence": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "pred_count": 0,
+          "recall": 0.0,
+          "support": 0
+        },
+        "stable": {
+          "f1": 0.4925373134328359,
+          "precision": 0.6346153846153846,
+          "pred_count": 52,
+          "recall": 0.4024390243902439,
+          "support": 82
+        },
+        "worsening": {
+          "f1": 0.5865384615384616,
+          "precision": 0.5213675213675214,
+          "pred_count": 117,
+          "recall": 0.6703296703296703,
+          "support": 91
+        }
+      },
+      "prediction_counts": {
+        "improving": 46,
+        "stable": 52,
+        "worsening": 117
+      },
+      "supported_macro_f1": 0.511207076505584
+    },
+    "MedSigLIP prior/current": {
+      "accuracy": 0.4790697674418605,
+      "confusion_matrix": {
+        "improving": {
+          "improving": 33,
+          "stable": 4,
+          "worsening": 5
+        },
+        "stable": {
+          "improving": 30,
+          "stable": 26,
+          "worsening": 26
+        },
+        "worsening": {
+          "improving": 30,
+          "stable": 17,
+          "worsening": 44
+        }
+      },
+      "correct_count": 103,
+      "count": 215,
+      "false_abstention_count": 0,
+      "false_abstention_rate": 0.0,
+      "gold_counts": {
+        "improving": 42,
+        "stable": 82,
+        "worsening": 91
+      },
+      "patient_pair_count": 152,
+      "per_class": {
+        "improving": {
+          "f1": 0.48888888888888893,
+          "precision": 0.3548387096774194,
+          "pred_count": 93,
+          "recall": 0.7857142857142857,
+          "support": 42
+        },
+        "no_supported_evidence": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "pred_count": 0,
+          "recall": 0.0,
+          "support": 0
+        },
+        "stable": {
+          "f1": 0.40310077519379844,
+          "precision": 0.5531914893617021,
+          "pred_count": 47,
+          "recall": 0.3170731707317073,
+          "support": 82
+        },
+        "worsening": {
+          "f1": 0.5301204819277109,
+          "precision": 0.5866666666666667,
+          "pred_count": 75,
+          "recall": 0.4835164835164835,
+          "support": 91
+        }
+      },
+      "prediction_counts": {
+        "improving": 93,
+        "stable": 47,
+        "worsening": 75
+      },
+      "supported_macro_f1": 0.4740367153367995
+    },
+    "Q-LACE primary run": {
+      "accuracy": 0.5767441860465117,
+      "confusion_matrix": {
+        "improving": {
+          "improving": 25,
+          "stable": 12,
+          "worsening": 5
+        },
+        "stable": {
+          "improving": 15,
+          "stable": 20,
+          "worsening": 47
+        },
+        "worsening": {
+          "improving": 9,
+          "stable": 3,
+          "worsening": 79
+        }
+      },
+      "correct_count": 124,
+      "count": 215,
+      "false_abstention_count": 0,
+      "false_abstention_rate": 0.0,
+      "gold_counts": {
+        "improving": 42,
+        "stable": 82,
+        "worsening": 91
+      },
+      "patient_pair_count": 152,
+      "per_class": {
+        "improving": {
+          "f1": 0.5494505494505494,
+          "precision": 0.5102040816326531,
+          "pred_count": 49,
+          "recall": 0.5952380952380952,
+          "support": 42
+        },
+        "no_supported_evidence": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "pred_count": 0,
+          "recall": 0.0,
+          "support": 0
+        },
+        "stable": {
+          "f1": 0.3418803418803419,
+          "precision": 0.5714285714285714,
+          "pred_count": 35,
+          "recall": 0.24390243902439024,
+          "support": 82
+        },
+        "worsening": {
+          "f1": 0.7117117117117118,
+          "precision": 0.6030534351145038,
+          "pred_count": 131,
+          "recall": 0.8681318681318682,
+          "support": 91
+        }
+      },
+      "prediction_counts": {
+        "improving": 49,
+        "stable": 35,
+        "worsening": 131
+      },
+      "supported_macro_f1": 0.5343475343475343
+    }
+  },
+  "transfer_scope": "Projected MIMIC-derived export; not external institutional validation"
+}

@@ -1,0 +1,16 @@
+tabular_number,row_number,cell_number,cell_latex,cell_text
+1,1,1,Historical full-query $-$ finding-blind contrast,Historical full-query - finding-blind contrast
+1,1,2,Difference,Difference
+1,1,3,95\% CI,95% CI
+1,2,1,Overall accuracy,Overall accuracy
+1,2,2,+0.0671,+0.0671
+1,2,3,"[0.0454, 0.0893]","[0.0454, 0.0893]"
+1,3,1,Pooled supported macro-F1,Pooled supported macro-F1
+1,3,2,+0.1195,+0.1195
+1,3,3,"[0.0976, 0.1413]","[0.0976, 0.1413]"
+1,4,1,Pooled class-balanced accuracy,Pooled class-balanced accuracy
+1,4,2,+0.0522,+0.0522
+1,4,3,"[0.0318, 0.0726]","[0.0318, 0.0726]"
+1,5,1,Mean five-finding class-balanced accuracy,Mean five-finding class-balanced accuracy
+1,5,2,+0.0067,+0.0067
+1,5,3,"[$-0.0116$, 0.0249]","[-0.0116, 0.0249]"

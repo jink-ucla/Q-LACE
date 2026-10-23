@@ -1,0 +1,3920 @@
+{
+  "alignment": "Complete source/finding/gold sequence verified for both raw models; primary patient/pair sequence also verified. Physical prior/current/finding plus occurrence index retained. Query controls use independently verified canonical row indices.",
+  "bootstrap": {
+    "method": "percentile_95",
+    "rng": "numpy.default_rng; paired identical draws for both model arms",
+    "samples": 10000,
+    "seed": 42,
+    "unit": "patient_id"
+  },
+  "classification": {
+    "consolidation": {
+      "biovilt": {
+        "accuracy": 0.48258706467661694,
+        "supported_macro_f1": 0.3951075682854925,
+        "worsening_recall": 0.8522727272727273
+      },
+      "biovilt_confusion": [
+        [
+          20,
+          0,
+          8,
+          0
+        ],
+        [
+          22,
+          2,
+          61,
+          0
+        ],
+        [
+          11,
+          2,
+          75,
+          0
+        ]
+      ],
+      "confusion_labels": {
+        "gold": [
+          "improving",
+          "stable",
+          "worsening"
+        ],
+        "prediction": [
+          "improving",
+          "stable",
+          "worsening",
+          "other"
+        ]
+      },
+      "paired_delta": {
+        "accuracy": {
+          "estimate": 0.02487562189054726,
+          "excludes_zero": false,
+          "patient_bootstrap_95_ci": [
+            -0.027624309392265234,
+            0.07798165137614677
+          ]
+        },
+        "supported_macro_f1": {
+          "estimate": 0.013715036717228846,
+          "excludes_zero": false,
+          "patient_bootstrap_95_ci": [
+            -0.05242219221299731,
+            0.07867949350023258
+          ]
+        },
+        "worsening_recall": {
+          "estimate": 0.06818181818181812,
+          "excludes_zero": false,
+          "patient_bootstrap_95_ci": [
+            -0.01041666666666674,
+            0.14634146341463417
+          ]
+        }
+      },
+      "patient_clusters": 187,
+      "q_lace": {
+        "accuracy": 0.5074626865671642,
+        "supported_macro_f1": 0.40882260500272133,
+        "worsening_recall": 0.9204545454545454
+      },
+      "q_lace_confusion": [
+        [
+          12,
+          3,
+          13,
+          0
+        ],
+        [
+          22,
+          9,
+          54,
+          0
+        ],
+        [
+          5,
+          2,
+          81,
+          0
+        ]
+      ],
+      "rows": 201
+    },
+    "edema": {
+      "biovilt": {
+        "accuracy": 0.6127819548872181,
+        "supported_macro_f1": 0.4767135713969644,
+        "worsening_recall": 0.8070175438596491
+      },
+      "biovilt_confusion": [
+        [
+          70,
+          1,
+          12,
+          0
+        ],
+        [
+          43,
+          1,
+          25,
+          0
+        ],
+        [
+          21,
+          1,
+          92,
+          0
+        ]
+      ],
+      "confusion_labels": {
+        "gold": [
+          "improving",
+          "stable",
+          "worsening"
+        ],
+        "prediction": [
+          "improving",
+          "stable",
+          "worsening",
+          "other"
+        ]
+      },
+      "paired_delta": {
+        "accuracy": {
+          "estimate": 0.03007518796992481,
+          "excludes_zero": false,
+          "patient_bootstrap_95_ci": [
+            -0.017605633802816878,
+            0.07692307692307687
+          ]
+        },
+        "supported_macro_f1": {
+          "estimate": 0.052705351433040615,
+          "excludes_zero": false,
+          "patient_bootstrap_95_ci": [
+            -0.0008751188675162043,
+            0.10723856804999897
+          ]
+        },
+        "worsening_recall": {
+          "estimate": 0.01754385964912286,
+          "excludes_zero": false,
+          "patient_bootstrap_95_ci": [
+            -0.05982905982905984,
+            0.09600384615384608
+          ]
+        }
+      },
+      "patient_clusters": 241,
+      "q_lace": {
+        "accuracy": 0.6428571428571429,
+        "supported_macro_f1": 0.529418922830005,
+        "worsening_recall": 0.8245614035087719
+      },
+      "q_lace_confusion": [
+        [
+          72,
+          3,
+          8,
+          0
+        ],
+        [
+          34,
+          5,
+          30,
+          0
+        ],
+        [
+          17,
+          3,
+          94,
+          0
+        ]
+      ],
+      "rows": 266
+    },
+    "overall": {
+      "biovilt": {
+        "accuracy": 0.5535444947209653,
+        "supported_macro_f1": 0.5268868514464783,
+        "worsening_recall": 0.7567567567567568
+      },
+      "biovilt_confusion": [
+        [
+          123,
+          71,
+          47,
+          0
+        ],
+        [
+          97,
+          191,
+          242,
+          0
+        ],
+        [
+          52,
+          83,
+          420,
+          0
+        ]
+      ],
+      "confusion_labels": {
+        "gold": [
+          "improving",
+          "stable",
+          "worsening"
+        ],
+        "prediction": [
+          "improving",
+          "stable",
+          "worsening",
+          "other"
+        ]
+      },
+      "paired_delta": {
+        "accuracy": {
+          "estimate": 0.038461538461538436,
+          "excludes_zero": true,
+          "patient_bootstrap_95_ci": [
+            0.014503000493951701,
+            0.06259768022433608
+          ]
+        },
+        "supported_macro_f1": {
+          "estimate": 0.03421316001711694,
+          "excludes_zero": true,
+          "patient_bootstrap_95_ci": [
+            0.007393097885561429,
+            0.061362787264341905
+          ]
+        },
+        "worsening_recall": {
+          "estimate": 0.012612612612612595,
+          "excludes_zero": false,
+          "patient_bootstrap_95_ci": [
+            -0.02260951599671865,
+            0.04841777657497433
+          ]
+        }
+      },
+      "patient_clusters": 800,
+      "q_lace": {
+        "accuracy": 0.5920060331825038,
+        "supported_macro_f1": 0.5611000114635952,
+        "worsening_recall": 0.7693693693693694
+      },
+      "q_lace_confusion": [
+        [
+          109,
+          99,
+          33,
+          0
+        ],
+        [
+          75,
+          249,
+          206,
+          0
+        ],
+        [
+          41,
+          87,
+          427,
+          0
+        ]
+      ],
+      "rows": 1326
+    },
+    "pleural effusion": {
+      "biovilt": {
+        "accuracy": 0.5206812652068127,
+        "supported_macro_f1": 0.4924023283664057,
+        "worsening_recall": 0.7480916030534351
+      },
+      "biovilt_confusion": [
+        [
+          24,
+          44,
+          12,
+          0
+        ],
+        [
+          18,
+          92,
+          90,
+          0
+        ],
+        [
+          4,
+          29,
+          98,
+          0
+        ]
+      ],
+      "confusion_labels": {
+        "gold": [
+          "improving",
+          "stable",
+          "worsening"
+        ],
+        "prediction": [
+          "improving",
+          "stable",
+          "worsening",
+          "other"
+        ]
+      },
+      "paired_delta": {
+        "accuracy": {
+          "estimate": 0.06082725060827243,
+          "excludes_zero": true,
+          "patient_bootstrap_95_ci": [
+            0.009851611575749495,
+            0.11212868110951899
+          ]
+        },
+        "supported_macro_f1": {
+          "estimate": 0.0006193015747097408,
+          "excludes_zero": false,
+          "patient_bootstrap_95_ci": [
+            -0.05478856328065053,
+            0.054468024509546006
+          ]
+        },
+        "worsening_recall": {
+          "estimate": 0.05343511450381677,
+          "excludes_zero": false,
+          "patient_bootstrap_95_ci": [
+            -0.021897810218978075,
+            0.12698748991121867
+          ]
+        }
+      },
+      "patient_clusters": 370,
+      "q_lace": {
+        "accuracy": 0.5815085158150851,
+        "supported_macro_f1": 0.4930216299411154,
+        "worsening_recall": 0.8015267175572519
+      },
+      "q_lace_confusion": [
+        [
+          10,
+          63,
+          7,
+          0
+        ],
+        [
+          5,
+          124,
+          71,
+          0
+        ],
+        [
+          1,
+          25,
+          105,
+          0
+        ]
+      ],
+      "rows": 411
+    },
+    "pneumonia": {
+      "biovilt": {
+        "accuracy": 0.6540084388185654,
+        "supported_macro_f1": 0.3426483454274098,
+        "worsening_recall": 0.949685534591195
+      },
+      "biovilt_confusion": [
+        [
+          4,
+          0,
+          15,
+          0
+        ],
+        [
+          3,
+          0,
+          56,
+          0
+        ],
+        [
+          8,
+          0,
+          151,
+          0
+        ]
+      ],
+      "confusion_labels": {
+        "gold": [
+          "improving",
+          "stable",
+          "worsening"
+        ],
+        "prediction": [
+          "improving",
+          "stable",
+          "worsening",
+          "other"
+        ]
+      },
+      "paired_delta": {
+        "accuracy": {
+          "estimate": 0.00421940928270037,
+          "excludes_zero": false,
+          "patient_bootstrap_95_ci": [
+            -0.03765690376569031,
+            0.04761904761904767
+          ]
+        },
+        "supported_macro_f1": {
+          "estimate": 0.0782077802997761,
+          "excludes_zero": true,
+          "patient_bootstrap_95_ci": [
+            0.00550182196561216,
+            0.15054383161463272
+          ]
+        },
+        "worsening_recall": {
+          "estimate": -0.06289308176100628,
+          "excludes_zero": true,
+          "patient_bootstrap_95_ci": [
+            -0.11258278145695355,
+            -0.014181899910098947
+          ]
+        }
+      },
+      "patient_clusters": 218,
+      "q_lace": {
+        "accuracy": 0.6582278481012658,
+        "supported_macro_f1": 0.4208561257271859,
+        "worsening_recall": 0.8867924528301887
+      },
+      "q_lace_confusion": [
+        [
+          15,
+          0,
+          4,
+          0
+        ],
+        [
+          14,
+          0,
+          45,
+          0
+        ],
+        [
+          18,
+          0,
+          141,
+          0
+        ]
+      ],
+      "rows": 237
+    },
+    "pneumothorax": {
+      "biovilt": {
+        "accuracy": 0.4976303317535545,
+        "supported_macro_f1": 0.3159277504105091,
+        "worsening_recall": 0.06349206349206349
+      },
+      "biovilt_confusion": [
+        [
+          5,
+          26,
+          0,
+          0
+        ],
+        [
+          11,
+          96,
+          10,
+          0
+        ],
+        [
+          8,
+          51,
+          4,
+          0
+        ]
+      ],
+      "confusion_labels": {
+        "gold": [
+          "improving",
+          "stable",
+          "worsening"
+        ],
+        "prediction": [
+          "improving",
+          "stable",
+          "worsening",
+          "other"
+        ]
+      },
+      "paired_delta": {
+        "accuracy": {
+          "estimate": 0.05687203791469192,
+          "excludes_zero": true,
+          "patient_bootstrap_95_ci": [
+            0.004608294930875556,
+            0.11399077356603945
+          ]
+        },
+        "supported_macro_f1": {
+          "estimate": -0.02837553654250574,
+          "excludes_zero": false,
+          "patient_bootstrap_95_ci": [
+            -0.09557449016563267,
+            0.0448649669294468
+          ]
+        },
+        "worsening_recall": {
+          "estimate": 0.031746031746031744,
+          "excludes_zero": false,
+          "patient_bootstrap_95_ci": [
+            -0.054545454545454536,
+            0.125
+          ]
+        }
+      },
+      "patient_clusters": 148,
+      "q_lace": {
+        "accuracy": 0.5545023696682464,
+        "supported_macro_f1": 0.28755221386800334,
+        "worsening_recall": 0.09523809523809523
+      },
+      "q_lace_confusion": [
+        [
+          0,
+          30,
+          1,
+          0
+        ],
+        [
+          0,
+          111,
+          6,
+          0
+        ],
+        [
+          0,
+          57,
+          6,
+          0
+        ]
+      ],
+      "rows": 211
+    }
+  },
+  "finding_blind_oracle": {
+    "all_exact_image_pairs": {
+      "denominator": 1326,
+      "estimate": 0.9539969834087482,
+      "groups": 1045,
+      "numerator": 1265,
+      "patient_bootstrap_95_ci": [
+        0.9429820392235342,
+        0.9643939393939394
+      ],
+      "patient_clusters": 800
+    },
+    "exact_image_discordant": {
+      "denominator": 140,
+      "estimate": 0.5642857142857143,
+      "groups": 60,
+      "numerator": 79,
+      "patient_bootstrap_95_ci": [
+        0.541338067390699,
+        0.5878378378378378
+      ],
+      "patient_clusters": 60
+    },
+    "exact_image_multi_query": {
+      "denominator": 516,
+      "estimate": 0.8817829457364341,
+      "groups": 235,
+      "numerator": 455,
+      "patient_bootstrap_95_ci": [
+        0.8563215600937395,
+        0.9068462711290141
+      ],
+      "patient_clusters": 219
+    }
+  },
+  "interpretation": [
+    "Primary-run diagnostics are not three-run mean results.",
+    "All intervals are exploratory and unadjusted for multiple comparisons.",
+    "Required-change compliance and same-label invariance do not imply correct predictions; strict both-correct is separately reported.",
+    "Oracle accuracy uses test labels in sample and is not a deployable learned baseline.",
+    "Supported macro-F1 fixes three gold classes; out-of-set outputs remain errors, pooled as other for confusion accounting."
+  ],
+  "patients": 800,
+  "primary_biovilt_complementarity": {
+    "counts": {
+      "biovilt_only_correct": 98,
+      "both_correct": 636,
+      "both_wrong_different_prediction": 84,
+      "both_wrong_same_prediction": 359,
+      "q_lace_only_correct": 149
+    },
+    "either_correct_oracle": {
+      "accuracy": 0.6659125188536953,
+      "correct_count": 883,
+      "denominator": 1326
+    },
+    "interpretation": "In-sample correctness oracle; no validation-selected or deployable ensemble is evaluated.",
+    "rows": 1326
+  },
+  "provenance_limitation": "Raw predictions omit physical image paths; BioViL-T raw outputs also omit patient/pair IDs. Physical identity follows complete archived manifest order and source/finding/gold matching rather than independently saved per-prediction image paths. These limitations cannot be retrospectively removed.",
+  "query_swap": {
+    "aggregate": {
+      "different_label_rows": 162,
+      "four_way_counts": {
+        "both_correct": 270,
+        "neither_correct": 164,
+        "original_only_correct": 114,
+        "swapped_only_correct": 114
+      },
+      "metrics": {
+        "all_both_correct": {
+          "denominator": 662,
+          "estimate": 0.4078549848942598,
+          "numerator": 270,
+          "patient_bootstrap_95_ci": [
+            0.3449364795450376,
+            0.47289156626506024
+          ],
+          "patient_clusters": 219
+        },
+        "changed_to_correct_target": {
+          "denominator": 162,
+          "estimate": 0.2654320987654321,
+          "numerator": 43,
+          "patient_bootstrap_95_ci": [
+            0.16883116883116883,
+            0.36933180261519283
+          ],
+          "patient_clusters": 60
+        },
+        "different_label_target_accuracy": {
+          "denominator": 162,
+          "estimate": 0.5432098765432098,
+          "numerator": 88,
+          "patient_bootstrap_95_ci": [
+            0.48148148148148145,
+            0.6058823529411764
+          ],
+          "patient_clusters": 60
+        },
+        "paired_target_success": {
+          "denominator": 162,
+          "estimate": 0.18518518518518517,
+          "numerator": 30,
+          "patient_bootstrap_95_ci": [
+            0.09721102150537636,
+            0.2857142857142857
+          ],
+          "patient_clusters": 60
+        },
+        "prediction_change_rate": {
+          "denominator": 662,
+          "estimate": 0.31419939577039274,
+          "numerator": 208,
+          "patient_bootstrap_95_ci": [
+            0.25872093023255816,
+            0.3716032136459642
+          ],
+          "patient_clusters": 219
+        },
+        "required_change_compliance": {
+          "denominator": 162,
+          "estimate": 0.41975308641975306,
+          "numerator": 68,
+          "patient_bootstrap_95_ci": [
+            0.29628684807256234,
+            0.5466666666666666
+          ],
+          "patient_clusters": 60
+        },
+        "same_label_both_correct": {
+          "denominator": 500,
+          "estimate": 0.48,
+          "numerator": 240,
+          "patient_bootstrap_95_ci": [
+            0.4057377049180328,
+            0.5595238095238095
+          ],
+          "patient_clusters": 180
+        },
+        "same_label_target_accuracy": {
+          "denominator": 500,
+          "estimate": 0.592,
+          "numerator": 296,
+          "patient_bootstrap_95_ci": [
+            0.5231062252487202,
+            0.6626016260162602
+          ],
+          "patient_clusters": 180
+        },
+        "same_target_invariance": {
+          "denominator": 500,
+          "estimate": 0.72,
+          "numerator": 360,
+          "patient_bootstrap_95_ci": [
+            0.660154320034585,
+            0.7805907172995781
+          ],
+          "patient_clusters": 180
+        },
+        "target_accuracy": {
+          "denominator": 662,
+          "estimate": 0.5800604229607251,
+          "numerator": 384,
+          "patient_bootstrap_95_ci": [
+            0.5238095238095238,
+            0.6340361445783133
+          ],
+          "patient_clusters": 219
+        }
+      },
+      "patient_clusters": 219,
+      "rows": 662,
+      "same_label_rows": 500,
+      "small_cell_descriptive": false
+    },
+    "four_way": {
+      "all": {
+        "both_correct": {
+          "denominator": 662,
+          "estimate": 0.4078549848942598,
+          "numerator": 270,
+          "patient_bootstrap_95_ci": [
+            0.3449364795450376,
+            0.47289156626506024
+          ],
+          "patient_clusters": 219
+        },
+        "neither_correct": {
+          "denominator": 662,
+          "estimate": 0.24773413897280966,
+          "numerator": 164,
+          "patient_bootstrap_95_ci": [
+            0.18950437317784258,
+            0.3096590909090909
+          ],
+          "patient_clusters": 219
+        },
+        "original_only_correct": {
+          "denominator": 662,
+          "estimate": 0.17220543806646527,
+          "numerator": 114,
+          "patient_bootstrap_95_ci": [
+            0.14353275791564435,
+            0.20058997050147492
+          ],
+          "patient_clusters": 219
+        },
+        "swapped_only_correct": {
+          "denominator": 662,
+          "estimate": 0.17220543806646527,
+          "numerator": 114,
+          "patient_bootstrap_95_ci": [
+            0.14353275791564435,
+            0.20058997050147492
+          ],
+          "patient_clusters": 219
+        }
+      },
+      "different_label": {
+        "both_correct": {
+          "denominator": 162,
+          "estimate": 0.18518518518518517,
+          "numerator": 30,
+          "patient_bootstrap_95_ci": [
+            0.09721102150537636,
+            0.2857142857142857
+          ],
+          "patient_clusters": 60
+        },
+        "neither_correct": {
+          "denominator": 162,
+          "estimate": 0.09876543209876543,
+          "numerator": 16,
+          "patient_bootstrap_95_ci": [
+            0.03796281645569621,
+            0.17105263157894737
+          ],
+          "patient_clusters": 60
+        },
+        "original_only_correct": {
+          "denominator": 162,
+          "estimate": 0.35802469135802467,
+          "numerator": 58,
+          "patient_bootstrap_95_ci": [
+            0.3013698630136986,
+            0.4090909090909091
+          ],
+          "patient_clusters": 60
+        },
+        "swapped_only_correct": {
+          "denominator": 162,
+          "estimate": 0.35802469135802467,
+          "numerator": 58,
+          "patient_bootstrap_95_ci": [
+            0.3013698630136986,
+            0.4090909090909091
+          ],
+          "patient_clusters": 60
+        }
+      },
+      "same_label": {
+        "both_correct": {
+          "denominator": 500,
+          "estimate": 0.48,
+          "numerator": 240,
+          "patient_bootstrap_95_ci": [
+            0.4057377049180328,
+            0.5595238095238095
+          ],
+          "patient_clusters": 180
+        },
+        "neither_correct": {
+          "denominator": 500,
+          "estimate": 0.296,
+          "numerator": 148,
+          "patient_bootstrap_95_ci": [
+            0.22134387351778656,
+            0.37083669354838705
+          ],
+          "patient_clusters": 180
+        },
+        "original_only_correct": {
+          "denominator": 500,
+          "estimate": 0.112,
+          "numerator": 56,
+          "patient_bootstrap_95_ci": [
+            0.08368200836820083,
+            0.14122344839030865
+          ],
+          "patient_clusters": 180
+        },
+        "swapped_only_correct": {
+          "denominator": 500,
+          "estimate": 0.112,
+          "numerator": 56,
+          "patient_bootstrap_95_ci": [
+            0.08368200836820083,
+            0.14122344839030865
+          ],
+          "patient_clusters": 180
+        }
+      }
+    },
+    "gold_transitions": [
+      {
+        "different_label_rows": 0,
+        "four_way_counts": {
+          "both_correct": 18,
+          "neither_correct": 10,
+          "original_only_correct": 9,
+          "swapped_only_correct": 9
+        },
+        "metrics": {
+          "all_both_correct": {
+            "denominator": 46,
+            "estimate": 0.391304347826087,
+            "numerator": 18,
+            "patient_bootstrap_95_ci": [
+              0.18181818181818182,
+              0.6
+            ],
+            "patient_clusters": 22
+          },
+          "changed_to_correct_target": null,
+          "different_label_target_accuracy": null,
+          "paired_target_success": null,
+          "prediction_change_rate": {
+            "denominator": 46,
+            "estimate": 0.43478260869565216,
+            "numerator": 20,
+            "patient_bootstrap_95_ci": [
+              0.22727272727272727,
+              0.64
+            ],
+            "patient_clusters": 22
+          },
+          "required_change_compliance": null,
+          "same_label_both_correct": {
+            "denominator": 46,
+            "estimate": 0.391304347826087,
+            "numerator": 18,
+            "patient_bootstrap_95_ci": [
+              0.18181818181818182,
+              0.6
+            ],
+            "patient_clusters": 22
+          },
+          "same_label_target_accuracy": {
+            "denominator": 46,
+            "estimate": 0.5869565217391305,
+            "numerator": 27,
+            "patient_bootstrap_95_ci": [
+              0.4090909090909091,
+              0.74
+            ],
+            "patient_clusters": 22
+          },
+          "same_target_invariance": {
+            "denominator": 46,
+            "estimate": 0.5652173913043478,
+            "numerator": 26,
+            "patient_bootstrap_95_ci": [
+              0.36,
+              0.7727272727272727
+            ],
+            "patient_clusters": 22
+          },
+          "target_accuracy": {
+            "denominator": 46,
+            "estimate": 0.5869565217391305,
+            "numerator": 27,
+            "patient_bootstrap_95_ci": [
+              0.4090909090909091,
+              0.74
+            ],
+            "patient_clusters": 22
+          }
+        },
+        "original_gold": "improving",
+        "patient_clusters": 22,
+        "rows": 46,
+        "same_label_rows": 46,
+        "small_cell_descriptive": false,
+        "target_gold": "improving"
+      },
+      {
+        "different_label_rows": 28,
+        "four_way_counts": {
+          "both_correct": 7,
+          "neither_correct": 7,
+          "original_only_correct": 6,
+          "swapped_only_correct": 8
+        },
+        "metrics": {
+          "all_both_correct": {
+            "denominator": 28,
+            "estimate": 0.25,
+            "numerator": 7,
+            "patient_bootstrap_95_ci": [
+              0.10344827586206896,
+              0.41379310344827586
+            ],
+            "patient_clusters": 23
+          },
+          "changed_to_correct_target": {
+            "denominator": 28,
+            "estimate": 0.35714285714285715,
+            "numerator": 10,
+            "patient_bootstrap_95_ci": [
+              0.18518518518518517,
+              0.5384615384615384
+            ],
+            "patient_clusters": 23
+          },
+          "different_label_target_accuracy": {
+            "denominator": 28,
+            "estimate": 0.5357142857142857,
+            "numerator": 15,
+            "patient_bootstrap_95_ci": [
+              0.3448275862068966,
+              0.7307692307692307
+            ],
+            "patient_clusters": 23
+          },
+          "paired_target_success": {
+            "denominator": 28,
+            "estimate": 0.25,
+            "numerator": 7,
+            "patient_bootstrap_95_ci": [
+              0.10344827586206896,
+              0.41379310344827586
+            ],
+            "patient_clusters": 23
+          },
+          "prediction_change_rate": {
+            "denominator": 28,
+            "estimate": 0.6785714285714286,
+            "numerator": 19,
+            "patient_bootstrap_95_ci": [
+              0.4838709677419355,
+              0.8518518518518519
+            ],
+            "patient_clusters": 23
+          },
+          "required_change_compliance": {
+            "denominator": 28,
+            "estimate": 0.6785714285714286,
+            "numerator": 19,
+            "patient_bootstrap_95_ci": [
+              0.4838709677419355,
+              0.8518518518518519
+            ],
+            "patient_clusters": 23
+          },
+          "same_label_both_correct": null,
+          "same_label_target_accuracy": null,
+          "same_target_invariance": null,
+          "target_accuracy": {
+            "denominator": 28,
+            "estimate": 0.5357142857142857,
+            "numerator": 15,
+            "patient_bootstrap_95_ci": [
+              0.3448275862068966,
+              0.7307692307692307
+            ],
+            "patient_clusters": 23
+          }
+        },
+        "original_gold": "improving",
+        "patient_clusters": 23,
+        "rows": 28,
+        "same_label_rows": 0,
+        "small_cell_descriptive": false,
+        "target_gold": "stable"
+      },
+      {
+        "different_label_rows": 13,
+        "four_way_counts": {
+          "both_correct": 2,
+          "original_only_correct": 5,
+          "swapped_only_correct": 6
+        },
+        "metrics": {
+          "all_both_correct": {
+            "denominator": 13,
+            "estimate": 0.15384615384615385,
+            "numerator": 2,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.3338235294117576
+            ],
+            "patient_clusters": 11
+          },
+          "changed_to_correct_target": {
+            "denominator": 13,
+            "estimate": 0.23076923076923078,
+            "numerator": 3,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.5
+            ],
+            "patient_clusters": 11
+          },
+          "different_label_target_accuracy": {
+            "denominator": 13,
+            "estimate": 0.6153846153846154,
+            "numerator": 8,
+            "patient_bootstrap_95_ci": [
+              0.2727272727272727,
+              0.8666666666666667
+            ],
+            "patient_clusters": 11
+          },
+          "paired_target_success": {
+            "denominator": 13,
+            "estimate": 0.15384615384615385,
+            "numerator": 2,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.3338235294117576
+            ],
+            "patient_clusters": 11
+          },
+          "prediction_change_rate": {
+            "denominator": 13,
+            "estimate": 0.38461538461538464,
+            "numerator": 5,
+            "patient_bootstrap_95_ci": [
+              0.08333333333333333,
+              0.6923076923076923
+            ],
+            "patient_clusters": 11
+          },
+          "required_change_compliance": {
+            "denominator": 13,
+            "estimate": 0.38461538461538464,
+            "numerator": 5,
+            "patient_bootstrap_95_ci": [
+              0.08333333333333333,
+              0.6923076923076923
+            ],
+            "patient_clusters": 11
+          },
+          "same_label_both_correct": null,
+          "same_label_target_accuracy": null,
+          "same_target_invariance": null,
+          "target_accuracy": {
+            "denominator": 13,
+            "estimate": 0.6153846153846154,
+            "numerator": 8,
+            "patient_bootstrap_95_ci": [
+              0.2727272727272727,
+              0.8666666666666667
+            ],
+            "patient_clusters": 11
+          }
+        },
+        "original_gold": "improving",
+        "patient_clusters": 11,
+        "rows": 13,
+        "same_label_rows": 0,
+        "small_cell_descriptive": true,
+        "target_gold": "worsening"
+      },
+      {
+        "different_label_rows": 28,
+        "four_way_counts": {
+          "both_correct": 7,
+          "neither_correct": 7,
+          "original_only_correct": 8,
+          "swapped_only_correct": 6
+        },
+        "metrics": {
+          "all_both_correct": {
+            "denominator": 28,
+            "estimate": 0.25,
+            "numerator": 7,
+            "patient_bootstrap_95_ci": [
+              0.10344827586206896,
+              0.41379310344827586
+            ],
+            "patient_clusters": 23
+          },
+          "changed_to_correct_target": {
+            "denominator": 28,
+            "estimate": 0.39285714285714285,
+            "numerator": 11,
+            "patient_bootstrap_95_ci": [
+              0.19230769230769232,
+              0.5925925925925926
+            ],
+            "patient_clusters": 23
+          },
+          "different_label_target_accuracy": {
+            "denominator": 28,
+            "estimate": 0.4642857142857143,
+            "numerator": 13,
+            "patient_bootstrap_95_ci": [
+              0.25925925925925924,
+              0.65625
+            ],
+            "patient_clusters": 23
+          },
+          "paired_target_success": {
+            "denominator": 28,
+            "estimate": 0.25,
+            "numerator": 7,
+            "patient_bootstrap_95_ci": [
+              0.10344827586206896,
+              0.41379310344827586
+            ],
+            "patient_clusters": 23
+          },
+          "prediction_change_rate": {
+            "denominator": 28,
+            "estimate": 0.6785714285714286,
+            "numerator": 19,
+            "patient_bootstrap_95_ci": [
+              0.4838709677419355,
+              0.8518518518518519
+            ],
+            "patient_clusters": 23
+          },
+          "required_change_compliance": {
+            "denominator": 28,
+            "estimate": 0.6785714285714286,
+            "numerator": 19,
+            "patient_bootstrap_95_ci": [
+              0.4838709677419355,
+              0.8518518518518519
+            ],
+            "patient_clusters": 23
+          },
+          "same_label_both_correct": null,
+          "same_label_target_accuracy": null,
+          "same_target_invariance": null,
+          "target_accuracy": {
+            "denominator": 28,
+            "estimate": 0.4642857142857143,
+            "numerator": 13,
+            "patient_bootstrap_95_ci": [
+              0.25925925925925924,
+              0.65625
+            ],
+            "patient_clusters": 23
+          }
+        },
+        "original_gold": "stable",
+        "patient_clusters": 23,
+        "rows": 28,
+        "same_label_rows": 0,
+        "small_cell_descriptive": false,
+        "target_gold": "improving"
+      },
+      {
+        "different_label_rows": 0,
+        "four_way_counts": {
+          "both_correct": 18,
+          "neither_correct": 114,
+          "original_only_correct": 34,
+          "swapped_only_correct": 34
+        },
+        "metrics": {
+          "all_both_correct": {
+            "denominator": 200,
+            "estimate": 0.09,
+            "numerator": 18,
+            "patient_bootstrap_95_ci": [
+              0.038834951456310676,
+              0.15306122448979592
+            ],
+            "patient_clusters": 78
+          },
+          "changed_to_correct_target": null,
+          "different_label_target_accuracy": null,
+          "paired_target_success": null,
+          "prediction_change_rate": {
+            "denominator": 200,
+            "estimate": 0.41,
+            "numerator": 82,
+            "patient_bootstrap_95_ci": [
+              0.31,
+              0.5104166666666666
+            ],
+            "patient_clusters": 78
+          },
+          "required_change_compliance": null,
+          "same_label_both_correct": {
+            "denominator": 200,
+            "estimate": 0.09,
+            "numerator": 18,
+            "patient_bootstrap_95_ci": [
+              0.038834951456310676,
+              0.15306122448979592
+            ],
+            "patient_clusters": 78
+          },
+          "same_label_target_accuracy": {
+            "denominator": 200,
+            "estimate": 0.26,
+            "numerator": 52,
+            "patient_bootstrap_95_ci": [
+              0.1926605504587156,
+              0.3333333333333333
+            ],
+            "patient_clusters": 78
+          },
+          "same_target_invariance": {
+            "denominator": 200,
+            "estimate": 0.59,
+            "numerator": 118,
+            "patient_bootstrap_95_ci": [
+              0.4895833333333333,
+              0.69
+            ],
+            "patient_clusters": 78
+          },
+          "target_accuracy": {
+            "denominator": 200,
+            "estimate": 0.26,
+            "numerator": 52,
+            "patient_bootstrap_95_ci": [
+              0.1926605504587156,
+              0.3333333333333333
+            ],
+            "patient_clusters": 78
+          }
+        },
+        "original_gold": "stable",
+        "patient_clusters": 78,
+        "rows": 200,
+        "same_label_rows": 200,
+        "small_cell_descriptive": false,
+        "target_gold": "stable"
+      },
+      {
+        "different_label_rows": 40,
+        "four_way_counts": {
+          "both_correct": 6,
+          "neither_correct": 1,
+          "original_only_correct": 6,
+          "swapped_only_correct": 27
+        },
+        "metrics": {
+          "all_both_correct": {
+            "denominator": 40,
+            "estimate": 0.15,
+            "numerator": 6,
+            "patient_bootstrap_95_ci": [
+              0.025,
+              0.3142857142857143
+            ],
+            "patient_clusters": 26
+          },
+          "changed_to_correct_target": {
+            "denominator": 40,
+            "estimate": 0.175,
+            "numerator": 7,
+            "patient_bootstrap_95_ci": [
+              0.045454545454545456,
+              0.34210526315789475
+            ],
+            "patient_clusters": 26
+          },
+          "different_label_target_accuracy": {
+            "denominator": 40,
+            "estimate": 0.825,
+            "numerator": 33,
+            "patient_bootstrap_95_ci": [
+              0.6666666666666666,
+              0.9487179487179487
+            ],
+            "patient_clusters": 26
+          },
+          "paired_target_success": {
+            "denominator": 40,
+            "estimate": 0.15,
+            "numerator": 6,
+            "patient_bootstrap_95_ci": [
+              0.025,
+              0.3142857142857143
+            ],
+            "patient_clusters": 26
+          },
+          "prediction_change_rate": {
+            "denominator": 40,
+            "estimate": 0.25,
+            "numerator": 10,
+            "patient_bootstrap_95_ci": [
+              0.1,
+              0.43243243243243246
+            ],
+            "patient_clusters": 26
+          },
+          "required_change_compliance": {
+            "denominator": 40,
+            "estimate": 0.25,
+            "numerator": 10,
+            "patient_bootstrap_95_ci": [
+              0.1,
+              0.43243243243243246
+            ],
+            "patient_clusters": 26
+          },
+          "same_label_both_correct": null,
+          "same_label_target_accuracy": null,
+          "same_target_invariance": null,
+          "target_accuracy": {
+            "denominator": 40,
+            "estimate": 0.825,
+            "numerator": 33,
+            "patient_bootstrap_95_ci": [
+              0.6666666666666666,
+              0.9487179487179487
+            ],
+            "patient_clusters": 26
+          }
+        },
+        "original_gold": "stable",
+        "patient_clusters": 26,
+        "rows": 40,
+        "same_label_rows": 0,
+        "small_cell_descriptive": false,
+        "target_gold": "worsening"
+      },
+      {
+        "different_label_rows": 13,
+        "four_way_counts": {
+          "both_correct": 2,
+          "original_only_correct": 6,
+          "swapped_only_correct": 5
+        },
+        "metrics": {
+          "all_both_correct": {
+            "denominator": 13,
+            "estimate": 0.15384615384615385,
+            "numerator": 2,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.3338235294117576
+            ],
+            "patient_clusters": 11
+          },
+          "changed_to_correct_target": {
+            "denominator": 13,
+            "estimate": 0.3076923076923077,
+            "numerator": 4,
+            "patient_bootstrap_95_ci": [
+              0.07692307692307693,
+              0.5714285714285714
+            ],
+            "patient_clusters": 11
+          },
+          "different_label_target_accuracy": {
+            "denominator": 13,
+            "estimate": 0.5384615384615384,
+            "numerator": 7,
+            "patient_bootstrap_95_ci": [
+              0.2857142857142857,
+              0.8333333333333334
+            ],
+            "patient_clusters": 11
+          },
+          "paired_target_success": {
+            "denominator": 13,
+            "estimate": 0.15384615384615385,
+            "numerator": 2,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.3338235294117576
+            ],
+            "patient_clusters": 11
+          },
+          "prediction_change_rate": {
+            "denominator": 13,
+            "estimate": 0.38461538461538464,
+            "numerator": 5,
+            "patient_bootstrap_95_ci": [
+              0.08333333333333333,
+              0.6923076923076923
+            ],
+            "patient_clusters": 11
+          },
+          "required_change_compliance": {
+            "denominator": 13,
+            "estimate": 0.38461538461538464,
+            "numerator": 5,
+            "patient_bootstrap_95_ci": [
+              0.08333333333333333,
+              0.6923076923076923
+            ],
+            "patient_clusters": 11
+          },
+          "same_label_both_correct": null,
+          "same_label_target_accuracy": null,
+          "same_target_invariance": null,
+          "target_accuracy": {
+            "denominator": 13,
+            "estimate": 0.5384615384615384,
+            "numerator": 7,
+            "patient_bootstrap_95_ci": [
+              0.2857142857142857,
+              0.8333333333333334
+            ],
+            "patient_clusters": 11
+          }
+        },
+        "original_gold": "worsening",
+        "patient_clusters": 11,
+        "rows": 13,
+        "same_label_rows": 0,
+        "small_cell_descriptive": true,
+        "target_gold": "improving"
+      },
+      {
+        "different_label_rows": 40,
+        "four_way_counts": {
+          "both_correct": 6,
+          "neither_correct": 1,
+          "original_only_correct": 27,
+          "swapped_only_correct": 6
+        },
+        "metrics": {
+          "all_both_correct": {
+            "denominator": 40,
+            "estimate": 0.15,
+            "numerator": 6,
+            "patient_bootstrap_95_ci": [
+              0.025,
+              0.3142857142857143
+            ],
+            "patient_clusters": 26
+          },
+          "changed_to_correct_target": {
+            "denominator": 40,
+            "estimate": 0.2,
+            "numerator": 8,
+            "patient_bootstrap_95_ci": [
+              0.0625,
+              0.3684210526315789
+            ],
+            "patient_clusters": 26
+          },
+          "different_label_target_accuracy": {
+            "denominator": 40,
+            "estimate": 0.3,
+            "numerator": 12,
+            "patient_bootstrap_95_ci": [
+              0.13333333333333333,
+              0.5
+            ],
+            "patient_clusters": 26
+          },
+          "paired_target_success": {
+            "denominator": 40,
+            "estimate": 0.15,
+            "numerator": 6,
+            "patient_bootstrap_95_ci": [
+              0.025,
+              0.3142857142857143
+            ],
+            "patient_clusters": 26
+          },
+          "prediction_change_rate": {
+            "denominator": 40,
+            "estimate": 0.25,
+            "numerator": 10,
+            "patient_bootstrap_95_ci": [
+              0.1,
+              0.43243243243243246
+            ],
+            "patient_clusters": 26
+          },
+          "required_change_compliance": {
+            "denominator": 40,
+            "estimate": 0.25,
+            "numerator": 10,
+            "patient_bootstrap_95_ci": [
+              0.1,
+              0.43243243243243246
+            ],
+            "patient_clusters": 26
+          },
+          "same_label_both_correct": null,
+          "same_label_target_accuracy": null,
+          "same_target_invariance": null,
+          "target_accuracy": {
+            "denominator": 40,
+            "estimate": 0.3,
+            "numerator": 12,
+            "patient_bootstrap_95_ci": [
+              0.13333333333333333,
+              0.5
+            ],
+            "patient_clusters": 26
+          }
+        },
+        "original_gold": "worsening",
+        "patient_clusters": 26,
+        "rows": 40,
+        "same_label_rows": 0,
+        "small_cell_descriptive": false,
+        "target_gold": "stable"
+      },
+      {
+        "different_label_rows": 0,
+        "four_way_counts": {
+          "both_correct": 204,
+          "neither_correct": 24,
+          "original_only_correct": 13,
+          "swapped_only_correct": 13
+        },
+        "metrics": {
+          "all_both_correct": {
+            "denominator": 254,
+            "estimate": 0.8031496062992126,
+            "numerator": 204,
+            "patient_bootstrap_95_ci": [
+              0.6950324558240173,
+              0.9016393442622951
+            ],
+            "patient_clusters": 88
+          },
+          "changed_to_correct_target": null,
+          "different_label_target_accuracy": null,
+          "paired_target_success": null,
+          "prediction_change_rate": {
+            "denominator": 254,
+            "estimate": 0.14960629921259844,
+            "numerator": 38,
+            "patient_bootstrap_95_ci": [
+              0.07376109189351783,
+              0.22602888624181056
+            ],
+            "patient_clusters": 88
+          },
+          "required_change_compliance": null,
+          "same_label_both_correct": {
+            "denominator": 254,
+            "estimate": 0.8031496062992126,
+            "numerator": 204,
+            "patient_bootstrap_95_ci": [
+              0.6950324558240173,
+              0.9016393442622951
+            ],
+            "patient_clusters": 88
+          },
+          "same_label_target_accuracy": {
+            "denominator": 254,
+            "estimate": 0.8543307086614174,
+            "numerator": 217,
+            "patient_bootstrap_95_ci": [
+              0.7535187150299054,
+              0.9338842975206612
+            ],
+            "patient_clusters": 88
+          },
+          "same_target_invariance": {
+            "denominator": 254,
+            "estimate": 0.8503937007874016,
+            "numerator": 216,
+            "patient_bootstrap_95_ci": [
+              0.7739711137581894,
+              0.926238908106482
+            ],
+            "patient_clusters": 88
+          },
+          "target_accuracy": {
+            "denominator": 254,
+            "estimate": 0.8543307086614174,
+            "numerator": 217,
+            "patient_bootstrap_95_ci": [
+              0.7535187150299054,
+              0.9338842975206612
+            ],
+            "patient_clusters": 88
+          }
+        },
+        "original_gold": "worsening",
+        "patient_clusters": 88,
+        "rows": 254,
+        "same_label_rows": 254,
+        "small_cell_descriptive": false,
+        "target_gold": "worsening"
+      }
+    ],
+    "ordered_finding_pairs": [
+      {
+        "different_label_rows": 10,
+        "four_way_counts": {
+          "both_correct": 14,
+          "neither_correct": 8,
+          "original_only_correct": 7,
+          "swapped_only_correct": 5
+        },
+        "metrics": {
+          "all_both_correct": {
+            "denominator": 34,
+            "estimate": 0.4117647058823529,
+            "numerator": 14,
+            "patient_bootstrap_95_ci": [
+              0.23529411764705882,
+              0.5588235294117647
+            ],
+            "patient_clusters": 34
+          },
+          "changed_to_correct_target": {
+            "denominator": 10,
+            "estimate": 0.1,
+            "numerator": 1,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.3
+            ],
+            "patient_clusters": 10
+          },
+          "different_label_target_accuracy": {
+            "denominator": 10,
+            "estimate": 0.4,
+            "numerator": 4,
+            "patient_bootstrap_95_ci": [
+              0.1,
+              0.7
+            ],
+            "patient_clusters": 10
+          },
+          "paired_target_success": {
+            "denominator": 10,
+            "estimate": 0.0,
+            "numerator": 0,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.0
+            ],
+            "patient_clusters": 10
+          },
+          "prediction_change_rate": {
+            "denominator": 34,
+            "estimate": 0.20588235294117646,
+            "numerator": 7,
+            "patient_bootstrap_95_ci": [
+              0.08823529411764706,
+              0.35294117647058826
+            ],
+            "patient_clusters": 34
+          },
+          "required_change_compliance": {
+            "denominator": 10,
+            "estimate": 0.3,
+            "numerator": 3,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.6
+            ],
+            "patient_clusters": 10
+          },
+          "same_label_both_correct": {
+            "denominator": 24,
+            "estimate": 0.5833333333333334,
+            "numerator": 14,
+            "patient_bootstrap_95_ci": [
+              0.375,
+              0.7916666666666666
+            ],
+            "patient_clusters": 24
+          },
+          "same_label_target_accuracy": {
+            "denominator": 24,
+            "estimate": 0.625,
+            "numerator": 15,
+            "patient_bootstrap_95_ci": [
+              0.4166666666666667,
+              0.7916666666666666
+            ],
+            "patient_clusters": 24
+          },
+          "same_target_invariance": {
+            "denominator": 24,
+            "estimate": 0.8333333333333334,
+            "numerator": 20,
+            "patient_bootstrap_95_ci": [
+              0.6666666666666666,
+              0.9583333333333334
+            ],
+            "patient_clusters": 24
+          },
+          "target_accuracy": {
+            "denominator": 34,
+            "estimate": 0.5588235294117647,
+            "numerator": 19,
+            "patient_bootstrap_95_ci": [
+              0.38235294117647056,
+              0.7058823529411765
+            ],
+            "patient_clusters": 34
+          }
+        },
+        "original_finding": "consolidation",
+        "patient_clusters": 34,
+        "rows": 34,
+        "same_label_rows": 24,
+        "small_cell_descriptive": false,
+        "target_finding": "edema"
+      },
+      {
+        "different_label_rows": 18,
+        "four_way_counts": {
+          "both_correct": 20,
+          "neither_correct": 20,
+          "original_only_correct": 10,
+          "swapped_only_correct": 16
+        },
+        "metrics": {
+          "all_both_correct": {
+            "denominator": 66,
+            "estimate": 0.30303030303030304,
+            "numerator": 20,
+            "patient_bootstrap_95_ci": [
+              0.19696969696969696,
+              0.4153846153846154
+            ],
+            "patient_clusters": 64
+          },
+          "changed_to_correct_target": {
+            "denominator": 18,
+            "estimate": 0.16666666666666666,
+            "numerator": 3,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.3333333333333333
+            ],
+            "patient_clusters": 18
+          },
+          "different_label_target_accuracy": {
+            "denominator": 18,
+            "estimate": 0.5,
+            "numerator": 9,
+            "patient_bootstrap_95_ci": [
+              0.2777777777777778,
+              0.7222222222222222
+            ],
+            "patient_clusters": 18
+          },
+          "paired_target_success": {
+            "denominator": 18,
+            "estimate": 0.1111111111111111,
+            "numerator": 2,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.2777777777777778
+            ],
+            "patient_clusters": 18
+          },
+          "prediction_change_rate": {
+            "denominator": 66,
+            "estimate": 0.3484848484848485,
+            "numerator": 23,
+            "patient_bootstrap_95_ci": [
+              0.234375,
+              0.4687736742424239
+            ],
+            "patient_clusters": 64
+          },
+          "required_change_compliance": {
+            "denominator": 18,
+            "estimate": 0.2777777777777778,
+            "numerator": 5,
+            "patient_bootstrap_95_ci": [
+              0.1111111111111111,
+              0.5
+            ],
+            "patient_clusters": 18
+          },
+          "same_label_both_correct": {
+            "denominator": 48,
+            "estimate": 0.375,
+            "numerator": 18,
+            "patient_bootstrap_95_ci": [
+              0.24489795918367346,
+              0.52
+            ],
+            "patient_clusters": 46
+          },
+          "same_label_target_accuracy": {
+            "denominator": 48,
+            "estimate": 0.5625,
+            "numerator": 27,
+            "patient_bootstrap_95_ci": [
+              0.4166666666666667,
+              0.7
+            ],
+            "patient_clusters": 46
+          },
+          "same_target_invariance": {
+            "denominator": 48,
+            "estimate": 0.625,
+            "numerator": 30,
+            "patient_bootstrap_95_ci": [
+              0.48936170212765956,
+              0.7659574468085106
+            ],
+            "patient_clusters": 46
+          },
+          "target_accuracy": {
+            "denominator": 66,
+            "estimate": 0.5454545454545454,
+            "numerator": 36,
+            "patient_bootstrap_95_ci": [
+              0.42424242424242425,
+              0.6620892018779325
+            ],
+            "patient_clusters": 64
+          }
+        },
+        "original_finding": "consolidation",
+        "patient_clusters": 64,
+        "rows": 66,
+        "same_label_rows": 48,
+        "small_cell_descriptive": false,
+        "target_finding": "pleural effusion"
+      },
+      {
+        "different_label_rows": 1,
+        "four_way_counts": {
+          "both_correct": 35,
+          "neither_correct": 25,
+          "original_only_correct": 1,
+          "swapped_only_correct": 1
+        },
+        "metrics": {
+          "all_both_correct": {
+            "denominator": 62,
+            "estimate": 0.5645161290322581,
+            "numerator": 35,
+            "patient_bootstrap_95_ci": [
+              0.4426229508196721,
+              0.6825595238095236
+            ],
+            "patient_clusters": 59
+          },
+          "changed_to_correct_target": {
+            "denominator": 1,
+            "estimate": 0.0,
+            "numerator": 0,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.0
+            ],
+            "patient_clusters": 1
+          },
+          "different_label_target_accuracy": {
+            "denominator": 1,
+            "estimate": 0.0,
+            "numerator": 0,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.0
+            ],
+            "patient_clusters": 1
+          },
+          "paired_target_success": {
+            "denominator": 1,
+            "estimate": 0.0,
+            "numerator": 0,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.0
+            ],
+            "patient_clusters": 1
+          },
+          "prediction_change_rate": {
+            "denominator": 62,
+            "estimate": 0.03225806451612903,
+            "numerator": 2,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.08196721311475409
+            ],
+            "patient_clusters": 59
+          },
+          "required_change_compliance": {
+            "denominator": 1,
+            "estimate": 0.0,
+            "numerator": 0,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.0
+            ],
+            "patient_clusters": 1
+          },
+          "same_label_both_correct": {
+            "denominator": 61,
+            "estimate": 0.5737704918032787,
+            "numerator": 35,
+            "patient_bootstrap_95_ci": [
+              0.4576271186440678,
+              0.6935483870967742
+            ],
+            "patient_clusters": 58
+          },
+          "same_label_target_accuracy": {
+            "denominator": 61,
+            "estimate": 0.5901639344262295,
+            "numerator": 36,
+            "patient_bootstrap_95_ci": [
+              0.4745762711864407,
+              0.7096774193548387
+            ],
+            "patient_clusters": 58
+          },
+          "same_target_invariance": {
+            "denominator": 61,
+            "estimate": 0.9672131147540983,
+            "numerator": 59,
+            "patient_bootstrap_95_ci": [
+              0.9166666666666666,
+              1.0
+            ],
+            "patient_clusters": 58
+          },
+          "target_accuracy": {
+            "denominator": 62,
+            "estimate": 0.5806451612903226,
+            "numerator": 36,
+            "patient_bootstrap_95_ci": [
+              0.4626865671641791,
+              0.6984126984126984
+            ],
+            "patient_clusters": 59
+          }
+        },
+        "original_finding": "consolidation",
+        "patient_clusters": 59,
+        "rows": 62,
+        "same_label_rows": 61,
+        "small_cell_descriptive": false,
+        "target_finding": "pneumonia"
+      },
+      {
+        "different_label_rows": 2,
+        "four_way_counts": {
+          "both_correct": 2,
+          "swapped_only_correct": 4
+        },
+        "metrics": {
+          "all_both_correct": {
+            "denominator": 6,
+            "estimate": 0.3333333333333333,
+            "numerator": 2,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.6666666666666666
+            ],
+            "patient_clusters": 6
+          },
+          "changed_to_correct_target": {
+            "denominator": 2,
+            "estimate": 1.0,
+            "numerator": 2,
+            "patient_bootstrap_95_ci": [
+              1.0,
+              1.0
+            ],
+            "patient_clusters": 2
+          },
+          "different_label_target_accuracy": {
+            "denominator": 2,
+            "estimate": 1.0,
+            "numerator": 2,
+            "patient_bootstrap_95_ci": [
+              1.0,
+              1.0
+            ],
+            "patient_clusters": 2
+          },
+          "paired_target_success": {
+            "denominator": 2,
+            "estimate": 0.0,
+            "numerator": 0,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.0
+            ],
+            "patient_clusters": 2
+          },
+          "prediction_change_rate": {
+            "denominator": 6,
+            "estimate": 0.6666666666666666,
+            "numerator": 4,
+            "patient_bootstrap_95_ci": [
+              0.3333333333333333,
+              1.0
+            ],
+            "patient_clusters": 6
+          },
+          "required_change_compliance": {
+            "denominator": 2,
+            "estimate": 1.0,
+            "numerator": 2,
+            "patient_bootstrap_95_ci": [
+              1.0,
+              1.0
+            ],
+            "patient_clusters": 2
+          },
+          "same_label_both_correct": {
+            "denominator": 4,
+            "estimate": 0.5,
+            "numerator": 2,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              1.0
+            ],
+            "patient_clusters": 4
+          },
+          "same_label_target_accuracy": {
+            "denominator": 4,
+            "estimate": 1.0,
+            "numerator": 4,
+            "patient_bootstrap_95_ci": [
+              1.0,
+              1.0
+            ],
+            "patient_clusters": 4
+          },
+          "same_target_invariance": {
+            "denominator": 4,
+            "estimate": 0.5,
+            "numerator": 2,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              1.0
+            ],
+            "patient_clusters": 4
+          },
+          "target_accuracy": {
+            "denominator": 6,
+            "estimate": 1.0,
+            "numerator": 6,
+            "patient_bootstrap_95_ci": [
+              1.0,
+              1.0
+            ],
+            "patient_clusters": 6
+          }
+        },
+        "original_finding": "consolidation",
+        "patient_clusters": 6,
+        "rows": 6,
+        "same_label_rows": 4,
+        "small_cell_descriptive": true,
+        "target_finding": "pneumothorax"
+      },
+      {
+        "different_label_rows": 10,
+        "four_way_counts": {
+          "both_correct": 14,
+          "neither_correct": 8,
+          "original_only_correct": 5,
+          "swapped_only_correct": 7
+        },
+        "metrics": {
+          "all_both_correct": {
+            "denominator": 34,
+            "estimate": 0.4117647058823529,
+            "numerator": 14,
+            "patient_bootstrap_95_ci": [
+              0.23529411764705882,
+              0.5588235294117647
+            ],
+            "patient_clusters": 34
+          },
+          "changed_to_correct_target": {
+            "denominator": 10,
+            "estimate": 0.1,
+            "numerator": 1,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.3
+            ],
+            "patient_clusters": 10
+          },
+          "different_label_target_accuracy": {
+            "denominator": 10,
+            "estimate": 0.5,
+            "numerator": 5,
+            "patient_bootstrap_95_ci": [
+              0.2,
+              0.8
+            ],
+            "patient_clusters": 10
+          },
+          "paired_target_success": {
+            "denominator": 10,
+            "estimate": 0.0,
+            "numerator": 0,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.0
+            ],
+            "patient_clusters": 10
+          },
+          "prediction_change_rate": {
+            "denominator": 34,
+            "estimate": 0.20588235294117646,
+            "numerator": 7,
+            "patient_bootstrap_95_ci": [
+              0.08823529411764706,
+              0.35294117647058826
+            ],
+            "patient_clusters": 34
+          },
+          "required_change_compliance": {
+            "denominator": 10,
+            "estimate": 0.3,
+            "numerator": 3,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.6
+            ],
+            "patient_clusters": 10
+          },
+          "same_label_both_correct": {
+            "denominator": 24,
+            "estimate": 0.5833333333333334,
+            "numerator": 14,
+            "patient_bootstrap_95_ci": [
+              0.375,
+              0.7916666666666666
+            ],
+            "patient_clusters": 24
+          },
+          "same_label_target_accuracy": {
+            "denominator": 24,
+            "estimate": 0.6666666666666666,
+            "numerator": 16,
+            "patient_bootstrap_95_ci": [
+              0.5,
+              0.8333333333333334
+            ],
+            "patient_clusters": 24
+          },
+          "same_target_invariance": {
+            "denominator": 24,
+            "estimate": 0.8333333333333334,
+            "numerator": 20,
+            "patient_bootstrap_95_ci": [
+              0.6666666666666666,
+              0.9583333333333334
+            ],
+            "patient_clusters": 24
+          },
+          "target_accuracy": {
+            "denominator": 34,
+            "estimate": 0.6176470588235294,
+            "numerator": 21,
+            "patient_bootstrap_95_ci": [
+              0.4411764705882353,
+              0.7647058823529411
+            ],
+            "patient_clusters": 34
+          }
+        },
+        "original_finding": "edema",
+        "patient_clusters": 34,
+        "rows": 34,
+        "same_label_rows": 24,
+        "small_cell_descriptive": false,
+        "target_finding": "consolidation"
+      },
+      {
+        "different_label_rows": 14,
+        "four_way_counts": {
+          "both_correct": 31,
+          "neither_correct": 16,
+          "original_only_correct": 13,
+          "swapped_only_correct": 13
+        },
+        "metrics": {
+          "all_both_correct": {
+            "denominator": 73,
+            "estimate": 0.4246575342465753,
+            "numerator": 31,
+            "patient_bootstrap_95_ci": [
+              0.30985915492957744,
+              0.5405405405405406
+            ],
+            "patient_clusters": 70
+          },
+          "changed_to_correct_target": {
+            "denominator": 14,
+            "estimate": 0.2857142857142857,
+            "numerator": 4,
+            "patient_bootstrap_95_ci": [
+              0.07142857142857142,
+              0.5
+            ],
+            "patient_clusters": 14
+          },
+          "different_label_target_accuracy": {
+            "denominator": 14,
+            "estimate": 0.35714285714285715,
+            "numerator": 5,
+            "patient_bootstrap_95_ci": [
+              0.14285714285714285,
+              0.6428571428571429
+            ],
+            "patient_clusters": 14
+          },
+          "paired_target_success": {
+            "denominator": 14,
+            "estimate": 0.2857142857142857,
+            "numerator": 4,
+            "patient_bootstrap_95_ci": [
+              0.07142857142857142,
+              0.5
+            ],
+            "patient_clusters": 14
+          },
+          "prediction_change_rate": {
+            "denominator": 73,
+            "estimate": 0.3835616438356164,
+            "numerator": 28,
+            "patient_bootstrap_95_ci": [
+              0.273972602739726,
+              0.4931506849315068
+            ],
+            "patient_clusters": 70
+          },
+          "required_change_compliance": {
+            "denominator": 14,
+            "estimate": 0.5714285714285714,
+            "numerator": 8,
+            "patient_bootstrap_95_ci": [
+              0.2857142857142857,
+              0.7857142857142857
+            ],
+            "patient_clusters": 14
+          },
+          "same_label_both_correct": {
+            "denominator": 59,
+            "estimate": 0.4576271186440678,
+            "numerator": 27,
+            "patient_bootstrap_95_ci": [
+              0.3275862068965517,
+              0.5873015873015873
+            ],
+            "patient_clusters": 56
+          },
+          "same_label_target_accuracy": {
+            "denominator": 59,
+            "estimate": 0.6610169491525424,
+            "numerator": 39,
+            "patient_bootstrap_95_ci": [
+              0.5344827586206896,
+              0.7796610169491526
+            ],
+            "patient_clusters": 56
+          },
+          "same_target_invariance": {
+            "denominator": 59,
+            "estimate": 0.6610169491525424,
+            "numerator": 39,
+            "patient_bootstrap_95_ci": [
+              0.5357142857142857,
+              0.7796610169491526
+            ],
+            "patient_clusters": 56
+          },
+          "target_accuracy": {
+            "denominator": 73,
+            "estimate": 0.6027397260273972,
+            "numerator": 44,
+            "patient_bootstrap_95_ci": [
+              0.4864864864864865,
+              0.7123287671232876
+            ],
+            "patient_clusters": 70
+          }
+        },
+        "original_finding": "edema",
+        "patient_clusters": 70,
+        "rows": 73,
+        "same_label_rows": 59,
+        "small_cell_descriptive": false,
+        "target_finding": "pleural effusion"
+      },
+      {
+        "different_label_rows": 7,
+        "four_way_counts": {
+          "both_correct": 14,
+          "neither_correct": 7,
+          "original_only_correct": 4,
+          "swapped_only_correct": 7
+        },
+        "metrics": {
+          "all_both_correct": {
+            "denominator": 32,
+            "estimate": 0.4375,
+            "numerator": 14,
+            "patient_bootstrap_95_ci": [
+              0.25806451612903225,
+              0.6060606060606061
+            ],
+            "patient_clusters": 31
+          },
+          "changed_to_correct_target": {
+            "denominator": 7,
+            "estimate": 0.14285714285714285,
+            "numerator": 1,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.42857142857142855
+            ],
+            "patient_clusters": 7
+          },
+          "different_label_target_accuracy": {
+            "denominator": 7,
+            "estimate": 0.5714285714285714,
+            "numerator": 4,
+            "patient_bootstrap_95_ci": [
+              0.14285714285714285,
+              0.8571428571428571
+            ],
+            "patient_clusters": 7
+          },
+          "paired_target_success": {
+            "denominator": 7,
+            "estimate": 0.14285714285714285,
+            "numerator": 1,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.42857142857142855
+            ],
+            "patient_clusters": 7
+          },
+          "prediction_change_rate": {
+            "denominator": 32,
+            "estimate": 0.3125,
+            "numerator": 10,
+            "patient_bootstrap_95_ci": [
+              0.16129032258064516,
+              0.47058823529411764
+            ],
+            "patient_clusters": 31
+          },
+          "required_change_compliance": {
+            "denominator": 7,
+            "estimate": 0.2857142857142857,
+            "numerator": 2,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.5714285714285714
+            ],
+            "patient_clusters": 7
+          },
+          "same_label_both_correct": {
+            "denominator": 25,
+            "estimate": 0.52,
+            "numerator": 13,
+            "patient_bootstrap_95_ci": [
+              0.3333333333333333,
+              0.7083333333333334
+            ],
+            "patient_clusters": 24
+          },
+          "same_label_target_accuracy": {
+            "denominator": 25,
+            "estimate": 0.68,
+            "numerator": 17,
+            "patient_bootstrap_95_ci": [
+              0.5,
+              0.8518518518518519
+            ],
+            "patient_clusters": 24
+          },
+          "same_target_invariance": {
+            "denominator": 25,
+            "estimate": 0.68,
+            "numerator": 17,
+            "patient_bootstrap_95_ci": [
+              0.5,
+              0.84
+            ],
+            "patient_clusters": 24
+          },
+          "target_accuracy": {
+            "denominator": 32,
+            "estimate": 0.65625,
+            "numerator": 21,
+            "patient_bootstrap_95_ci": [
+              0.4838709677419355,
+              0.8125
+            ],
+            "patient_clusters": 31
+          }
+        },
+        "original_finding": "edema",
+        "patient_clusters": 31,
+        "rows": 32,
+        "same_label_rows": 25,
+        "small_cell_descriptive": false,
+        "target_finding": "pneumonia"
+      },
+      {
+        "different_label_rows": 8,
+        "four_way_counts": {
+          "both_correct": 4,
+          "neither_correct": 2,
+          "original_only_correct": 3,
+          "swapped_only_correct": 2
+        },
+        "metrics": {
+          "all_both_correct": {
+            "denominator": 11,
+            "estimate": 0.36363636363636365,
+            "numerator": 4,
+            "patient_bootstrap_95_ci": [
+              0.09090909090909091,
+              0.7777777777777778
+            ],
+            "patient_clusters": 9
+          },
+          "changed_to_correct_target": {
+            "denominator": 8,
+            "estimate": 0.5,
+            "numerator": 4,
+            "patient_bootstrap_95_ci": [
+              0.125,
+              0.875
+            ],
+            "patient_clusters": 8
+          },
+          "different_label_target_accuracy": {
+            "denominator": 8,
+            "estimate": 0.625,
+            "numerator": 5,
+            "patient_bootstrap_95_ci": [
+              0.25,
+              0.875
+            ],
+            "patient_clusters": 8
+          },
+          "paired_target_success": {
+            "denominator": 8,
+            "estimate": 0.5,
+            "numerator": 4,
+            "patient_bootstrap_95_ci": [
+              0.125,
+              0.875
+            ],
+            "patient_clusters": 8
+          },
+          "prediction_change_rate": {
+            "denominator": 11,
+            "estimate": 0.7272727272727273,
+            "numerator": 8,
+            "patient_bootstrap_95_ci": [
+              0.4666666666666667,
+              1.0
+            ],
+            "patient_clusters": 9
+          },
+          "required_change_compliance": {
+            "denominator": 8,
+            "estimate": 0.75,
+            "numerator": 6,
+            "patient_bootstrap_95_ci": [
+              0.375,
+              1.0
+            ],
+            "patient_clusters": 8
+          },
+          "same_label_both_correct": {
+            "denominator": 3,
+            "estimate": 0.0,
+            "numerator": 0,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.0
+            ],
+            "patient_clusters": 2
+          },
+          "same_label_target_accuracy": {
+            "denominator": 3,
+            "estimate": 0.3333333333333333,
+            "numerator": 1,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.5
+            ],
+            "patient_clusters": 2
+          },
+          "same_target_invariance": {
+            "denominator": 3,
+            "estimate": 0.3333333333333333,
+            "numerator": 1,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.5
+            ],
+            "patient_clusters": 2
+          },
+          "target_accuracy": {
+            "denominator": 11,
+            "estimate": 0.5454545454545454,
+            "numerator": 6,
+            "patient_bootstrap_95_ci": [
+              0.3076923076923077,
+              0.8888888888888888
+            ],
+            "patient_clusters": 9
+          }
+        },
+        "original_finding": "edema",
+        "patient_clusters": 9,
+        "rows": 11,
+        "same_label_rows": 3,
+        "small_cell_descriptive": true,
+        "target_finding": "pneumothorax"
+      },
+      {
+        "different_label_rows": 18,
+        "four_way_counts": {
+          "both_correct": 20,
+          "neither_correct": 20,
+          "original_only_correct": 16,
+          "swapped_only_correct": 10
+        },
+        "metrics": {
+          "all_both_correct": {
+            "denominator": 66,
+            "estimate": 0.30303030303030304,
+            "numerator": 20,
+            "patient_bootstrap_95_ci": [
+              0.19696969696969696,
+              0.4153846153846154
+            ],
+            "patient_clusters": 64
+          },
+          "changed_to_correct_target": {
+            "denominator": 18,
+            "estimate": 0.1111111111111111,
+            "numerator": 2,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.2777777777777778
+            ],
+            "patient_clusters": 18
+          },
+          "different_label_target_accuracy": {
+            "denominator": 18,
+            "estimate": 0.3888888888888889,
+            "numerator": 7,
+            "patient_bootstrap_95_ci": [
+              0.16666666666666666,
+              0.6111111111111112
+            ],
+            "patient_clusters": 18
+          },
+          "paired_target_success": {
+            "denominator": 18,
+            "estimate": 0.1111111111111111,
+            "numerator": 2,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.2777777777777778
+            ],
+            "patient_clusters": 18
+          },
+          "prediction_change_rate": {
+            "denominator": 66,
+            "estimate": 0.3484848484848485,
+            "numerator": 23,
+            "patient_bootstrap_95_ci": [
+              0.234375,
+              0.4687736742424239
+            ],
+            "patient_clusters": 64
+          },
+          "required_change_compliance": {
+            "denominator": 18,
+            "estimate": 0.2777777777777778,
+            "numerator": 5,
+            "patient_bootstrap_95_ci": [
+              0.1111111111111111,
+              0.5
+            ],
+            "patient_clusters": 18
+          },
+          "same_label_both_correct": {
+            "denominator": 48,
+            "estimate": 0.375,
+            "numerator": 18,
+            "patient_bootstrap_95_ci": [
+              0.24489795918367346,
+              0.52
+            ],
+            "patient_clusters": 46
+          },
+          "same_label_target_accuracy": {
+            "denominator": 48,
+            "estimate": 0.4791666666666667,
+            "numerator": 23,
+            "patient_bootstrap_95_ci": [
+              0.3469387755102041,
+              0.6170212765957447
+            ],
+            "patient_clusters": 46
+          },
+          "same_target_invariance": {
+            "denominator": 48,
+            "estimate": 0.625,
+            "numerator": 30,
+            "patient_bootstrap_95_ci": [
+              0.48936170212765956,
+              0.7659574468085106
+            ],
+            "patient_clusters": 46
+          },
+          "target_accuracy": {
+            "denominator": 66,
+            "estimate": 0.45454545454545453,
+            "numerator": 30,
+            "patient_bootstrap_95_ci": [
+              0.3384615384615385,
+              0.5692307692307692
+            ],
+            "patient_clusters": 64
+          }
+        },
+        "original_finding": "pleural effusion",
+        "patient_clusters": 64,
+        "rows": 66,
+        "same_label_rows": 48,
+        "small_cell_descriptive": false,
+        "target_finding": "consolidation"
+      },
+      {
+        "different_label_rows": 14,
+        "four_way_counts": {
+          "both_correct": 31,
+          "neither_correct": 16,
+          "original_only_correct": 13,
+          "swapped_only_correct": 13
+        },
+        "metrics": {
+          "all_both_correct": {
+            "denominator": 73,
+            "estimate": 0.4246575342465753,
+            "numerator": 31,
+            "patient_bootstrap_95_ci": [
+              0.30985915492957744,
+              0.5405405405405406
+            ],
+            "patient_clusters": 70
+          },
+          "changed_to_correct_target": {
+            "denominator": 14,
+            "estimate": 0.5,
+            "numerator": 7,
+            "patient_bootstrap_95_ci": [
+              0.21428571428571427,
+              0.7857142857142857
+            ],
+            "patient_clusters": 14
+          },
+          "different_label_target_accuracy": {
+            "denominator": 14,
+            "estimate": 0.8571428571428571,
+            "numerator": 12,
+            "patient_bootstrap_95_ci": [
+              0.6428571428571429,
+              1.0
+            ],
+            "patient_clusters": 14
+          },
+          "paired_target_success": {
+            "denominator": 14,
+            "estimate": 0.2857142857142857,
+            "numerator": 4,
+            "patient_bootstrap_95_ci": [
+              0.07142857142857142,
+              0.5
+            ],
+            "patient_clusters": 14
+          },
+          "prediction_change_rate": {
+            "denominator": 73,
+            "estimate": 0.3835616438356164,
+            "numerator": 28,
+            "patient_bootstrap_95_ci": [
+              0.273972602739726,
+              0.4931506849315068
+            ],
+            "patient_clusters": 70
+          },
+          "required_change_compliance": {
+            "denominator": 14,
+            "estimate": 0.5714285714285714,
+            "numerator": 8,
+            "patient_bootstrap_95_ci": [
+              0.2857142857142857,
+              0.7857142857142857
+            ],
+            "patient_clusters": 14
+          },
+          "same_label_both_correct": {
+            "denominator": 59,
+            "estimate": 0.4576271186440678,
+            "numerator": 27,
+            "patient_bootstrap_95_ci": [
+              0.3275862068965517,
+              0.5873015873015873
+            ],
+            "patient_clusters": 56
+          },
+          "same_label_target_accuracy": {
+            "denominator": 59,
+            "estimate": 0.5423728813559322,
+            "numerator": 32,
+            "patient_bootstrap_95_ci": [
+              0.4107142857142857,
+              0.6721311475409836
+            ],
+            "patient_clusters": 56
+          },
+          "same_target_invariance": {
+            "denominator": 59,
+            "estimate": 0.6610169491525424,
+            "numerator": 39,
+            "patient_bootstrap_95_ci": [
+              0.5357142857142857,
+              0.7796610169491526
+            ],
+            "patient_clusters": 56
+          },
+          "target_accuracy": {
+            "denominator": 73,
+            "estimate": 0.6027397260273972,
+            "numerator": 44,
+            "patient_bootstrap_95_ci": [
+              0.4857142857142857,
+              0.7162162162162162
+            ],
+            "patient_clusters": 70
+          }
+        },
+        "original_finding": "pleural effusion",
+        "patient_clusters": 70,
+        "rows": 73,
+        "same_label_rows": 59,
+        "small_cell_descriptive": false,
+        "target_finding": "edema"
+      },
+      {
+        "different_label_rows": 15,
+        "four_way_counts": {
+          "both_correct": 11,
+          "neither_correct": 4,
+          "original_only_correct": 6,
+          "swapped_only_correct": 6
+        },
+        "metrics": {
+          "all_both_correct": {
+            "denominator": 27,
+            "estimate": 0.4074074074074074,
+            "numerator": 11,
+            "patient_bootstrap_95_ci": [
+              0.2222222222222222,
+              0.5925925925925926
+            ],
+            "patient_clusters": 27
+          },
+          "changed_to_correct_target": {
+            "denominator": 15,
+            "estimate": 0.3333333333333333,
+            "numerator": 5,
+            "patient_bootstrap_95_ci": [
+              0.13333333333333333,
+              0.6
+            ],
+            "patient_clusters": 15
+          },
+          "different_label_target_accuracy": {
+            "denominator": 15,
+            "estimate": 0.6666666666666666,
+            "numerator": 10,
+            "patient_bootstrap_95_ci": [
+              0.4,
+              0.8666666666666667
+            ],
+            "patient_clusters": 15
+          },
+          "paired_target_success": {
+            "denominator": 15,
+            "estimate": 0.26666666666666666,
+            "numerator": 4,
+            "patient_bootstrap_95_ci": [
+              0.06666666666666667,
+              0.5333333333333333
+            ],
+            "patient_clusters": 15
+          },
+          "prediction_change_rate": {
+            "denominator": 27,
+            "estimate": 0.4444444444444444,
+            "numerator": 12,
+            "patient_bootstrap_95_ci": [
+              0.25925925925925924,
+              0.6296296296296297
+            ],
+            "patient_clusters": 27
+          },
+          "required_change_compliance": {
+            "denominator": 15,
+            "estimate": 0.5333333333333333,
+            "numerator": 8,
+            "patient_bootstrap_95_ci": [
+              0.26666666666666666,
+              0.8
+            ],
+            "patient_clusters": 15
+          },
+          "same_label_both_correct": {
+            "denominator": 12,
+            "estimate": 0.5833333333333334,
+            "numerator": 7,
+            "patient_bootstrap_95_ci": [
+              0.3333333333333333,
+              0.8333333333333334
+            ],
+            "patient_clusters": 12
+          },
+          "same_label_target_accuracy": {
+            "denominator": 12,
+            "estimate": 0.5833333333333334,
+            "numerator": 7,
+            "patient_bootstrap_95_ci": [
+              0.3333333333333333,
+              0.8333333333333334
+            ],
+            "patient_clusters": 12
+          },
+          "same_target_invariance": {
+            "denominator": 12,
+            "estimate": 0.6666666666666666,
+            "numerator": 8,
+            "patient_bootstrap_95_ci": [
+              0.4166666666666667,
+              0.9166666666666666
+            ],
+            "patient_clusters": 12
+          },
+          "target_accuracy": {
+            "denominator": 27,
+            "estimate": 0.6296296296296297,
+            "numerator": 17,
+            "patient_bootstrap_95_ci": [
+              0.4444444444444444,
+              0.8148148148148148
+            ],
+            "patient_clusters": 27
+          }
+        },
+        "original_finding": "pleural effusion",
+        "patient_clusters": 27,
+        "rows": 27,
+        "same_label_rows": 12,
+        "small_cell_descriptive": false,
+        "target_finding": "pneumonia"
+      },
+      {
+        "different_label_rows": 6,
+        "four_way_counts": {
+          "both_correct": 4,
+          "original_only_correct": 5,
+          "swapped_only_correct": 7
+        },
+        "metrics": {
+          "all_both_correct": {
+            "denominator": 16,
+            "estimate": 0.25,
+            "numerator": 4,
+            "patient_bootstrap_95_ci": [
+              0.0625,
+              0.5
+            ],
+            "patient_clusters": 16
+          },
+          "changed_to_correct_target": {
+            "denominator": 6,
+            "estimate": 0.0,
+            "numerator": 0,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.0
+            ],
+            "patient_clusters": 6
+          },
+          "different_label_target_accuracy": {
+            "denominator": 6,
+            "estimate": 0.3333333333333333,
+            "numerator": 2,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.6666666666666666
+            ],
+            "patient_clusters": 6
+          },
+          "paired_target_success": {
+            "denominator": 6,
+            "estimate": 0.0,
+            "numerator": 0,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.0
+            ],
+            "patient_clusters": 6
+          },
+          "prediction_change_rate": {
+            "denominator": 16,
+            "estimate": 0.375,
+            "numerator": 6,
+            "patient_bootstrap_95_ci": [
+              0.125,
+              0.625
+            ],
+            "patient_clusters": 16
+          },
+          "required_change_compliance": {
+            "denominator": 6,
+            "estimate": 0.0,
+            "numerator": 0,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.0
+            ],
+            "patient_clusters": 6
+          },
+          "same_label_both_correct": {
+            "denominator": 10,
+            "estimate": 0.4,
+            "numerator": 4,
+            "patient_bootstrap_95_ci": [
+              0.1,
+              0.7
+            ],
+            "patient_clusters": 10
+          },
+          "same_label_target_accuracy": {
+            "denominator": 10,
+            "estimate": 0.9,
+            "numerator": 9,
+            "patient_bootstrap_95_ci": [
+              0.7,
+              1.0
+            ],
+            "patient_clusters": 10
+          },
+          "same_target_invariance": {
+            "denominator": 10,
+            "estimate": 0.4,
+            "numerator": 4,
+            "patient_bootstrap_95_ci": [
+              0.1,
+              0.7
+            ],
+            "patient_clusters": 10
+          },
+          "target_accuracy": {
+            "denominator": 16,
+            "estimate": 0.6875,
+            "numerator": 11,
+            "patient_bootstrap_95_ci": [
+              0.4375,
+              0.875
+            ],
+            "patient_clusters": 16
+          }
+        },
+        "original_finding": "pleural effusion",
+        "patient_clusters": 16,
+        "rows": 16,
+        "same_label_rows": 10,
+        "small_cell_descriptive": true,
+        "target_finding": "pneumothorax"
+      },
+      {
+        "different_label_rows": 1,
+        "four_way_counts": {
+          "both_correct": 35,
+          "neither_correct": 25,
+          "original_only_correct": 1,
+          "swapped_only_correct": 1
+        },
+        "metrics": {
+          "all_both_correct": {
+            "denominator": 62,
+            "estimate": 0.5645161290322581,
+            "numerator": 35,
+            "patient_bootstrap_95_ci": [
+              0.4426229508196721,
+              0.6825595238095236
+            ],
+            "patient_clusters": 59
+          },
+          "changed_to_correct_target": {
+            "denominator": 1,
+            "estimate": 0.0,
+            "numerator": 0,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.0
+            ],
+            "patient_clusters": 1
+          },
+          "different_label_target_accuracy": {
+            "denominator": 1,
+            "estimate": 1.0,
+            "numerator": 1,
+            "patient_bootstrap_95_ci": [
+              1.0,
+              1.0
+            ],
+            "patient_clusters": 1
+          },
+          "paired_target_success": {
+            "denominator": 1,
+            "estimate": 0.0,
+            "numerator": 0,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.0
+            ],
+            "patient_clusters": 1
+          },
+          "prediction_change_rate": {
+            "denominator": 62,
+            "estimate": 0.03225806451612903,
+            "numerator": 2,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.08196721311475409
+            ],
+            "patient_clusters": 59
+          },
+          "required_change_compliance": {
+            "denominator": 1,
+            "estimate": 0.0,
+            "numerator": 0,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.0
+            ],
+            "patient_clusters": 1
+          },
+          "same_label_both_correct": {
+            "denominator": 61,
+            "estimate": 0.5737704918032787,
+            "numerator": 35,
+            "patient_bootstrap_95_ci": [
+              0.4576271186440678,
+              0.6935483870967742
+            ],
+            "patient_clusters": 58
+          },
+          "same_label_target_accuracy": {
+            "denominator": 61,
+            "estimate": 0.5737704918032787,
+            "numerator": 35,
+            "patient_bootstrap_95_ci": [
+              0.4576271186440678,
+              0.6935483870967742
+            ],
+            "patient_clusters": 58
+          },
+          "same_target_invariance": {
+            "denominator": 61,
+            "estimate": 0.9672131147540983,
+            "numerator": 59,
+            "patient_bootstrap_95_ci": [
+              0.9166666666666666,
+              1.0
+            ],
+            "patient_clusters": 58
+          },
+          "target_accuracy": {
+            "denominator": 62,
+            "estimate": 0.5806451612903226,
+            "numerator": 36,
+            "patient_bootstrap_95_ci": [
+              0.45901639344262296,
+              0.6984126984126984
+            ],
+            "patient_clusters": 59
+          }
+        },
+        "original_finding": "pneumonia",
+        "patient_clusters": 59,
+        "rows": 62,
+        "same_label_rows": 61,
+        "small_cell_descriptive": false,
+        "target_finding": "consolidation"
+      },
+      {
+        "different_label_rows": 7,
+        "four_way_counts": {
+          "both_correct": 14,
+          "neither_correct": 7,
+          "original_only_correct": 7,
+          "swapped_only_correct": 4
+        },
+        "metrics": {
+          "all_both_correct": {
+            "denominator": 32,
+            "estimate": 0.4375,
+            "numerator": 14,
+            "patient_bootstrap_95_ci": [
+              0.25806451612903225,
+              0.6060606060606061
+            ],
+            "patient_clusters": 31
+          },
+          "changed_to_correct_target": {
+            "denominator": 7,
+            "estimate": 0.2857142857142857,
+            "numerator": 2,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.5714285714285714
+            ],
+            "patient_clusters": 7
+          },
+          "different_label_target_accuracy": {
+            "denominator": 7,
+            "estimate": 0.5714285714285714,
+            "numerator": 4,
+            "patient_bootstrap_95_ci": [
+              0.14285714285714285,
+              0.8571428571428571
+            ],
+            "patient_clusters": 7
+          },
+          "paired_target_success": {
+            "denominator": 7,
+            "estimate": 0.14285714285714285,
+            "numerator": 1,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.42857142857142855
+            ],
+            "patient_clusters": 7
+          },
+          "prediction_change_rate": {
+            "denominator": 32,
+            "estimate": 0.3125,
+            "numerator": 10,
+            "patient_bootstrap_95_ci": [
+              0.16129032258064516,
+              0.47058823529411764
+            ],
+            "patient_clusters": 31
+          },
+          "required_change_compliance": {
+            "denominator": 7,
+            "estimate": 0.2857142857142857,
+            "numerator": 2,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.5714285714285714
+            ],
+            "patient_clusters": 7
+          },
+          "same_label_both_correct": {
+            "denominator": 25,
+            "estimate": 0.52,
+            "numerator": 13,
+            "patient_bootstrap_95_ci": [
+              0.3333333333333333,
+              0.7083333333333334
+            ],
+            "patient_clusters": 24
+          },
+          "same_label_target_accuracy": {
+            "denominator": 25,
+            "estimate": 0.56,
+            "numerator": 14,
+            "patient_bootstrap_95_ci": [
+              0.375,
+              0.75
+            ],
+            "patient_clusters": 24
+          },
+          "same_target_invariance": {
+            "denominator": 25,
+            "estimate": 0.68,
+            "numerator": 17,
+            "patient_bootstrap_95_ci": [
+              0.5,
+              0.84
+            ],
+            "patient_clusters": 24
+          },
+          "target_accuracy": {
+            "denominator": 32,
+            "estimate": 0.5625,
+            "numerator": 18,
+            "patient_bootstrap_95_ci": [
+              0.3939393939393939,
+              0.7272727272727273
+            ],
+            "patient_clusters": 31
+          }
+        },
+        "original_finding": "pneumonia",
+        "patient_clusters": 31,
+        "rows": 32,
+        "same_label_rows": 25,
+        "small_cell_descriptive": false,
+        "target_finding": "edema"
+      },
+      {
+        "different_label_rows": 15,
+        "four_way_counts": {
+          "both_correct": 11,
+          "neither_correct": 4,
+          "original_only_correct": 6,
+          "swapped_only_correct": 6
+        },
+        "metrics": {
+          "all_both_correct": {
+            "denominator": 27,
+            "estimate": 0.4074074074074074,
+            "numerator": 11,
+            "patient_bootstrap_95_ci": [
+              0.2222222222222222,
+              0.5925925925925926
+            ],
+            "patient_clusters": 27
+          },
+          "changed_to_correct_target": {
+            "denominator": 15,
+            "estimate": 0.4,
+            "numerator": 6,
+            "patient_bootstrap_95_ci": [
+              0.13333333333333333,
+              0.6666666666666666
+            ],
+            "patient_clusters": 15
+          },
+          "different_label_target_accuracy": {
+            "denominator": 15,
+            "estimate": 0.5333333333333333,
+            "numerator": 8,
+            "patient_bootstrap_95_ci": [
+              0.26666666666666666,
+              0.8
+            ],
+            "patient_clusters": 15
+          },
+          "paired_target_success": {
+            "denominator": 15,
+            "estimate": 0.26666666666666666,
+            "numerator": 4,
+            "patient_bootstrap_95_ci": [
+              0.06666666666666667,
+              0.5333333333333333
+            ],
+            "patient_clusters": 15
+          },
+          "prediction_change_rate": {
+            "denominator": 27,
+            "estimate": 0.4444444444444444,
+            "numerator": 12,
+            "patient_bootstrap_95_ci": [
+              0.25925925925925924,
+              0.6296296296296297
+            ],
+            "patient_clusters": 27
+          },
+          "required_change_compliance": {
+            "denominator": 15,
+            "estimate": 0.5333333333333333,
+            "numerator": 8,
+            "patient_bootstrap_95_ci": [
+              0.26666666666666666,
+              0.8
+            ],
+            "patient_clusters": 15
+          },
+          "same_label_both_correct": {
+            "denominator": 12,
+            "estimate": 0.5833333333333334,
+            "numerator": 7,
+            "patient_bootstrap_95_ci": [
+              0.3333333333333333,
+              0.8333333333333334
+            ],
+            "patient_clusters": 12
+          },
+          "same_label_target_accuracy": {
+            "denominator": 12,
+            "estimate": 0.75,
+            "numerator": 9,
+            "patient_bootstrap_95_ci": [
+              0.5,
+              1.0
+            ],
+            "patient_clusters": 12
+          },
+          "same_target_invariance": {
+            "denominator": 12,
+            "estimate": 0.6666666666666666,
+            "numerator": 8,
+            "patient_bootstrap_95_ci": [
+              0.4166666666666667,
+              0.9166666666666666
+            ],
+            "patient_clusters": 12
+          },
+          "target_accuracy": {
+            "denominator": 27,
+            "estimate": 0.6296296296296297,
+            "numerator": 17,
+            "patient_bootstrap_95_ci": [
+              0.4444444444444444,
+              0.8148148148148148
+            ],
+            "patient_clusters": 27
+          }
+        },
+        "original_finding": "pneumonia",
+        "patient_clusters": 27,
+        "rows": 27,
+        "same_label_rows": 12,
+        "small_cell_descriptive": false,
+        "target_finding": "pleural effusion"
+      },
+      {
+        "different_label_rows": 0,
+        "four_way_counts": {
+          "original_only_correct": 2,
+          "swapped_only_correct": 2
+        },
+        "metrics": {
+          "all_both_correct": {
+            "denominator": 4,
+            "estimate": 0.0,
+            "numerator": 0,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.0
+            ],
+            "patient_clusters": 4
+          },
+          "changed_to_correct_target": null,
+          "different_label_target_accuracy": null,
+          "paired_target_success": null,
+          "prediction_change_rate": {
+            "denominator": 4,
+            "estimate": 1.0,
+            "numerator": 4,
+            "patient_bootstrap_95_ci": [
+              1.0,
+              1.0
+            ],
+            "patient_clusters": 4
+          },
+          "required_change_compliance": null,
+          "same_label_both_correct": {
+            "denominator": 4,
+            "estimate": 0.0,
+            "numerator": 0,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.0
+            ],
+            "patient_clusters": 4
+          },
+          "same_label_target_accuracy": {
+            "denominator": 4,
+            "estimate": 0.5,
+            "numerator": 2,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              1.0
+            ],
+            "patient_clusters": 4
+          },
+          "same_target_invariance": {
+            "denominator": 4,
+            "estimate": 0.0,
+            "numerator": 0,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.0
+            ],
+            "patient_clusters": 4
+          },
+          "target_accuracy": {
+            "denominator": 4,
+            "estimate": 0.5,
+            "numerator": 2,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              1.0
+            ],
+            "patient_clusters": 4
+          }
+        },
+        "original_finding": "pneumonia",
+        "patient_clusters": 4,
+        "rows": 4,
+        "same_label_rows": 4,
+        "small_cell_descriptive": true,
+        "target_finding": "pneumothorax"
+      },
+      {
+        "different_label_rows": 2,
+        "four_way_counts": {
+          "both_correct": 2,
+          "original_only_correct": 4
+        },
+        "metrics": {
+          "all_both_correct": {
+            "denominator": 6,
+            "estimate": 0.3333333333333333,
+            "numerator": 2,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.6666666666666666
+            ],
+            "patient_clusters": 6
+          },
+          "changed_to_correct_target": {
+            "denominator": 2,
+            "estimate": 0.0,
+            "numerator": 0,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.0
+            ],
+            "patient_clusters": 2
+          },
+          "different_label_target_accuracy": {
+            "denominator": 2,
+            "estimate": 0.0,
+            "numerator": 0,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.0
+            ],
+            "patient_clusters": 2
+          },
+          "paired_target_success": {
+            "denominator": 2,
+            "estimate": 0.0,
+            "numerator": 0,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.0
+            ],
+            "patient_clusters": 2
+          },
+          "prediction_change_rate": {
+            "denominator": 6,
+            "estimate": 0.6666666666666666,
+            "numerator": 4,
+            "patient_bootstrap_95_ci": [
+              0.3333333333333333,
+              1.0
+            ],
+            "patient_clusters": 6
+          },
+          "required_change_compliance": {
+            "denominator": 2,
+            "estimate": 1.0,
+            "numerator": 2,
+            "patient_bootstrap_95_ci": [
+              1.0,
+              1.0
+            ],
+            "patient_clusters": 2
+          },
+          "same_label_both_correct": {
+            "denominator": 4,
+            "estimate": 0.5,
+            "numerator": 2,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              1.0
+            ],
+            "patient_clusters": 4
+          },
+          "same_label_target_accuracy": {
+            "denominator": 4,
+            "estimate": 0.5,
+            "numerator": 2,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              1.0
+            ],
+            "patient_clusters": 4
+          },
+          "same_target_invariance": {
+            "denominator": 4,
+            "estimate": 0.5,
+            "numerator": 2,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              1.0
+            ],
+            "patient_clusters": 4
+          },
+          "target_accuracy": {
+            "denominator": 6,
+            "estimate": 0.3333333333333333,
+            "numerator": 2,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.6666666666666666
+            ],
+            "patient_clusters": 6
+          }
+        },
+        "original_finding": "pneumothorax",
+        "patient_clusters": 6,
+        "rows": 6,
+        "same_label_rows": 4,
+        "small_cell_descriptive": true,
+        "target_finding": "consolidation"
+      },
+      {
+        "different_label_rows": 8,
+        "four_way_counts": {
+          "both_correct": 4,
+          "neither_correct": 2,
+          "original_only_correct": 2,
+          "swapped_only_correct": 3
+        },
+        "metrics": {
+          "all_both_correct": {
+            "denominator": 11,
+            "estimate": 0.36363636363636365,
+            "numerator": 4,
+            "patient_bootstrap_95_ci": [
+              0.09090909090909091,
+              0.7777777777777778
+            ],
+            "patient_clusters": 9
+          },
+          "changed_to_correct_target": {
+            "denominator": 8,
+            "estimate": 0.625,
+            "numerator": 5,
+            "patient_bootstrap_95_ci": [
+              0.25,
+              0.875
+            ],
+            "patient_clusters": 8
+          },
+          "different_label_target_accuracy": {
+            "denominator": 8,
+            "estimate": 0.75,
+            "numerator": 6,
+            "patient_bootstrap_95_ci": [
+              0.49687500000000284,
+              1.0
+            ],
+            "patient_clusters": 8
+          },
+          "paired_target_success": {
+            "denominator": 8,
+            "estimate": 0.5,
+            "numerator": 4,
+            "patient_bootstrap_95_ci": [
+              0.125,
+              0.875
+            ],
+            "patient_clusters": 8
+          },
+          "prediction_change_rate": {
+            "denominator": 11,
+            "estimate": 0.7272727272727273,
+            "numerator": 8,
+            "patient_bootstrap_95_ci": [
+              0.4666666666666667,
+              1.0
+            ],
+            "patient_clusters": 9
+          },
+          "required_change_compliance": {
+            "denominator": 8,
+            "estimate": 0.75,
+            "numerator": 6,
+            "patient_bootstrap_95_ci": [
+              0.375,
+              1.0
+            ],
+            "patient_clusters": 8
+          },
+          "same_label_both_correct": {
+            "denominator": 3,
+            "estimate": 0.0,
+            "numerator": 0,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.0
+            ],
+            "patient_clusters": 2
+          },
+          "same_label_target_accuracy": {
+            "denominator": 3,
+            "estimate": 0.3333333333333333,
+            "numerator": 1,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              1.0
+            ],
+            "patient_clusters": 2
+          },
+          "same_target_invariance": {
+            "denominator": 3,
+            "estimate": 0.3333333333333333,
+            "numerator": 1,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.5
+            ],
+            "patient_clusters": 2
+          },
+          "target_accuracy": {
+            "denominator": 11,
+            "estimate": 0.6363636363636364,
+            "numerator": 7,
+            "patient_bootstrap_95_ci": [
+              0.38461538461538464,
+              1.0
+            ],
+            "patient_clusters": 9
+          }
+        },
+        "original_finding": "pneumothorax",
+        "patient_clusters": 9,
+        "rows": 11,
+        "same_label_rows": 3,
+        "small_cell_descriptive": true,
+        "target_finding": "edema"
+      },
+      {
+        "different_label_rows": 6,
+        "four_way_counts": {
+          "both_correct": 4,
+          "original_only_correct": 7,
+          "swapped_only_correct": 5
+        },
+        "metrics": {
+          "all_both_correct": {
+            "denominator": 16,
+            "estimate": 0.25,
+            "numerator": 4,
+            "patient_bootstrap_95_ci": [
+              0.0625,
+              0.5
+            ],
+            "patient_clusters": 16
+          },
+          "changed_to_correct_target": {
+            "denominator": 6,
+            "estimate": 0.0,
+            "numerator": 0,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.0
+            ],
+            "patient_clusters": 6
+          },
+          "different_label_target_accuracy": {
+            "denominator": 6,
+            "estimate": 0.6666666666666666,
+            "numerator": 4,
+            "patient_bootstrap_95_ci": [
+              0.3333333333333333,
+              1.0
+            ],
+            "patient_clusters": 6
+          },
+          "paired_target_success": {
+            "denominator": 6,
+            "estimate": 0.0,
+            "numerator": 0,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.0
+            ],
+            "patient_clusters": 6
+          },
+          "prediction_change_rate": {
+            "denominator": 16,
+            "estimate": 0.375,
+            "numerator": 6,
+            "patient_bootstrap_95_ci": [
+              0.125,
+              0.625
+            ],
+            "patient_clusters": 16
+          },
+          "required_change_compliance": {
+            "denominator": 6,
+            "estimate": 0.0,
+            "numerator": 0,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.0
+            ],
+            "patient_clusters": 6
+          },
+          "same_label_both_correct": {
+            "denominator": 10,
+            "estimate": 0.4,
+            "numerator": 4,
+            "patient_bootstrap_95_ci": [
+              0.1,
+              0.7
+            ],
+            "patient_clusters": 10
+          },
+          "same_label_target_accuracy": {
+            "denominator": 10,
+            "estimate": 0.5,
+            "numerator": 5,
+            "patient_bootstrap_95_ci": [
+              0.2,
+              0.8
+            ],
+            "patient_clusters": 10
+          },
+          "same_target_invariance": {
+            "denominator": 10,
+            "estimate": 0.4,
+            "numerator": 4,
+            "patient_bootstrap_95_ci": [
+              0.1,
+              0.7
+            ],
+            "patient_clusters": 10
+          },
+          "target_accuracy": {
+            "denominator": 16,
+            "estimate": 0.5625,
+            "numerator": 9,
+            "patient_bootstrap_95_ci": [
+              0.3125,
+              0.8125
+            ],
+            "patient_clusters": 16
+          }
+        },
+        "original_finding": "pneumothorax",
+        "patient_clusters": 16,
+        "rows": 16,
+        "same_label_rows": 10,
+        "small_cell_descriptive": true,
+        "target_finding": "pleural effusion"
+      },
+      {
+        "different_label_rows": 0,
+        "four_way_counts": {
+          "original_only_correct": 2,
+          "swapped_only_correct": 2
+        },
+        "metrics": {
+          "all_both_correct": {
+            "denominator": 4,
+            "estimate": 0.0,
+            "numerator": 0,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.0
+            ],
+            "patient_clusters": 4
+          },
+          "changed_to_correct_target": null,
+          "different_label_target_accuracy": null,
+          "paired_target_success": null,
+          "prediction_change_rate": {
+            "denominator": 4,
+            "estimate": 1.0,
+            "numerator": 4,
+            "patient_bootstrap_95_ci": [
+              1.0,
+              1.0
+            ],
+            "patient_clusters": 4
+          },
+          "required_change_compliance": null,
+          "same_label_both_correct": {
+            "denominator": 4,
+            "estimate": 0.0,
+            "numerator": 0,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.0
+            ],
+            "patient_clusters": 4
+          },
+          "same_label_target_accuracy": {
+            "denominator": 4,
+            "estimate": 0.5,
+            "numerator": 2,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              1.0
+            ],
+            "patient_clusters": 4
+          },
+          "same_target_invariance": {
+            "denominator": 4,
+            "estimate": 0.0,
+            "numerator": 0,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              0.0
+            ],
+            "patient_clusters": 4
+          },
+          "target_accuracy": {
+            "denominator": 4,
+            "estimate": 0.5,
+            "numerator": 2,
+            "patient_bootstrap_95_ci": [
+              0.0,
+              1.0
+            ],
+            "patient_clusters": 4
+          }
+        },
+        "original_finding": "pneumothorax",
+        "patient_clusters": 4,
+        "rows": 4,
+        "same_label_rows": 4,
+        "small_cell_descriptive": true,
+        "target_finding": "pneumonia"
+      }
+    ]
+  },
+  "rows": 1326,
+  "scope": "CPU-only canonical primary-run diagnostics; historical artifacts unchanged"
+}

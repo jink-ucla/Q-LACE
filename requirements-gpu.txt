@@ -1,0 +1,10 @@
+# Inventory, not a tested or fully pinned historical lockfile; see ENVIRONMENT.md.
+-r requirements-cpu.txt
+torch
+transformers
+peft
+accelerate
+datasets
+trl
+safetensors
+sentencepiece

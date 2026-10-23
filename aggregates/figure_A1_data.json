@@ -1,0 +1,233 @@
+{
+  "evaluation_rows": 1326,
+  "label": "fig:historical_benchmark",
+  "metric_definition": {
+    "accuracy": "Number of exactly correct labels / all 1326 ordered benchmark occurrences.",
+    "classes": [
+      "improving",
+      "stable",
+      "worsening"
+    ],
+    "macro_f1": "Unweighted macro-F1 over improving, stable, worsening. Out-of-set outputs remain errors.",
+    "rounding": "Round only for display, after computing differences from full-precision point estimates."
+  },
+  "number": "A1",
+  "page": "12",
+  "panel_b": [
+    {
+      "group": "Input-free",
+      "key": "always_stable",
+      "label": "Always stable",
+      "no_acc": 0.3996983408748115,
+      "no_f1": 0.1903735632183908,
+      "pc_acc": 0.3996983408748115,
+      "pc_f1": 0.1903735632183908
+    },
+    {
+      "group": "Input-free",
+      "key": "always_worsening",
+      "label": "Always worsening",
+      "no_acc": 0.41855203619909503,
+      "no_f1": 0.19670388091440724,
+      "pc_acc": 0.41855203619909503,
+      "pc_f1": 0.19670388091440724
+    },
+    {
+      "group": "Input-free",
+      "key": "finding_majority",
+      "label": "Finding majority",
+      "no_acc": 0.4879336349924585,
+      "no_f1": 0.45841525747623235,
+      "pc_acc": 0.4879336349924585,
+      "pc_f1": 0.45841525747623235
+    },
+    {
+      "group": "Frozen encoders",
+      "key": "medsiglip",
+      "label": "MedSigLIP",
+      "no_acc": 0.45248868778280543,
+      "no_f1": 0.4322454401363493,
+      "pc_acc": 0.5437405731523378,
+      "pc_f1": 0.49169631656533114
+    },
+    {
+      "group": "Frozen encoders",
+      "key": "biovilt",
+      "label": "BioViL-T",
+      "no_acc": 0.5158371040723982,
+      "no_f1": 0.4738198513820831,
+      "pc_acc": 0.5535444947209653,
+      "pc_f1": 0.5268868514464784
+    },
+    {
+      "group": "Frozen encoders",
+      "key": "densenet",
+      "label": "DenseNet",
+      "no_acc": 0.5007541478129713,
+      "no_f1": 0.45303175961643677,
+      "pc_acc": 0.5203619909502263,
+      "pc_f1": 0.45936183407335585
+    },
+    {
+      "group": "Prompt diagnostics",
+      "key": "medgemma_prompt",
+      "label": "MedGemma prompt",
+      "no_acc": 0.3137254901960784,
+      "no_f1": 0.28577581353059245,
+      "pc_acc": 0.33634992458521873,
+      "pc_f1": 0.2870905028146221
+    },
+    {
+      "group": "Prompt diagnostics",
+      "key": "qwen25vl",
+      "label": "Qwen2.5-VL-7B",
+      "no_acc": 0.09728506787330317,
+      "no_f1": 0.1355500182379904,
+      "pc_acc": 0.23604826546003016,
+      "pc_f1": 0.22645526973361907
+    },
+    {
+      "group": "Prompt diagnostics",
+      "key": "lingshu7b",
+      "label": "Lingshu-7B",
+      "no_acc": 0.39894419306184015,
+      "no_f1": 0.23120159792994288,
+      "pc_acc": 0.38235294117647056,
+      "pc_f1": 0.22667265807444323
+    },
+    {
+      "group": "Prompt diagnostics",
+      "key": "lingshu_i8b",
+      "label": "Lingshu-I-8B",
+      "no_acc": 0.3974358974358974,
+      "no_f1": 0.24011107493547368,
+      "pc_acc": 0.38838612368024134,
+      "pc_f1": 0.22101052252360442
+    },
+    {
+      "group": "Prompt diagnostics",
+      "key": "huatuo",
+      "label": "HuatuoGPT-Vision",
+      "no_acc": 0.38687782805429866,
+      "no_f1": 0.20261299067334493,
+      "pc_acc": 0.40497737556561086,
+      "pc_f1": 0.2441174152593983
+    },
+    {
+      "group": "Prompt diagnostics",
+      "key": "smolvlm2",
+      "label": "SmolVLM2-2.2B",
+      "no_acc": 0.332579185520362,
+      "no_f1": 0.20529944790681506,
+      "pc_acc": 0.3431372549019608,
+      "pc_f1": 0.19557274876423814
+    },
+    {
+      "group": "Q-LACE",
+      "key": "qlace",
+      "label": "Q-LACE (ours)",
+      "no_acc": 0.49019607843137253,
+      "no_f1": 0.40773686933325487,
+      "pc_acc": 0.5920060331825038,
+      "pc_f1": 0.5611000114635952
+    }
+  ],
+  "panel_c": {
+    "estimates": [
+      {
+        "accuracy_delta": 0.1923076923076923,
+        "key": "always_stable",
+        "label": "Always stable",
+        "macro_f1_delta": 0.3707264482452044
+      },
+      {
+        "accuracy_delta": 0.248868778280543,
+        "key": "smolvlm2",
+        "label": "SmolVLM2-2.2B",
+        "macro_f1_delta": 0.3655272626993571
+      },
+      {
+        "accuracy_delta": 0.17345399698340874,
+        "key": "always_worsening",
+        "label": "Always worsening",
+        "macro_f1_delta": 0.36439613054918796
+      },
+      {
+        "accuracy_delta": 0.20361990950226244,
+        "key": "lingshu_i8b",
+        "label": "Lingshu-I-8B",
+        "macro_f1_delta": 0.3400894889399908
+      },
+      {
+        "accuracy_delta": 0.20965309200603321,
+        "key": "lingshu7b",
+        "label": "Lingshu-7B",
+        "macro_f1_delta": 0.33442735338915197
+      },
+      {
+        "accuracy_delta": 0.3559577677224736,
+        "key": "qwen25vl",
+        "label": "Qwen2.5-VL-7B",
+        "macro_f1_delta": 0.33464474172997616
+      },
+      {
+        "accuracy_delta": 0.1870286576168929,
+        "key": "huatuo",
+        "label": "HuatuoGPT-Vision",
+        "macro_f1_delta": 0.3169825962041969
+      },
+      {
+        "accuracy_delta": 0.25565610859728505,
+        "key": "medgemma_prompt",
+        "label": "MedGemma prompt",
+        "macro_f1_delta": 0.2740095086489731
+      },
+      {
+        "accuracy_delta": 0.10407239819004527,
+        "key": "finding_majority",
+        "label": "Finding majority",
+        "macro_f1_delta": 0.10268475398736288
+      },
+      {
+        "accuracy_delta": 0.0716440422322775,
+        "key": "densenet",
+        "label": "DenseNet",
+        "macro_f1_delta": 0.10173817739023938
+      },
+      {
+        "accuracy_delta": 0.04826546003016596,
+        "key": "medsiglip",
+        "label": "MedSigLIP",
+        "macro_f1_delta": 0.06940369489826409
+      },
+      {
+        "accuracy_delta": 0.038461538461538436,
+        "key": "biovilt",
+        "label": "BioViL-T",
+        "macro_f1_delta": 0.03421316001711683
+      }
+    ],
+    "reference_key": "qlace"
+  },
+  "primary": {
+    "accuracy": 0.5920060331825038,
+    "macro_f1": 0.5611000114635952
+  },
+  "schema": "qlace-published-figure-data-v1",
+  "scope": "Full-precision data for active historical diagnostic panels; no confidence intervals. One uncertified comparator is excluded.",
+  "source": {
+    "relative_path": "figures/figure1_results_data.json",
+    "sha256": "a583ec988a000fda1a887b8355b7a0709ebed18d9dcdc0f8f3240a5e56f9897c"
+  },
+  "three_random_seed_mean": {
+    "accuracy": 0.5794369029663148,
+    "accuracy_sample_sd": 0.013685930204943398,
+    "macro_f1": 0.5478192072394635,
+    "macro_f1_sample_sd": 0.013891177694088982
+  },
+  "verification_sha256": "c4c3184ed2ec2902143a281e1f18a1d91e33428ff956ea101fc6d7ffa11ef721",
+  "verified_panel_counts": {
+    "B": 13,
+    "C": 12
+  }
+}

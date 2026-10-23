@@ -1,0 +1,1416 @@
+{
+  "classification_labels": [
+    "improving",
+    "stable",
+    "worsening"
+  ],
+  "scale": {
+    "2048": {
+      "all_test": {
+        "raw_metrics": {
+          "accuracy": 0.5920060331825038,
+          "confusion_matrix": {
+            "improving": {
+              "improving": 109,
+              "stable": 99,
+              "worsening": 33
+            },
+            "stable": {
+              "improving": 75,
+              "stable": 249,
+              "worsening": 206
+            },
+            "worsening": {
+              "improving": 41,
+              "stable": 87,
+              "worsening": 427
+            }
+          },
+          "correct_count": 785,
+          "count": 1326,
+          "gold_counts": {
+            "improving": 241,
+            "stable": 530,
+            "worsening": 555
+          },
+          "per_class": {
+            "improving": {
+              "f1": 0.46781115879828333,
+              "precision": 0.48444444444444446,
+              "pred_count": 225,
+              "recall": 0.45228215767634855,
+              "support": 241
+            },
+            "no_supported_evidence": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "pred_count": 0,
+              "recall": 0.0,
+              "support": 0
+            },
+            "stable": {
+              "f1": 0.5160621761658031,
+              "precision": 0.5724137931034483,
+              "pred_count": 435,
+              "recall": 0.469811320754717,
+              "support": 530
+            },
+            "worsening": {
+              "f1": 0.6994266994266994,
+              "precision": 0.6411411411411412,
+              "pred_count": 666,
+              "recall": 0.7693693693693694,
+              "support": 555
+            }
+          },
+          "prediction_counts": {
+            "improving": 225,
+            "stable": 435,
+            "worsening": 666
+          },
+          "supported_macro_f1": 0.5611000114635952
+        },
+        "rows": 1326
+      },
+      "same_view": {
+        "raw_metrics": {
+          "accuracy": 0.5795954265611257,
+          "confusion_matrix": {
+            "improving": {
+              "improving": 97,
+              "stable": 77,
+              "worsening": 28
+            },
+            "stable": {
+              "improving": 73,
+              "stable": 208,
+              "worsening": 191
+            },
+            "worsening": {
+              "improving": 32,
+              "stable": 77,
+              "worsening": 354
+            }
+          },
+          "correct_count": 659,
+          "count": 1137,
+          "gold_counts": {
+            "improving": 202,
+            "stable": 472,
+            "worsening": 463
+          },
+          "per_class": {
+            "improving": {
+              "f1": 0.4801980198019802,
+              "precision": 0.4801980198019802,
+              "pred_count": 202,
+              "recall": 0.4801980198019802,
+              "support": 202
+            },
+            "no_supported_evidence": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "pred_count": 0,
+              "recall": 0.0,
+              "support": 0
+            },
+            "stable": {
+              "f1": 0.49880095923261386,
+              "precision": 0.574585635359116,
+              "pred_count": 362,
+              "recall": 0.4406779661016949,
+              "support": 472
+            },
+            "worsening": {
+              "f1": 0.6833976833976834,
+              "precision": 0.6178010471204188,
+              "pred_count": 573,
+              "recall": 0.7645788336933045,
+              "support": 463
+            }
+          },
+          "prediction_counts": {
+            "improving": 202,
+            "stable": 362,
+            "worsening": 573
+          },
+          "supported_macro_f1": 0.5541322208107592
+        },
+        "rows": 1137
+      }
+    },
+    "512": {
+      "all_test": {
+        "raw_metrics": {
+          "accuracy": 0.4796380090497738,
+          "confusion_matrix": {
+            "improving": {
+              "improving": 149,
+              "stable": 78,
+              "worsening": 14
+            },
+            "stable": {
+              "improving": 215,
+              "stable": 224,
+              "worsening": 91
+            },
+            "worsening": {
+              "improving": 192,
+              "stable": 100,
+              "worsening": 263
+            }
+          },
+          "correct_count": 636,
+          "count": 1326,
+          "gold_counts": {
+            "improving": 241,
+            "stable": 530,
+            "worsening": 555
+          },
+          "per_class": {
+            "improving": {
+              "f1": 0.37390213299874525,
+              "precision": 0.26798561151079137,
+              "pred_count": 556,
+              "recall": 0.6182572614107884,
+              "support": 241
+            },
+            "no_supported_evidence": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "pred_count": 0,
+              "recall": 0.0,
+              "support": 0
+            },
+            "stable": {
+              "f1": 0.48068669527897,
+              "precision": 0.5572139303482587,
+              "pred_count": 402,
+              "recall": 0.4226415094339623,
+              "support": 530
+            },
+            "worsening": {
+              "f1": 0.5698808234019501,
+              "precision": 0.7146739130434783,
+              "pred_count": 368,
+              "recall": 0.47387387387387386,
+              "support": 555
+            }
+          },
+          "prediction_counts": {
+            "improving": 556,
+            "stable": 402,
+            "worsening": 368
+          },
+          "supported_macro_f1": 0.4748232172265551
+        },
+        "rows": 1326
+      },
+      "same_view": {
+        "raw_metrics": {
+          "accuracy": 0.46437994722955145,
+          "confusion_matrix": {
+            "improving": {
+              "improving": 135,
+              "stable": 54,
+              "worsening": 13
+            },
+            "stable": {
+              "improving": 203,
+              "stable": 180,
+              "worsening": 89
+            },
+            "worsening": {
+              "improving": 165,
+              "stable": 85,
+              "worsening": 213
+            }
+          },
+          "correct_count": 528,
+          "count": 1137,
+          "gold_counts": {
+            "improving": 202,
+            "stable": 472,
+            "worsening": 463
+          },
+          "per_class": {
+            "improving": {
+              "f1": 0.3829787234042553,
+              "precision": 0.268389662027833,
+              "pred_count": 503,
+              "recall": 0.6683168316831684,
+              "support": 202
+            },
+            "no_supported_evidence": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "pred_count": 0,
+              "recall": 0.0,
+              "support": 0
+            },
+            "stable": {
+              "f1": 0.4551201011378002,
+              "precision": 0.5642633228840125,
+              "pred_count": 319,
+              "recall": 0.3813559322033898,
+              "support": 472
+            },
+            "worsening": {
+              "f1": 0.5475578406169666,
+              "precision": 0.6761904761904762,
+              "pred_count": 315,
+              "recall": 0.46004319654427644,
+              "support": 463
+            }
+          },
+          "prediction_counts": {
+            "improving": 503,
+            "stable": 319,
+            "worsening": 315
+          },
+          "supported_macro_f1": 0.4618855550530074
+        },
+        "rows": 1137
+      }
+    },
+    "8192": {
+      "all_test": {
+        "raw_metrics": {
+          "accuracy": 0.5897435897435898,
+          "confusion_matrix": {
+            "improving": {
+              "improving": 158,
+              "stable": 57,
+              "worsening": 26
+            },
+            "stable": {
+              "improving": 147,
+              "stable": 211,
+              "worsening": 172
+            },
+            "worsening": {
+              "improving": 69,
+              "stable": 73,
+              "worsening": 413
+            }
+          },
+          "correct_count": 782,
+          "count": 1326,
+          "gold_counts": {
+            "improving": 241,
+            "stable": 530,
+            "worsening": 555
+          },
+          "per_class": {
+            "improving": {
+              "f1": 0.5138211382113822,
+              "precision": 0.42245989304812837,
+              "pred_count": 374,
+              "recall": 0.6556016597510373,
+              "support": 241
+            },
+            "no_supported_evidence": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "pred_count": 0,
+              "recall": 0.0,
+              "support": 0
+            },
+            "stable": {
+              "f1": 0.4845005740528128,
+              "precision": 0.6187683284457478,
+              "pred_count": 341,
+              "recall": 0.39811320754716983,
+              "support": 530
+            },
+            "worsening": {
+              "f1": 0.7084048027444254,
+              "precision": 0.6759410801963993,
+              "pred_count": 611,
+              "recall": 0.7441441441441441,
+              "support": 555
+            }
+          },
+          "prediction_counts": {
+            "improving": 374,
+            "stable": 341,
+            "worsening": 611
+          },
+          "supported_macro_f1": 0.5689088383362068
+        },
+        "rows": 1326
+      },
+      "same_view": {
+        "raw_metrics": {
+          "accuracy": 0.5769569041336852,
+          "confusion_matrix": {
+            "improving": {
+              "improving": 136,
+              "stable": 43,
+              "worsening": 23
+            },
+            "stable": {
+              "improving": 131,
+              "stable": 185,
+              "worsening": 156
+            },
+            "worsening": {
+              "improving": 62,
+              "stable": 66,
+              "worsening": 335
+            }
+          },
+          "correct_count": 656,
+          "count": 1137,
+          "gold_counts": {
+            "improving": 202,
+            "stable": 472,
+            "worsening": 463
+          },
+          "per_class": {
+            "improving": {
+              "f1": 0.512241054613936,
+              "precision": 0.4133738601823708,
+              "pred_count": 329,
+              "recall": 0.6732673267326733,
+              "support": 202
+            },
+            "no_supported_evidence": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "pred_count": 0,
+              "recall": 0.0,
+              "support": 0
+            },
+            "stable": {
+              "f1": 0.4830287206266318,
+              "precision": 0.6292517006802721,
+              "pred_count": 294,
+              "recall": 0.3919491525423729,
+              "support": 472
+            },
+            "worsening": {
+              "f1": 0.6857727737973388,
+              "precision": 0.6517509727626459,
+              "pred_count": 514,
+              "recall": 0.7235421166306696,
+              "support": 463
+            }
+          },
+          "prediction_counts": {
+            "improving": 329,
+            "stable": 294,
+            "worsening": 514
+          },
+          "supported_macro_f1": 0.5603475163459689
+        },
+        "rows": 1137
+      }
+    }
+  },
+  "scope": "Canonical raw-output query interventions and sample-size sensitivities used in the manuscript",
+  "splits": {
+    "all_test": {
+      "canonical_metrics": {
+        "accuracy": 0.5920060331825038,
+        "confusion_matrix": {
+          "improving": {
+            "improving": 109,
+            "stable": 99,
+            "worsening": 33
+          },
+          "stable": {
+            "improving": 75,
+            "stable": 249,
+            "worsening": 206
+          },
+          "worsening": {
+            "improving": 41,
+            "stable": 87,
+            "worsening": 427
+          }
+        },
+        "correct_count": 785,
+        "count": 1326,
+        "gold_counts": {
+          "improving": 241,
+          "stable": 530,
+          "worsening": 555
+        },
+        "per_class": {
+          "improving": {
+            "f1": 0.46781115879828333,
+            "precision": 0.48444444444444446,
+            "pred_count": 225,
+            "recall": 0.45228215767634855,
+            "support": 241
+          },
+          "no_supported_evidence": {
+            "f1": 0.0,
+            "precision": 0.0,
+            "pred_count": 0,
+            "recall": 0.0,
+            "support": 0
+          },
+          "stable": {
+            "f1": 0.5160621761658031,
+            "precision": 0.5724137931034483,
+            "pred_count": 435,
+            "recall": 0.469811320754717,
+            "support": 530
+          },
+          "worsening": {
+            "f1": 0.6994266994266994,
+            "precision": 0.6411411411411412,
+            "pred_count": 666,
+            "recall": 0.7693693693693694,
+            "support": 555
+          }
+        },
+        "prediction_counts": {
+          "improving": 225,
+          "stable": 435,
+          "worsening": 666
+        },
+        "supported_macro_f1": 0.5611000114635952
+      },
+      "patients": 800,
+      "rows": 1326,
+      "variants": {
+        "blank_query": {
+          "canonical_prediction_agreement": {
+            "denominator": 1326,
+            "numerator": 981,
+            "rate": 0.7398190045248869
+          },
+          "delta_supported_macro_f1_vs_canonical_raw": -0.13151490807071486,
+          "raw_metrics": {
+            "accuracy": 0.5580693815987934,
+            "confusion_matrix": {
+              "improving": {
+                "improving": 9,
+                "stable": 194,
+                "worsening": 38
+              },
+              "stable": {
+                "improving": 6,
+                "stable": 315,
+                "worsening": 209
+              },
+              "worsening": {
+                "improving": 3,
+                "stable": 136,
+                "worsening": 416
+              }
+            },
+            "correct_count": 740,
+            "count": 1326,
+            "gold_counts": {
+              "improving": 241,
+              "stable": 530,
+              "worsening": 555
+            },
+            "per_class": {
+              "improving": {
+                "f1": 0.0694980694980695,
+                "precision": 0.5,
+                "pred_count": 18,
+                "recall": 0.03734439834024896,
+                "support": 241
+              },
+              "no_supported_evidence": {
+                "f1": 0.0,
+                "precision": 0.0,
+                "pred_count": 0,
+                "recall": 0.0,
+                "support": 0
+              },
+              "stable": {
+                "f1": 0.5361702127659574,
+                "precision": 0.4883720930232558,
+                "pred_count": 645,
+                "recall": 0.5943396226415094,
+                "support": 530
+              },
+              "worsening": {
+                "f1": 0.6830870279146142,
+                "precision": 0.6274509803921569,
+                "pred_count": 663,
+                "recall": 0.7495495495495496,
+                "support": 555
+              }
+            },
+            "prediction_counts": {
+              "improving": 18,
+              "stable": 645,
+              "worsening": 663
+            },
+            "supported_macro_f1": 0.42958510339288036
+          },
+          "rendered_problem_exact_inclusion_count": 1326
+        },
+        "generic_query": {
+          "canonical_prediction_agreement": {
+            "denominator": 1326,
+            "numerator": 988,
+            "rate": 0.7450980392156863
+          },
+          "delta_supported_macro_f1_vs_canonical_raw": -0.1183011073207757,
+          "raw_metrics": {
+            "accuracy": 0.5565610859728507,
+            "confusion_matrix": {
+              "improving": {
+                "improving": 16,
+                "stable": 189,
+                "worsening": 36
+              },
+              "stable": {
+                "improving": 15,
+                "stable": 308,
+                "worsening": 207
+              },
+              "worsening": {
+                "improving": 6,
+                "stable": 135,
+                "worsening": 414
+              }
+            },
+            "correct_count": 738,
+            "count": 1326,
+            "gold_counts": {
+              "improving": 241,
+              "stable": 530,
+              "worsening": 555
+            },
+            "per_class": {
+              "improving": {
+                "f1": 0.11510791366906475,
+                "precision": 0.43243243243243246,
+                "pred_count": 37,
+                "recall": 0.06639004149377593,
+                "support": 241
+              },
+              "no_supported_evidence": {
+                "f1": 0.0,
+                "precision": 0.0,
+                "pred_count": 0,
+                "recall": 0.0,
+                "support": 0
+              },
+              "stable": {
+                "f1": 0.5301204819277108,
+                "precision": 0.4873417721518987,
+                "pred_count": 632,
+                "recall": 0.5811320754716981,
+                "support": 530
+              },
+              "worsening": {
+                "f1": 0.6831683168316831,
+                "precision": 0.6301369863013698,
+                "pred_count": 657,
+                "recall": 0.745945945945946,
+                "support": 555
+              }
+            },
+            "prediction_counts": {
+              "improving": 37,
+              "stable": 632,
+              "worsening": 657
+            },
+            "supported_macro_f1": 0.4427989041428195
+          },
+          "rendered_problem_exact_inclusion_count": 1326
+        },
+        "paraphrase_how_changed": {
+          "canonical_prediction_agreement": {
+            "denominator": 1326,
+            "numerator": 1193,
+            "rate": 0.8996983408748115
+          },
+          "delta_supported_macro_f1_vs_canonical_raw": -0.01953957849021537,
+          "raw_metrics": {
+            "accuracy": 0.5852187028657617,
+            "confusion_matrix": {
+              "improving": {
+                "improving": 79,
+                "stable": 126,
+                "worsening": 36
+              },
+              "stable": {
+                "improving": 47,
+                "stable": 271,
+                "worsening": 212
+              },
+              "worsening": {
+                "improving": 20,
+                "stable": 109,
+                "worsening": 426
+              }
+            },
+            "correct_count": 776,
+            "count": 1326,
+            "gold_counts": {
+              "improving": 241,
+              "stable": 530,
+              "worsening": 555
+            },
+            "per_class": {
+              "improving": {
+                "f1": 0.4082687338501292,
+                "precision": 0.541095890410959,
+                "pred_count": 146,
+                "recall": 0.3278008298755187,
+                "support": 241
+              },
+              "no_supported_evidence": {
+                "f1": 0.0,
+                "precision": 0.0,
+                "pred_count": 0,
+                "recall": 0.0,
+                "support": 0
+              },
+              "stable": {
+                "f1": 0.5231660231660232,
+                "precision": 0.5355731225296443,
+                "pred_count": 506,
+                "recall": 0.5113207547169811,
+                "support": 530
+              },
+              "worsening": {
+                "f1": 0.693246541903987,
+                "precision": 0.6320474777448071,
+                "pred_count": 674,
+                "recall": 0.7675675675675676,
+                "support": 555
+              }
+            },
+            "prediction_counts": {
+              "improving": 146,
+              "stable": 506,
+              "worsening": 674
+            },
+            "supported_macro_f1": 0.5415604329733799
+          },
+          "rendered_problem_exact_inclusion_count": 1326
+        },
+        "paraphrase_label_choice": {
+          "canonical_prediction_agreement": {
+            "denominator": 1326,
+            "numerator": 1120,
+            "rate": 0.8446455505279035
+          },
+          "delta_supported_macro_f1_vs_canonical_raw": -0.041188849868523336,
+          "raw_metrics": {
+            "accuracy": 0.579185520361991,
+            "confusion_matrix": {
+              "improving": {
+                "improving": 58,
+                "stable": 152,
+                "worsening": 31
+              },
+              "stable": {
+                "improving": 34,
+                "stable": 298,
+                "worsening": 198
+              },
+              "worsening": {
+                "improving": 16,
+                "stable": 127,
+                "worsening": 412
+              }
+            },
+            "correct_count": 768,
+            "count": 1326,
+            "gold_counts": {
+              "improving": 241,
+              "stable": 530,
+              "worsening": 555
+            },
+            "per_class": {
+              "improving": {
+                "f1": 0.33237822349570195,
+                "precision": 0.5370370370370371,
+                "pred_count": 108,
+                "recall": 0.24066390041493776,
+                "support": 241
+              },
+              "no_supported_evidence": {
+                "f1": 0.0,
+                "precision": 0.0,
+                "pred_count": 0,
+                "recall": 0.0,
+                "support": 0
+              },
+              "stable": {
+                "f1": 0.5383920505871725,
+                "precision": 0.5164644714038128,
+                "pred_count": 577,
+                "recall": 0.5622641509433962,
+                "support": 530
+              },
+              "worsening": {
+                "f1": 0.6889632107023412,
+                "precision": 0.6427457098283932,
+                "pred_count": 641,
+                "recall": 0.7423423423423423,
+                "support": 555
+              }
+            },
+            "prediction_counts": {
+              "improving": 108,
+              "stable": 577,
+              "worsening": 641
+            },
+            "supported_macro_f1": 0.5199111615950719
+          },
+          "rendered_problem_exact_inclusion_count": 1326
+        },
+        "paraphrase_relative_current": {
+          "canonical_prediction_agreement": {
+            "denominator": 1326,
+            "numerator": 1234,
+            "rate": 0.9306184012066365
+          },
+          "delta_supported_macro_f1_vs_canonical_raw": -0.008254761771008923,
+          "raw_metrics": {
+            "accuracy": 0.5912518853695324,
+            "confusion_matrix": {
+              "improving": {
+                "improving": 91,
+                "stable": 110,
+                "worsening": 40
+              },
+              "stable": {
+                "improving": 52,
+                "stable": 256,
+                "worsening": 222
+              },
+              "worsening": {
+                "improving": 27,
+                "stable": 91,
+                "worsening": 437
+              }
+            },
+            "correct_count": 784,
+            "count": 1326,
+            "gold_counts": {
+              "improving": 241,
+              "stable": 530,
+              "worsening": 555
+            },
+            "per_class": {
+              "improving": {
+                "f1": 0.4428223844282238,
+                "precision": 0.5352941176470588,
+                "pred_count": 170,
+                "recall": 0.3775933609958506,
+                "support": 241
+              },
+              "no_supported_evidence": {
+                "f1": 0.0,
+                "precision": 0.0,
+                "pred_count": 0,
+                "recall": 0.0,
+                "support": 0
+              },
+              "stable": {
+                "f1": 0.518743667679838,
+                "precision": 0.5601750547045952,
+                "pred_count": 457,
+                "recall": 0.4830188679245283,
+                "support": 530
+              },
+              "worsening": {
+                "f1": 0.696969696969697,
+                "precision": 0.6251788268955651,
+                "pred_count": 699,
+                "recall": 0.7873873873873873,
+                "support": 555
+              }
+            },
+            "prediction_counts": {
+              "improving": 170,
+              "stable": 457,
+              "worsening": 699
+            },
+            "supported_macro_f1": 0.5528452496925863
+          },
+          "rendered_problem_exact_inclusion_count": 1326
+        },
+        "random_wrong_query": {
+          "canonical_prediction_agreement": {
+            "denominator": 1326,
+            "numerator": 739,
+            "rate": 0.557315233785822
+          },
+          "delta_supported_macro_f1_vs_canonical_raw": -0.11236154334685583,
+          "raw_metrics": {
+            "accuracy": 0.48491704374057315,
+            "confusion_matrix": {
+              "improving": {
+                "improving": 88,
+                "stable": 92,
+                "worsening": 61
+              },
+              "stable": {
+                "improving": 135,
+                "stable": 180,
+                "worsening": 215
+              },
+              "worsening": {
+                "improving": 70,
+                "stable": 110,
+                "worsening": 375
+              }
+            },
+            "correct_count": 643,
+            "count": 1326,
+            "gold_counts": {
+              "improving": 241,
+              "stable": 530,
+              "worsening": 555
+            },
+            "per_class": {
+              "improving": {
+                "f1": 0.3295880149812734,
+                "precision": 0.3003412969283277,
+                "pred_count": 293,
+                "recall": 0.3651452282157676,
+                "support": 241
+              },
+              "no_supported_evidence": {
+                "f1": 0.0,
+                "precision": 0.0,
+                "pred_count": 0,
+                "recall": 0.0,
+                "support": 0
+              },
+              "stable": {
+                "f1": 0.39473684210526316,
+                "precision": 0.4712041884816754,
+                "pred_count": 382,
+                "recall": 0.33962264150943394,
+                "support": 530
+              },
+              "worsening": {
+                "f1": 0.6218905472636816,
+                "precision": 0.576036866359447,
+                "pred_count": 651,
+                "recall": 0.6756756756756757,
+                "support": 555
+              }
+            },
+            "prediction_counts": {
+              "improving": 293,
+              "stable": 382,
+              "worsening": 651
+            },
+            "supported_macro_f1": 0.4487384681167394
+          },
+          "rendered_problem_exact_inclusion_count": 1326
+        }
+      }
+    },
+    "same_view": {
+      "canonical_metrics": {
+        "accuracy": 0.5795954265611257,
+        "confusion_matrix": {
+          "improving": {
+            "improving": 97,
+            "stable": 77,
+            "worsening": 28
+          },
+          "stable": {
+            "improving": 73,
+            "stable": 208,
+            "worsening": 191
+          },
+          "worsening": {
+            "improving": 32,
+            "stable": 77,
+            "worsening": 354
+          }
+        },
+        "correct_count": 659,
+        "count": 1137,
+        "gold_counts": {
+          "improving": 202,
+          "stable": 472,
+          "worsening": 463
+        },
+        "per_class": {
+          "improving": {
+            "f1": 0.4801980198019802,
+            "precision": 0.4801980198019802,
+            "pred_count": 202,
+            "recall": 0.4801980198019802,
+            "support": 202
+          },
+          "no_supported_evidence": {
+            "f1": 0.0,
+            "precision": 0.0,
+            "pred_count": 0,
+            "recall": 0.0,
+            "support": 0
+          },
+          "stable": {
+            "f1": 0.49880095923261386,
+            "precision": 0.574585635359116,
+            "pred_count": 362,
+            "recall": 0.4406779661016949,
+            "support": 472
+          },
+          "worsening": {
+            "f1": 0.6833976833976834,
+            "precision": 0.6178010471204188,
+            "pred_count": 573,
+            "recall": 0.7645788336933045,
+            "support": 463
+          }
+        },
+        "prediction_counts": {
+          "improving": 202,
+          "stable": 362,
+          "worsening": 573
+        },
+        "supported_macro_f1": 0.5541322208107592
+      },
+      "patients": 684,
+      "rows": 1137,
+      "variants": {
+        "blank_query": {
+          "canonical_prediction_agreement": {
+            "denominator": 1137,
+            "numerator": 836,
+            "rate": 0.7352682497801232
+          },
+          "delta_supported_macro_f1_vs_canonical_raw": -0.12794129316273495,
+          "raw_metrics": {
+            "accuracy": 0.5523306948109059,
+            "confusion_matrix": {
+              "improving": {
+                "improving": 8,
+                "stable": 161,
+                "worsening": 33
+              },
+              "stable": {
+                "improving": 6,
+                "stable": 273,
+                "worsening": 193
+              },
+              "worsening": {
+                "improving": 2,
+                "stable": 114,
+                "worsening": 347
+              }
+            },
+            "correct_count": 628,
+            "count": 1137,
+            "gold_counts": {
+              "improving": 202,
+              "stable": 472,
+              "worsening": 463
+            },
+            "per_class": {
+              "improving": {
+                "f1": 0.07339449541284403,
+                "precision": 0.5,
+                "pred_count": 16,
+                "recall": 0.039603960396039604,
+                "support": 202
+              },
+              "no_supported_evidence": {
+                "f1": 0.0,
+                "precision": 0.0,
+                "pred_count": 0,
+                "recall": 0.0,
+                "support": 0
+              },
+              "stable": {
+                "f1": 0.5352941176470588,
+                "precision": 0.4981751824817518,
+                "pred_count": 548,
+                "recall": 0.5783898305084746,
+                "support": 472
+              },
+              "worsening": {
+                "f1": 0.6698841698841698,
+                "precision": 0.6055846422338569,
+                "pred_count": 573,
+                "recall": 0.7494600431965442,
+                "support": 463
+              }
+            },
+            "prediction_counts": {
+              "improving": 16,
+              "stable": 548,
+              "worsening": 573
+            },
+            "supported_macro_f1": 0.42619092764802424
+          },
+          "rendered_problem_exact_inclusion_count": 1137
+        },
+        "generic_query": {
+          "canonical_prediction_agreement": {
+            "denominator": 1137,
+            "numerator": 840,
+            "rate": 0.7387862796833773
+          },
+          "delta_supported_macro_f1_vs_canonical_raw": -0.11752891984995928,
+          "raw_metrics": {
+            "accuracy": 0.5496921723834652,
+            "confusion_matrix": {
+              "improving": {
+                "improving": 13,
+                "stable": 158,
+                "worsening": 31
+              },
+              "stable": {
+                "improving": 15,
+                "stable": 267,
+                "worsening": 190
+              },
+              "worsening": {
+                "improving": 3,
+                "stable": 115,
+                "worsening": 345
+              }
+            },
+            "correct_count": 625,
+            "count": 1137,
+            "gold_counts": {
+              "improving": 202,
+              "stable": 472,
+              "worsening": 463
+            },
+            "per_class": {
+              "improving": {
+                "f1": 0.11158798283261803,
+                "precision": 0.41935483870967744,
+                "pred_count": 31,
+                "recall": 0.06435643564356436,
+                "support": 202
+              },
+              "no_supported_evidence": {
+                "f1": 0.0,
+                "precision": 0.0,
+                "pred_count": 0,
+                "recall": 0.0,
+                "support": 0
+              },
+              "stable": {
+                "f1": 0.5276679841897233,
+                "precision": 0.49444444444444446,
+                "pred_count": 540,
+                "recall": 0.565677966101695,
+                "support": 472
+              },
+              "worsening": {
+                "f1": 0.6705539358600584,
+                "precision": 0.6095406360424028,
+                "pred_count": 566,
+                "recall": 0.7451403887688985,
+                "support": 463
+              }
+            },
+            "prediction_counts": {
+              "improving": 31,
+              "stable": 540,
+              "worsening": 566
+            },
+            "supported_macro_f1": 0.4366033009607999
+          },
+          "rendered_problem_exact_inclusion_count": 1137
+        },
+        "paraphrase_how_changed": {
+          "canonical_prediction_agreement": {
+            "denominator": 1137,
+            "numerator": 1019,
+            "rate": 0.8962181178540017
+          },
+          "delta_supported_macro_f1_vs_canonical_raw": -0.022232038737364235,
+          "raw_metrics": {
+            "accuracy": 0.5716798592788038,
+            "confusion_matrix": {
+              "improving": {
+                "improving": 68,
+                "stable": 103,
+                "worsening": 31
+              },
+              "stable": {
+                "improving": 47,
+                "stable": 227,
+                "worsening": 198
+              },
+              "worsening": {
+                "improving": 14,
+                "stable": 94,
+                "worsening": 355
+              }
+            },
+            "correct_count": 650,
+            "count": 1137,
+            "gold_counts": {
+              "improving": 202,
+              "stable": 472,
+              "worsening": 463
+            },
+            "per_class": {
+              "improving": {
+                "f1": 0.41087613293051356,
+                "precision": 0.5271317829457365,
+                "pred_count": 129,
+                "recall": 0.33663366336633666,
+                "support": 202
+              },
+              "no_supported_evidence": {
+                "f1": 0.0,
+                "precision": 0.0,
+                "pred_count": 0,
+                "recall": 0.0,
+                "support": 0
+              },
+              "stable": {
+                "f1": 0.5066964285714285,
+                "precision": 0.535377358490566,
+                "pred_count": 424,
+                "recall": 0.4809322033898305,
+                "support": 472
+              },
+              "worsening": {
+                "f1": 0.6781279847182426,
+                "precision": 0.6078767123287672,
+                "pred_count": 584,
+                "recall": 0.7667386609071274,
+                "support": 463
+              }
+            },
+            "prediction_counts": {
+              "improving": 129,
+              "stable": 424,
+              "worsening": 584
+            },
+            "supported_macro_f1": 0.531900182073395
+          },
+          "rendered_problem_exact_inclusion_count": 1137
+        },
+        "paraphrase_label_choice": {
+          "canonical_prediction_agreement": {
+            "denominator": 1137,
+            "numerator": 955,
+            "rate": 0.8399296394019349
+          },
+          "delta_supported_macro_f1_vs_canonical_raw": -0.0436791959771724,
+          "raw_metrics": {
+            "accuracy": 0.5672823218997362,
+            "confusion_matrix": {
+              "improving": {
+                "improving": 49,
+                "stable": 125,
+                "worsening": 28
+              },
+              "stable": {
+                "improving": 34,
+                "stable": 253,
+                "worsening": 185
+              },
+              "worsening": {
+                "improving": 12,
+                "stable": 108,
+                "worsening": 343
+              }
+            },
+            "correct_count": 645,
+            "count": 1137,
+            "gold_counts": {
+              "improving": 202,
+              "stable": 472,
+              "worsening": 463
+            },
+            "per_class": {
+              "improving": {
+                "f1": 0.32996632996632996,
+                "precision": 0.5157894736842106,
+                "pred_count": 95,
+                "recall": 0.24257425742574257,
+                "support": 202
+              },
+              "no_supported_evidence": {
+                "f1": 0.0,
+                "precision": 0.0,
+                "pred_count": 0,
+                "recall": 0.0,
+                "support": 0
+              },
+              "stable": {
+                "f1": 0.5281837160751566,
+                "precision": 0.5205761316872428,
+                "pred_count": 486,
+                "recall": 0.5360169491525424,
+                "support": 472
+              },
+              "worsening": {
+                "f1": 0.6732090284592738,
+                "precision": 0.6169064748201439,
+                "pred_count": 556,
+                "recall": 0.7408207343412527,
+                "support": 463
+              }
+            },
+            "prediction_counts": {
+              "improving": 95,
+              "stable": 486,
+              "worsening": 556
+            },
+            "supported_macro_f1": 0.5104530248335868
+          },
+          "rendered_problem_exact_inclusion_count": 1137
+        },
+        "paraphrase_relative_current": {
+          "canonical_prediction_agreement": {
+            "denominator": 1137,
+            "numerator": 1055,
+            "rate": 0.9278803869832893
+          },
+          "delta_supported_macro_f1_vs_canonical_raw": -0.01078230243460665,
+          "raw_metrics": {
+            "accuracy": 0.5760773966578716,
+            "confusion_matrix": {
+              "improving": {
+                "improving": 80,
+                "stable": 87,
+                "worsening": 35
+              },
+              "stable": {
+                "improving": 52,
+                "stable": 212,
+                "worsening": 208
+              },
+              "worsening": {
+                "improving": 19,
+                "stable": 81,
+                "worsening": 363
+              }
+            },
+            "correct_count": 655,
+            "count": 1137,
+            "gold_counts": {
+              "improving": 202,
+              "stable": 472,
+              "worsening": 463
+            },
+            "per_class": {
+              "improving": {
+                "f1": 0.453257790368272,
+                "precision": 0.5298013245033113,
+                "pred_count": 151,
+                "recall": 0.39603960396039606,
+                "support": 202
+              },
+              "no_supported_evidence": {
+                "f1": 0.0,
+                "precision": 0.0,
+                "pred_count": 0,
+                "recall": 0.0,
+                "support": 0
+              },
+              "stable": {
+                "f1": 0.4976525821596244,
+                "precision": 0.5578947368421052,
+                "pred_count": 380,
+                "recall": 0.4491525423728814,
+                "support": 472
+              },
+              "worsening": {
+                "f1": 0.6791393826005612,
+                "precision": 0.599009900990099,
+                "pred_count": 606,
+                "recall": 0.7840172786177105,
+                "support": 463
+              }
+            },
+            "prediction_counts": {
+              "improving": 151,
+              "stable": 380,
+              "worsening": 606
+            },
+            "supported_macro_f1": 0.5433499183761525
+          },
+          "rendered_problem_exact_inclusion_count": 1137
+        },
+        "random_wrong_query": {
+          "canonical_prediction_agreement": {
+            "denominator": 1137,
+            "numerator": 628,
+            "rate": 0.5523306948109059
+          },
+          "delta_supported_macro_f1_vs_canonical_raw": -0.10861095525457681,
+          "raw_metrics": {
+            "accuracy": 0.47757255936675463,
+            "confusion_matrix": {
+              "improving": {
+                "improving": 76,
+                "stable": 75,
+                "worsening": 51
+              },
+              "stable": {
+                "improving": 116,
+                "stable": 159,
+                "worsening": 197
+              },
+              "worsening": {
+                "improving": 59,
+                "stable": 96,
+                "worsening": 308
+              }
+            },
+            "correct_count": 543,
+            "count": 1137,
+            "gold_counts": {
+              "improving": 202,
+              "stable": 472,
+              "worsening": 463
+            },
+            "per_class": {
+              "improving": {
+                "f1": 0.3355408388520971,
+                "precision": 0.30278884462151395,
+                "pred_count": 251,
+                "recall": 0.37623762376237624,
+                "support": 202
+              },
+              "no_supported_evidence": {
+                "f1": 0.0,
+                "precision": 0.0,
+                "pred_count": 0,
+                "recall": 0.0,
+                "support": 0
+              },
+              "stable": {
+                "f1": 0.39650872817955113,
+                "precision": 0.4818181818181818,
+                "pred_count": 330,
+                "recall": 0.336864406779661,
+                "support": 472
+              },
+              "worsening": {
+                "f1": 0.6045142296368989,
+                "precision": 0.5539568345323741,
+                "pred_count": 556,
+                "recall": 0.6652267818574514,
+                "support": 463
+              }
+            },
+            "prediction_counts": {
+              "improving": 251,
+              "stable": 330,
+              "worsening": 556
+            },
+            "supported_macro_f1": 0.4455212655561824
+          },
+          "rendered_problem_exact_inclusion_count": 1137
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "aggregate_membership": {
+    "finding_blind_historical_three_runs": [
+      "historical_generic_run1",
+      "historical_generic_run2",
+      "historical_generic_run3"
+    ],
+    "qlace_historical_three_runs": [
+      "historical_qlace_run1",
+      "historical_qlace_run2",
+      "historical_qlace_run3"
+    ],
+    "qlace_native_three_runs": [
+      "qlace_run1_native",
+      "qlace_run2_native",
+      "qlace_run3_native"
+    ]
+  },
+  "analysis_arm_count": 13,
+  "interpretation": "Native-interface arms re-evaluate the same three adapters. Finding-blind controls use the corresponding three random seeds.",
+  "published_single_run_variants": "Scale, budget and synthetic-abstention tables describe separate experimental conditions.",
+  "reported_random_seed_runs": 3,
+  "run_names": [
+    "Run 1",
+    "Run 2",
+    "Run 3"
+  ]
+}

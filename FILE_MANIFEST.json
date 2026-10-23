@@ -1,0 +1,1046 @@
+{
+  "contents": "Code, protocols, synthetic tests and manuscript aggregate results",
+  "files": [
+    {
+      "bytes": 138,
+      "file": ".gitattributes",
+      "sha256": "7631302a1cc2db9e8378cc25a45ae7cda2aaf536e0783c07cd57de1394c9bf3a",
+      "source": "Q-LACE public-repository documentation, tooling or preserved provenance"
+    },
+    {
+      "bytes": 1041,
+      "file": ".github/workflows/cpu-checks.yml",
+      "sha256": "3e0d2133e8972f38bd032f05c2fbd61d74233891703fb14bbebeeceb584f5e91",
+      "source": "Q-LACE public-repository documentation, tooling or preserved provenance"
+    },
+    {
+      "bytes": 634,
+      "file": ".gitignore",
+      "sha256": "83ab2b2dddfa7dc618ac52178368ae08a502a78da63da63935094e686e2ca562",
+      "source": "Q-LACE public-repository documentation, tooling or preserved provenance"
+    },
+    {
+      "bytes": 934,
+      "file": "CITATION.cff",
+      "sha256": "0c5608b01689e335054e74964ee6cb007689f66b2f317adaaa222dddcb818c1c",
+      "source": "Q-LACE public-repository documentation, tooling or preserved provenance"
+    },
+    {
+      "bytes": 785,
+      "file": "CONTRIBUTING.md",
+      "sha256": "ead2bc9638aae57e10d064e6e220060731ffec046f357647f5f9b0093e5229ca",
+      "source": "Q-LACE public-repository documentation, tooling or preserved provenance"
+    },
+    {
+      "bytes": 1161,
+      "file": "ENVIRONMENT.md",
+      "s1_sha256": "3012439c5a40a6cebb843bae3fae3b98029284b63ae1c0f67720589258ee6a6b",
+      "sha256": "3012439c5a40a6cebb843bae3fae3b98029284b63ae1c0f67720589258ee6a6b",
+      "source": "authored supplementary utility/documentation",
+      "transformations": []
+    },
+    {
+      "bytes": 11357,
+      "file": "LICENSE",
+      "s1_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "source": "LICENSE",
+      "transformations": []
+    },
+    {
+      "bytes": 655,
+      "file": "NOTICE",
+      "sha256": "fb50afd1afc559cc210259bd8ebe8e94cdae2d98170f24594cf8b88fea678112",
+      "source": "Q-LACE public-repository documentation, tooling or preserved provenance"
+    },
+    {
+      "bytes": 837,
+      "file": "PAPER_RUN_SCOPE.json",
+      "s1_sha256": "c90fcb6455c07eb42452cd618d74080306d25b9919d3baa5e901bfd9c70e81fd",
+      "sha256": "c90fcb6455c07eb42452cd618d74080306d25b9919d3baa5e901bfd9c70e81fd",
+      "source": "Verified manuscript three-run membership",
+      "transformations": [
+        "Checked aggregate membership against the reported study runs"
+      ]
+    },
+    {
+      "bytes": 2240,
+      "file": "PORTABILITY.md",
+      "s1_sha256": "735dc36db304a1d512e00e53ca471083b427800917f83bfbb19b5deb905d14bb",
+      "sha256": "5d113182897e0d8fb26fcb0fcdcfb13e999355259e5e0256291565d69c796b7c",
+      "source": "generated portability declaration",
+      "transformations": [
+        "Public-repository adaptation; see PORTABILITY.md"
+      ]
+    },
+    {
+      "bytes": 5739,
+      "file": "README.md",
+      "s1_sha256": "bbd7f2462b4103eb84958a2554046fb9c4525898524c99ba3cdd5baba0116fee",
+      "sha256": "17b4c05c71d86176a67a09fc949c8253e032ea34b4e0885c8f71dbe44c65db76",
+      "source": "authored supplementary utility/documentation",
+      "transformations": [
+        "Public-repository adaptation; see PORTABILITY.md"
+      ]
+    },
+    {
+      "bytes": 10288,
+      "file": "RECONSTRUCTION.md",
+      "s1_sha256": "ee3ac634e5a69a1705705a3d279aa603138247a722817020e0ccca01145e388a",
+      "sha256": "ee3ac634e5a69a1705705a3d279aa603138247a722817020e0ccca01145e388a",
+      "source": "authored supplementary utility/documentation",
+      "transformations": []
+    },
+    {
+      "bytes": 6721,
+      "file": "RESULTS_INDEX.md",
+      "s1_sha256": "05fdaa3d00f17b5945625397575802a6de68084a3d3bdb8bb77e93675ac97c73",
+      "sha256": "05fdaa3d00f17b5945625397575802a6de68084a3d3bdb8bb77e93675ac97c73",
+      "source": "Active CMIG published tables and compiled labels",
+      "transformations": [
+        "Public published-table/graph fields only; no private cases",
+        "Snapshot/projection, not independently recomputed study estimates"
+      ]
+    },
+    {
+      "bytes": 1251,
+      "file": "THIRD_PARTY_NOTICES.md",
+      "s1_sha256": "0bba5884ea95c1c48536a88b635c5a6b4e067c980db7034dc9d7c05a6e517508",
+      "sha256": "7c745350fc517e20a472518308fbe76b6ac223aab1164ada1873432d4b87a245",
+      "source": "authored supplementary utility/documentation",
+      "transformations": [
+        "Public-repository adaptation; see PORTABILITY.md"
+      ]
+    },
+    {
+      "bytes": 92363,
+      "file": "aggregates/baseline_comparison.json",
+      "s1_sha256": "18a6e152a5b581f6831e3c6b0c36f0a4844f0d72337c2519fc8e48ca8e9fc38d",
+      "sha256": "18a6e152a5b581f6831e3c6b0c36f0a4844f0d72337c2519fc8e48ca8e9fc38d",
+      "source": "cmig_validation/baseline/comparison/comparison.json",
+      "transformations": [
+        "Explicit aggregate-field allowlist; no case records"
+      ]
+    },
+    {
+      "bytes": 10429,
+      "file": "aggregates/baseline_metrics.csv",
+      "s1_sha256": "a9809c9de62892a618e16faacf20d3896e4b95d30a2e2d9929abfc582f66d605",
+      "sha256": "a9809c9de62892a618e16faacf20d3896e4b95d30a2e2d9929abfc582f66d605",
+      "source": "cmig_validation/baseline/comparison/comparison.json",
+      "transformations": [
+        "Aggregate metric/interval/sample-SD columns only"
+      ]
+    },
+    {
+      "bytes": 109717,
+      "file": "aggregates/canonical_diagnostics.json",
+      "s1_sha256": "ca0af95954dd43390140931009ccca54c5f1e8261ab809d2db89745b977760ae",
+      "sha256": "ca0af95954dd43390140931009ccca54c5f1e8261ab809d2db89745b977760ae",
+      "source": "cmig_validation/canonical_diagnostics/report.json",
+      "transformations": [
+        "Explicit aggregate-field allowlist; no case records"
+      ]
+    },
+    {
+      "bytes": 58957,
+      "file": "aggregates/catalogue_and_frozen_heads.json",
+      "s1_sha256": "0a95800b123a4fc8c973a59e8936ddbbcd45219cd12967a29df7e6ec0c0a70a8",
+      "sha256": "0a95800b123a4fc8c973a59e8936ddbbcd45219cd12967a29df7e6ec0c0a70a8",
+      "source": "artifacts/cmig_validation/catalogue_raw/report.json",
+      "transformations": [
+        "Explicit aggregate fields only; exclude paths, identifiers and case-level examples"
+      ]
+    },
+    {
+      "bytes": 28428,
+      "file": "aggregates/data_training_runtime.json",
+      "s1_sha256": "4f86af4aac4d6c163edb62004b501a02e1b64d8fa3f06e008953ca2b68815f8a",
+      "sha256": "4f86af4aac4d6c163edb62004b501a02e1b64d8fa3f06e008953ca2b68815f8a",
+      "source": "artifacts/cmig_validation/trainability_ptx/report.json",
+      "transformations": [
+        "Explicit aggregate fields only; exclude paths, identifiers and case-level examples"
+      ]
+    },
+    {
+      "bytes": 16159,
+      "file": "aggregates/existing_50_image_review.json",
+      "s1_sha256": "0416e6ac4b8ff20b27ade9b3ed40133884e8ed9710da40dc286370c1e03463f9",
+      "sha256": "0416e6ac4b8ff20b27ade9b3ed40133884e8ed9710da40dc286370c1e03463f9",
+      "source": "restricted completed image-review audit (case records not distributed)",
+      "transformations": [
+        "Explicit aggregate-field allowlist; no case records"
+      ]
+    },
+    {
+      "bytes": 6693,
+      "file": "aggregates/figure_A1_data.json",
+      "s1_sha256": "df291388eb7eb87c50b47fa902a25820d9d54b2ccf9a7c4cf7bcdb86d939668d",
+      "sha256": "df291388eb7eb87c50b47fa902a25820d9d54b2ccf9a7c4cf7bcdb86d939668d",
+      "source": "figures/figure1_results_data.json",
+      "transformations": [
+        "Public published-table/graph fields only; no private cases",
+        "Snapshot/projection, not independently recomputed study estimates"
+      ]
+    },
+    {
+      "bytes": 17796,
+      "file": "aggregates/manuscript_results_index.json",
+      "s1_sha256": "a10441fd40c6d16ee8e7ec946993bc3d8850663bd15900d0fc68467d55a17450",
+      "sha256": "a10441fd40c6d16ee8e7ec946993bc3d8850663bd15900d0fc68467d55a17450",
+      "source": "Active CMIG published tables and compiled labels",
+      "transformations": [
+        "Public published-table/graph fields only; no private cases",
+        "Snapshot/projection, not independently recomputed study estimates"
+      ]
+    },
+    {
+      "bytes": 135069,
+      "file": "aggregates/manuscript_tables.json",
+      "s1_sha256": "fb5d52ccfacccab1bbd64d8462ce9204e003250e2d32767ae308747b52f0d5f6",
+      "sha256": "fb5d52ccfacccab1bbd64d8462ce9204e003250e2d32767ae308747b52f0d5f6",
+      "source": "Active CMIG published tables and compiled labels",
+      "transformations": [
+        "Public published-table/graph fields only; no private cases",
+        "Snapshot/projection, not independently recomputed study estimates"
+      ]
+    },
+    {
+      "bytes": 905,
+      "file": "aggregates/manuscript_tables/table_1.csv",
+      "s1_sha256": "fe21dc5b4bbbc0ce825da44f89c1926f200c512f449a693be638c1e6cfc30940",
+      "sha256": "fe21dc5b4bbbc0ce825da44f89c1926f200c512f449a693be638c1e6cfc30940",
+      "source": "sections/task_method_eval.tex",
+      "transformations": [
+        "Public published-table/graph fields only; no private cases",
+        "Snapshot/projection, not independently recomputed study estimates"
+      ]
+    },
+    {
+      "bytes": 750,
+      "file": "aggregates/manuscript_tables/table_2.csv",
+      "s1_sha256": "bafba2943fd1197909c6f92dafa6e39c3ec7d058fe4f0bb59dd1179e4d198c78",
+      "sha256": "bafba2943fd1197909c6f92dafa6e39c3ec7d058fe4f0bb59dd1179e4d198c78",
+      "source": "tables/table_aggregation_effects.tex",
+      "transformations": [
+        "Public published-table/graph fields only; no private cases",
+        "Snapshot/projection, not independently recomputed study estimates"
+      ]
+    },
+    {
+      "bytes": 2295,
+      "file": "aggregates/manuscript_tables/table_3.csv",
+      "s1_sha256": "c0364c73f8ed8de88c4ff54c7108db7ae0bd3d03af091d4f143fb394e9a34242",
+      "sha256": "c0364c73f8ed8de88c4ff54c7108db7ae0bd3d03af091d4f143fb394e9a34242",
+      "source": "tables/table1_main_benchmark.tex",
+      "transformations": [
+        "Public published-table/graph fields only; no private cases",
+        "Snapshot/projection, not independently recomputed study estimates"
+      ]
+    },
+    {
+      "bytes": 938,
+      "file": "aggregates/manuscript_tables/table_4.csv",
+      "s1_sha256": "ad6016cffc54f7049fc3149bdaa42fcf92477d09a9d6e87e3a636a44d86cb73a",
+      "sha256": "ad6016cffc54f7049fc3149bdaa42fcf92477d09a9d6e87e3a636a44d86cb73a",
+      "source": "tables/table_query_intervention_controls.tex",
+      "transformations": [
+        "Public published-table/graph fields only; no private cases",
+        "Snapshot/projection, not independently recomputed study estimates"
+      ]
+    },
+    {
+      "bytes": 1889,
+      "file": "aggregates/manuscript_tables/table_A1.csv",
+      "s1_sha256": "fb8b4a46946659e03a476304d7cc2c9e9dcd7f690ac80591a0245a8a89517a94",
+      "sha256": "fb8b4a46946659e03a476304d7cc2c9e9dcd7f690ac80591a0245a8a89517a94",
+      "source": "tables/tableA1_protocol_counts.tex",
+      "transformations": [
+        "Public published-table/graph fields only; no private cases",
+        "Snapshot/projection, not independently recomputed study estimates"
+      ]
+    },
+    {
+      "bytes": 2867,
+      "file": "aggregates/manuscript_tables/table_A10.csv",
+      "s1_sha256": "27ce32c041189e5217a83ae2764872b2e6753c59ca579930a249cd47c75b0aa1",
+      "sha256": "27ce32c041189e5217a83ae2764872b2e6753c59ca579930a249cd47c75b0aa1",
+      "source": "tables/tableA8_secondary_diagnostics.tex",
+      "transformations": [
+        "Public published-table/graph fields only; no private cases",
+        "Snapshot/projection, not independently recomputed study estimates"
+      ]
+    },
+    {
+      "bytes": 1214,
+      "file": "aggregates/manuscript_tables/table_A11.csv",
+      "s1_sha256": "e871c0f915b50b810562da8d5de6d8ef1172f29aaebecd1a1ddaf4b046895828",
+      "sha256": "e871c0f915b50b810562da8d5de6d8ef1172f29aaebecd1a1ddaf4b046895828",
+      "source": "tables/tableA21_fixed_prompt_catalogue.tex",
+      "transformations": [
+        "Public published-table/graph fields only; no private cases",
+        "Snapshot/projection, not independently recomputed study estimates"
+      ]
+    },
+    {
+      "bytes": 1524,
+      "file": "aggregates/manuscript_tables/table_A12.csv",
+      "s1_sha256": "cb34f1b04049181085cbafb6c2236b7d7494f37e126617c5090578f19d5fc038",
+      "sha256": "cb34f1b04049181085cbafb6c2236b7d7494f37e126617c5090578f19d5fc038",
+      "source": "tables/tableA23_existing_50_review.tex",
+      "transformations": [
+        "Public published-table/graph fields only; no private cases",
+        "Snapshot/projection, not independently recomputed study estimates"
+      ]
+    },
+    {
+      "bytes": 583,
+      "file": "aggregates/manuscript_tables/table_A13.csv",
+      "s1_sha256": "92032b1aedceed2f6a7f4a13e7154ac2d9d26874bf0d8c073a336daa49665cc0",
+      "sha256": "92032b1aedceed2f6a7f4a13e7154ac2d9d26874bf0d8c073a336daa49665cc0",
+      "source": "tables/tableA17_matched_finding_blind.tex",
+      "transformations": [
+        "Public published-table/graph fields only; no private cases",
+        "Snapshot/projection, not independently recomputed study estimates"
+      ]
+    },
+    {
+      "bytes": 3152,
+      "file": "aggregates/manuscript_tables/table_A14.csv",
+      "s1_sha256": "c632d91a9b040602b914ea5a4082cf719bd050777ad877f077bffc906eeb0675",
+      "sha256": "c632d91a9b040602b914ea5a4082cf719bd050777ad877f077bffc906eeb0675",
+      "source": "tables/tableA18_query_swap_detailed.tex",
+      "transformations": [
+        "Public published-table/graph fields only; no private cases",
+        "Snapshot/projection, not independently recomputed study estimates"
+      ]
+    },
+    {
+      "bytes": 1241,
+      "file": "aggregates/manuscript_tables/table_A15.csv",
+      "s1_sha256": "f9ce0ba93967eb08a46b9ee391e294617c65f42aeebc284f9fd87dd086ec77a6",
+      "sha256": "f9ce0ba93967eb08a46b9ee391e294617c65f42aeebc284f9fd87dd086ec77a6",
+      "source": "tables/tableA19_query_swap_pairs.tex",
+      "transformations": [
+        "Public published-table/graph fields only; no private cases",
+        "Snapshot/projection, not independently recomputed study estimates"
+      ]
+    },
+    {
+      "bytes": 625,
+      "file": "aggregates/manuscript_tables/table_A16.csv",
+      "s1_sha256": "cba232c287fb687737948c8ab8d635dd29be16895ec4df575da52a1a702fb656",
+      "sha256": "cba232c287fb687737948c8ab8d635dd29be16895ec4df575da52a1a702fb656",
+      "source": "tables/tableA20_finding_blind_oracle.tex",
+      "transformations": [
+        "Public published-table/graph fields only; no private cases",
+        "Snapshot/projection, not independently recomputed study estimates"
+      ]
+    },
+    {
+      "bytes": 1138,
+      "file": "aggregates/manuscript_tables/table_A17.csv",
+      "s1_sha256": "e3569533729405cfb38b2d8faa77704264f1ffab2976c5dc94089facb7192622",
+      "sha256": "e3569533729405cfb38b2d8faa77704264f1ffab2976c5dc94089facb7192622",
+      "source": "tables/tableA22_baseline_metric_bridge.tex",
+      "transformations": [
+        "Public published-table/graph fields only; no private cases",
+        "Snapshot/projection, not independently recomputed study estimates"
+      ]
+    },
+    {
+      "bytes": 1290,
+      "file": "aggregates/manuscript_tables/table_A18.csv",
+      "s1_sha256": "75c80e4d4db52377ecac30856a20db482a62bec7acfce64802e598da72439d47",
+      "sha256": "75c80e4d4db52377ecac30856a20db482a62bec7acfce64802e598da72439d47",
+      "source": "tables/tableA4_nse_stress.tex",
+      "transformations": [
+        "Public published-table/graph fields only; no private cases",
+        "Snapshot/projection, not independently recomputed study estimates"
+      ]
+    },
+    {
+      "bytes": 1164,
+      "file": "aggregates/manuscript_tables/table_A19.csv",
+      "s1_sha256": "273a676a510563aa14e7d57d5c9d664c6aeb763b6ea350e3fe166bb8e195ade8",
+      "sha256": "273a676a510563aa14e7d57d5c9d664c6aeb763b6ea350e3fe166bb8e195ade8",
+      "source": "tables/tableA5_nse_hard_negative_training.tex",
+      "transformations": [
+        "Public published-table/graph fields only; no private cases",
+        "Snapshot/projection, not independently recomputed study estimates"
+      ]
+    },
+    {
+      "bytes": 2726,
+      "file": "aggregates/manuscript_tables/table_A2.csv",
+      "s1_sha256": "76e00a8e1c8668f1c3ee5df0fa3cb597538d61419d202f8ca5f45bd0a213c438",
+      "sha256": "76e00a8e1c8668f1c3ee5df0fa3cb597538d61419d202f8ca5f45bd0a213c438",
+      "source": "tables/tableA7_label_distributions.tex",
+      "transformations": [
+        "Public published-table/graph fields only; no private cases",
+        "Snapshot/projection, not independently recomputed study estimates"
+      ]
+    },
+    {
+      "bytes": 999,
+      "file": "aggregates/manuscript_tables/table_A20.csv",
+      "s1_sha256": "f60d0ce448ce3f8f47aa1da0c950389392c974bbcc66512847c9ed6c4844a99c",
+      "sha256": "f60d0ce448ce3f8f47aa1da0c950389392c974bbcc66512847c9ed6c4844a99c",
+      "source": "tables/tableA5_seed_stability.tex",
+      "transformations": [
+        "Public published-table/graph fields only; no private cases",
+        "Snapshot/projection, not independently recomputed study estimates"
+      ]
+    },
+    {
+      "bytes": 2070,
+      "file": "aggregates/manuscript_tables/table_A3.csv",
+      "s1_sha256": "2165f96afa7b1a398995af1a714ad227f5c4bc4bb9611c44c1d7035ced043e66",
+      "sha256": "2165f96afa7b1a398995af1a714ad227f5c4bc4bb9611c44c1d7035ced043e66",
+      "source": "tables/tableA14_weak_label_rules.tex",
+      "transformations": [
+        "Public published-table/graph fields only; no private cases",
+        "Snapshot/projection, not independently recomputed study estimates"
+      ]
+    },
+    {
+      "bytes": 1472,
+      "file": "aggregates/manuscript_tables/table_A4.csv",
+      "s1_sha256": "6a3e75bd3d96252748ff89ba082eb883bb293038fe6a32574c85888e7c21603c",
+      "sha256": "6a3e75bd3d96252748ff89ba082eb883bb293038fe6a32574c85888e7c21603c",
+      "source": "figures/figureA1_data_overlap.tex",
+      "transformations": [
+        "Public published-table/graph fields only; no private cases",
+        "Snapshot/projection, not independently recomputed study estimates"
+      ]
+    },
+    {
+      "bytes": 1125,
+      "file": "aggregates/manuscript_tables/table_A5.csv",
+      "s1_sha256": "2328373acb3122b4f840ceca94662338ae4f85820bc6c73e049c4176132ce888",
+      "sha256": "2328373acb3122b4f840ceca94662338ae4f85820bc6c73e049c4176132ce888",
+      "source": "figures/figureA2_stage1_stage2_bridge.tex",
+      "transformations": [
+        "Public published-table/graph fields only; no private cases",
+        "Snapshot/projection, not independently recomputed study estimates"
+      ]
+    },
+    {
+      "bytes": 741,
+      "file": "aggregates/manuscript_tables/table_A6.csv",
+      "s1_sha256": "602d9ef34e2b32cba1b46951aeb1e6ad590f60c94f7ede50e698e04a4579b1ae",
+      "sha256": "602d9ef34e2b32cba1b46951aeb1e6ad590f60c94f7ede50e698e04a4579b1ae",
+      "source": "tables/tableA15_query_agreement.tex",
+      "transformations": [
+        "Public published-table/graph fields only; no private cases",
+        "Snapshot/projection, not independently recomputed study estimates"
+      ]
+    },
+    {
+      "bytes": 1653,
+      "file": "aggregates/manuscript_tables/table_A7.csv",
+      "s1_sha256": "4a6562716fd16aa00ac2d40299c7b4a08bb309a3927390a5c872dcf4bd0d4b74",
+      "sha256": "4a6562716fd16aa00ac2d40299c7b4a08bb309a3927390a5c872dcf4bd0d4b74",
+      "source": "tables/tableA13_temporal_controls_full.tex",
+      "transformations": [
+        "Public published-table/graph fields only; no private cases",
+        "Snapshot/projection, not independently recomputed study estimates"
+      ]
+    },
+    {
+      "bytes": 1855,
+      "file": "aggregates/manuscript_tables/table_A8.csv",
+      "s1_sha256": "dac06df9ed85f47693ade68ae061bc898a3339b083e0f4f18705f001c6cdd1b1",
+      "sha256": "dac06df9ed85f47693ade68ae061bc898a3339b083e0f4f18705f001c6cdd1b1",
+      "source": "tables/tableA2_per_finding.tex",
+      "transformations": [
+        "Public published-table/graph fields only; no private cases",
+        "Snapshot/projection, not independently recomputed study estimates"
+      ]
+    },
+    {
+      "bytes": 1559,
+      "file": "aggregates/manuscript_tables/table_A9.csv",
+      "s1_sha256": "8ed4757e86d0b479f048738fe321a76974e0eca00437257a6ba33f4e053db643",
+      "sha256": "8ed4757e86d0b479f048738fe321a76974e0eca00437257a6ba33f4e053db643",
+      "source": "tables/tableA3_transfer.tex",
+      "transformations": [
+        "Public published-table/graph fields only; no private cases",
+        "Snapshot/projection, not independently recomputed study estimates"
+      ]
+    },
+    {
+      "bytes": 42488,
+      "file": "aggregates/query_interventions_and_scale.json",
+      "s1_sha256": "4165c6471960649c92e46e096eee4bf38fad351256eea651f253e02951e6b6c0",
+      "sha256": "4165c6471960649c92e46e096eee4bf38fad351256eea651f253e02951e6b6c0",
+      "source": "artifacts/cmig_validation/query_interventions/report.json",
+      "transformations": [
+        "Explicit aggregate fields only; exclude paths, identifiers and case-level examples"
+      ]
+    },
+    {
+      "bytes": 22100,
+      "file": "aggregates/secondary_diagnostics.json",
+      "s1_sha256": "7887ecff41b2343e5e4c60104bb4ce0c264002efea62f12a836793522ae0a6d8",
+      "sha256": "7887ecff41b2343e5e4c60104bb4ce0c264002efea62f12a836793522ae0a6d8",
+      "source": "artifacts/cmig_validation/secondary_raw/report.json",
+      "transformations": [
+        "Explicit aggregate fields only; exclude paths, identifiers and case-level examples"
+      ]
+    },
+    {
+      "bytes": 84309,
+      "file": "aggregates/temporal_details.json",
+      "s1_sha256": "479ba39e797a33bba9bd5032557f01c3942afb1fe24c87738e72e4142aa9ced3",
+      "sha256": "479ba39e797a33bba9bd5032557f01c3942afb1fe24c87738e72e4142aa9ced3",
+      "source": "artifacts/cmig_validation/temporal/report.json",
+      "transformations": [
+        "Explicit aggregate fields only; exclude paths, identifiers and case-level examples"
+      ]
+    },
+    {
+      "bytes": 1631,
+      "file": "aggregates/temporal_metrics.tsv",
+      "s1_sha256": "8757103f0bdaf194e612e592b0ae70099ca21a85ef88e356f03078cea17de68e",
+      "sha256": "8757103f0bdaf194e612e592b0ae70099ca21a85ef88e356f03078cea17de68e",
+      "source": "cmig_validation/temporal/temporal_metrics.tsv",
+      "transformations": [
+        "Aggregate-only TSV; no case records"
+      ]
+    },
+    {
+      "bytes": 16133,
+      "file": "dataset/build_chest_imagenome_gold_stage1.py",
+      "s1_sha256": "0f1401ffca1f718ce06e606391540a26daf8cebcd9dda346f16d34be7be8638e",
+      "sha256": "0f1401ffca1f718ce06e606391540a26daf8cebcd9dda346f16d34be7be8638e",
+      "source": "dataset/build_chest_imagenome_gold_stage1.py",
+      "transformations": [
+        "Replace owner-specific default path or legacy mount alias"
+      ]
+    },
+    {
+      "bytes": 19428,
+      "file": "dataset/build_mimic_cxr_longitudinal_manifest.py",
+      "s1_sha256": "57a16d3e21d2ede09d353871a4f205d7dee1f4021adc3dfbae4fe4a3d5049c4a",
+      "sha256": "57a16d3e21d2ede09d353871a4f205d7dee1f4021adc3dfbae4fe4a3d5049c4a",
+      "source": "dataset/build_mimic_cxr_longitudinal_manifest.py",
+      "transformations": [
+        "Replace owner-specific default path or legacy mount alias"
+      ]
+    },
+    {
+      "bytes": 15787,
+      "file": "dataset/build_mimic_cxr_longitudinal_stage1_benchmark.py",
+      "s1_sha256": "20afef101bc099073d193e4787ca4c26b55bcbd7e39d83c3b846b644b792be5f",
+      "sha256": "20afef101bc099073d193e4787ca4c26b55bcbd7e39d83c3b846b644b792be5f",
+      "source": "dataset/build_mimic_cxr_longitudinal_stage1_benchmark.py",
+      "transformations": []
+    },
+    {
+      "bytes": 12869,
+      "file": "dataset/build_mimic_cxr_longitudinal_weak_tuples.py",
+      "s1_sha256": "4e8fe5238b2e6d6b3fe65894b1d39f89f0fcd5abf825fc166b065bf4259fdd84",
+      "sha256": "4e8fe5238b2e6d6b3fe65894b1d39f89f0fcd5abf825fc166b065bf4259fdd84",
+      "source": "dataset/build_mimic_cxr_longitudinal_weak_tuples.py",
+      "transformations": []
+    },
+    {
+      "bytes": 18722,
+      "file": "dataset/build_ms_cxr_t_longitudinal_stage1.py",
+      "s1_sha256": "d01396bfe0837f4d339f245f326efd2e5f3ecd0d4197170ec6f86da81c43597f",
+      "sha256": "d01396bfe0837f4d339f245f326efd2e5f3ecd0d4197170ec6f86da81c43597f",
+      "source": "dataset/build_ms_cxr_t_longitudinal_stage1.py",
+      "transformations": [
+        "Replace owner-specific default path or legacy mount alias"
+      ]
+    },
+    {
+      "bytes": 15829,
+      "file": "dataset/build_stage1_temporal_controls.py",
+      "s1_sha256": "f93f521fae6f1feca03f043b0acc4d872a2d5ecbe6a7cd6593b82073a99dc382",
+      "sha256": "f93f521fae6f1feca03f043b0acc4d872a2d5ecbe6a7cd6593b82073a99dc382",
+      "source": "dataset/build_stage1_temporal_controls.py",
+      "transformations": []
+    },
+    {
+      "bytes": 1901,
+      "file": "dataset/longitudinal_manifest_spec.md",
+      "s1_sha256": "7496b6fb2644d89e7f26da6073f954080776948014fe9f52698b861aae6e2b90",
+      "sha256": "7496b6fb2644d89e7f26da6073f954080776948014fe9f52698b861aae6e2b90",
+      "source": "dataset/longitudinal_manifest_spec.md",
+      "transformations": []
+    },
+    {
+      "bytes": 8256,
+      "file": "docs/CONDITIONAL_RELIABILITY.md",
+      "sha256": "29a2ff225af183efbf38980d97ffe72ae00a6e75be7f80b1fc117f0c54b655e5",
+      "source": "Q-LACE public-repository documentation, tooling or preserved provenance"
+    },
+    {
+      "bytes": 2777,
+      "file": "docs/DATA_ACCESS.md",
+      "sha256": "051dfb943c6ac04501433d077660b89f4d756418be36d3c730dcf4a79d065a64",
+      "source": "Q-LACE public-repository documentation, tooling or preserved provenance"
+    },
+    {
+      "bytes": 2755,
+      "file": "medgemma_visual_rft/__init__.py",
+      "s1_sha256": "814e281d92e86441ae241f14c7e08a46eaf7a2dee256b2037d6da4ab87775be9",
+      "sha256": "814e281d92e86441ae241f14c7e08a46eaf7a2dee256b2037d6da4ab87775be9",
+      "source": "medgemma_visual_rft/__init__.py",
+      "transformations": []
+    },
+    {
+      "bytes": 8274,
+      "file": "medgemma_visual_rft/data_schema.py",
+      "s1_sha256": "5f59221f599123a90f7480a4bc14e5cbec5925f1d5a618a915ea9374bfe891c3",
+      "sha256": "5f59221f599123a90f7480a4bc14e5cbec5925f1d5a618a915ea9374bfe891c3",
+      "source": "medgemma_visual_rft/data_schema.py",
+      "transformations": []
+    },
+    {
+      "bytes": 13453,
+      "file": "medgemma_visual_rft/longitudinal_classification.py",
+      "s1_sha256": "8225b9767476b13dd5a1d5870cd9e66f58ee23bd16f3fe4946c88f5ca247e4a9",
+      "sha256": "8225b9767476b13dd5a1d5870cd9e66f58ee23bd16f3fe4946c88f5ca247e4a9",
+      "source": "medgemma_visual_rft/longitudinal_classification.py",
+      "transformations": []
+    },
+    {
+      "bytes": 1542,
+      "file": "medgemma_visual_rft/longitudinal_decoding.py",
+      "s1_sha256": "2112f8144fad238953bb5918de9b2a20fcd5273d41071e17f4a85f819f4433e4",
+      "sha256": "2112f8144fad238953bb5918de9b2a20fcd5273d41071e17f4a85f819f4433e4",
+      "source": "medgemma_visual_rft/longitudinal_decoding.py",
+      "transformations": []
+    },
+    {
+      "bytes": 3910,
+      "file": "medgemma_visual_rft/longitudinal_label_schema.py",
+      "s1_sha256": "b17e677bba05264623bf93c22824b847b99a49a83a40a48815f6b8a75e864257",
+      "sha256": "b17e677bba05264623bf93c22824b847b99a49a83a40a48815f6b8a75e864257",
+      "source": "medgemma_visual_rft/longitudinal_label_schema.py",
+      "transformations": []
+    },
+    {
+      "bytes": 8766,
+      "file": "medgemma_visual_rft/longitudinal_manifest.py",
+      "s1_sha256": "248dff4b9aeab5471626c87d9f50e197ea527e69d2ed71821c485f14ef444435",
+      "sha256": "248dff4b9aeab5471626c87d9f50e197ea527e69d2ed71821c485f14ef444435",
+      "source": "medgemma_visual_rft/longitudinal_manifest.py",
+      "transformations": []
+    },
+    {
+      "bytes": 5885,
+      "file": "medgemma_visual_rft/longitudinal_projection.py",
+      "s1_sha256": "3bd94e8556b338ce103e6d085899a1acc37adfaaba71b8bf8be35ada9cdfe928",
+      "sha256": "3bd94e8556b338ce103e6d085899a1acc37adfaaba71b8bf8be35ada9cdfe928",
+      "source": "medgemma_visual_rft/longitudinal_projection.py",
+      "transformations": []
+    },
+    {
+      "bytes": 9377,
+      "file": "medgemma_visual_rft/longitudinal_schema.py",
+      "s1_sha256": "566390616eb25d49952253dd3079d058ad569877ed76c2b4f7bed99c71a12ac1",
+      "sha256": "566390616eb25d49952253dd3079d058ad569877ed76c2b4f7bed99c71a12ac1",
+      "source": "medgemma_visual_rft/longitudinal_schema.py",
+      "transformations": []
+    },
+    {
+      "bytes": 5780,
+      "file": "medgemma_visual_rft/parser.py",
+      "s1_sha256": "5f001fa2caba44c79d83d53d2eff18451197935ae5185a128a960f2c0b5ad27a",
+      "sha256": "5f001fa2caba44c79d83d53d2eff18451197935ae5185a128a960f2c0b5ad27a",
+      "source": "medgemma_visual_rft/parser.py",
+      "transformations": []
+    },
+    {
+      "bytes": 16472,
+      "file": "medgemma_visual_rft/rewards.py",
+      "s1_sha256": "a89082c6f2bdd3045f80861d58144b4c22c141abbe013683e812b586500faa10",
+      "sha256": "a89082c6f2bdd3045f80861d58144b4c22c141abbe013683e812b586500faa10",
+      "source": "medgemma_visual_rft/rewards.py",
+      "transformations": []
+    },
+    {
+      "bytes": 1298,
+      "file": "protocols/protocol_native_mcq.json",
+      "s1_sha256": "98c0222552ce236f44d7905e1dc455b8ee74312c6329fcdf746c6c3ac7990615",
+      "sha256": "98c0222552ce236f44d7905e1dc455b8ee74312c6329fcdf746c6c3ac7990615",
+      "source": "cmig_validation/baseline/protocol_native_mcq.json",
+      "transformations": []
+    },
+    {
+      "bytes": 1513,
+      "file": "protocols/protocol_square_pad_mcq.json",
+      "s1_sha256": "e4b1bb3c97470c157b18788396028d63866f8dde450e38aa2dd1d80d54dedb76",
+      "sha256": "e4b1bb3c97470c157b18788396028d63866f8dde450e38aa2dd1d80d54dedb76",
+      "source": "cmig_validation/baseline/protocol_square_pad_mcq.json",
+      "transformations": []
+    },
+    {
+      "bytes": 643,
+      "file": "provenance/S1_SOURCE.json",
+      "sha256": "0a37da0eca778b835acab055b48e6af528ad81ddc0eea8d2cff5b0f48d51be1b",
+      "source": "Q-LACE public-repository documentation, tooling or preserved provenance"
+    },
+    {
+      "bytes": 42281,
+      "file": "provenance/s1_file_manifest.json",
+      "sha256": "c0d9e26407e298bbcc038affc227c823076bfdb972b40f7e2aeaadeb58ca152e",
+      "source": "Q-LACE public-repository documentation, tooling or preserved provenance"
+    },
+    {
+      "bytes": 32,
+      "file": "requirements-cpu.txt",
+      "s1_sha256": "6e4957303ea666f4a23156d8683c17e9628b2f0ae937c84aef7cef742cf77686",
+      "sha256": "6e4957303ea666f4a23156d8683c17e9628b2f0ae937c84aef7cef742cf77686",
+      "source": "authored supplementary utility/documentation",
+      "transformations": []
+    },
+    {
+      "bytes": 181,
+      "file": "requirements-gpu.txt",
+      "s1_sha256": "1e0a66aa5b5cca75518a1fc2ea999ca79742fe12bba280d9a37962ddc98530e3",
+      "sha256": "1e0a66aa5b5cca75518a1fc2ea999ca79742fe12bba280d9a37962ddc98530e3",
+      "source": "authored supplementary utility/documentation",
+      "transformations": []
+    },
+    {
+      "bytes": 17971,
+      "file": "scripts/audit_longitudinal_benchmark_overlap.py",
+      "s1_sha256": "224ac51e9b738e05596c1878a9f987242b98998a23b04fe5fadac12332b72a92",
+      "sha256": "224ac51e9b738e05596c1878a9f987242b98998a23b04fe5fadac12332b72a92",
+      "source": "scripts/audit_longitudinal_benchmark_overlap.py",
+      "transformations": []
+    },
+    {
+      "bytes": 36110,
+      "file": "scripts/cmig_baseline_compare.py",
+      "s1_sha256": "ca4be486d23e4224b5ba89f91c13ad12c8d60ac60fcf407e0a656ae5a2da90d5",
+      "sha256": "ca4be486d23e4224b5ba89f91c13ad12c8d60ac60fcf407e0a656ae5a2da90d5",
+      "source": "scripts/cmig_baseline_compare.py",
+      "transformations": []
+    },
+    {
+      "bytes": 28419,
+      "file": "scripts/cmig_canonical_diagnostics.py",
+      "s1_sha256": "3eb38a6f6464d4d7ab93214d4eefee9472f70ad161e9b9a62a01e26c95e1003d",
+      "sha256": "3eb38a6f6464d4d7ab93214d4eefee9472f70ad161e9b9a62a01e26c95e1003d",
+      "source": "scripts/cmig_canonical_diagnostics.py",
+      "transformations": []
+    },
+    {
+      "bytes": 24885,
+      "file": "scripts/cmig_medgemma_baseline.py",
+      "s1_sha256": "7ebe25818aab8d943e38bf2dc73f4a461fad8a53220688bd3b291156fb48783e",
+      "sha256": "7ebe25818aab8d943e38bf2dc73f4a461fad8a53220688bd3b291156fb48783e",
+      "source": "scripts/cmig_medgemma_baseline.py",
+      "transformations": [
+        "Replace owner-specific default path or legacy mount alias"
+      ]
+    },
+    {
+      "bytes": 32007,
+      "file": "scripts/cmig_temporal_validation.py",
+      "s1_sha256": "da9ce427594a32303b4e35f9c4c4fd59e0b816bc8d8ba3f48abfe1e80bf226bb",
+      "sha256": "da9ce427594a32303b4e35f9c4c4fd59e0b816bc8d8ba3f48abfe1e80bf226bb",
+      "source": "scripts/cmig_temporal_validation.py",
+      "transformations": [
+        "Replace owner-specific default path or legacy mount alias"
+      ]
+    },
+    {
+      "bytes": 28703,
+      "file": "scripts/eval_medgemma_longitudinal.py",
+      "s1_sha256": "b0524c56919cf687b255a744f529d88d88f16d96aefd088e7ab15687777ff807",
+      "sha256": "b0524c56919cf687b255a744f529d88d88f16d96aefd088e7ab15687777ff807",
+      "source": "scripts/eval_medgemma_longitudinal.py",
+      "transformations": [
+        "Replace owner-specific default path or legacy mount alias"
+      ]
+    },
+    {
+      "bytes": 17076,
+      "file": "scripts/eval_ms_cxr_t_classification.py",
+      "s1_sha256": "ffc4d9c94a402d96110b807070b7af2d3dc920af86cc6569f487850a2a4b5c68",
+      "sha256": "ffc4d9c94a402d96110b807070b7af2d3dc920af86cc6569f487850a2a4b5c68",
+      "source": "scripts/eval_ms_cxr_t_classification.py",
+      "transformations": []
+    },
+    {
+      "bytes": 4339,
+      "file": "scripts/filter_json_records_by_patient_ids.py",
+      "s1_sha256": "ac11d67e359bb85967c685aaa89e280c5d69ff2be1360c2395fe448b4df87ee6",
+      "sha256": "ac11d67e359bb85967c685aaa89e280c5d69ff2be1360c2395fe448b4df87ee6",
+      "source": "scripts/filter_json_records_by_patient_ids.py",
+      "transformations": []
+    },
+    {
+      "bytes": 23740,
+      "file": "scripts/train_medgemma_longitudinal_sft.py",
+      "s1_sha256": "85a093bc8cf93fde83ef03e861908a1a313c8a904c7ad311c9be4bd5d111999f",
+      "sha256": "85a093bc8cf93fde83ef03e861908a1a313c8a904c7ad311c9be4bd5d111999f",
+      "source": "scripts/train_medgemma_longitudinal_sft.py",
+      "transformations": [
+        "Replace owner-specific default path or legacy mount alias"
+      ]
+    },
+    {
+      "bytes": 2544,
+      "file": "scripts/validate_mimic_cxr_longitudinal_manifest.py",
+      "s1_sha256": "580542d6ff4fdbaab2c76921af27fc3e8691e5a8479e2c1d1b70b05a02361b78",
+      "sha256": "580542d6ff4fdbaab2c76921af27fc3e8691e5a8479e2c1d1b70b05a02361b78",
+      "source": "scripts/validate_mimic_cxr_longitudinal_manifest.py",
+      "transformations": []
+    },
+    {
+      "bytes": 7610,
+      "file": "tests/test_benchmark_overlap_audit.py",
+      "s1_sha256": "ded367de870c0907903d55932c73427bd16db3c32d107ffc53797d9141c1d4a2",
+      "sha256": "ded367de870c0907903d55932c73427bd16db3c32d107ffc53797d9141c1d4a2",
+      "source": "tests/test_benchmark_overlap_audit.py",
+      "transformations": []
+    },
+    {
+      "bytes": 9702,
+      "file": "tests/test_build_stage1_temporal_controls.py",
+      "s1_sha256": "1e5a9164d94a01c6cde8da1a0d62808c7b8815793ab8efbc5302a1450c4fa5b1",
+      "sha256": "1e5a9164d94a01c6cde8da1a0d62808c7b8815793ab8efbc5302a1450c4fa5b1",
+      "source": "tests/test_build_stage1_temporal_controls.py",
+      "transformations": []
+    },
+    {
+      "bytes": 12651,
+      "file": "tests/test_chest_imagenome_gold_stage1_builder.py",
+      "s1_sha256": "97af53b29dc4533c0468f71e208b041c17a42ecab34138dd63f8975093314281",
+      "sha256": "97af53b29dc4533c0468f71e208b041c17a42ecab34138dd63f8975093314281",
+      "source": "tests/test_chest_imagenome_gold_stage1_builder.py",
+      "transformations": []
+    },
+    {
+      "bytes": 10756,
+      "file": "tests/test_cmig_baseline_compare.py",
+      "s1_sha256": "90ea1090694402ad450ac97c6824cda65d7ae38347fb99187e425aa827d50a84",
+      "sha256": "90ea1090694402ad450ac97c6824cda65d7ae38347fb99187e425aa827d50a84",
+      "source": "tests/test_cmig_baseline_compare.py",
+      "transformations": []
+    },
+    {
+      "bytes": 5492,
+      "file": "tests/test_cmig_canonical_diagnostics.py",
+      "s1_sha256": "20524a37761f0a9d8823d60ca2434d421894a7e7215ae98597863d451a2d8f71",
+      "sha256": "20524a37761f0a9d8823d60ca2434d421894a7e7215ae98597863d451a2d8f71",
+      "source": "tests/test_cmig_canonical_diagnostics.py",
+      "transformations": []
+    },
+    {
+      "bytes": 6904,
+      "file": "tests/test_cmig_medgemma_baseline.py",
+      "s1_sha256": "f5782183742a5b0043824ef0fc3d860b7a0ac5ea12cbd38dcadce54c1b744aca",
+      "sha256": "f5782183742a5b0043824ef0fc3d860b7a0ac5ea12cbd38dcadce54c1b744aca",
+      "source": "tests/test_cmig_medgemma_baseline.py",
+      "transformations": []
+    },
+    {
+      "bytes": 5086,
+      "file": "tests/test_cmig_temporal_validation.py",
+      "s1_sha256": "96ab0eb8cb5b7ddb612c9b36c167e1508f4a6c1dbc1d5470c49add847e284588",
+      "sha256": "96ab0eb8cb5b7ddb612c9b36c167e1508f4a6c1dbc1d5470c49add847e284588",
+      "source": "tests/test_cmig_temporal_validation.py",
+      "transformations": []
+    },
+    {
+      "bytes": 5091,
+      "file": "tests/test_documented_commands.py",
+      "s1_sha256": "ccb902190c1aacf8ef58c27417f24442ff43d66a8095710458de7ab5eb9e7c24",
+      "sha256": "f770757761e172b0e270231b075f59bd977acc296dd0af2cb818587a48727d9f",
+      "source": "authored supplementary utility/documentation",
+      "transformations": [
+        "Public-repository adaptation; see PORTABILITY.md"
+      ]
+    },
+    {
+      "bytes": 1674,
+      "file": "tests/test_expanded_aggregates.py",
+      "s1_sha256": "92ce19f4fc18ccbfed0c1793d0212710711c010e310bc3b6c7f3df668bd26247",
+      "sha256": "92ce19f4fc18ccbfed0c1793d0212710711c010e310bc3b6c7f3df668bd26247",
+      "source": "authored supplementary utility/documentation",
+      "transformations": []
+    },
+    {
+      "bytes": 1858,
+      "file": "tests/test_filter_json_records_by_patient_ids.py",
+      "s1_sha256": "94751340d7058dac04f414b5b543e88091cb6844426780428c24313f814a70e4",
+      "sha256": "94751340d7058dac04f414b5b543e88091cb6844426780428c24313f814a70e4",
+      "source": "tests/test_filter_json_records_by_patient_ids.py",
+      "transformations": []
+    },
+    {
+      "bytes": 9089,
+      "file": "tests/test_local_tools.py",
+      "s1_sha256": "e3f2d019299418068d0059d637651255b3bc4def70c677ed91ecbc556a4a0dc9",
+      "sha256": "e3f2d019299418068d0059d637651255b3bc4def70c677ed91ecbc556a4a0dc9",
+      "source": "authored supplementary utility/documentation",
+      "transformations": []
+    },
+    {
+      "bytes": 3035,
+      "file": "tests/test_longitudinal_classification.py",
+      "s1_sha256": "c4a269b2ba4a25014d66dfd9c7ec5d74a7f47641de523f172d38eddf79f9935a",
+      "sha256": "c4a269b2ba4a25014d66dfd9c7ec5d74a7f47641de523f172d38eddf79f9935a",
+      "source": "tests/test_longitudinal_classification.py",
+      "transformations": []
+    },
+    {
+      "bytes": 3329,
+      "file": "tests/test_longitudinal_projection.py",
+      "s1_sha256": "29424e9c383ee953d581dec6cf0e285e118711e697e75ffee643b194df6011dd",
+      "sha256": "29424e9c383ee953d581dec6cf0e285e118711e697e75ffee643b194df6011dd",
+      "source": "tests/test_longitudinal_projection.py",
+      "transformations": []
+    },
+    {
+      "bytes": 9876,
+      "file": "tests/test_manuscript_results.py",
+      "s1_sha256": "11b704c2c7a7b7b4894b1382d33fadba4e141dbdb5b25a08a6e5ac00dfb699f8",
+      "sha256": "11b704c2c7a7b7b4894b1382d33fadba4e141dbdb5b25a08a6e5ac00dfb699f8",
+      "source": "authored supplementary utility/documentation",
+      "transformations": []
+    },
+    {
+      "bytes": 10977,
+      "file": "tests/test_ms_cxr_t_stage1_builder.py",
+      "s1_sha256": "56e77df1a5072bed52d2538d89e45b99bfeb08ae1b16388f42c0df02efb2266f",
+      "sha256": "56e77df1a5072bed52d2538d89e45b99bfeb08ae1b16388f42c0df02efb2266f",
+      "source": "tests/test_ms_cxr_t_stage1_builder.py",
+      "transformations": []
+    },
+    {
+      "bytes": 1133,
+      "file": "tests/test_paper_run_scope.py",
+      "s1_sha256": "e5ad7220b8ba08a6ac1b2820b693fa35a97b6915aac502ac82ee10cbe6e46e74",
+      "sha256": "e5ad7220b8ba08a6ac1b2820b693fa35a97b6915aac502ac82ee10cbe6e46e74",
+      "source": "authored supplementary utility/documentation",
+      "transformations": []
+    },
+    {
+      "bytes": 11334,
+      "file": "tests/test_public_conditional_reliability.py",
+      "sha256": "abc701d0286461a1e26e26abeb589e8874ad991403cf677ae68e7a68f87a8548",
+      "source": "Q-LACE public-repository documentation, tooling or preserved provenance"
+    },
+    {
+      "bytes": 2386,
+      "file": "tests/test_public_release.py",
+      "sha256": "20783b493860481b65d2ff2c11864df06c3a6fdd8c7e5e5c69d7454e7e5eee41",
+      "source": "Q-LACE public-repository documentation, tooling or preserved provenance"
+    },
+    {
+      "bytes": 5960,
+      "file": "tests/test_stage1_benchmark_builder.py",
+      "s1_sha256": "cbc8bb1dcd1175efe3ed968cc22bc5b33b80e3739806d4d8c06c79b6ad2cf44c",
+      "sha256": "cbc8bb1dcd1175efe3ed968cc22bc5b33b80e3739806d4d8c06c79b6ad2cf44c",
+      "source": "tests/test_stage1_benchmark_builder.py",
+      "transformations": []
+    },
+    {
+      "bytes": 2814,
+      "file": "tests/test_weak_tuples.py",
+      "s1_sha256": "4382324c9a131895635a46f9aaebbb95257e59f3c0298d4dd6dab3ae676f192e",
+      "sha256": "4382324c9a131895635a46f9aaebbb95257e59f3c0298d4dd6dab3ae676f192e",
+      "source": "tests/test_weak_tuples.py",
+      "transformations": []
+    },
+    {
+      "bytes": 14869,
+      "file": "tools/analyze_conditional_reliability.py",
+      "sha256": "b7565da1522954c7a7214db35097edd016b2d67c2a9be7a8166c83f71d5da384",
+      "source": "Q-LACE public-repository documentation, tooling or preserved provenance"
+    },
+    {
+      "bytes": 4246,
+      "file": "tools/build_master_csv.py",
+      "s1_sha256": "4b39691646d01753a983c92f9f5765fe0583e679db0abe30c6585e469d56c822",
+      "sha256": "4b39691646d01753a983c92f9f5765fe0583e679db0abe30c6585e469d56c822",
+      "source": "authored supplementary utility/documentation",
+      "transformations": []
+    },
+    {
+      "bytes": 2980,
+      "file": "tools/build_query_swap_controls.py",
+      "sha256": "8d3a13f8677071ac73fa2105eeb531c4ca6cdb718fa2cfea43558bc0eef93245",
+      "source": "Q-LACE public-repository documentation, tooling or preserved provenance"
+    },
+    {
+      "bytes": 5982,
+      "file": "tools/check_public_release.py",
+      "sha256": "e18962d12a62807feb05ab6018224b4b23eade1b65b48fda3b47ebe59596627c",
+      "source": "Q-LACE public-repository documentation, tooling or preserved provenance"
+    },
+    {
+      "bytes": 3016,
+      "file": "tools/compare_local_predictions.py",
+      "s1_sha256": "b8fcd1dea8a62545c459f49fec5283fe31b06bf1e4db5b71f98e95df1ad8269a",
+      "sha256": "b8fcd1dea8a62545c459f49fec5283fe31b06bf1e4db5b71f98e95df1ad8269a",
+      "source": "authored supplementary utility/documentation",
+      "transformations": []
+    },
+    {
+      "bytes": 1618,
+      "file": "tools/make_finding_blind.py",
+      "s1_sha256": "a26b64e20cd793691d30f46fedf1232dd84fdb01a38a1e449b484e28b306f488",
+      "sha256": "a26b64e20cd793691d30f46fedf1232dd84fdb01a38a1e449b484e28b306f488",
+      "source": "authored supplementary utility/documentation",
+      "transformations": []
+    },
+    {
+      "bytes": 4000,
+      "file": "tools/paper_run_scope.py",
+      "s1_sha256": "0b3efca610058e3c5d7a9c9d3437b0f0ccc9adcef86708e81c1246ebaf2941b7",
+      "sha256": "0b3efca610058e3c5d7a9c9d3437b0f0ccc9adcef86708e81c1246ebaf2941b7",
+      "source": "authored supplementary utility/documentation",
+      "transformations": []
+    },
+    {
+      "bytes": 2627,
+      "file": "tools/run_paper_training.py",
+      "s1_sha256": "da6967ccfcf5f2a921dbaa343d7345934c5c6b259c2cba89a6e50b12e58bc327",
+      "sha256": "da6967ccfcf5f2a921dbaa343d7345934c5c6b259c2cba89a6e50b12e58bc327",
+      "source": "authored supplementary utility/documentation",
+      "transformations": []
+    },
+    {
+      "bytes": 2000,
+      "file": "tools/update_file_manifest.py",
+      "sha256": "c11e27fa890cc9c7906ac583ffc2eb453c3551f49f7224d4ad0acff29ddba6a9",
+      "source": "Q-LACE public-repository documentation, tooling or preserved provenance"
+    },
+    {
+      "bytes": 11087,
+      "file": "tools/verify_aggregate_tables.py",
+      "s1_sha256": "a8c564b760dd8476fe05cd2d1f236a4b33e8e58b8668714bc48f678079f82078",
+      "sha256": "a8c564b760dd8476fe05cd2d1f236a4b33e8e58b8668714bc48f678079f82078",
+      "source": "authored supplementary utility/documentation",
+      "transformations": []
+    },
+    {
+      "bytes": 1348,
+      "file": "tools/verify_manifest.py",
+      "s1_sha256": "dcc834e14b8c64a7ce4772d84c8b538213a4f93e80be0b259afbf93a30a45ac0",
+      "sha256": "dcc834e14b8c64a7ce4772d84c8b538213a4f93e80be0b259afbf93a30a45ac0",
+      "source": "authored supplementary utility/documentation",
+      "transformations": []
+    },
+    {
+      "bytes": 15153,
+      "file": "tools/verify_manuscript_results.py",
+      "s1_sha256": "bae9bfa476ce912f83082a966c49280214a85797391b276c7e9974262ffb2b56",
+      "sha256": "bae9bfa476ce912f83082a966c49280214a85797391b276c7e9974262ffb2b56",
+      "source": "authored supplementary utility/documentation",
+      "transformations": []
+    }
+  ],
+  "schema": "qlace-public-file-manifest-v1"
+}

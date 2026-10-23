@@ -1,0 +1,3955 @@
+{
+  "compiled_labels_sha256": "c1274413df002b89b55e113e3716778ab5610784d8db06edb06b2667e92382cf",
+  "context": {
+    "model_figure": {
+      "caption_latex": "Q-LACE pipeline. Report-derived weak supervision adapts a medical VLM for held-out finding-conditioned interval-change classification using 2,048 weak-training examples per run. Adaptation includes language/vision LoRA and trainable input embeddings and output head; other base weights remain frozen. Historical validation-monitoring schedules are specified in Appendix~\\ref{sec:historical_provenance}. ``No evidence'' is an appendix diagnostic, while the three change labels define the benchmark task. The illustrative radiographs are separate NIH Clinical Center images from different patients, arranged to depict input roles; they are not a real longitudinal pair or study evaluation case. NIH credit and download: \\url{https://nihcc.app.box.com/v/ChestXray-NIHCC}; \\cite{wang2017chestxray}. Author-created schematic, exported with Inkscape 1.4.4/cairo 1.18.4.",
+      "caption_text": "Q-LACE pipeline. Report-derived weak supervision adapts a medical VLM for held-out finding-conditioned interval-change classification using 2,048 weak-training examples per run. Adaptation includes language/vision LoRA and trainable input embeddings and output head; other base weights remain frozen. Historical validation-monitoring schedules are specified in Appendix A.10. \"No evidence\" is an appendix diagnostic, while the three change labels define the benchmark task. The illustrative radiographs are separate NIH Clinical Center images from different patients, arranged to depict input roles; they are not a real longitudinal pair or study evaluation case. NIH credit and download: https://nihcc.app.box.com/v/ChestXray-NIHCC; [wang2017chestxray]. Author-created schematic, exported with Inkscape 1.4.4/cairo 1.18.4.",
+      "label": "fig:pipeline",
+      "number": "1",
+      "page": "4",
+      "source": {
+        "relative_path": "figures/figure1_pipeline.tex",
+        "sha256": "2f7a956a54f79cdaddfba3b06046c3880afaee1724434736779c377cdfaa6923"
+      }
+    },
+    "protocol_counts_label": "tab:protocol-counts"
+  },
+  "entrypoint": "CMIG.tex",
+  "reference_numbers": {
+    "fig:historical_benchmark": "A1",
+    "fig:pipeline": "1",
+    "sec:historical_provenance": "A.10",
+    "tab:aggregation_effects": "2",
+    "tab:appendix_matched_budget": "A10",
+    "tab:appendix_nse_hard_negative": "A19",
+    "tab:appendix_nse_stress": "A18",
+    "tab:appendix_paired_deltas": "A10",
+    "tab:appendix_per_finding_controls": "A8",
+    "tab:appendix_secondary_diagnostics": "A10",
+    "tab:appendix_seed_stability": "A20",
+    "tab:appendix_temporal_controls_full": "A7",
+    "tab:appendix_transfer": "A9",
+    "tab:baseline_metric_bridge": "A17",
+    "tab:complementarity_ensemble": "A10",
+    "tab:data-overlap": "A4",
+    "tab:detailed_query_swap": "A14",
+    "tab:existing_fifty_review": "A12",
+    "tab:finding_blind_oracle": "A16",
+    "tab:fixed_prompt_catalogue": "A11",
+    "tab:label-distributions": "A2",
+    "tab:label-semantics": "1",
+    "tab:main_benchmark": "3",
+    "tab:matched_finding_blind": "A13",
+    "tab:protocol-counts": "A1",
+    "tab:query_intervention_agreement": "A6",
+    "tab:query_intervention_controls": "4",
+    "tab:query_swap_finding_pairs": "A15",
+    "tab:scale_ablation": "A10",
+    "tab:stage1-stage2-bridge": "A5",
+    "tab:weak_label_rules": "A3"
+  },
+  "schema": "qlace-published-tables-v1",
+  "scope": "Exact active published-table snapshot, not independent recomputation. LaTeX cells are authoritative; text is a convenience projection. Stored intervals are not regenerated.",
+  "table_count": 24,
+  "tables": [
+    {
+      "aliases": [],
+      "caption_latex": "Label semantics for the supported MS-CXR-T task. Unsupported-query abstention is outside this three-label task and is examined only as an unresolved appendix diagnostic.",
+      "caption_text": "Label semantics for the supported MS-CXR-T task. Unsupported-query abstention is outside this three-label task and is examined only as an unresolved appendix diagnostic.",
+      "label": "tab:label-semantics",
+      "number": "1",
+      "page": "3",
+      "source": {
+        "line": 7,
+        "relative_path": "sections/task_method_eval.tex",
+        "sha256": "e52a235a0d8f739e71c1aba0799598bc3a1975c5a508e2b5d7ed718a33079ac0"
+      },
+      "tabulars": [
+        {
+          "column_spec_latex": "p{0.20\\linewidth}p{0.20\\linewidth}p{0.25\\linewidth}X",
+          "environment": "tabularx",
+          "rows": [
+            {
+              "cells_latex": [
+                "Label",
+                "Role",
+                "Example evidence",
+                "Meaning"
+              ],
+              "cells_text": [
+                "Label",
+                "Role",
+                "Example evidence",
+                "Meaning"
+              ],
+              "row_number": 1
+            },
+            {
+              "cells_latex": [
+                "\\texttt{improving}",
+                "supported",
+                "small effusion $\\rightarrow$ resolved",
+                "queried finding is less severe or resolving"
+              ],
+              "cells_text": [
+                "improving",
+                "supported",
+                "small effusion → resolved",
+                "queried finding is less severe or resolving"
+              ],
+              "row_number": 2
+            },
+            {
+              "cells_latex": [
+                "\\texttt{stable}",
+                "supported",
+                "unchanged pleural effusion",
+                "queried finding is assessable and has no material interval change"
+              ],
+              "cells_text": [
+                "stable",
+                "supported",
+                "unchanged pleural effusion",
+                "queried finding is assessable and has no material interval change"
+              ],
+              "row_number": 3
+            },
+            {
+              "cells_latex": [
+                "\\texttt{worsening}",
+                "supported",
+                "none $\\rightarrow$ new apical pneumothorax",
+                "queried finding is more severe, new, or increased"
+              ],
+              "cells_text": [
+                "worsening",
+                "supported",
+                "none → new apical pneumothorax",
+                "queried finding is more severe, new, or increased"
+              ],
+              "row_number": 4
+            }
+          ],
+          "tabular_number": 1
+        }
+      ]
+    },
+    {
+      "aliases": [],
+      "caption_latex": "Aggregation changes the conclusion about finding conditioning. Each contrast averages the three historical random-seed pairs on all 1,326 benchmark occurrences. Pooled class-balanced accuracy averages the three class recalls across the benchmark; the last row computes that quantity within each finding and averages the five findings equally. Patient-bootstrap intervals condition on the observed runs. Aggregate gains do not establish a comparable gain across equally weighted finding--class strata, nor identify label priors as their cause. Exact historical training-row and base-weight identities are unresolved (Appendix~\\ref{sec:historical_provenance}).",
+      "caption_text": "Aggregation changes the conclusion about finding conditioning. Each contrast averages the three historical random-seed pairs on all 1,326 benchmark occurrences. Pooled class-balanced accuracy averages the three class recalls across the benchmark; the last row computes that quantity within each finding and averages the five findings equally. Patient-bootstrap intervals condition on the observed runs. Aggregate gains do not establish a comparable gain across equally weighted finding--class strata, nor identify label priors as their cause. Exact historical training-row and base-weight identities are unresolved (Appendix A.10).",
+      "label": "tab:aggregation_effects",
+      "number": "2",
+      "page": "7",
+      "source": {
+        "line": 1,
+        "relative_path": "tables/table_aggregation_effects.tex",
+        "sha256": "89b11a4e5d36df952cb183cfcd5a78a7c67942d78d1bb2a34d30d9160fcbae9f"
+      },
+      "tabulars": [
+        {
+          "column_spec_latex": "Xcc",
+          "environment": "tabularx",
+          "rows": [
+            {
+              "cells_latex": [
+                "Historical full-query $-$ finding-blind contrast",
+                "Difference",
+                "95\\% CI"
+              ],
+              "cells_text": [
+                "Historical full-query - finding-blind contrast",
+                "Difference",
+                "95% CI"
+              ],
+              "row_number": 1
+            },
+            {
+              "cells_latex": [
+                "Overall accuracy",
+                "+0.0671",
+                "[0.0454, 0.0893]"
+              ],
+              "cells_text": [
+                "Overall accuracy",
+                "+0.0671",
+                "[0.0454, 0.0893]"
+              ],
+              "row_number": 2
+            },
+            {
+              "cells_latex": [
+                "Pooled supported macro-F1",
+                "+0.1195",
+                "[0.0976, 0.1413]"
+              ],
+              "cells_text": [
+                "Pooled supported macro-F1",
+                "+0.1195",
+                "[0.0976, 0.1413]"
+              ],
+              "row_number": 3
+            },
+            {
+              "cells_latex": [
+                "Pooled class-balanced accuracy",
+                "+0.0522",
+                "[0.0318, 0.0726]"
+              ],
+              "cells_text": [
+                "Pooled class-balanced accuracy",
+                "+0.0522",
+                "[0.0318, 0.0726]"
+              ],
+              "row_number": 4
+            },
+            {
+              "cells_latex": [
+                "Mean five-finding class-balanced accuracy",
+                "+0.0067",
+                "[$-0.0116$, 0.0249]"
+              ],
+              "cells_text": [
+                "Mean five-finding class-balanced accuracy",
+                "+0.0067",
+                "[-0.0116, 0.0249]"
+              ],
+              "row_number": 5
+            }
+          ],
+          "tabular_number": 1
+        }
+      ]
+    },
+    {
+      "aliases": [],
+      "caption_latex": "Historical adaptation and representation comparisons on all 1,326 MS-CXR-T occurrences, with supported three-class F1. Invalid outputs and abstentions count as errors. Three-run values are mean$\\pm$sample SD. Full-query and finding-blind runs share the recorded training recipe; exact historical sampled-row and base-weight identities are unresolved (Appendix~\\ref{sec:historical_provenance}). Frozen heads use larger weak pools. The lower block evaluates existing adapters and the base under one fixed MCQ contract with a shared content-hashed checkpoint and processor. It is a local interface comparison. Additional historical prompt diagnostics appear in Appendix Table~\\ref{tab:fixed_prompt_catalogue}.",
+      "caption_text": "Historical adaptation and representation comparisons on all 1,326 MS-CXR-T occurrences, with supported three-class F1. Invalid outputs and abstentions count as errors. Three-run values are mean±sample SD. Full-query and finding-blind runs share the recorded training recipe; exact historical sampled-row and base-weight identities are unresolved (Appendix A.10). Frozen heads use larger weak pools. The lower block evaluates existing adapters and the base under one fixed MCQ contract with a shared content-hashed checkpoint and processor. It is a local interface comparison. Additional historical prompt diagnostics appear in Appendix Table A11.",
+      "label": "tab:main_benchmark",
+      "number": "3",
+      "page": "7",
+      "source": {
+        "line": 1,
+        "relative_path": "tables/table1_main_benchmark.tex",
+        "sha256": "8f00bbc9cf59318bc2b2649bee13d88eb64df415562769a9932316cdc31830bc"
+      },
+      "tabulars": [
+        {
+          "column_spec_latex": "Xlcc",
+          "environment": "tabularx",
+          "rows": [
+            {
+              "cells_latex": [
+                "System",
+                "Adaptation / input",
+                "Accuracy",
+                "Supported F1"
+              ],
+              "cells_text": [
+                "System",
+                "Adaptation / input",
+                "Accuracy",
+                "Supported F1"
+              ],
+              "row_number": 1
+            },
+            {
+              "cells_latex": [
+                "\\multicolumn{4}{l}{\\textit{Trained label interface and original discriminative controls}}"
+              ],
+              "cells_text": [
+                "Trained label interface and original discriminative controls"
+              ],
+              "row_number": 2
+            },
+            {
+              "cells_latex": [
+                "Q-LACE, three random seeds",
+                "2,048 weak rows / finding query",
+                "0.579$\\pm$0.014",
+                "0.548$\\pm$0.014"
+              ],
+              "cells_text": [
+                "Q-LACE, three random seeds",
+                "2,048 weak rows / finding query",
+                "0.579±0.014",
+                "0.548±0.014"
+              ],
+              "row_number": 3
+            },
+            {
+              "cells_latex": [
+                "Finding-blind, three random seeds",
+                "Recorded recipe / finding removed",
+                "0.512$\\pm$0.040",
+                "0.428$\\pm$0.037"
+              ],
+              "cells_text": [
+                "Finding-blind, three random seeds",
+                "Recorded recipe / finding removed",
+                "0.512±0.040",
+                "0.428±0.037"
+              ],
+              "row_number": 4
+            },
+            {
+              "cells_latex": [
+                "MedGemma, historical prompt-only \\cite{sellergren2025medgemma}",
+                "None / four-label interface",
+                "0.336",
+                "0.287"
+              ],
+              "cells_text": [
+                "MedGemma, historical prompt-only [sellergren2025medgemma]",
+                "None / four-label interface",
+                "0.336",
+                "0.287"
+              ],
+              "row_number": 5
+            },
+            {
+              "cells_latex": [
+                "BioViL-T \\cite{bannur2023biovilt}",
+                "Frozen encoder / full-pool head",
+                "0.554",
+                "0.527"
+              ],
+              "cells_text": [
+                "BioViL-T [bannur2023biovilt]",
+                "Frozen encoder / full-pool head",
+                "0.554",
+                "0.527"
+              ],
+              "row_number": 6
+            },
+            {
+              "cells_latex": [
+                "MedSigLIP \\cite{sellergren2025medgemmaTech}",
+                "Frozen encoder / full-pool head",
+                "0.544",
+                "0.492"
+              ],
+              "cells_text": [
+                "MedSigLIP [sellergren2025medgemmaTech]",
+                "Frozen encoder / full-pool head",
+                "0.544",
+                "0.492"
+              ],
+              "row_number": 7
+            },
+            {
+              "cells_latex": [
+                "TorchXRayVision DenseNet \\cite{cohen2022xrv}",
+                "Frozen encoder / full-pool head",
+                "0.520",
+                "0.459"
+              ],
+              "cells_text": [
+                "TorchXRayVision DenseNet [cohen2022xrv]",
+                "Frozen encoder / full-pool head",
+                "0.520",
+                "0.459"
+              ],
+              "row_number": 8
+            },
+            {
+              "cells_latex": [
+                "Finding-majority prior",
+                "Input-free finding shortcut",
+                "0.488",
+                "0.458"
+              ],
+              "cells_text": [
+                "Finding-majority prior",
+                "Input-free finding shortcut",
+                "0.488",
+                "0.458"
+              ],
+              "row_number": 9
+            },
+            {
+              "cells_latex": [
+                "\\multicolumn{4}{l}{\\textit{Fixed user-only three-option interface, native preprocessing}}"
+              ],
+              "cells_text": [
+                "Fixed user-only three-option interface, native preprocessing"
+              ],
+              "row_number": 10
+            },
+            {
+              "cells_latex": [
+                "MedGemma, prompt-only",
+                "None / same native MCQ",
+                "0.305",
+                "0.278"
+              ],
+              "cells_text": [
+                "MedGemma, prompt-only",
+                "None / same native MCQ",
+                "0.305",
+                "0.278"
+              ],
+              "row_number": 11
+            },
+            {
+              "cells_latex": [
+                "Q-LACE, same three existing adapters",
+                "No new training / same native MCQ",
+                "0.570$\\pm$0.003",
+                "0.515$\\pm$0.021"
+              ],
+              "cells_text": [
+                "Q-LACE, same three existing adapters",
+                "No new training / same native MCQ",
+                "0.570±0.003",
+                "0.515±0.021"
+              ],
+              "row_number": 12
+            }
+          ],
+          "tabular_number": 1
+        }
+      ]
+    },
+    {
+      "aliases": [],
+      "caption_latex": "Primary-run query interventions, rescored from original raw outputs on all 1,326 MS-CXR-T occurrences. All three archived paraphrases are shown rather than selecting the best. F1 deltas use unrounded values. All rows retain the original references; wrong-query variants are mismatched perturbations, not alternative ground truth. Exact rendered query variants and all same-view results are retained in the audit artifact.",
+      "caption_text": "Primary-run query interventions, rescored from original raw outputs on all 1,326 MS-CXR-T occurrences. All three archived paraphrases are shown rather than selecting the best. F1 deltas use unrounded values. All rows retain the original references; wrong-query variants are mismatched perturbations, not alternative ground truth. Exact rendered query variants and all same-view results are retained in the audit artifact.",
+      "label": "tab:query_intervention_controls",
+      "number": "4",
+      "page": "7",
+      "source": {
+        "line": 1,
+        "relative_path": "tables/table_query_intervention_controls.tex",
+        "sha256": "9530f1f251411483cb5b4b35453a3da49625a4e855484f2ee0ae944d358bd84f"
+      },
+      "tabulars": [
+        {
+          "column_spec_latex": "Xccc",
+          "environment": "tabularx",
+          "rows": [
+            {
+              "cells_latex": [
+                "Intervention",
+                "Acc.",
+                "Supp. F1",
+                "$\\Delta$ F1"
+              ],
+              "cells_text": [
+                "Intervention",
+                "Acc.",
+                "Supp. F1",
+                "Δ F1"
+              ],
+              "row_number": 1
+            },
+            {
+              "cells_latex": [
+                "Canonical finding query",
+                "0.592",
+                "0.561",
+                "--"
+              ],
+              "cells_text": [
+                "Canonical finding query",
+                "0.592",
+                "0.561",
+                "--"
+              ],
+              "row_number": 2
+            },
+            {
+              "cells_latex": [
+                "Blank query",
+                "0.558",
+                "0.430",
+                "-0.132"
+              ],
+              "cells_text": [
+                "Blank query",
+                "0.558",
+                "0.430",
+                "-0.132"
+              ],
+              "row_number": 3
+            },
+            {
+              "cells_latex": [
+                "Generic change query",
+                "0.557",
+                "0.443",
+                "-0.118"
+              ],
+              "cells_text": [
+                "Generic change query",
+                "0.557",
+                "0.443",
+                "-0.118"
+              ],
+              "row_number": 4
+            },
+            {
+              "cells_latex": [
+                "Random wrong finding query",
+                "0.485",
+                "0.449",
+                "-0.112"
+              ],
+              "cells_text": [
+                "Random wrong finding query",
+                "0.485",
+                "0.449",
+                "-0.112"
+              ],
+              "row_number": 5
+            },
+            {
+              "cells_latex": [
+                "Paraphrase: how changed",
+                "0.585",
+                "0.542",
+                "-0.020"
+              ],
+              "cells_text": [
+                "Paraphrase: how changed",
+                "0.585",
+                "0.542",
+                "-0.020"
+              ],
+              "row_number": 6
+            },
+            {
+              "cells_latex": [
+                "Paraphrase: label choice",
+                "0.579",
+                "0.520",
+                "-0.041"
+              ],
+              "cells_text": [
+                "Paraphrase: label choice",
+                "0.579",
+                "0.520",
+                "-0.041"
+              ],
+              "row_number": 7
+            },
+            {
+              "cells_latex": [
+                "Paraphrase: relative current",
+                "0.591",
+                "0.553",
+                "-0.008"
+              ],
+              "cells_text": [
+                "Paraphrase: relative current",
+                "0.591",
+                "0.553",
+                "-0.008"
+              ],
+              "row_number": 8
+            }
+          ],
+          "tabular_number": 1
+        }
+      ]
+    },
+    {
+      "aliases": [],
+      "caption_latex": "Protocol inventory. The temporal suite's 5,225 pairs count the 1,045 source pairs once per condition, not distinct physical image pairs after perturbation. The 36,335-row weak pool is MS-CXR-T-excluded; reported Q-LACE samples come from the stricter 25,261-row training partition after Chest ImaGenome exclusion. Transfer is within the MIMIC-derived ecosystem.",
+      "caption_text": "Protocol inventory. The temporal suite's 5,225 pairs count the 1,045 source pairs once per condition, not distinct physical image pairs after perturbation. The 36,335-row weak pool is MS-CXR-T-excluded; reported Q-LACE samples come from the stricter 25,261-row training partition after Chest ImaGenome exclusion. Transfer is within the MIMIC-derived ecosystem.",
+      "label": "tab:protocol-counts",
+      "number": "A1",
+      "page": "13",
+      "source": {
+        "line": 1,
+        "relative_path": "tables/tableA1_protocol_counts.tex",
+        "sha256": "9ae547ed98a16e258061526db022c0c4daeff2d4580866050f0a0b26df05cea1"
+      },
+      "tabulars": [
+        {
+          "column_spec_latex": "lrrrl",
+          "environment": "tabular",
+          "rows": [
+            {
+              "cells_latex": [
+                "Asset",
+                "Query rows",
+                "Image pairs",
+                "Patients",
+                "Role"
+              ],
+              "cells_text": [
+                "Asset",
+                "Query rows",
+                "Image pairs",
+                "Patients",
+                "Role"
+              ],
+              "row_number": 1
+            },
+            {
+              "cells_latex": [
+                "MS-CXR-T \\texttt{all\\_test} benchmark",
+                "1{,}326",
+                "1{,}045",
+                "800",
+                "Primary evaluation"
+              ],
+              "cells_text": [
+                "MS-CXR-T all_test benchmark",
+                "1,326",
+                "1,045",
+                "800",
+                "Primary evaluation"
+              ],
+              "row_number": 2
+            },
+            {
+              "cells_latex": [
+                "MS-CXR-T same-view sensitivity subset",
+                "1{,}137",
+                "881",
+                "684",
+                "Sensitivity analysis"
+              ],
+              "cells_text": [
+                "MS-CXR-T same-view sensitivity subset",
+                "1,137",
+                "881",
+                "684",
+                "Sensitivity analysis"
+              ],
+              "row_number": 3
+            },
+            {
+              "cells_latex": [
+                "MS-CXR-T temporal-control suite",
+                "6{,}630",
+                "5{,}225",
+                "800",
+                "Temporal controls"
+              ],
+              "cells_text": [
+                "MS-CXR-T temporal-control suite",
+                "6,630",
+                "5,225",
+                "800",
+                "Temporal controls"
+              ],
+              "row_number": 4
+            },
+            {
+              "cells_latex": [
+                "MS-CXR-T synthetic NSE stress set",
+                "500",
+                "411",
+                "363",
+                "Diagnostic"
+              ],
+              "cells_text": [
+                "MS-CXR-T synthetic NSE stress set",
+                "500",
+                "411",
+                "363",
+                "Diagnostic"
+              ],
+              "row_number": 5
+            },
+            {
+              "cells_latex": [
+                "MS-CXR-T synthetic NSE candidate pool",
+                "3{,}861",
+                "1{,}035",
+                "800",
+                "NSE diagnostic candidates"
+              ],
+              "cells_text": [
+                "MS-CXR-T synthetic NSE candidate pool",
+                "3,861",
+                "1,035",
+                "800",
+                "NSE diagnostic candidates"
+              ],
+              "row_number": 6
+            },
+            {
+              "cells_latex": [
+                "MS-CXR-T \\texttt{patient\\_hash} split view",
+                "1{,}326",
+                "1{,}045",
+                "800",
+                "Dev-only bookkeeping view"
+              ],
+              "cells_text": [
+                "MS-CXR-T patient_hash split view",
+                "1,326",
+                "1,045",
+                "800",
+                "Dev-only bookkeeping view"
+              ],
+              "row_number": 7
+            },
+            {
+              "cells_latex": [
+                "Weak Q-LACE benchmark-aligned training pool",
+                "36{,}335",
+                "30{,}856",
+                "10{,}462",
+                "Weak training pool"
+              ],
+              "cells_text": [
+                "Weak Q-LACE benchmark-aligned training pool",
+                "36,335",
+                "30,856",
+                "10,462",
+                "Weak training pool"
+              ],
+              "row_number": 8
+            },
+            {
+              "cells_latex": [
+                "MIMIC chronology manifest (MS-CXR-T excluded)",
+                "N/A",
+                "134{,}315",
+                "29{,}680",
+                "Chronology source"
+              ],
+              "cells_text": [
+                "MIMIC chronology manifest (MS-CXR-T excluded)",
+                "N/A",
+                "134,315",
+                "29,680",
+                "Chronology source"
+              ],
+              "row_number": 9
+            },
+            {
+              "cells_latex": [
+                "Chest ImaGenome projected transfer eval",
+                "215",
+                "152",
+                "152",
+                "Transfer"
+              ],
+              "cells_text": [
+                "Chest ImaGenome projected transfer eval",
+                "215",
+                "152",
+                "152",
+                "Transfer"
+              ],
+              "row_number": 10
+            }
+          ],
+          "tabular_number": 1
+        }
+      ]
+    },
+    {
+      "aliases": [],
+      "caption_latex": "Label and finding distributions, with counts separated for readability. PE denotes pleural effusion and PTX pneumothorax. Historical primary draws are reconstructed from the current strict pools (25,261 training and 5,459 validation rows); aggregate agreement with logs does not establish exact historical row identity (Appendix~\\ref{sec:historical_provenance}). Validation rows describe the historical monitoring sample. Synthetic NSE labels are a diagnostic convention, not clinical ground truth.",
+      "caption_text": "Label and finding distributions, with counts separated for readability. PE denotes pleural effusion and PTX pneumothorax. Historical primary draws are reconstructed from the current strict pools (25,261 training and 5,459 validation rows); aggregate agreement with logs does not establish exact historical row identity (Appendix A.10). Validation rows describe the historical monitoring sample. Synthetic NSE labels are a diagnostic convention, not clinical ground truth.",
+      "label": "tab:label-distributions",
+      "number": "A2",
+      "page": "13",
+      "source": {
+        "line": 1,
+        "relative_path": "tables/tableA7_label_distributions.tex",
+        "sha256": "c46933e95167f0e063dca2b0f308e3622e9ea07c8a513ffce030374fa1d9f095"
+      },
+      "tabulars": [
+        {
+          "column_spec_latex": "Xrrrrrr",
+          "environment": "tabularx",
+          "rows": [
+            {
+              "cells_latex": [
+                "Artifact",
+                "Rows",
+                "Patients",
+                "Improving",
+                "Stable",
+                "Worsening",
+                "NSE"
+              ],
+              "cells_text": [
+                "Artifact",
+                "Rows",
+                "Patients",
+                "Improving",
+                "Stable",
+                "Worsening",
+                "NSE"
+              ],
+              "row_number": 1
+            },
+            {
+              "cells_latex": [
+                "Weak train, frozen-head pool",
+                "25{,}335",
+                "7{,}284",
+                "7{,}153",
+                "8{,}055",
+                "10{,}127",
+                "0"
+              ],
+              "cells_text": [
+                "Weak train, frozen-head pool",
+                "25,335",
+                "7,284",
+                "7,153",
+                "8,055",
+                "10,127",
+                "0"
+              ],
+              "row_number": 2
+            },
+            {
+              "cells_latex": [
+                "Weak validation, frozen-head pool",
+                "5{,}478",
+                "1{,}589",
+                "1{,}571",
+                "1{,}699",
+                "2{,}208",
+                "0"
+              ],
+              "cells_text": [
+                "Weak validation, frozen-head pool",
+                "5,478",
+                "1,589",
+                "1,571",
+                "1,699",
+                "2,208",
+                "0"
+              ],
+              "row_number": 3
+            },
+            {
+              "cells_latex": [
+                "Historical primary train (reconstructed)",
+                "2{,}048",
+                "1{,}569",
+                "562",
+                "666",
+                "820",
+                "0"
+              ],
+              "cells_text": [
+                "Historical primary train (reconstructed)",
+                "2,048",
+                "1,569",
+                "562",
+                "666",
+                "820",
+                "0"
+              ],
+              "row_number": 4
+            },
+            {
+              "cells_latex": [
+                "Historical primary validation (reconstructed)",
+                "512",
+                "392",
+                "148",
+                "177",
+                "187",
+                "0"
+              ],
+              "cells_text": [
+                "Historical primary validation (reconstructed)",
+                "512",
+                "392",
+                "148",
+                "177",
+                "187",
+                "0"
+              ],
+              "row_number": 5
+            },
+            {
+              "cells_latex": [
+                "MS-CXR-T all rows",
+                "1{,}326",
+                "800",
+                "241",
+                "530",
+                "555",
+                "0"
+              ],
+              "cells_text": [
+                "MS-CXR-T all rows",
+                "1,326",
+                "800",
+                "241",
+                "530",
+                "555",
+                "0"
+              ],
+              "row_number": 6
+            },
+            {
+              "cells_latex": [
+                "MS-CXR-T same-view subset",
+                "1{,}137",
+                "684",
+                "202",
+                "472",
+                "463",
+                "0"
+              ],
+              "cells_text": [
+                "MS-CXR-T same-view subset",
+                "1,137",
+                "684",
+                "202",
+                "472",
+                "463",
+                "0"
+              ],
+              "row_number": 7
+            },
+            {
+              "cells_latex": [
+                "Synthetic unsupported-query candidates",
+                "500",
+                "363",
+                "0",
+                "0",
+                "0",
+                "500"
+              ],
+              "cells_text": [
+                "Synthetic unsupported-query candidates",
+                "500",
+                "363",
+                "0",
+                "0",
+                "0",
+                "500"
+              ],
+              "row_number": 8
+            }
+          ],
+          "tabular_number": 1
+        },
+        {
+          "column_spec_latex": "Xrrrrr",
+          "environment": "tabularx",
+          "rows": [
+            {
+              "cells_latex": [
+                "Artifact",
+                "Consolidation",
+                "Edema",
+                "PE",
+                "Pneumonia",
+                "PTX"
+              ],
+              "cells_text": [
+                "Artifact",
+                "Consolidation",
+                "Edema",
+                "PE",
+                "Pneumonia",
+                "PTX"
+              ],
+              "row_number": 1
+            },
+            {
+              "cells_latex": [
+                "Weak train, frozen-head pool",
+                "2{,}533",
+                "6{,}419",
+                "11{,}907",
+                "2{,}717",
+                "1{,}759"
+              ],
+              "cells_text": [
+                "Weak train, frozen-head pool",
+                "2,533",
+                "6,419",
+                "11,907",
+                "2,717",
+                "1,759"
+              ],
+              "row_number": 2
+            },
+            {
+              "cells_latex": [
+                "Weak validation, frozen-head pool",
+                "535",
+                "1{,}374",
+                "2{,}498",
+                "603",
+                "468"
+              ],
+              "cells_text": [
+                "Weak validation, frozen-head pool",
+                "535",
+                "1,374",
+                "2,498",
+                "603",
+                "468"
+              ],
+              "row_number": 3
+            },
+            {
+              "cells_latex": [
+                "Historical primary train (reconstructed)",
+                "193",
+                "542",
+                "979",
+                "194",
+                "140"
+              ],
+              "cells_text": [
+                "Historical primary train (reconstructed)",
+                "193",
+                "542",
+                "979",
+                "194",
+                "140"
+              ],
+              "row_number": 4
+            },
+            {
+              "cells_latex": [
+                "Historical primary validation (reconstructed)",
+                "45",
+                "121",
+                "247",
+                "54",
+                "45"
+              ],
+              "cells_text": [
+                "Historical primary validation (reconstructed)",
+                "45",
+                "121",
+                "247",
+                "54",
+                "45"
+              ],
+              "row_number": 5
+            },
+            {
+              "cells_latex": [
+                "MS-CXR-T all rows",
+                "201",
+                "266",
+                "411",
+                "237",
+                "211"
+              ],
+              "cells_text": [
+                "MS-CXR-T all rows",
+                "201",
+                "266",
+                "411",
+                "237",
+                "211"
+              ],
+              "row_number": 6
+            },
+            {
+              "cells_latex": [
+                "MS-CXR-T same-view subset",
+                "181",
+                "233",
+                "355",
+                "199",
+                "169"
+              ],
+              "cells_text": [
+                "MS-CXR-T same-view subset",
+                "181",
+                "233",
+                "355",
+                "199",
+                "169"
+              ],
+              "row_number": 7
+            },
+            {
+              "cells_latex": [
+                "Synthetic unsupported-query candidates",
+                "100",
+                "100",
+                "100",
+                "100",
+                "100"
+              ],
+              "cells_text": [
+                "Synthetic unsupported-query candidates",
+                "100",
+                "100",
+                "100",
+                "100",
+                "100"
+              ],
+              "row_number": 8
+            }
+          ],
+          "tabular_number": 2
+        }
+      ]
+    },
+    {
+      "aliases": [],
+      "caption_latex": "Illustrative weak-label construction rules used before benchmark projection. The rules operate on comparison, findings, and impression text; they are conservative by design and produce training candidates rather than benchmark truth.",
+      "caption_text": "Illustrative weak-label construction rules used before benchmark projection. The rules operate on comparison, findings, and impression text; they are conservative by design and produce training candidates rather than benchmark truth.",
+      "label": "tab:weak_label_rules",
+      "number": "A3",
+      "page": "14",
+      "source": {
+        "line": 1,
+        "relative_path": "tables/tableA14_weak_label_rules.tex",
+        "sha256": "0f5877a47ac0b43543b9aca6416f06a5e86b191a2ca51ba37e9e50af0b7dc1a6"
+      },
+      "tabulars": [
+        {
+          "column_spec_latex": "p{4.0cm}p{2.5cm}p{2.2cm}p{5.2cm}",
+          "environment": "tabular",
+          "rows": [
+            {
+              "cells_latex": [
+                "Report phrase pattern",
+                "Example finding",
+                "Weak label",
+                "Handling"
+              ],
+              "cells_text": [
+                "Report phrase pattern",
+                "Example finding",
+                "Weak label",
+                "Handling"
+              ],
+              "row_number": 1
+            },
+            {
+              "cells_latex": [
+                "``decreased'' / ``improved'' finding",
+                "edema",
+                "\\texttt{improving}",
+                "keep if mapped to one of the five benchmark heads"
+              ],
+              "cells_text": [
+                "\"decreased\" / \"improved\" finding",
+                "edema",
+                "improving",
+                "keep if mapped to one of the five benchmark heads"
+              ],
+              "row_number": 2
+            },
+            {
+              "cells_latex": [
+                "``stable'' / ``unchanged'' finding",
+                "pleural effusion",
+                "\\texttt{stable}",
+                "keep as supported no-material-change evidence"
+              ],
+              "cells_text": [
+                "\"stable\" / \"unchanged\" finding",
+                "pleural effusion",
+                "stable",
+                "keep as supported no-material-change evidence"
+              ],
+              "row_number": 3
+            },
+            {
+              "cells_latex": [
+                "``increased'' / ``worsened'' / ``new'' finding",
+                "pneumothorax",
+                "\\texttt{worsening}",
+                "keep unless the change cue is negated; negated change cues are filtered"
+              ],
+              "cells_text": [
+                "\"increased\" / \"worsened\" / \"new\" finding",
+                "pneumothorax",
+                "worsening",
+                "keep unless the change cue is negated; negated change cues are filtered"
+              ],
+              "row_number": 4
+            },
+            {
+              "cells_latex": [
+                "``no interval change in'' finding",
+                "any benchmark finding",
+                "\\texttt{stable}",
+                "keep when the queried finding is explicitly supported"
+              ],
+              "cells_text": [
+                "\"no interval change in\" finding",
+                "any benchmark finding",
+                "stable",
+                "keep when the queried finding is explicitly supported"
+              ],
+              "row_number": 5
+            },
+            {
+              "cells_latex": [
+                "``no evidence of worsening'' / negated change cue",
+                "any benchmark finding",
+                "filtered",
+                "drop non-stable change sentence rather than create a negative row"
+              ],
+              "cells_text": [
+                "\"no evidence of worsening\" / negated change cue",
+                "any benchmark finding",
+                "filtered",
+                "drop non-stable change sentence rather than create a negative row"
+              ],
+              "row_number": 6
+            },
+            {
+              "cells_latex": [
+                "conflicting improving and worsening cues for same head",
+                "any benchmark finding",
+                "filtered",
+                "drop ambiguous rows; when multiple non-conflicting tuples map to one pair/head, select a deterministic representative tuple"
+              ],
+              "cells_text": [
+                "conflicting improving and worsening cues for same head",
+                "any benchmark finding",
+                "filtered",
+                "drop ambiguous rows; when multiple non-conflicting tuples map to one pair/head, select a deterministic representative tuple"
+              ],
+              "row_number": 7
+            }
+          ],
+          "tabular_number": 1
+        }
+      ]
+    },
+    {
+      "aliases": [],
+      "caption_latex": "Appendix overlap-audit summary. Before cleanup, the preview export overlapped benchmark content. The audited weak pools have full-manifest zero-overlap intersections against the MS-CXR-T benchmark pairs used in \\texttt{all\\_test} reporting, not from a spot check alone. These checks do not independently certify exact historical per-run sample membership.",
+      "caption_text": "Appendix overlap-audit summary. Before cleanup, the preview export overlapped benchmark content. The audited weak pools have full-manifest zero-overlap intersections against the MS-CXR-T benchmark pairs used in all_test reporting, not from a spot check alone. These checks do not independently certify exact historical per-run sample membership.",
+      "label": "tab:data-overlap",
+      "number": "A4",
+      "page": "14",
+      "source": {
+        "line": 1,
+        "relative_path": "figures/figureA1_data_overlap.tex",
+        "sha256": "0db9759cda67ba5fc6970fde69fecac987bf0a3eb2e32cdb8719dd975b96f198"
+      },
+      "tabulars": [
+        {
+          "column_spec_latex": "p{3.3cm}p{2.3cm}p{3.2cm}p{6.1cm}",
+          "environment": "tabular",
+          "rows": [
+            {
+              "cells_latex": [
+                "Audit target",
+                "Rows checked",
+                "Overlap evidence",
+                "Interpretation"
+              ],
+              "cells_text": [
+                "Audit target",
+                "Rows checked",
+                "Overlap evidence",
+                "Interpretation"
+              ],
+              "row_number": 1
+            },
+            {
+              "cells_latex": [
+                "Initial preview export",
+                "148",
+                "17 overlapping preview rows",
+                "These rows share 9 unique identifier values with benchmark content. The preview was discarded and is not used in any reported result."
+              ],
+              "cells_text": [
+                "Initial preview export",
+                "148",
+                "17 overlapping preview rows",
+                "These rows share 9 unique identifier values with benchmark content. The preview was discarded and is not used in any reported result."
+              ],
+              "row_number": 2
+            },
+            {
+              "cells_latex": [
+                "Full Q-LACE weak pool vs. MS-CXR-T",
+                "36{,}335 weak rows / 1{,}045 benchmark pairs",
+                "0 shared identifiers",
+                "Exact manifest intersection over patient, study, DICOM/image, pair, image-path, and image-basename identifiers."
+              ],
+              "cells_text": [
+                "Full Q-LACE weak pool vs. MS-CXR-T",
+                "36,335 weak rows / 1,045 benchmark pairs",
+                "0 shared identifiers",
+                "Exact manifest intersection over patient, study, DICOM/image, pair, image-path, and image-basename identifiers."
+              ],
+              "row_number": 3
+            },
+            {
+              "cells_latex": [
+                "Stricter Q-LACE weak pool vs. MS-CXR-T",
+                "36{,}224 weak rows / 1{,}045 benchmark pairs",
+                "0 shared identifiers",
+                "Same full-manifest check after also excluding the Chest ImaGenome transfer export."
+              ],
+              "cells_text": [
+                "Stricter Q-LACE weak pool vs. MS-CXR-T",
+                "36,224 weak rows / 1,045 benchmark pairs",
+                "0 shared identifiers",
+                "Same full-manifest check after also excluding the Chest ImaGenome transfer export."
+              ],
+              "row_number": 4
+            }
+          ],
+          "tabular_number": 1
+        }
+      ]
+    },
+    {
+      "aliases": [],
+      "caption_latex": "Short appendix-only tuple-bridge note. Parser-valid open tuple outputs can be misaligned with a canonical benchmark query, so benchmark claims use the query-conditioned Q-LACE label contract. Illustrative contract example; not a clinically validated case.",
+      "caption_text": "Short appendix-only tuple-bridge note. Parser-valid open tuple outputs can be misaligned with a canonical benchmark query, so benchmark claims use the query-conditioned Q-LACE label contract. Illustrative contract example; not a clinically validated case.",
+      "label": "tab:stage1-stage2-bridge",
+      "number": "A5",
+      "page": "14",
+      "source": {
+        "line": 1,
+        "relative_path": "figures/figureA2_stage1_stage2_bridge.tex",
+        "sha256": "3991d1dfe07c28a6c2ffc8db1a52cfc3ec8af6ca36fa357bed6fef332b74e76d"
+      },
+      "tabulars": [
+        {
+          "column_spec_latex": "p{1.7cm}p{3.0cm}p{3.0cm}",
+          "environment": "tabular",
+          "rows": [
+            {
+              "cells_latex": [
+                "Representation",
+                "Output for the same image pair",
+                "Appendix-only point"
+              ],
+              "cells_text": [
+                "Representation",
+                "Output for the same image pair",
+                "Appendix-only point"
+              ],
+              "row_number": 1
+            },
+            {
+              "cells_latex": [
+                "Query-conditioned target",
+                "\\parbox[t]{3.0cm}{\\texttt{Query: interval change for consolidation?}\\\\ \\texttt{Benchmark label: stable}}",
+                "This is the benchmark contract used for the paper's quantitative claims."
+              ],
+              "cells_text": [
+                "Query-conditioned target",
+                "Query: interval change for consolidation?\nBenchmark label: stable",
+                "This is the benchmark contract used for the paper's quantitative claims."
+              ],
+              "row_number": 2
+            },
+            {
+              "cells_latex": [
+                "Open tuple bridge",
+                "\\parbox[t]{3.0cm}{\\texttt{worsening bilateral opacity}\\\\ \\texttt{worsening pleural effusion}}",
+                "Parser-valid tuple output can still be misaligned with the queried finding."
+              ],
+              "cells_text": [
+                "Open tuple bridge",
+                "worsening bilateral opacity\nworsening pleural effusion",
+                "Parser-valid tuple output can still be misaligned with the queried finding."
+              ],
+              "row_number": 3
+            },
+            {
+              "cells_latex": [
+                "Q-LACE answer",
+                "\\texttt{stable}",
+                "Directly scored against the queried finding."
+              ],
+              "cells_text": [
+                "Q-LACE answer",
+                "stable",
+                "Directly scored against the queried finding."
+              ],
+              "row_number": 4
+            }
+          ],
+          "tabular_number": 1
+        }
+      ]
+    },
+    {
+      "aliases": [],
+      "caption_latex": "Prediction agreement between each Q-LACE query intervention and the canonical all-test run. Agreement is measured against the canonical Q-LACE prediction, not against the benchmark label. Corrupted queries change predictions more often than semantic-preserving paraphrases, supporting the main query-intervention table; paraphrase names denote the templates used for this diagnostic.",
+      "caption_text": "Prediction agreement between each Q-LACE query intervention and the canonical all-test run. Agreement is measured against the canonical Q-LACE prediction, not against the benchmark label. Corrupted queries change predictions more often than semantic-preserving paraphrases, supporting the main query-intervention table; paraphrase names denote the templates used for this diagnostic.",
+      "label": "tab:query_intervention_agreement",
+      "number": "A6",
+      "page": "14",
+      "source": {
+        "line": 1,
+        "relative_path": "tables/tableA15_query_agreement.tex",
+        "sha256": "c4752d685b878b663eb85b6ec1bf24084ddf0427da1ecbde051c81f314df6fd7"
+      },
+      "tabulars": [
+        {
+          "column_spec_latex": "lcc",
+          "environment": "tabular",
+          "rows": [
+            {
+              "cells_latex": [
+                "Intervention",
+                "Agreement with canonical",
+                "Prediction changed"
+              ],
+              "cells_text": [
+                "Intervention",
+                "Agreement with canonical",
+                "Prediction changed"
+              ],
+              "row_number": 1
+            },
+            {
+              "cells_latex": [
+                "Blank query",
+                "0.738",
+                "0.262"
+              ],
+              "cells_text": [
+                "Blank query",
+                "0.738",
+                "0.262"
+              ],
+              "row_number": 2
+            },
+            {
+              "cells_latex": [
+                "Generic change query",
+                "0.744",
+                "0.256"
+              ],
+              "cells_text": [
+                "Generic change query",
+                "0.744",
+                "0.256"
+              ],
+              "row_number": 3
+            },
+            {
+              "cells_latex": [
+                "Random wrong finding query",
+                "0.557",
+                "0.443"
+              ],
+              "cells_text": [
+                "Random wrong finding query",
+                "0.557",
+                "0.443"
+              ],
+              "row_number": 4
+            },
+            {
+              "cells_latex": [
+                "Paraphrase: how changed",
+                "0.898",
+                "0.102"
+              ],
+              "cells_text": [
+                "Paraphrase: how changed",
+                "0.898",
+                "0.102"
+              ],
+              "row_number": 5
+            },
+            {
+              "cells_latex": [
+                "Paraphrase: label choice",
+                "0.843",
+                "0.157"
+              ],
+              "cells_text": [
+                "Paraphrase: label choice",
+                "0.843",
+                "0.157"
+              ],
+              "row_number": 6
+            },
+            {
+              "cells_latex": [
+                "Paraphrase: relative current",
+                "0.929",
+                "0.071"
+              ],
+              "cells_text": [
+                "Paraphrase: relative current",
+                "0.929",
+                "0.071"
+              ],
+              "row_number": 7
+            }
+          ],
+          "tabular_number": 1
+        }
+      ]
+    },
+    {
+      "aliases": [],
+      "caption_latex": "Temporal-control summary: 1,326 manifest occurrences per condition, 6,630 rows per system. F1 columns use the same supported three-class macro-F1 definition as the main task. Positive prior-drop deltas mean removing the prior helped. Duplicate stable rate is the fraction predicting \\texttt{stable} across all 1,326 duplicate-image pairs. TRC uses all 1,326 baseline/reversal pairs after transforming \\texttt{improving}/\\texttt{worsening} and preserving \\texttt{stable}. Q-LACE values describe the primary run only.",
+      "caption_text": "Temporal-control summary: 1,326 manifest occurrences per condition, 6,630 rows per system. F1 columns use the same supported three-class macro-F1 definition as the main task. Positive prior-drop deltas mean removing the prior helped. Duplicate stable rate is the fraction predicting stable across all 1,326 duplicate-image pairs. TRC uses all 1,326 baseline/reversal pairs after transforming improving/worsening and preserving stable. Q-LACE values describe the primary run only.",
+      "label": "tab:appendix_temporal_controls_full",
+      "number": "A7",
+      "page": "15",
+      "source": {
+        "line": 1,
+        "relative_path": "tables/tableA13_temporal_controls_full.tex",
+        "sha256": "4b484622d3634a47244b4fba1aaf28cf1b1073f4425ea9d3e919ca3317e20d64"
+      },
+      "tabulars": [
+        {
+          "column_spec_latex": "lcccccc",
+          "environment": "tabular",
+          "rows": [
+            {
+              "cells_latex": [
+                "System",
+                "Baseline F1",
+                "Prior-drop F1",
+                "$\\Delta$ prior-drop",
+                "Random-prior F1",
+                "Duplicate stable rate",
+                "TRC"
+              ],
+              "cells_text": [
+                "System",
+                "Baseline F1",
+                "Prior-drop F1",
+                "Δ prior-drop",
+                "Random-prior F1",
+                "Duplicate stable rate",
+                "TRC"
+              ],
+              "row_number": 1
+            },
+            {
+              "cells_latex": [
+                "MedSigLIP current-only",
+                "0.432",
+                "0.432",
+                "+0.000",
+                "0.432",
+                "0.431",
+                "0.422"
+              ],
+              "cells_text": [
+                "MedSigLIP current-only",
+                "0.432",
+                "0.432",
+                "+0.000",
+                "0.432",
+                "0.431",
+                "0.422"
+              ],
+              "row_number": 2
+            },
+            {
+              "cells_latex": [
+                "MedSigLIP prior/current",
+                "0.492",
+                "0.310",
+                "-0.182",
+                "0.388",
+                "0.741",
+                "0.444"
+              ],
+              "cells_text": [
+                "MedSigLIP prior/current",
+                "0.492",
+                "0.310",
+                "-0.182",
+                "0.388",
+                "0.741",
+                "0.444"
+              ],
+              "row_number": 3
+            },
+            {
+              "cells_latex": [
+                "BioViL-T current-only",
+                "0.474",
+                "0.474",
+                "+0.000",
+                "0.474",
+                "0.290",
+                "0.343"
+              ],
+              "cells_text": [
+                "BioViL-T current-only",
+                "0.474",
+                "0.474",
+                "+0.000",
+                "0.474",
+                "0.290",
+                "0.343"
+              ],
+              "row_number": 4
+            },
+            {
+              "cells_latex": [
+                "BioViL-T prior/current",
+                "0.527",
+                "0.453",
+                "-0.074",
+                "0.424",
+                "0.319",
+                "0.509"
+              ],
+              "cells_text": [
+                "BioViL-T prior/current",
+                "0.527",
+                "0.453",
+                "-0.074",
+                "0.424",
+                "0.319",
+                "0.509"
+              ],
+              "row_number": 5
+            },
+            {
+              "cells_latex": [
+                "DenseNet current-only",
+                "0.453",
+                "0.453",
+                "+0.000",
+                "0.453",
+                "0.339",
+                "0.364"
+              ],
+              "cells_text": [
+                "DenseNet current-only",
+                "0.453",
+                "0.453",
+                "+0.000",
+                "0.453",
+                "0.339",
+                "0.364"
+              ],
+              "row_number": 6
+            },
+            {
+              "cells_latex": [
+                "DenseNet prior/current",
+                "0.459",
+                "0.299",
+                "-0.160",
+                "0.376",
+                "0.851",
+                "0.492"
+              ],
+              "cells_text": [
+                "DenseNet prior/current",
+                "0.459",
+                "0.299",
+                "-0.160",
+                "0.376",
+                "0.851",
+                "0.492"
+              ],
+              "row_number": 7
+            },
+            {
+              "cells_latex": [
+                "MedGemma historical prompt-only",
+                "0.279",
+                "0.286",
+                "+0.007",
+                "0.278",
+                "0.039",
+                "0.241"
+              ],
+              "cells_text": [
+                "MedGemma historical prompt-only",
+                "0.279",
+                "0.286",
+                "+0.007",
+                "0.278",
+                "0.039",
+                "0.241"
+              ],
+              "row_number": 8
+            },
+            {
+              "cells_latex": [
+                "Q-LACE primary run",
+                "0.558",
+                "0.408",
+                "-0.150",
+                "0.414",
+                "0.582",
+                "0.603"
+              ],
+              "cells_text": [
+                "Q-LACE primary run",
+                "0.558",
+                "0.408",
+                "-0.150",
+                "0.414",
+                "0.582",
+                "0.603"
+              ],
+              "row_number": 9
+            }
+          ],
+          "tabular_number": 1
+        }
+      ]
+    },
+    {
+      "aliases": [],
+      "caption_latex": "Original raw-output per-finding comparison on all 1,326 MS-CXR-T \\texttt{all\\_test} occurrences. Q/B denotes the primary Q-LACE run and BioViL-T prior/current. F1 is supported three-class macro-F1; W-rec. is worsening recall. Deltas use 10,000 paired patient-bootstrap samples and are exploratory without multiplicity adjustment. Historical per-output image provenance follows the archived manifest order.",
+      "caption_text": "Original raw-output per-finding comparison on all 1,326 MS-CXR-T all_test occurrences. Q/B denotes the primary Q-LACE run and BioViL-T prior/current. F1 is supported three-class macro-F1; W-rec. is worsening recall. Deltas use 10,000 paired patient-bootstrap samples and are exploratory without multiplicity adjustment. Historical per-output image provenance follows the archived manifest order.",
+      "label": "tab:appendix_per_finding_controls",
+      "number": "A8",
+      "page": "15",
+      "source": {
+        "line": 1,
+        "relative_path": "tables/tableA2_per_finding.tex",
+        "sha256": "63530cd9c92b2948fb04f5a21a6ceb014cf8cf98d744e6ceadd156223282c92e"
+      },
+      "tabulars": [
+        {
+          "column_spec_latex": "lrrcccccc",
+          "environment": "tabular",
+          "rows": [
+            {
+              "cells_latex": [
+                "Finding",
+                "$n$",
+                "W $n$",
+                "Acc. Q/B",
+                "$\\Delta$ Acc. [95\\% CI]",
+                "F1 Q/B",
+                "$\\Delta$ F1 [95\\% CI]",
+                "W-rec. Q/B",
+                "$\\Delta$ W-rec. [95\\% CI]"
+              ],
+              "cells_text": [
+                "Finding",
+                "n",
+                "W n",
+                "Acc. Q/B",
+                "Δ Acc. [95% CI]",
+                "F1 Q/B",
+                "Δ F1 [95% CI]",
+                "W-rec. Q/B",
+                "Δ W-rec. [95% CI]"
+              ],
+              "row_number": 1
+            },
+            {
+              "cells_latex": [
+                "Consolidation",
+                "201",
+                "88",
+                ".507/.483",
+                "+.025 [$-.028$,+.078]",
+                ".409/.395",
+                "+.014 [$-.052$,+.079]",
+                ".920/.852",
+                "+.068 [$-.010$,+.146]"
+              ],
+              "cells_text": [
+                "Consolidation",
+                "201",
+                "88",
+                ".507/.483",
+                "+.025 [-.028,+.078]",
+                ".409/.395",
+                "+.014 [-.052,+.079]",
+                ".920/.852",
+                "+.068 [-.010,+.146]"
+              ],
+              "row_number": 2
+            },
+            {
+              "cells_latex": [
+                "Edema",
+                "266",
+                "114",
+                ".643/.613",
+                "+.030 [$-.018$,+.077]",
+                ".529/.477",
+                "+.053 [$-.001$,+.107]",
+                ".825/.807",
+                "+.018 [$-.060$,+.096]"
+              ],
+              "cells_text": [
+                "Edema",
+                "266",
+                "114",
+                ".643/.613",
+                "+.030 [-.018,+.077]",
+                ".529/.477",
+                "+.053 [-.001,+.107]",
+                ".825/.807",
+                "+.018 [-.060,+.096]"
+              ],
+              "row_number": 3
+            },
+            {
+              "cells_latex": [
+                "Pleural effusion (PE)",
+                "411",
+                "131",
+                ".582/.521",
+                "+.061 [+.010,+.112]",
+                ".493/.492",
+                "+.001 [$-.055$,+.054]",
+                ".802/.748",
+                "+.053 [$-.022$,+.127]"
+              ],
+              "cells_text": [
+                "Pleural effusion (PE)",
+                "411",
+                "131",
+                ".582/.521",
+                "+.061 [+.010,+.112]",
+                ".493/.492",
+                "+.001 [-.055,+.054]",
+                ".802/.748",
+                "+.053 [-.022,+.127]"
+              ],
+              "row_number": 4
+            },
+            {
+              "cells_latex": [
+                "Pneumonia",
+                "237",
+                "159",
+                ".658/.654",
+                "+.004 [$-.038$,+.048]",
+                ".421/.343",
+                "+.078 [+.006,+.151]",
+                ".887/.950",
+                "$-.063$ [$-.113$,$-.014$]"
+              ],
+              "cells_text": [
+                "Pneumonia",
+                "237",
+                "159",
+                ".658/.654",
+                "+.004 [-.038,+.048]",
+                ".421/.343",
+                "+.078 [+.006,+.151]",
+                ".887/.950",
+                "-.063 [-.113,-.014]"
+              ],
+              "row_number": 5
+            },
+            {
+              "cells_latex": [
+                "Pneumothorax (PTX)",
+                "211",
+                "63",
+                ".555/.498",
+                "+.057 [+.005,+.114]",
+                ".288/.316",
+                "$-.028$ [$-.096$,+.045]",
+                ".095/.063",
+                "+.032 [$-.055$,+.125]"
+              ],
+              "cells_text": [
+                "Pneumothorax (PTX)",
+                "211",
+                "63",
+                ".555/.498",
+                "+.057 [+.005,+.114]",
+                ".288/.316",
+                "-.028 [-.096,+.045]",
+                ".095/.063",
+                "+.032 [-.055,+.125]"
+              ],
+              "row_number": 6
+            }
+          ],
+          "tabular_number": 1
+        }
+      ]
+    },
+    {
+      "aliases": [],
+      "caption_latex": "Secondary transfer evaluation on the projected Chest ImaGenome export normalized to the five MS-CXR-T heads. All F1 entries use the three supported change labels; legacy fixed four-class scores remain in provenance artifacts only. These rows are descriptive because the export is small and transfer confidence intervals are not included. This MIMIC-CXR/Chest ImaGenome projection is not an external institutional validation.",
+      "caption_text": "Secondary transfer evaluation on the projected Chest ImaGenome export normalized to the five MS-CXR-T heads. All F1 entries use the three supported change labels; legacy fixed four-class scores remain in provenance artifacts only. These rows are descriptive because the export is small and transfer confidence intervals are not included. This MIMIC-CXR/Chest ImaGenome projection is not an external institutional validation.",
+      "label": "tab:appendix_transfer",
+      "number": "A9",
+      "page": "15",
+      "source": {
+        "line": 1,
+        "relative_path": "tables/tableA3_transfer.tex",
+        "sha256": "785e446349d2c6d7fbbb2a2201353ad083b948c3ddecc8faaf6caa82c0773fa6"
+      },
+      "tabulars": [
+        {
+          "column_spec_latex": "lrrrrl",
+          "environment": "tabular",
+          "rows": [
+            {
+              "cells_latex": [
+                "System",
+                "Query rows",
+                "Patient pairs",
+                "Accuracy",
+                "Supported macro-F1",
+                "Scope note"
+              ],
+              "cells_text": [
+                "System",
+                "Query rows",
+                "Patient pairs",
+                "Accuracy",
+                "Supported macro-F1",
+                "Scope note"
+              ],
+              "row_number": 1
+            },
+            {
+              "cells_latex": [
+                "MedSigLIP current-only",
+                "215",
+                "152",
+                "0.530",
+                "0.511",
+                "Projected 3-way transfer; \\texttt{anatomy=\"unspecified\"}"
+              ],
+              "cells_text": [
+                "MedSigLIP current-only",
+                "215",
+                "152",
+                "0.530",
+                "0.511",
+                "Projected 3-way transfer; anatomy=\"unspecified\""
+              ],
+              "row_number": 2
+            },
+            {
+              "cells_latex": [
+                "MedSigLIP prior/current",
+                "215",
+                "152",
+                "0.479",
+                "0.474",
+                "Projected 3-way transfer; \\texttt{anatomy=\"unspecified\"}"
+              ],
+              "cells_text": [
+                "MedSigLIP prior/current",
+                "215",
+                "152",
+                "0.479",
+                "0.474",
+                "Projected 3-way transfer; anatomy=\"unspecified\""
+              ],
+              "row_number": 3
+            },
+            {
+              "cells_latex": [
+                "BioViL-T current-only",
+                "215",
+                "152",
+                "0.535",
+                "0.513",
+                "Matched current-image frozen encoder"
+              ],
+              "cells_text": [
+                "BioViL-T current-only",
+                "215",
+                "152",
+                "0.535",
+                "0.513",
+                "Matched current-image frozen encoder"
+              ],
+              "row_number": 4
+            },
+            {
+              "cells_latex": [
+                "BioViL-T prior/current",
+                "215",
+                "152",
+                "0.558",
+                "0.534",
+                "Matched prior/current temporal encoder"
+              ],
+              "cells_text": [
+                "BioViL-T prior/current",
+                "215",
+                "152",
+                "0.558",
+                "0.534",
+                "Matched prior/current temporal encoder"
+              ],
+              "row_number": 5
+            },
+            {
+              "cells_latex": [
+                "MedGemma prompt-only",
+                "215",
+                "152",
+                "0.330",
+                "0.392",
+                "Closed-set label-mode transfer baseline"
+              ],
+              "cells_text": [
+                "MedGemma prompt-only",
+                "215",
+                "152",
+                "0.330",
+                "0.392",
+                "Closed-set label-mode transfer baseline"
+              ],
+              "row_number": 6
+            },
+            {
+              "cells_latex": [
+                "\\textbf{Q-LACE}",
+                "\\textbf{215}",
+                "\\textbf{152}",
+                "\\textbf{0.577}",
+                "\\textbf{0.534}",
+                "Primary prior/current Q-LACE checkpoint"
+              ],
+              "cells_text": [
+                "Q-LACE",
+                "215",
+                "152",
+                "0.577",
+                "0.534",
+                "Primary prior/current Q-LACE checkpoint"
+              ],
+              "row_number": 7
+            }
+          ],
+          "tabular_number": 1
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "tab:complementarity_ensemble",
+        "tab:appendix_paired_deltas",
+        "tab:scale_ablation",
+        "tab:appendix_matched_budget"
+      ],
+      "caption_latex": "Secondary diagnostics. Panel (a) shows primary-run Q-LACE--BioViL-T complementarity on all 1{,}326 raw-output occurrences; its oracle uses test labels and is not deployable. Panel (b) reports 10,000 paired patient-bootstrap deltas conditional on three observed runs; the F1 interval versus BioViL-T includes zero. Panel (c) rescores original outputs at three sample caps from the same strict weak pool. Its 2,048-row anchor is the primary adapter; evaluation/resumption differences and incomplete environment provenance make this descriptive scale sensitivity, not a fully controlled size experiment or model selection. Panel (d) compares full weak-pool frozen heads with 2,048/512-row budget sanity checks.",
+      "caption_text": "Secondary diagnostics. Panel (a) shows primary-run Q-LACE--BioViL-T complementarity on all 1,326 raw-output occurrences; its oracle uses test labels and is not deployable. Panel (b) reports 10,000 paired patient-bootstrap deltas conditional on three observed runs; the F1 interval versus BioViL-T includes zero. Panel (c) rescores original outputs at three sample caps from the same strict weak pool. Its 2,048-row anchor is the primary adapter; evaluation/resumption differences and incomplete environment provenance make this descriptive scale sensitivity, not a fully controlled size experiment or model selection. Panel (d) compares full weak-pool frozen heads with 2,048/512-row budget sanity checks.",
+      "label": "tab:appendix_secondary_diagnostics",
+      "number": "A10",
+      "page": "16",
+      "source": {
+        "line": 1,
+        "relative_path": "tables/tableA8_secondary_diagnostics.tex",
+        "sha256": "12cdcd32931d9cd92edd2840e14877cd5120fcb40cce7c3ecb4f0ddfc1c9f12e"
+      },
+      "tabulars": [
+        {
+          "column_spec_latex": "Xrcc",
+          "environment": "tabularx",
+          "rows": [
+            {
+              "cells_latex": [
+                "Diagnostic",
+                "Count",
+                "Acc.",
+                "Supp. F1"
+              ],
+              "cells_text": [
+                "Diagnostic",
+                "Count",
+                "Acc.",
+                "Supp. F1"
+              ],
+              "row_number": 1
+            },
+            {
+              "cells_latex": [
+                "Q-LACE, primary raw outputs",
+                "1326",
+                "0.592",
+                "0.561"
+              ],
+              "cells_text": [
+                "Q-LACE, primary raw outputs",
+                "1326",
+                "0.592",
+                "0.561"
+              ],
+              "row_number": 2
+            },
+            {
+              "cells_latex": [
+                "BioViL-T prior/current",
+                "1326",
+                "0.554",
+                "0.527"
+              ],
+              "cells_text": [
+                "BioViL-T prior/current",
+                "1326",
+                "0.554",
+                "0.527"
+              ],
+              "row_number": 3
+            },
+            {
+              "cells_latex": [
+                "Both correct",
+                "636",
+                "--",
+                "--"
+              ],
+              "cells_text": [
+                "Both correct",
+                "636",
+                "--",
+                "--"
+              ],
+              "row_number": 4
+            },
+            {
+              "cells_latex": [
+                "Q-LACE correct / BioViL-T wrong",
+                "149",
+                "--",
+                "--"
+              ],
+              "cells_text": [
+                "Q-LACE correct / BioViL-T wrong",
+                "149",
+                "--",
+                "--"
+              ],
+              "row_number": 5
+            },
+            {
+              "cells_latex": [
+                "BioViL-T correct / Q-LACE wrong",
+                "98",
+                "--",
+                "--"
+              ],
+              "cells_text": [
+                "BioViL-T correct / Q-LACE wrong",
+                "98",
+                "--",
+                "--"
+              ],
+              "row_number": 6
+            },
+            {
+              "cells_latex": [
+                "Both wrong, same prediction",
+                "359",
+                "--",
+                "--"
+              ],
+              "cells_text": [
+                "Both wrong, same prediction",
+                "359",
+                "--",
+                "--"
+              ],
+              "row_number": 7
+            },
+            {
+              "cells_latex": [
+                "Both wrong, different prediction",
+                "84",
+                "--",
+                "--"
+              ],
+              "cells_text": [
+                "Both wrong, different prediction",
+                "84",
+                "--",
+                "--"
+              ],
+              "row_number": 8
+            },
+            {
+              "cells_latex": [
+                "Oracle over both (test-label upper bound)",
+                "1326",
+                "0.666",
+                "--"
+              ],
+              "cells_text": [
+                "Oracle over both (test-label upper bound)",
+                "1326",
+                "0.666",
+                "--"
+              ],
+              "row_number": 9
+            }
+          ],
+          "tabular_number": 1
+        },
+        {
+          "column_spec_latex": "Xcc",
+          "environment": "tabularx",
+          "rows": [
+            {
+              "cells_latex": [
+                "Comparison",
+                "$\\Delta$ Acc. [95\\% CI]",
+                "$\\Delta$ supp. F1 [95\\% CI]"
+              ],
+              "cells_text": [
+                "Comparison",
+                "Δ Acc. [95% CI]",
+                "Δ supp. F1 [95% CI]"
+              ],
+              "row_number": 1
+            },
+            {
+              "cells_latex": [
+                "3 random-seed mean vs BioViL-T",
+                "+0.0259 [0.0046, 0.0477]",
+                "+0.0209 [$-0.0021$, 0.0449]"
+              ],
+              "cells_text": [
+                "3 random-seed mean vs BioViL-T",
+                "+0.0259 [0.0046, 0.0477]",
+                "+0.0209 [-0.0021, 0.0449]"
+              ],
+              "row_number": 2
+            },
+            {
+              "cells_latex": [
+                "3 random-seed full vs generic query",
+                "+0.0671 [0.0454, 0.0893]",
+                "+0.1195 [0.0976, 0.1413]"
+              ],
+              "cells_text": [
+                "3 random-seed full vs generic query",
+                "+0.0671 [0.0454, 0.0893]",
+                "+0.1195 [0.0976, 0.1413]"
+              ],
+              "row_number": 3
+            }
+          ],
+          "tabular_number": 2
+        },
+        {
+          "column_spec_latex": "Xlccc",
+          "environment": "tabularx",
+          "rows": [
+            {
+              "cells_latex": [
+                "Training rows",
+                "Status",
+                "All-test acc.",
+                "All-test supp. F1",
+                "Same-view supp. F1"
+              ],
+              "cells_text": [
+                "Training rows",
+                "Status",
+                "All-test acc.",
+                "All-test supp. F1",
+                "Same-view supp. F1"
+              ],
+              "row_number": 1
+            },
+            {
+              "cells_latex": [
+                "512",
+                "completed",
+                "0.480",
+                "0.475",
+                "0.462"
+              ],
+              "cells_text": [
+                "512",
+                "completed",
+                "0.480",
+                "0.475",
+                "0.462"
+              ],
+              "row_number": 2
+            },
+            {
+              "cells_latex": [
+                "2{,}048",
+                "completed",
+                "0.592",
+                "0.561",
+                "0.554"
+              ],
+              "cells_text": [
+                "2,048",
+                "completed",
+                "0.592",
+                "0.561",
+                "0.554"
+              ],
+              "row_number": 3
+            },
+            {
+              "cells_latex": [
+                "8{,}192",
+                "completed",
+                "0.590",
+                "0.569",
+                "0.560"
+              ],
+              "cells_text": [
+                "8,192",
+                "completed",
+                "0.590",
+                "0.569",
+                "0.560"
+              ],
+              "row_number": 4
+            }
+          ],
+          "tabular_number": 3
+        },
+        {
+          "column_spec_latex": "Xlrrrr",
+          "environment": "tabularx",
+          "rows": [
+            {
+              "cells_latex": [
+                "Comparator",
+                "Rows",
+                "all-test acc.",
+                "all-test F1",
+                "same-view acc.",
+                "same-view F1"
+              ],
+              "cells_text": [
+                "Comparator",
+                "Rows",
+                "all-test acc.",
+                "all-test F1",
+                "same-view acc.",
+                "same-view F1"
+              ],
+              "row_number": 1
+            },
+            {
+              "cells_latex": [
+                "MedSigLIP prior/current",
+                "full",
+                "0.544",
+                "0.492",
+                "0.532",
+                "0.481"
+              ],
+              "cells_text": [
+                "MedSigLIP prior/current",
+                "full",
+                "0.544",
+                "0.492",
+                "0.532",
+                "0.481"
+              ],
+              "row_number": 2
+            },
+            {
+              "cells_latex": [
+                "MedSigLIP prior/current",
+                "2{,}048/512",
+                "0.487",
+                "0.462",
+                "0.477",
+                "0.454"
+              ],
+              "cells_text": [
+                "MedSigLIP prior/current",
+                "2,048/512",
+                "0.487",
+                "0.462",
+                "0.477",
+                "0.454"
+              ],
+              "row_number": 3
+            },
+            {
+              "cells_latex": [
+                "BioViL-T prior/current",
+                "full",
+                "0.554",
+                "0.527",
+                "0.536",
+                "0.512"
+              ],
+              "cells_text": [
+                "BioViL-T prior/current",
+                "full",
+                "0.554",
+                "0.527",
+                "0.536",
+                "0.512"
+              ],
+              "row_number": 4
+            },
+            {
+              "cells_latex": [
+                "BioViL-T prior/current",
+                "2{,}048/512",
+                "0.527",
+                "0.485",
+                "0.513",
+                "0.476"
+              ],
+              "cells_text": [
+                "BioViL-T prior/current",
+                "2,048/512",
+                "0.527",
+                "0.485",
+                "0.513",
+                "0.476"
+              ],
+              "row_number": 5
+            }
+          ],
+          "tabular_number": 4
+        }
+      ]
+    },
+    {
+      "aliases": [],
+      "caption_latex": "Historical fixed-prompt diagnostics, rescored from all 1,326 raw occurrences and 1,137 same-view occurrences. F1 uses the three supported classes. Models were not adapted or selected with prompt optimization; protocol differences preclude superiority claims over optimized systems. Old joined-output confidence intervals are not reused for these corrected points. $\\dagger$CheXagent's side-by-side composite filenames were reused within colliding source IDs: labels can be rescored, but correct prior-specific rendering cannot be certified retrospectively.",
+      "caption_text": "Historical fixed-prompt diagnostics, rescored from all 1,326 raw occurrences and 1,137 same-view occurrences. F1 uses the three supported classes. Models were not adapted or selected with prompt optimization; protocol differences preclude superiority claims over optimized systems. Old joined-output confidence intervals are not reused for these corrected points. †CheXagent's side-by-side composite filenames were reused within colliding source IDs: labels can be rescored, but correct prior-specific rendering cannot be certified retrospectively.",
+      "label": "tab:fixed_prompt_catalogue",
+      "number": "A11",
+      "page": "16",
+      "source": {
+        "line": 1,
+        "relative_path": "tables/tableA21_fixed_prompt_catalogue.tex",
+        "sha256": "bde4dca41d33f7719588ebc4858a2c91c9a99f8907b02f05748946d7a4e561dd"
+      },
+      "tabulars": [
+        {
+          "column_spec_latex": "Xccc",
+          "environment": "tabularx",
+          "rows": [
+            {
+              "cells_latex": [
+                "Historical fixed-prompt diagnostic",
+                "No-prior/current",
+                "Prior/current",
+                "Same-view"
+              ],
+              "cells_text": [
+                "Historical fixed-prompt diagnostic",
+                "No-prior/current",
+                "Prior/current",
+                "Same-view"
+              ],
+              "row_number": 1
+            },
+            {
+              "cells_latex": [
+                "",
+                "Acc. / F1",
+                "Acc. / F1",
+                "Acc. / F1"
+              ],
+              "cells_text": [
+                "",
+                "Acc. / F1",
+                "Acc. / F1",
+                "Acc. / F1"
+              ],
+              "row_number": 2
+            },
+            {
+              "cells_latex": [
+                "Qwen2.5-VL-7B",
+                "0.097 / 0.136",
+                "0.236 / 0.226",
+                "0.227 / 0.217"
+              ],
+              "cells_text": [
+                "Qwen2.5-VL-7B",
+                "0.097 / 0.136",
+                "0.236 / 0.226",
+                "0.227 / 0.217"
+              ],
+              "row_number": 3
+            },
+            {
+              "cells_latex": [
+                "CheXagent side-by-side MC$^{\\dagger}$",
+                "0.461 / 0.442",
+                "0.441 / 0.394",
+                "0.454 / 0.407"
+              ],
+              "cells_text": [
+                "CheXagent side-by-side MC^†",
+                "0.461 / 0.442",
+                "0.441 / 0.394",
+                "0.454 / 0.407"
+              ],
+              "row_number": 4
+            },
+            {
+              "cells_latex": [
+                "Lingshu-7B",
+                "0.399 / 0.231",
+                "0.382 / 0.227",
+                "0.379 / 0.217"
+              ],
+              "cells_text": [
+                "Lingshu-7B",
+                "0.399 / 0.231",
+                "0.382 / 0.227",
+                "0.379 / 0.217"
+              ],
+              "row_number": 5
+            },
+            {
+              "cells_latex": [
+                "Lingshu-I-8B",
+                "0.397 / 0.240",
+                "0.388 / 0.221",
+                "0.379 / 0.213"
+              ],
+              "cells_text": [
+                "Lingshu-I-8B",
+                "0.397 / 0.240",
+                "0.388 / 0.221",
+                "0.379 / 0.213"
+              ],
+              "row_number": 6
+            },
+            {
+              "cells_latex": [
+                "HuatuoGPT-Vision-7B",
+                "0.387 / 0.203",
+                "0.405 / 0.244",
+                "0.398 / 0.241"
+              ],
+              "cells_text": [
+                "HuatuoGPT-Vision-7B",
+                "0.387 / 0.203",
+                "0.405 / 0.244",
+                "0.398 / 0.241"
+              ],
+              "row_number": 7
+            },
+            {
+              "cells_latex": [
+                "SmolVLM2-2.2B",
+                "0.333 / 0.205",
+                "0.343 / 0.196",
+                "0.336 / 0.190"
+              ],
+              "cells_text": [
+                "SmolVLM2-2.2B",
+                "0.333 / 0.205",
+                "0.343 / 0.196",
+                "0.336 / 0.190"
+              ],
+              "row_number": 8
+            }
+          ],
+          "tabular_number": 1
+        }
+      ]
+    },
+    {
+      "aliases": [],
+      "caption_latex": "Exact agreement with the existing single-coauthor-radiologist image labels, not clinical accuracy or weak-training-label precision. All 50 cases are retained: 49 patients, 50 pairs and ten cases per finding. The 40 benchmark rows and ten candidates are separated. Cannot-assess maps operationally to NSE; original answers remain preserved. Missing predictions are unavailable, not incorrect. These are historical checkpoints, not three-run means or new MCQ outputs. BioViL-T and MedImageInsight rows use their respective model-specific prediction outputs. This enriched, single-reader review does not establish superiority, prevalence or adjudicated ground truth.",
+      "caption_text": "Exact agreement with the existing single-coauthor-radiologist image labels, not clinical accuracy or weak-training-label precision. All 50 cases are retained: 49 patients, 50 pairs and ten cases per finding. The 40 benchmark rows and ten candidates are separated. Cannot-assess maps operationally to NSE; original answers remain preserved. Missing predictions are unavailable, not incorrect. These are historical checkpoints, not three-run means or new MCQ outputs. BioViL-T and MedImageInsight rows use their respective model-specific prediction outputs. This enriched, single-reader review does not establish superiority, prevalence or adjudicated ground truth.",
+      "label": "tab:existing_fifty_review",
+      "number": "A12",
+      "page": "17",
+      "source": {
+        "line": 1,
+        "relative_path": "tables/tableA23_existing_50_review.tex",
+        "sha256": "af4324d8bdcc7a46725bb4632033d5def87d34359fdf9e081a3b2579efee688c"
+      },
+      "tabulars": [
+        {
+          "column_spec_latex": "Xccc",
+          "environment": "tabularx",
+          "rows": [
+            {
+              "cells_latex": [
+                "Reference / historical model",
+                "Benchmark cases",
+                "Synthetic candidates",
+                "All available cases"
+              ],
+              "cells_text": [
+                "Reference / historical model",
+                "Benchmark cases",
+                "Synthetic candidates",
+                "All available cases"
+              ],
+              "row_number": 1
+            },
+            {
+              "cells_latex": [
+                "Benchmark / candidate reference",
+                "22/40",
+                "2/10",
+                "24/50"
+              ],
+              "cells_text": [
+                "Benchmark / candidate reference",
+                "22/40",
+                "2/10",
+                "24/50"
+              ],
+              "row_number": 2
+            },
+            {
+              "cells_latex": [
+                "Q-LACE, primary checkpoint",
+                "14/40",
+                "3/10",
+                "17/50"
+              ],
+              "cells_text": [
+                "Q-LACE, primary checkpoint",
+                "14/40",
+                "3/10",
+                "17/50"
+              ],
+              "row_number": 3
+            },
+            {
+              "cells_latex": [
+                "BioViL-T prior/current",
+                "19/40",
+                "1/10",
+                "20/50"
+              ],
+              "cells_text": [
+                "BioViL-T prior/current",
+                "19/40",
+                "1/10",
+                "20/50"
+              ],
+              "row_number": 4
+            },
+            {
+              "cells_latex": [
+                "MedSigLIP prior/current",
+                "17/40",
+                "---",
+                "17/40"
+              ],
+              "cells_text": [
+                "MedSigLIP prior/current",
+                "17/40",
+                "---",
+                "17/40"
+              ],
+              "row_number": 5
+            },
+            {
+              "cells_latex": [
+                "DenseNet prior/current",
+                "21/40",
+                "---",
+                "21/40"
+              ],
+              "cells_text": [
+                "DenseNet prior/current",
+                "21/40",
+                "---",
+                "21/40"
+              ],
+              "row_number": 6
+            },
+            {
+              "cells_latex": [
+                "MedGemma, historical prompt-only",
+                "10/40",
+                "3/10",
+                "13/50"
+              ],
+              "cells_text": [
+                "MedGemma, historical prompt-only",
+                "10/40",
+                "3/10",
+                "13/50"
+              ],
+              "row_number": 7
+            },
+            {
+              "cells_latex": [
+                "Qwen2.5-VL, historical fixed prompt",
+                "8/40",
+                "2/10",
+                "10/50"
+              ],
+              "cells_text": [
+                "Qwen2.5-VL, historical fixed prompt",
+                "8/40",
+                "2/10",
+                "10/50"
+              ],
+              "row_number": 8
+            },
+            {
+              "cells_latex": [
+                "CheXagent, side-by-side multiple choice",
+                "13/40",
+                "---",
+                "13/40"
+              ],
+              "cells_text": [
+                "CheXagent, side-by-side multiple choice",
+                "13/40",
+                "---",
+                "13/40"
+              ],
+              "row_number": 9
+            },
+            {
+              "cells_latex": [
+                "Q-LACE, synthetic-NSE variant",
+                "10/40",
+                "3/10",
+                "13/50"
+              ],
+              "cells_text": [
+                "Q-LACE, synthetic-NSE variant",
+                "10/40",
+                "3/10",
+                "13/50"
+              ],
+              "row_number": 10
+            },
+            {
+              "cells_latex": [
+                "MedImageInsight, legacy packet comparator",
+                "17/40",
+                "1/10",
+                "18/50"
+              ],
+              "cells_text": [
+                "MedImageInsight, legacy packet comparator",
+                "17/40",
+                "1/10",
+                "18/50"
+              ],
+              "row_number": 11
+            }
+          ],
+          "tabular_number": 1
+        }
+      ]
+    },
+    {
+      "aliases": [],
+      "caption_latex": "Historical finding-blind comparison across three random seeds on 1,326 occurrences. The recorded sample-selection and update recipes agree, but original sampled-row lists and historical base-weight hashes are unavailable. Two full-query runs monitored 512 validation rows; the third and all finding-blind runs disabled monitoring. All report final one-epoch checkpoints without validation-based selection; any effect of monitoring on training state is unknown. Intervals use 10,000 paired patient bootstraps conditional on the observed runs. See Appendix~\\ref{sec:historical_provenance}.",
+      "caption_text": "Historical finding-blind comparison across three random seeds on 1,326 occurrences. The recorded sample-selection and update recipes agree, but original sampled-row lists and historical base-weight hashes are unavailable. Two full-query runs monitored 512 validation rows; the third and all finding-blind runs disabled monitoring. All report final one-epoch checkpoints without validation-based selection; any effect of monitoring on training state is unknown. Intervals use 10,000 paired patient bootstraps conditional on the observed runs. See Appendix A.10.",
+      "label": "tab:matched_finding_blind",
+      "number": "A13",
+      "page": "17",
+      "source": {
+        "line": 1,
+        "relative_path": "tables/tableA17_matched_finding_blind.tex",
+        "sha256": "6ca71e5422767ff40d9a8a4d41e651cf81af7d2c1babf9c8559a4ea83e2c6522"
+      },
+      "tabulars": [
+        {
+          "column_spec_latex": "Xccc",
+          "environment": "tabularx",
+          "rows": [
+            {
+              "cells_latex": [
+                "Condition",
+                "Random seeds",
+                "Accuracy",
+                "Supp. F1"
+              ],
+              "cells_text": [
+                "Condition",
+                "Random seeds",
+                "Accuracy",
+                "Supp. F1"
+              ],
+              "row_number": 1
+            },
+            {
+              "cells_latex": [
+                "Full finding query",
+                "3",
+                "0.5794",
+                "0.5478"
+              ],
+              "cells_text": [
+                "Full finding query",
+                "3",
+                "0.5794",
+                "0.5478"
+              ],
+              "row_number": 2
+            },
+            {
+              "cells_latex": [
+                "Generic query in train and test",
+                "3",
+                "0.5123",
+                "0.4284"
+              ],
+              "cells_text": [
+                "Generic query in train and test",
+                "3",
+                "0.5123",
+                "0.4284"
+              ],
+              "row_number": 3
+            },
+            {
+              "cells_latex": [
+                "Full $-$ generic [95\\% CI]",
+                "3",
+                "+0.0671 [0.0454, 0.0893]",
+                "+0.1195 [0.0976, 0.1413]"
+              ],
+              "cells_text": [
+                "Full - generic [95% CI]",
+                "3",
+                "+0.0671 [0.0454, 0.0893]",
+                "+0.1195 [0.0976, 0.1413]"
+              ],
+              "row_number": 4
+            }
+          ],
+          "tabular_number": 1
+        }
+      ]
+    },
+    {
+      "aliases": [],
+      "caption_latex": "Detailed query-swap analysis for the originally designated primary run. Required-change compliance asks whether the prediction changes when the target gold label changes; same-target invariance asks whether it remains unchanged when the target gold label is the same; paired target success requires both predictions to be correct. Invariance is not specificity or correctness. Intervals use 10{,}000 patient-bootstrap samples. $^\\dagger$Cells with $n<20$ are descriptive; no transition or ordered-pair result is used for multiplicity-adjusted significance claims.",
+      "caption_text": "Detailed query-swap analysis for the originally designated primary run. Required-change compliance asks whether the prediction changes when the target gold label changes; same-target invariance asks whether it remains unchanged when the target gold label is the same; paired target success requires both predictions to be correct. Invariance is not specificity or correctness. Intervals use 10,000 patient-bootstrap samples. ^†Cells with n<20 are descriptive; no transition or ordered-pair result is used for multiplicity-adjusted significance claims.",
+      "label": "tab:detailed_query_swap",
+      "number": "A14",
+      "page": "17",
+      "source": {
+        "line": 1,
+        "relative_path": "tables/tableA18_query_swap_detailed.tex",
+        "sha256": "e366fcd5b1073038050260fea55fb561b560691b5b535f5a868d14b8ffb15053"
+      },
+      "tabulars": [
+        {
+          "column_spec_latex": "lrrc",
+          "environment": "tabular",
+          "rows": [
+            {
+              "cells_latex": [
+                "Metric",
+                "Rows",
+                "Patients",
+                "Estimate [95\\% CI]"
+              ],
+              "cells_text": [
+                "Metric",
+                "Rows",
+                "Patients",
+                "Estimate [95% CI]"
+              ],
+              "row_number": 1
+            },
+            {
+              "cells_latex": [
+                "All-swap target accuracy",
+                "662",
+                "219",
+                "0.580 [0.524, 0.634]"
+              ],
+              "cells_text": [
+                "All-swap target accuracy",
+                "662",
+                "219",
+                "0.580 [0.524, 0.634]"
+              ],
+              "row_number": 2
+            },
+            {
+              "cells_latex": [
+                "All-swap prediction-change rate",
+                "662",
+                "219",
+                "0.314 [0.2587, 0.3716]"
+              ],
+              "cells_text": [
+                "All-swap prediction-change rate",
+                "662",
+                "219",
+                "0.314 [0.2587, 0.3716]"
+              ],
+              "row_number": 3
+            },
+            {
+              "cells_latex": [
+                "Different-label target accuracy",
+                "162",
+                "60",
+                "0.543 [0.4815, 0.6059]"
+              ],
+              "cells_text": [
+                "Different-label target accuracy",
+                "162",
+                "60",
+                "0.543 [0.4815, 0.6059]"
+              ],
+              "row_number": 4
+            },
+            {
+              "cells_latex": [
+                "Required-change compliance",
+                "162",
+                "60",
+                "0.420 [0.2963, 0.5467]"
+              ],
+              "cells_text": [
+                "Required-change compliance",
+                "162",
+                "60",
+                "0.420 [0.2963, 0.5467]"
+              ],
+              "row_number": 5
+            },
+            {
+              "cells_latex": [
+                "Paired target success",
+                "162",
+                "60",
+                "0.185 [0.0972, 0.2857]"
+              ],
+              "cells_text": [
+                "Paired target success",
+                "162",
+                "60",
+                "0.185 [0.0972, 0.2857]"
+              ],
+              "row_number": 6
+            },
+            {
+              "cells_latex": [
+                "Changed to correct target",
+                "162",
+                "60",
+                "0.265 [0.1688, 0.3693]"
+              ],
+              "cells_text": [
+                "Changed to correct target",
+                "162",
+                "60",
+                "0.265 [0.1688, 0.3693]"
+              ],
+              "row_number": 7
+            },
+            {
+              "cells_latex": [
+                "Same-target invariance",
+                "500",
+                "180",
+                "0.720 [0.6602, 0.7806]"
+              ],
+              "cells_text": [
+                "Same-target invariance",
+                "500",
+                "180",
+                "0.720 [0.6602, 0.7806]"
+              ],
+              "row_number": 8
+            },
+            {
+              "cells_latex": [
+                "Same-label target accuracy",
+                "500",
+                "180",
+                "0.592 [0.5231, 0.6626]"
+              ],
+              "cells_text": [
+                "Same-label target accuracy",
+                "500",
+                "180",
+                "0.592 [0.5231, 0.6626]"
+              ],
+              "row_number": 9
+            }
+          ],
+          "tabular_number": 1
+        },
+        {
+          "column_spec_latex": "lrrrrrr",
+          "environment": "tabular",
+          "rows": [
+            {
+              "cells_latex": [
+                "Original $\\rightarrow$ target",
+                "$n$",
+                "Target acc.",
+                "Pred. change",
+                "Paired success",
+                "Retention",
+                "Changed to correct target"
+              ],
+              "cells_text": [
+                "Original → target",
+                "n",
+                "Target acc.",
+                "Pred. change",
+                "Paired success",
+                "Retention",
+                "Changed to correct target"
+              ],
+              "row_number": 1
+            },
+            {
+              "cells_latex": [
+                "improving $\\rightarrow$ improving",
+                "46",
+                "0.587",
+                "0.435",
+                "0.391",
+                "0.565",
+                "0.196"
+              ],
+              "cells_text": [
+                "improving → improving",
+                "46",
+                "0.587",
+                "0.435",
+                "0.391",
+                "0.565",
+                "0.196"
+              ],
+              "row_number": 2
+            },
+            {
+              "cells_latex": [
+                "improving $\\rightarrow$ stable",
+                "28",
+                "0.536",
+                "0.679",
+                "0.250",
+                "0.321",
+                "0.357"
+              ],
+              "cells_text": [
+                "improving → stable",
+                "28",
+                "0.536",
+                "0.679",
+                "0.250",
+                "0.321",
+                "0.357"
+              ],
+              "row_number": 3
+            },
+            {
+              "cells_latex": [
+                "improving $\\rightarrow$ worsening$^\\dagger$",
+                "13",
+                "0.615",
+                "0.385",
+                "0.154",
+                "0.615",
+                "0.231"
+              ],
+              "cells_text": [
+                "improving → worsening^†",
+                "13",
+                "0.615",
+                "0.385",
+                "0.154",
+                "0.615",
+                "0.231"
+              ],
+              "row_number": 4
+            },
+            {
+              "cells_latex": [
+                "stable $\\rightarrow$ improving",
+                "28",
+                "0.464",
+                "0.679",
+                "0.250",
+                "0.321",
+                "0.393"
+              ],
+              "cells_text": [
+                "stable → improving",
+                "28",
+                "0.464",
+                "0.679",
+                "0.250",
+                "0.321",
+                "0.393"
+              ],
+              "row_number": 5
+            },
+            {
+              "cells_latex": [
+                "stable $\\rightarrow$ stable",
+                "200",
+                "0.260",
+                "0.410",
+                "0.090",
+                "0.590",
+                "0.170"
+              ],
+              "cells_text": [
+                "stable → stable",
+                "200",
+                "0.260",
+                "0.410",
+                "0.090",
+                "0.590",
+                "0.170"
+              ],
+              "row_number": 6
+            },
+            {
+              "cells_latex": [
+                "stable $\\rightarrow$ worsening",
+                "40",
+                "0.825",
+                "0.250",
+                "0.150",
+                "0.750",
+                "0.175"
+              ],
+              "cells_text": [
+                "stable → worsening",
+                "40",
+                "0.825",
+                "0.250",
+                "0.150",
+                "0.750",
+                "0.175"
+              ],
+              "row_number": 7
+            },
+            {
+              "cells_latex": [
+                "worsening $\\rightarrow$ improving$^\\dagger$",
+                "13",
+                "0.538",
+                "0.385",
+                "0.154",
+                "0.615",
+                "0.308"
+              ],
+              "cells_text": [
+                "worsening → improving^†",
+                "13",
+                "0.538",
+                "0.385",
+                "0.154",
+                "0.615",
+                "0.308"
+              ],
+              "row_number": 8
+            },
+            {
+              "cells_latex": [
+                "worsening $\\rightarrow$ stable",
+                "40",
+                "0.300",
+                "0.250",
+                "0.150",
+                "0.750",
+                "0.200"
+              ],
+              "cells_text": [
+                "worsening → stable",
+                "40",
+                "0.300",
+                "0.250",
+                "0.150",
+                "0.750",
+                "0.200"
+              ],
+              "row_number": 9
+            },
+            {
+              "cells_latex": [
+                "worsening $\\rightarrow$ worsening",
+                "254",
+                "0.854",
+                "0.150",
+                "0.803",
+                "0.850",
+                "0.051"
+              ],
+              "cells_text": [
+                "worsening → worsening",
+                "254",
+                "0.854",
+                "0.150",
+                "0.803",
+                "0.850",
+                "0.051"
+              ],
+              "row_number": 10
+            }
+          ],
+          "tabular_number": 2
+        }
+      ]
+    },
+    {
+      "aliases": [],
+      "caption_latex": "Ordered finding-pair decomposition for different-label swaps, shown as $n$/target accuracy/required-change compliance/paired target success. PE denotes pleural effusion and PTX pneumothorax. Every cell has $n<20$ and is descriptive only; no multiplicity-adjusted significance claim is made.",
+      "caption_text": "Ordered finding-pair decomposition for different-label swaps, shown as n/target accuracy/required-change compliance/paired target success. PE denotes pleural effusion and PTX pneumothorax. Every cell has n<20 and is descriptive only; no multiplicity-adjusted significance claim is made.",
+      "label": "tab:query_swap_finding_pairs",
+      "number": "A15",
+      "page": "18",
+      "source": {
+        "line": 1,
+        "relative_path": "tables/tableA19_query_swap_pairs.tex",
+        "sha256": "8118752d5ed36c4fb0b9f1e4009de2f08e15b92287060ec647ed5f034d7636c8"
+      },
+      "tabulars": [
+        {
+          "column_spec_latex": "lccccc",
+          "environment": "tabular",
+          "rows": [
+            {
+              "cells_latex": [
+                "Source $\\backslash$ target",
+                "Cons.",
+                "Edema",
+                "PE",
+                "Pneumonia",
+                "PTX"
+              ],
+              "cells_text": [
+                "Source target",
+                "Cons.",
+                "Edema",
+                "PE",
+                "Pneumonia",
+                "PTX"
+              ],
+              "row_number": 1
+            },
+            {
+              "cells_latex": [
+                "Consolidation",
+                "--",
+                "10/.400/.300/.000",
+                "18/.500/.278/.111",
+                "1/.000/.000/.000",
+                "2/1.000/1.000/.000"
+              ],
+              "cells_text": [
+                "Consolidation",
+                "--",
+                "10/.400/.300/.000",
+                "18/.500/.278/.111",
+                "1/.000/.000/.000",
+                "2/1.000/1.000/.000"
+              ],
+              "row_number": 2
+            },
+            {
+              "cells_latex": [
+                "Edema",
+                "10/.500/.300/.000",
+                "--",
+                "14/.357/.571/.286",
+                "7/.571/.286/.143",
+                "8/.625/.750/.500"
+              ],
+              "cells_text": [
+                "Edema",
+                "10/.500/.300/.000",
+                "--",
+                "14/.357/.571/.286",
+                "7/.571/.286/.143",
+                "8/.625/.750/.500"
+              ],
+              "row_number": 3
+            },
+            {
+              "cells_latex": [
+                "Pleural effusion",
+                "18/.389/.278/.111",
+                "14/.857/.571/.286",
+                "--",
+                "15/.667/.533/.267",
+                "6/.333/.000/.000"
+              ],
+              "cells_text": [
+                "Pleural effusion",
+                "18/.389/.278/.111",
+                "14/.857/.571/.286",
+                "--",
+                "15/.667/.533/.267",
+                "6/.333/.000/.000"
+              ],
+              "row_number": 4
+            },
+            {
+              "cells_latex": [
+                "Pneumonia",
+                "1/1.000/.000/.000",
+                "7/.571/.286/.143",
+                "15/.533/.533/.267",
+                "--",
+                "0/--/--/--"
+              ],
+              "cells_text": [
+                "Pneumonia",
+                "1/1.000/.000/.000",
+                "7/.571/.286/.143",
+                "15/.533/.533/.267",
+                "--",
+                "0/--/--/--"
+              ],
+              "row_number": 5
+            },
+            {
+              "cells_latex": [
+                "Pneumothorax",
+                "2/.000/1.000/.000",
+                "8/.750/.750/.500",
+                "6/.667/.000/.000",
+                "0/--/--/--",
+                "--"
+              ],
+              "cells_text": [
+                "Pneumothorax",
+                "2/.000/1.000/.000",
+                "8/.750/.750/.500",
+                "6/.667/.000/.000",
+                "0/--/--/--",
+                "--"
+              ],
+              "row_number": 6
+            }
+          ],
+          "tabular_number": 1
+        }
+      ]
+    },
+    {
+      "aliases": [],
+      "caption_latex": "Appendix-only deterministic finding-blind pair-level oracle. For each exact prior/current image pair, the oracle uses test gold labels to assign the pair's majority label to every finding query. It is an in-sample accuracy ceiling for a deterministic finding-blind rule, not a trained or deployable model and not a macro-F1 bound. Intervals use patient bootstrap.",
+      "caption_text": "Appendix-only deterministic finding-blind pair-level oracle. For each exact prior/current image pair, the oracle uses test gold labels to assign the pair's majority label to every finding query. It is an in-sample accuracy ceiling for a deterministic finding-blind rule, not a trained or deployable model and not a macro-F1 bound. Intervals use patient bootstrap.",
+      "label": "tab:finding_blind_oracle",
+      "number": "A16",
+      "page": "18",
+      "source": {
+        "line": 1,
+        "relative_path": "tables/tableA20_finding_blind_oracle.tex",
+        "sha256": "8a0d25896bf5a9f4b6fe7a90d8c522242bad7bf2014c8eef6e9f41642efa09e3"
+      },
+      "tabulars": [
+        {
+          "column_spec_latex": "lrrc",
+          "environment": "tabular",
+          "rows": [
+            {
+              "cells_latex": [
+                "Subset",
+                "Image pairs",
+                "Rows",
+                "Oracle accuracy [95\\% CI]"
+              ],
+              "cells_text": [
+                "Subset",
+                "Image pairs",
+                "Rows",
+                "Oracle accuracy [95% CI]"
+              ],
+              "row_number": 1
+            },
+            {
+              "cells_latex": [
+                "All exact image pairs",
+                "1{,}045",
+                "1{,}326",
+                "0.954 [0.943, 0.964]"
+              ],
+              "cells_text": [
+                "All exact image pairs",
+                "1,045",
+                "1,326",
+                "0.954 [0.943, 0.964]"
+              ],
+              "row_number": 2
+            },
+            {
+              "cells_latex": [
+                "Multi-query image pairs",
+                "235",
+                "516",
+                "0.882 [0.856, 0.907]"
+              ],
+              "cells_text": [
+                "Multi-query image pairs",
+                "235",
+                "516",
+                "0.882 [0.856, 0.907]"
+              ],
+              "row_number": 3
+            },
+            {
+              "cells_latex": [
+                "Discordant multi-query pairs",
+                "60",
+                "140",
+                "0.564 [0.541, 0.588]"
+              ],
+              "cells_text": [
+                "Discordant multi-query pairs",
+                "60",
+                "140",
+                "0.564 [0.541, 0.588]"
+              ],
+              "row_number": 4
+            }
+          ],
+          "tabular_number": 1
+        }
+      ]
+    },
+    {
+      "aliases": [],
+      "caption_latex": "Explicit metric bridge on the same 1,326 occurrences. BAcc is class-balanced accuracy (mean supported-class recall). Finding BAcc first computes it within each finding, then averages the five findings equally. Neither is asserted to exactly reproduce Google's unavailable aggregation code. Q-LACE means use the same three existing adapters without retraining. All invalid outputs remain errors; invalid and truncation counts can overlap. Historical token/EOS records are unavailable. The fixed padding arm does not recover the published result and also differs in GPU allocation; it is not selected in place of the primary native arm.",
+      "caption_text": "Explicit metric bridge on the same 1,326 occurrences. BAcc is class-balanced accuracy (mean supported-class recall). Finding BAcc first computes it within each finding, then averages the five findings equally. Neither is asserted to exactly reproduce Google's unavailable aggregation code. Q-LACE means use the same three existing adapters without retraining. All invalid outputs remain errors; invalid and truncation counts can overlap. Historical token/EOS records are unavailable. The fixed padding arm does not recover the published result and also differs in GPU allocation; it is not selected in place of the primary native arm.",
+      "label": "tab:baseline_metric_bridge",
+      "number": "A17",
+      "page": "19",
+      "source": {
+        "line": 1,
+        "relative_path": "tables/tableA22_baseline_metric_bridge.tex",
+        "sha256": "9b53cacf190cdc62d967f8e68243553ca497e56ab0a5f9fbc1e373a169cb8f62"
+      },
+      "tabulars": [
+        {
+          "column_spec_latex": "Xccccc",
+          "environment": "tabularx",
+          "rows": [
+            {
+              "cells_latex": [
+                "Interface / model",
+                "Accuracy",
+                "Supported F1",
+                "\\shortstack{Pooled\\\\BAcc}",
+                "\\shortstack{Finding\\\\BAcc}",
+                "\\shortstack{Invalid /\\\\truncated}"
+              ],
+              "cells_text": [
+                "Interface / model",
+                "Accuracy",
+                "Supported F1",
+                "Pooled\nBAcc",
+                "Finding\nBAcc",
+                "Invalid /\ntruncated"
+              ],
+              "row_number": 1
+            },
+            {
+              "cells_latex": [
+                "Historical MedGemma",
+                "0.336",
+                "0.287",
+                "0.317",
+                "0.299",
+                "0 / unknown"
+              ],
+              "cells_text": [
+                "Historical MedGemma",
+                "0.336",
+                "0.287",
+                "0.317",
+                "0.299",
+                "0 / unknown"
+              ],
+              "row_number": 2
+            },
+            {
+              "cells_latex": [
+                "Historical Q-LACE mean",
+                "0.579",
+                "0.548",
+                "0.552",
+                "0.488",
+                "0 / unknown"
+              ],
+              "cells_text": [
+                "Historical Q-LACE mean",
+                "0.579",
+                "0.548",
+                "0.552",
+                "0.488",
+                "0 / unknown"
+              ],
+              "row_number": 3
+            },
+            {
+              "cells_latex": [
+                "Native three-option MedGemma",
+                "0.305",
+                "0.278",
+                "0.398",
+                "0.395",
+                "25 / 2"
+              ],
+              "cells_text": [
+                "Native three-option MedGemma",
+                "0.305",
+                "0.278",
+                "0.398",
+                "0.395",
+                "25 / 2"
+              ],
+              "row_number": 4
+            },
+            {
+              "cells_latex": [
+                "Native three-option Q-LACE mean",
+                "0.570",
+                "0.515",
+                "0.516",
+                "0.466",
+                "0 / 0"
+              ],
+              "cells_text": [
+                "Native three-option Q-LACE mean",
+                "0.570",
+                "0.515",
+                "0.516",
+                "0.466",
+                "0 / 0"
+              ],
+              "row_number": 5
+            },
+            {
+              "cells_latex": [
+                "Square-padding MedGemma sensitivity",
+                "0.292",
+                "0.267",
+                "0.383",
+                "0.387",
+                "39 / 1"
+              ],
+              "cells_text": [
+                "Square-padding MedGemma sensitivity",
+                "0.292",
+                "0.267",
+                "0.383",
+                "0.387",
+                "39 / 1"
+              ],
+              "row_number": 6
+            }
+          ],
+          "tabular_number": 1
+        }
+      ]
+    },
+    {
+      "aliases": [],
+      "caption_latex": "Synthetic \\texttt{no\\_supported\\_evidence} stress-set diagnostics on 500 balanced candidate rows. Rows query a benchmark finding absent from the pair's MS-CXR-T annotated query set; the candidate unsupported label is a synthetic stress condition, not adjudicated clinical truth. ``Candidate abstention'' means predicting \\texttt{no\\_supported\\_evidence}; ``candidate supported-label rate'' means predicting one of the three supported change labels on these candidate rows. Behavioral rates and output counts are reported because candidate unsupported labels have not been clinically adjudicated. W, I, S, and NSE denote \\texttt{worsening}, \\texttt{improving}, \\texttt{stable}, and \\texttt{no\\_supported\\_evidence}.",
+      "caption_text": "Synthetic no_supported_evidence stress-set diagnostics on 500 balanced candidate rows. Rows query a benchmark finding absent from the pair's MS-CXR-T annotated query set; the candidate unsupported label is a synthetic stress condition, not adjudicated clinical truth. \"Candidate abstention\" means predicting no_supported_evidence; \"candidate supported-label rate\" means predicting one of the three supported change labels on these candidate rows. Behavioral rates and output counts are reported because candidate unsupported labels have not been clinically adjudicated. W, I, S, and NSE denote worsening, improving, stable, and no_supported_evidence.",
+      "label": "tab:appendix_nse_stress",
+      "number": "A18",
+      "page": "19",
+      "source": {
+        "line": 1,
+        "relative_path": "tables/tableA4_nse_stress.tex",
+        "sha256": "77cd52c775bdd9746c66dfc8a1b76950bc1e89e9f9d01b0259347581eec915d2"
+      },
+      "tabulars": [
+        {
+          "column_spec_latex": "llrrll",
+          "environment": "tabular",
+          "rows": [
+            {
+              "cells_latex": [
+                "System",
+                "Type",
+                "Cand. abstain",
+                "Cand. supported",
+                "Counts",
+                "Scope note"
+              ],
+              "cells_text": [
+                "System",
+                "Type",
+                "Cand. abstain",
+                "Cand. supported",
+                "Counts",
+                "Scope note"
+              ],
+              "row_number": 1
+            },
+            {
+              "cells_latex": [
+                "BioViL-T prior/current",
+                "Frozen 3-way classifier",
+                "0.000",
+                "1.000",
+                "W:254, I:120, S:126, NSE:0",
+                "3-way head; cannot abstain."
+              ],
+              "cells_text": [
+                "BioViL-T prior/current",
+                "Frozen 3-way classifier",
+                "0.000",
+                "1.000",
+                "W:254, I:120, S:126, NSE:0",
+                "3-way head; cannot abstain."
+              ],
+              "row_number": 2
+            },
+            {
+              "cells_latex": [
+                "Q-LACE",
+                "Closed-label generation",
+                "0.000",
+                "1.000",
+                "W:237, S:145, I:118, NSE:0",
+                "Q-LACE never abstains here."
+              ],
+              "cells_text": [
+                "Q-LACE",
+                "Closed-label generation",
+                "0.000",
+                "1.000",
+                "W:237, S:145, I:118, NSE:0",
+                "Q-LACE never abstains here."
+              ],
+              "row_number": 3
+            },
+            {
+              "cells_latex": [
+                "MedGemma prompt-only",
+                "Closed-label generation",
+                "0.422",
+                "0.578",
+                "NSE:211, W:224, I:53, S:12",
+                "Historical prompt's output distribution."
+              ],
+              "cells_text": [
+                "MedGemma prompt-only",
+                "Closed-label generation",
+                "0.422",
+                "0.578",
+                "NSE:211, W:224, I:53, S:12",
+                "Historical prompt's output distribution."
+              ],
+              "row_number": 4
+            },
+            {
+              "cells_latex": [
+                "Qwen2.5-VL-7B prompt-only",
+                "Closed-label generation",
+                "0.132",
+                "0.868",
+                "I:253, W:181, S:0, NSE:66",
+                "Rare abstention."
+              ],
+              "cells_text": [
+                "Qwen2.5-VL-7B prompt-only",
+                "Closed-label generation",
+                "0.132",
+                "0.868",
+                "I:253, W:181, S:0, NSE:66",
+                "Rare abstention."
+              ],
+              "row_number": 5
+            }
+          ],
+          "tabular_number": 1
+        }
+      ]
+    },
+    {
+      "aliases": [],
+      "caption_latex": "Historical synthetic hard-negative training diagnostics. Candidate NSE (\\texttt{no\\_supported\\_evidence}) rows are not adjudicated negatives. Benchmark rows have supported labels, so NSE outputs there are false abstentions. Ratio variants mix synthetic NSE rows into the 4,096-row weak recipe; balanced and natural variants use more aggressive base rates. The 2\\% variant never abstains, higher rates trade supported-task performance for abstention, and the natural variant collapses to always abstain. These are separate single-run diagnostics.",
+      "caption_text": "Historical synthetic hard-negative training diagnostics. Candidate NSE (no_supported_evidence) rows are not adjudicated negatives. Benchmark rows have supported labels, so NSE outputs there are false abstentions. Ratio variants mix synthetic NSE rows into the 4,096-row weak recipe; balanced and natural variants use more aggressive base rates. The 2% variant never abstains, higher rates trade supported-task performance for abstention, and the natural variant collapses to always abstain. These are separate single-run diagnostics.",
+      "label": "tab:appendix_nse_hard_negative",
+      "number": "A19",
+      "page": "19",
+      "source": {
+        "line": 1,
+        "relative_path": "tables/tableA5_nse_hard_negative_training.tex",
+        "sha256": "521f8a19b98fe0bc0c41b92aa0a86ff2343c57d1c9d20e898d77f0810c97dae2"
+      },
+      "tabulars": [
+        {
+          "column_spec_latex": "Xccrr",
+          "environment": "tabularx",
+          "rows": [
+            {
+              "cells_latex": [
+                "Variant",
+                "Accuracy",
+                "Macro-F1",
+                "\\shortstack{False abstention\\\\($n$/1,326)}",
+                "\\shortstack{Candidate abstention\\\\($n$/500)}"
+              ],
+              "cells_text": [
+                "Variant",
+                "Accuracy",
+                "Macro-F1",
+                "False abstention\n(n/1,326)",
+                "Candidate abstention\n(n/500)"
+              ],
+              "row_number": 1
+            },
+            {
+              "cells_latex": [
+                "Q-LACE (primary)",
+                "0.592",
+                "0.561",
+                "0 (0.0\\%)",
+                "0 (0.0\\%)"
+              ],
+              "cells_text": [
+                "Q-LACE (primary)",
+                "0.592",
+                "0.561",
+                "0 (0.0%)",
+                "0 (0.0%)"
+              ],
+              "row_number": 2
+            },
+            {
+              "cells_latex": [
+                "2\\% synthetic NSE",
+                "0.550",
+                "0.507",
+                "0 (0.0\\%)",
+                "0 (0.0\\%)"
+              ],
+              "cells_text": [
+                "2% synthetic NSE",
+                "0.550",
+                "0.507",
+                "0 (0.0%)",
+                "0 (0.0%)"
+              ],
+              "row_number": 3
+            },
+            {
+              "cells_latex": [
+                "5\\% synthetic NSE",
+                "0.565",
+                "0.528",
+                "26 (2.0\\%)",
+                "59 (11.8\\%)"
+              ],
+              "cells_text": [
+                "5% synthetic NSE",
+                "0.565",
+                "0.528",
+                "26 (2.0%)",
+                "59 (11.8%)"
+              ],
+              "row_number": 4
+            },
+            {
+              "cells_latex": [
+                "10\\% synthetic NSE",
+                "0.520",
+                "0.504",
+                "130 (9.8\\%)",
+                "145 (29.0\\%)"
+              ],
+              "cells_text": [
+                "10% synthetic NSE",
+                "0.520",
+                "0.504",
+                "130 (9.8%)",
+                "145 (29.0%)"
+              ],
+              "row_number": 5
+            },
+            {
+              "cells_latex": [
+                "Balanced synthetic NSE",
+                "0.398",
+                "0.459",
+                "387 (29.2\\%)",
+                "325 (65.0\\%)"
+              ],
+              "cells_text": [
+                "Balanced synthetic NSE",
+                "0.398",
+                "0.459",
+                "387 (29.2%)",
+                "325 (65.0%)"
+              ],
+              "row_number": 6
+            },
+            {
+              "cells_latex": [
+                "Natural synthetic NSE",
+                "0.000",
+                "0.000",
+                "1{,}326 (100.0\\%)",
+                "500 (100.0\\%)"
+              ],
+              "cells_text": [
+                "Natural synthetic NSE",
+                "0.000",
+                "0.000",
+                "1,326 (100.0%)",
+                "500 (100.0%)"
+              ],
+              "row_number": 7
+            }
+          ],
+          "tabular_number": 1
+        }
+      ]
+    },
+    {
+      "aliases": [],
+      "caption_latex": "Historical raw outputs and fixed native-MCQ inference on 1,326 occurrences. The same three existing adapters are unchanged; mean$\\pm$sample SD is not an ensemble. Training randomness affects optimization and the 2,048-row draw. Runs 1--2 monitor 512 validation rows; Run 3 disables evaluation, so this is not purely seed-only variability. All use final checkpoints. New base/adapters share checkpoint hashes; historical temporary base identity is unresolved. Several interface details change together.",
+      "caption_text": "Historical raw outputs and fixed native-MCQ inference on 1,326 occurrences. The same three existing adapters are unchanged; mean±sample SD is not an ensemble. Training randomness affects optimization and the 2,048-row draw. Runs 1--2 monitor 512 validation rows; Run 3 disables evaluation, so this is not purely seed-only variability. All use final checkpoints. New base/adapters share checkpoint hashes; historical temporary base identity is unresolved. Several interface details change together.",
+      "label": "tab:appendix_seed_stability",
+      "number": "A20",
+      "page": "19",
+      "source": {
+        "line": 1,
+        "relative_path": "tables/tableA5_seed_stability.tex",
+        "sha256": "0199ff29286aab03bde46bbeb1ad923d83de25c7dbb1318f1b03c575dbf494f2"
+      },
+      "tabulars": [
+        {
+          "column_spec_latex": "Xcccc",
+          "environment": "tabularx",
+          "rows": [
+            {
+              "cells_latex": [
+                "Model / run",
+                "Historical acc.",
+                "Historical F1",
+                "Native MCQ acc.",
+                "Native MCQ F1"
+              ],
+              "cells_text": [
+                "Model / run",
+                "Historical acc.",
+                "Historical F1",
+                "Native MCQ acc.",
+                "Native MCQ F1"
+              ],
+              "row_number": 1
+            },
+            {
+              "cells_latex": [
+                "Run 1 (primary)",
+                "0.592",
+                "0.561",
+                "0.566",
+                "0.540"
+              ],
+              "cells_text": [
+                "Run 1 (primary)",
+                "0.592",
+                "0.561",
+                "0.566",
+                "0.540"
+              ],
+              "row_number": 2
+            },
+            {
+              "cells_latex": [
+                "Run 2",
+                "0.581",
+                "0.549",
+                "0.573",
+                "0.502"
+              ],
+              "cells_text": [
+                "Run 2",
+                "0.581",
+                "0.549",
+                "0.573",
+                "0.502"
+              ],
+              "row_number": 3
+            },
+            {
+              "cells_latex": [
+                "Run 3",
+                "0.565",
+                "0.533",
+                "0.569",
+                "0.504"
+              ],
+              "cells_text": [
+                "Run 3",
+                "0.565",
+                "0.533",
+                "0.569",
+                "0.504"
+              ],
+              "row_number": 4
+            },
+            {
+              "cells_latex": [
+                "Q-LACE mean (3 random seeds)",
+                "0.579$\\pm$0.014",
+                "0.548$\\pm$0.014",
+                "0.570$\\pm$0.003",
+                "0.515$\\pm$0.021"
+              ],
+              "cells_text": [
+                "Q-LACE mean (3 random seeds)",
+                "0.579±0.014",
+                "0.548±0.014",
+                "0.570±0.003",
+                "0.515±0.021"
+              ],
+              "row_number": 5
+            },
+            {
+              "cells_latex": [
+                "BioViL-T prior/current",
+                "0.554",
+                "0.527",
+                "---",
+                "---"
+              ],
+              "cells_text": [
+                "BioViL-T prior/current",
+                "0.554",
+                "0.527",
+                "---",
+                "---"
+              ],
+              "row_number": 6
+            },
+            {
+              "cells_latex": [
+                "MedGemma prompt-only",
+                "0.336",
+                "0.287",
+                "0.305",
+                "0.278"
+              ],
+              "cells_text": [
+                "MedGemma prompt-only",
+                "0.336",
+                "0.287",
+                "0.305",
+                "0.278"
+              ],
+              "row_number": 7
+            }
+          ],
+          "tabular_number": 1
+        }
+      ]
+    }
+  ]
+}

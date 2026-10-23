@@ -1,0 +1,17 @@
+tabular_number,row_number,cell_number,cell_latex,cell_text
+1,1,1,Label,Label
+1,1,2,Role,Role
+1,1,3,Example evidence,Example evidence
+1,1,4,Meaning,Meaning
+1,2,1,\texttt{improving},improving
+1,2,2,supported,supported
+1,2,3,small effusion $\rightarrow$ resolved,small effusion → resolved
+1,2,4,queried finding is less severe or resolving,queried finding is less severe or resolving
+1,3,1,\texttt{stable},stable
+1,3,2,supported,supported
+1,3,3,unchanged pleural effusion,unchanged pleural effusion
+1,3,4,queried finding is assessable and has no material interval change,queried finding is assessable and has no material interval change
+1,4,1,\texttt{worsening},worsening
+1,4,2,supported,supported
+1,4,3,none $\rightarrow$ new apical pneumothorax,none → new apical pneumothorax
+1,4,4,"queried finding is more severe, new, or increased","queried finding is more severe, new, or increased"

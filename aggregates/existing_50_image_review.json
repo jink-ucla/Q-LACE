@@ -1,0 +1,547 @@
+{
+  "claim_limits": [
+    "Selected single-reader image review: 40 benchmark cases and 10 synthetic candidates.",
+    "Agreement is descriptive; the review has no adjudication or inter-reader assessment.",
+    "Report-extraction precision, recall and report-to-supplied-prior compatibility were not measured."
+  ],
+  "cohort_counts": {
+    "unique_pairs": 50,
+    "unique_patients": 49
+  },
+  "model_agreement": {
+    "BioViL-T P+C": {
+      "all_50": {
+        "agreement": 0.4,
+        "cohen_kappa": 0.18610960390667394,
+        "denominator": 50,
+        "four_class_macro_f1_against_normalized_review": 0.32331262183235865,
+        "matches": 20,
+        "missing_predictions": 0,
+        "patient_cluster_bootstrap_95_conditional": [
+          0.2653061224489796,
+          0.54
+        ],
+        "unique_patients": 49,
+        "wilson_95_descriptive": [
+          0.27608389730256544,
+          0.5381856225241064
+        ]
+      },
+      "benchmark_40": {
+        "agreement": 0.475,
+        "cohen_kappa": 0.28205128205128205,
+        "denominator": 40,
+        "four_class_macro_f1_against_normalized_review": 0.375,
+        "matches": 19,
+        "missing_predictions": 0,
+        "patient_cluster_bootstrap_95_conditional": [
+          0.3076923076923077,
+          0.6341463414634146
+        ],
+        "unique_patients": 39,
+        "wilson_95_descriptive": [
+          0.329354701126789,
+          0.6250263789330753
+        ]
+      },
+      "synthetic_candidates_10": {
+        "agreement": 0.1,
+        "cohen_kappa": -0.18421052631578946,
+        "denominator": 10,
+        "four_class_macro_f1_against_normalized_review": 0.08333333333333333,
+        "matches": 1,
+        "missing_predictions": 0,
+        "patient_cluster_bootstrap_95_conditional": [
+          0.0,
+          0.3
+        ],
+        "unique_patients": 10,
+        "wilson_95_descriptive": [
+          0.017876213095072896,
+          0.4041500267952385
+        ]
+      }
+    },
+    "CheXagent side-by-side MC": {
+      "all_50": {
+        "agreement": 0.325,
+        "cohen_kappa": 0.025270758122743705,
+        "denominator": 40,
+        "four_class_macro_f1_against_normalized_review": 0.2006704980842912,
+        "matches": 13,
+        "missing_predictions": 10,
+        "patient_cluster_bootstrap_95_conditional": [
+          0.1794871794871795,
+          0.475
+        ],
+        "unique_patients": 39,
+        "wilson_95_descriptive": [
+          0.200845022317827,
+          0.47982253810122333
+        ]
+      },
+      "benchmark_40": {
+        "agreement": 0.325,
+        "cohen_kappa": 0.025270758122743705,
+        "denominator": 40,
+        "four_class_macro_f1_against_normalized_review": 0.2006704980842912,
+        "matches": 13,
+        "missing_predictions": 0,
+        "patient_cluster_bootstrap_95_conditional": [
+          0.1794871794871795,
+          0.475
+        ],
+        "unique_patients": 39,
+        "wilson_95_descriptive": [
+          0.200845022317827,
+          0.47982253810122333
+        ]
+      },
+      "synthetic_candidates_10": {
+        "agreement": null,
+        "denominator": 0,
+        "matches": 0
+      }
+    },
+    "DenseNet P+C": {
+      "all_50": {
+        "agreement": 0.525,
+        "cohen_kappa": 0.2621359223300971,
+        "denominator": 40,
+        "four_class_macro_f1_against_normalized_review": 0.3992673992673993,
+        "matches": 21,
+        "missing_predictions": 10,
+        "patient_cluster_bootstrap_95_conditional": [
+          0.375,
+          0.675
+        ],
+        "unique_patients": 39,
+        "wilson_95_descriptive": [
+          0.3749736210669248,
+          0.670645298873211
+        ]
+      },
+      "benchmark_40": {
+        "agreement": 0.525,
+        "cohen_kappa": 0.2621359223300971,
+        "denominator": 40,
+        "four_class_macro_f1_against_normalized_review": 0.3992673992673993,
+        "matches": 21,
+        "missing_predictions": 0,
+        "patient_cluster_bootstrap_95_conditional": [
+          0.375,
+          0.675
+        ],
+        "unique_patients": 39,
+        "wilson_95_descriptive": [
+          0.3749736210669248,
+          0.670645298873211
+        ]
+      },
+      "synthetic_candidates_10": {
+        "agreement": null,
+        "denominator": 0,
+        "matches": 0
+      }
+    },
+    "MedGemma historical prompt-only": {
+      "all_50": {
+        "agreement": 0.26,
+        "cohen_kappa": 0.12072243346007604,
+        "denominator": 50,
+        "four_class_macro_f1_against_normalized_review": 0.2651580459770115,
+        "matches": 13,
+        "missing_predictions": 0,
+        "patient_cluster_bootstrap_95_conditional": [
+          0.14285714285714285,
+          0.3877551020408163
+        ],
+        "unique_patients": 49,
+        "wilson_95_descriptive": [
+          0.15871527493552393,
+          0.39553157264848837
+        ]
+      },
+      "benchmark_40": {
+        "agreement": 0.25,
+        "cohen_kappa": 0.08536585365853659,
+        "denominator": 40,
+        "four_class_macro_f1_against_normalized_review": 0.24105924105924106,
+        "matches": 10,
+        "missing_predictions": 0,
+        "patient_cluster_bootstrap_95_conditional": [
+          0.125,
+          0.38461538461538464
+        ],
+        "unique_patients": 39,
+        "wilson_95_descriptive": [
+          0.14187118639096302,
+          0.40193961420768026
+        ]
+      },
+      "synthetic_candidates_10": {
+        "agreement": 0.3,
+        "cohen_kappa": 0.14634146341463414,
+        "denominator": 10,
+        "four_class_macro_f1_against_normalized_review": 0.22619047619047616,
+        "matches": 3,
+        "missing_predictions": 0,
+        "patient_cluster_bootstrap_95_conditional": [
+          0.0,
+          0.6
+        ],
+        "unique_patients": 10,
+        "wilson_95_descriptive": [
+          0.10779126740630099,
+          0.6032218525388546
+        ]
+      }
+    },
+    "MedImageInsight P+C": {
+      "all_50": {
+        "agreement": 0.36,
+        "cohen_kappa": 0.004975124378109422,
+        "denominator": 50,
+        "four_class_macro_f1_against_normalized_review": 0.24882985452245415,
+        "matches": 18,
+        "missing_predictions": 0,
+        "patient_cluster_bootstrap_95_conditional": [
+          0.22448979591836735,
+          0.49056603773584906
+        ],
+        "unique_patients": 49,
+        "wilson_95_descriptive": [
+          0.24138749651846741,
+          0.49858983123887307
+        ]
+      },
+      "benchmark_40": {
+        "agreement": 0.425,
+        "cohen_kappa": 0.06504065040650403,
+        "denominator": 40,
+        "four_class_macro_f1_against_normalized_review": 0.2942857142857143,
+        "matches": 17,
+        "missing_predictions": 0,
+        "patient_cluster_bootstrap_95_conditional": [
+          0.2682926829268293,
+          0.5853658536585366
+        ],
+        "unique_patients": 39,
+        "wilson_95_descriptive": [
+          0.28509392559950375,
+          0.5780493145800892
+        ]
+      },
+      "synthetic_candidates_10": {
+        "agreement": 0.1,
+        "cohen_kappa": -0.125,
+        "denominator": 10,
+        "four_class_macro_f1_against_normalized_review": 0.05555555555555555,
+        "matches": 1,
+        "missing_predictions": 0,
+        "patient_cluster_bootstrap_95_conditional": [
+          0.0,
+          0.3
+        ],
+        "unique_patients": 10,
+        "wilson_95_descriptive": [
+          0.017876213095072896,
+          0.4041500267952385
+        ]
+      }
+    },
+    "MedSigLIP P+C": {
+      "all_50": {
+        "agreement": 0.425,
+        "cohen_kappa": 0.11708253358925141,
+        "denominator": 40,
+        "four_class_macro_f1_against_normalized_review": 0.29778773857721225,
+        "matches": 17,
+        "missing_predictions": 10,
+        "patient_cluster_bootstrap_95_conditional": [
+          0.275,
+          0.5853658536585366
+        ],
+        "unique_patients": 39,
+        "wilson_95_descriptive": [
+          0.28509392559950375,
+          0.5780493145800892
+        ]
+      },
+      "benchmark_40": {
+        "agreement": 0.425,
+        "cohen_kappa": 0.11708253358925141,
+        "denominator": 40,
+        "four_class_macro_f1_against_normalized_review": 0.29778773857721225,
+        "matches": 17,
+        "missing_predictions": 0,
+        "patient_cluster_bootstrap_95_conditional": [
+          0.275,
+          0.5853658536585366
+        ],
+        "unique_patients": 39,
+        "wilson_95_descriptive": [
+          0.28509392559950375,
+          0.5780493145800892
+        ]
+      },
+      "synthetic_candidates_10": {
+        "agreement": null,
+        "denominator": 0,
+        "matches": 0
+      }
+    },
+    "Q-LACE hard-negative NSE variant": {
+      "all_50": {
+        "agreement": 0.26,
+        "cohen_kappa": 0.11185789726356218,
+        "denominator": 50,
+        "four_class_macro_f1_against_normalized_review": 0.28024715320910976,
+        "matches": 13,
+        "missing_predictions": 0,
+        "patient_cluster_bootstrap_95_conditional": [
+          0.14,
+          0.3877551020408163
+        ],
+        "unique_patients": 49,
+        "wilson_95_descriptive": [
+          0.15871527493552393,
+          0.39553157264848837
+        ]
+      },
+      "benchmark_40": {
+        "agreement": 0.25,
+        "cohen_kappa": 0.08814589665653497,
+        "denominator": 40,
+        "four_class_macro_f1_against_normalized_review": 0.25913476501711796,
+        "matches": 10,
+        "missing_predictions": 0,
+        "patient_cluster_bootstrap_95_conditional": [
+          0.125,
+          0.38461538461538464
+        ],
+        "unique_patients": 39,
+        "wilson_95_descriptive": [
+          0.14187118639096302,
+          0.40193961420768026
+        ]
+      },
+      "synthetic_candidates_10": {
+        "agreement": 0.3,
+        "cohen_kappa": 0.17647058823529413,
+        "denominator": 10,
+        "four_class_macro_f1_against_normalized_review": 0.25,
+        "matches": 3,
+        "missing_predictions": 0,
+        "patient_cluster_bootstrap_95_conditional": [
+          0.0,
+          0.6
+        ],
+        "unique_patients": 10,
+        "wilson_95_descriptive": [
+          0.10779126740630099,
+          0.6032218525388546
+        ]
+      }
+    },
+    "Q-LACE historical evaluated checkpoint": {
+      "all_50": {
+        "agreement": 0.34,
+        "cohen_kappa": 0.058219178082191785,
+        "denominator": 50,
+        "four_class_macro_f1_against_normalized_review": 0.26512606412472683,
+        "matches": 17,
+        "missing_predictions": 0,
+        "patient_cluster_bootstrap_95_conditional": [
+          0.20408163265306123,
+          0.48
+        ],
+        "unique_patients": 49,
+        "wilson_95_descriptive": [
+          0.2243694922250009,
+          0.478461739497674
+        ]
+      },
+      "benchmark_40": {
+        "agreement": 0.35,
+        "cohen_kappa": 0.049360146252285186,
+        "denominator": 40,
+        "four_class_macro_f1_against_normalized_review": 0.2701465201465202,
+        "matches": 14,
+        "missing_predictions": 0,
+        "patient_cluster_bootstrap_95_conditional": [
+          0.2,
+          0.5
+        ],
+        "unique_patients": 39,
+        "wilson_95_descriptive": [
+          0.2213452887317629,
+          0.5049411916274231
+        ]
+      },
+      "synthetic_candidates_10": {
+        "agreement": 0.3,
+        "cohen_kappa": 0.11392405063291139,
+        "denominator": 10,
+        "four_class_macro_f1_against_normalized_review": 0.225,
+        "matches": 3,
+        "missing_predictions": 0,
+        "patient_cluster_bootstrap_95_conditional": [
+          0.0,
+          0.6
+        ],
+        "unique_patients": 10,
+        "wilson_95_descriptive": [
+          0.10779126740630099,
+          0.6032218525388546
+        ]
+      }
+    },
+    "Qwen2.5-VL-7B historical fixed prompt": {
+      "all_50": {
+        "agreement": 0.2,
+        "cohen_kappa": 0.04671115347950431,
+        "denominator": 50,
+        "four_class_macro_f1_against_normalized_review": 0.17975277067348677,
+        "matches": 10,
+        "missing_predictions": 0,
+        "patient_cluster_bootstrap_95_conditional": [
+          0.09803921568627451,
+          0.32
+        ],
+        "unique_patients": 49,
+        "wilson_95_descriptive": [
+          0.1124375001577611,
+          0.3303710593222542
+        ]
+      },
+      "benchmark_40": {
+        "agreement": 0.2,
+        "cohen_kappa": 0.06158357771260999,
+        "denominator": 40,
+        "four_class_macro_f1_against_normalized_review": 0.19166666666666668,
+        "matches": 8,
+        "missing_predictions": 0,
+        "patient_cluster_bootstrap_95_conditional": [
+          0.07692307692307693,
+          0.3333333333333333
+        ],
+        "unique_patients": 39,
+        "wilson_95_descriptive": [
+          0.10499989725437704,
+          0.347573063463995
+        ]
+      },
+      "synthetic_candidates_10": {
+        "agreement": 0.2,
+        "cohen_kappa": 0.0,
+        "denominator": 10,
+        "four_class_macro_f1_against_normalized_review": 0.1111111111111111,
+        "matches": 2,
+        "missing_predictions": 0,
+        "patient_cluster_bootstrap_95_conditional": [
+          0.0,
+          0.5
+        ],
+        "unique_patients": 10,
+        "wilson_95_descriptive": [
+          0.05668215145437519,
+          0.5098375284633583
+        ]
+      }
+    }
+  },
+  "normalization": {
+    "cannot_assess_not_enough_evidence": "no_supported_evidence",
+    "limitation": "Computational mapping only. Image assessability is not identical to an adjudicated unsupported-query diagnosis; retain the reader's original answer alongside normalized scores."
+  },
+  "reference_agreement": {
+    "all_50": {
+      "agreement": 0.48,
+      "cohen_kappa": 0.27616926503340755,
+      "denominator": 50,
+      "four_class_macro_f1_against_normalized_review": 0.4469823654606263,
+      "matches": 24,
+      "missing_predictions": 0,
+      "patient_cluster_bootstrap_95_conditional": [
+        0.34,
+        0.62
+      ],
+      "unique_patients": 49,
+      "wilson_95_descriptive": [
+        0.34797135286578046,
+        0.6148825510995539
+      ]
+    },
+    "benchmark_40": {
+      "agreement": 0.55,
+      "cohen_kappa": 0.30501930501930513,
+      "denominator": 40,
+      "four_class_macro_f1_against_normalized_review": 0.4096006295494787,
+      "matches": 22,
+      "missing_predictions": 0,
+      "patient_cluster_bootstrap_95_conditional": [
+        0.3902439024390244,
+        0.7073170731707317
+      ],
+      "unique_patients": 39,
+      "wilson_95_descriptive": [
+        0.39829091798932054,
+        0.6929469218909508
+      ]
+    },
+    "synthetic_candidates_10": {
+      "agreement": 0.2,
+      "cohen_kappa": 0.0,
+      "denominator": 10,
+      "four_class_macro_f1_against_normalized_review": 0.08333333333333333,
+      "matches": 2,
+      "missing_predictions": 0,
+      "patient_cluster_bootstrap_95_conditional": [
+        0.0,
+        0.5
+      ],
+      "unique_patients": 10,
+      "wilson_95_descriptive": [
+        0.05668215145437519,
+        0.5098375284633583
+      ]
+    }
+  },
+  "sampling": {
+    "benchmark_cases": 40,
+    "by_finding": {
+      "consolidation": 10,
+      "edema": 10,
+      "pleural effusion": 10,
+      "pneumonia": 10,
+      "pneumothorax": 10
+    },
+    "by_hidden_reference": {
+      "improving": 10,
+      "no_supported_evidence": 10,
+      "stable": 16,
+      "worsening": 14
+    },
+    "by_sampling_stratum": {
+      "candidate_nse": 10,
+      "high_risk_enriched": 1,
+      "q_lace_biovilt_disagreement": 8,
+      "supported_benchmark_balanced": 31
+    },
+    "by_source_dataset": {
+      "ms_cxr_t_supported_benchmark": 40,
+      "synthetic_candidate_nse": 10
+    },
+    "review_answer_raw_counts": {
+      "cannot_assess_not_enough_evidence": 3,
+      "improving": 10,
+      "stable": 28,
+      "worsening": 9
+    },
+    "selected_cases": 50,
+    "selection_note": "Balanced by finding and approximately balanced by hidden reference; selected from an enriched 500-case packet. Metadata-quality ranking and deterministic hash ordering favor view-consistent available pairs. Not a representative prevalence sample.",
+    "source_packet_cases": 500,
+    "synthetic_candidate_cases": 10
+  }
+}

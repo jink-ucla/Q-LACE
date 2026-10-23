@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "Please cite the Q-LACE manuscript when using the study's framework or results."
+title: "Q-LACE: Separating Benchmark Performance from Conditional Reliability in Longitudinal Chest Radiograph Assessment"
+type: software
+repository-code: "https://github.com/jink-ucla/Q-LACE"
+url: "https://github.com/jink-ucla/Q-LACE"
+authors:
+  - family-names: Kim
+    given-names: Jin
+  - family-names: Abtin
+    given-names: Fereidoun
+  - family-names: Brown
+    given-names: Matthew S.
+  - family-names: Ruan
+    given-names: Dan
+license: Apache-2.0
+abstract: >-
+  Code and aggregate results for separating adaptation performance, finding
+  conditioning, and temporal consistency in longitudinal chest radiograph
+  assessment. Patient-level datasets and model weights are obtained separately.
+keywords:
+  - longitudinal chest radiographs
+  - conditional reliability
+  - vision-language models
+  - medical image analysis

@@ -1,0 +1,56 @@
+# Local Python environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.DS_Store
+
+# Credentials and private configuration
+.env
+.env.*
+*.pem
+*.key
+.netrc
+.git-credentials
+
+# Authorized local inputs and generated research outputs
+/data/
+/share_data/
+/local_artifacts/
+/models/
+/checkpoints/
+/predictions/
+/outputs/
+/runs/
+/logs/
+/reproduced/
+/wandb/
+*.jsonl
+*.log
+
+# Images, model tensors and binary datasets are not release payloads
+*.dcm
+*.dicom
+*.jpg
+*.jpeg
+*.png
+*.webp
+*.pdf
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.pkl
+*.pickle
+*.parquet
+*.h5
+*.hdf5
+*.zip
+*.tar
+*.gz

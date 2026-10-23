@@ -1,0 +1,535 @@
+{
+  "context": {
+    "model_figure": {
+      "caption_latex": "Q-LACE pipeline. Report-derived weak supervision adapts a medical VLM for held-out finding-conditioned interval-change classification using 2,048 weak-training examples per run. Adaptation includes language/vision LoRA and trainable input embeddings and output head; other base weights remain frozen. Historical validation-monitoring schedules are specified in Appendix~\\ref{sec:historical_provenance}. ``No evidence'' is an appendix diagnostic, while the three change labels define the benchmark task. The illustrative radiographs are separate NIH Clinical Center images from different patients, arranged to depict input roles; they are not a real longitudinal pair or study evaluation case. NIH credit and download: \\url{https://nihcc.app.box.com/v/ChestXray-NIHCC}; \\cite{wang2017chestxray}. Author-created schematic, exported with Inkscape 1.4.4/cairo 1.18.4.",
+      "caption_text": "Q-LACE pipeline. Report-derived weak supervision adapts a medical VLM for held-out finding-conditioned interval-change classification using 2,048 weak-training examples per run. Adaptation includes language/vision LoRA and trainable input embeddings and output head; other base weights remain frozen. Historical validation-monitoring schedules are specified in Appendix A.10. \"No evidence\" is an appendix diagnostic, while the three change labels define the benchmark task. The illustrative radiographs are separate NIH Clinical Center images from different patients, arranged to depict input roles; they are not a real longitudinal pair or study evaluation case. NIH credit and download: https://nihcc.app.box.com/v/ChestXray-NIHCC; [wang2017chestxray]. Author-created schematic, exported with Inkscape 1.4.4/cairo 1.18.4.",
+      "label": "fig:pipeline",
+      "number": "1",
+      "page": "4",
+      "source": {
+        "relative_path": "figures/figure1_pipeline.tex",
+        "sha256": "2f7a956a54f79cdaddfba3b06046c3880afaee1724434736779c377cdfaa6923"
+      }
+    },
+    "protocol_counts_label": "tab:protocol-counts"
+  },
+  "coverage_from_compiled_labels": [
+    {
+      "aliases": [],
+      "label": "tab:label-semantics",
+      "number": "1",
+      "page": "3"
+    },
+    {
+      "aliases": [],
+      "label": "tab:aggregation_effects",
+      "number": "2",
+      "page": "7"
+    },
+    {
+      "aliases": [],
+      "label": "tab:main_benchmark",
+      "number": "3",
+      "page": "7"
+    },
+    {
+      "aliases": [],
+      "label": "tab:query_intervention_controls",
+      "number": "4",
+      "page": "7"
+    },
+    {
+      "aliases": [],
+      "label": "tab:protocol-counts",
+      "number": "A1",
+      "page": "13"
+    },
+    {
+      "aliases": [],
+      "label": "tab:label-distributions",
+      "number": "A2",
+      "page": "13"
+    },
+    {
+      "aliases": [],
+      "label": "tab:weak_label_rules",
+      "number": "A3",
+      "page": "14"
+    },
+    {
+      "aliases": [],
+      "label": "tab:data-overlap",
+      "number": "A4",
+      "page": "14"
+    },
+    {
+      "aliases": [],
+      "label": "tab:stage1-stage2-bridge",
+      "number": "A5",
+      "page": "14"
+    },
+    {
+      "aliases": [],
+      "label": "tab:query_intervention_agreement",
+      "number": "A6",
+      "page": "14"
+    },
+    {
+      "aliases": [],
+      "label": "tab:appendix_temporal_controls_full",
+      "number": "A7",
+      "page": "15"
+    },
+    {
+      "aliases": [],
+      "label": "tab:appendix_per_finding_controls",
+      "number": "A8",
+      "page": "15"
+    },
+    {
+      "aliases": [],
+      "label": "tab:appendix_transfer",
+      "number": "A9",
+      "page": "15"
+    },
+    {
+      "aliases": [
+        "tab:complementarity_ensemble",
+        "tab:appendix_paired_deltas",
+        "tab:scale_ablation",
+        "tab:appendix_matched_budget"
+      ],
+      "label": "tab:appendix_secondary_diagnostics",
+      "number": "A10",
+      "page": "16"
+    },
+    {
+      "aliases": [],
+      "label": "tab:fixed_prompt_catalogue",
+      "number": "A11",
+      "page": "16"
+    },
+    {
+      "aliases": [],
+      "label": "tab:existing_fifty_review",
+      "number": "A12",
+      "page": "17"
+    },
+    {
+      "aliases": [],
+      "label": "tab:matched_finding_blind",
+      "number": "A13",
+      "page": "17"
+    },
+    {
+      "aliases": [],
+      "label": "tab:detailed_query_swap",
+      "number": "A14",
+      "page": "17"
+    },
+    {
+      "aliases": [],
+      "label": "tab:query_swap_finding_pairs",
+      "number": "A15",
+      "page": "18"
+    },
+    {
+      "aliases": [],
+      "label": "tab:finding_blind_oracle",
+      "number": "A16",
+      "page": "18"
+    },
+    {
+      "aliases": [],
+      "label": "tab:baseline_metric_bridge",
+      "number": "A17",
+      "page": "19"
+    },
+    {
+      "aliases": [],
+      "label": "tab:appendix_nse_stress",
+      "number": "A18",
+      "page": "19"
+    },
+    {
+      "aliases": [],
+      "label": "tab:appendix_nse_hard_negative",
+      "number": "A19",
+      "page": "19"
+    },
+    {
+      "aliases": [],
+      "label": "tab:appendix_seed_stability",
+      "number": "A20",
+      "page": "19"
+    }
+  ],
+  "figures": [
+    {
+      "data": "aggregates/figure_A1_data.json",
+      "label": "fig:historical_benchmark",
+      "number": "A1",
+      "page": "12",
+      "sha256": "df291388eb7eb87c50b47fa902a25820d9d54b2ccf9a7c4cf7bcdb86d939668d",
+      "verified_panel_counts": {
+        "B": 13,
+        "C": 12
+      }
+    }
+  ],
+  "prose_result_families": [
+    {
+      "canonical_aggregate_families": [
+        "aggregates/data_training_runtime.json"
+      ],
+      "topic": "Configured trainability and parameter breakdown"
+    },
+    {
+      "canonical_aggregate_families": [
+        "aggregates/data_training_runtime.json"
+      ],
+      "topic": "Training distributions and descriptive PTX errors"
+    },
+    {
+      "canonical_aggregate_families": [
+        "aggregates/data_training_runtime.json"
+      ],
+      "topic": "Dataset/overlap and physical-pair counts"
+    },
+    {
+      "canonical_aggregate_families": [
+        "aggregates/data_training_runtime.json"
+      ],
+      "topic": "Runtime input-integrity and parsing checks"
+    },
+    {
+      "canonical_aggregate_families": [
+        "aggregates/data_training_runtime.json"
+      ],
+      "topic": "Heterogeneous documented compute accounting"
+    }
+  ],
+  "schema": "qlace-manuscript-results-index-v1",
+  "scope": "Exact active published-table snapshot, not independent recomputation. LaTeX cells are authoritative; text is a convenience projection. Stored intervals are not regenerated.",
+  "snapshot": "aggregates/manuscript_tables.json",
+  "snapshot_sha256": "fb5d52ccfacccab1bbd64d8462ce9204e003250e2d32767ae308747b52f0d5f6",
+  "table_count": 24,
+  "tables": [
+    {
+      "aliases": [],
+      "canonical_aggregate_families": [],
+      "classification": "specification",
+      "csv": "aggregates/manuscript_tables/table_1.csv",
+      "csv_sha256": "fe21dc5b4bbbc0ce825da44f89c1926f200c512f449a693be638c1e6cfc30940",
+      "label": "tab:label-semantics",
+      "number": "1",
+      "page": "3",
+      "tabular_count": 1
+    },
+    {
+      "aliases": [],
+      "canonical_aggregate_families": [
+        "aggregates/baseline_comparison.json"
+      ],
+      "classification": "published_results_or_context_counts",
+      "csv": "aggregates/manuscript_tables/table_2.csv",
+      "csv_sha256": "bafba2943fd1197909c6f92dafa6e39c3ec7d058fe4f0bb59dd1179e4d198c78",
+      "label": "tab:aggregation_effects",
+      "number": "2",
+      "page": "7",
+      "tabular_count": 1
+    },
+    {
+      "aliases": [],
+      "canonical_aggregate_families": [
+        "aggregates/baseline_comparison.json",
+        "aggregates/catalogue_and_frozen_heads.json"
+      ],
+      "classification": "published_results_or_context_counts",
+      "csv": "aggregates/manuscript_tables/table_3.csv",
+      "csv_sha256": "c0364c73f8ed8de88c4ff54c7108db7ae0bd3d03af091d4f143fb394e9a34242",
+      "label": "tab:main_benchmark",
+      "number": "3",
+      "page": "7",
+      "tabular_count": 1
+    },
+    {
+      "aliases": [],
+      "canonical_aggregate_families": [
+        "aggregates/query_interventions_and_scale.json"
+      ],
+      "classification": "published_results_or_context_counts",
+      "csv": "aggregates/manuscript_tables/table_4.csv",
+      "csv_sha256": "ad6016cffc54f7049fc3149bdaa42fcf92477d09a9d6e87e3a636a44d86cb73a",
+      "label": "tab:query_intervention_controls",
+      "number": "4",
+      "page": "7",
+      "tabular_count": 1
+    },
+    {
+      "aliases": [],
+      "canonical_aggregate_families": [
+        "aggregates/data_training_runtime.json"
+      ],
+      "classification": "published_results_or_context_counts",
+      "csv": "aggregates/manuscript_tables/table_A1.csv",
+      "csv_sha256": "fb8b4a46946659e03a476304d7cc2c9e9dcd7f690ac80591a0245a8a89517a94",
+      "label": "tab:protocol-counts",
+      "number": "A1",
+      "page": "13",
+      "tabular_count": 1
+    },
+    {
+      "aliases": [],
+      "canonical_aggregate_families": [
+        "aggregates/data_training_runtime.json"
+      ],
+      "classification": "published_results_or_context_counts",
+      "csv": "aggregates/manuscript_tables/table_A2.csv",
+      "csv_sha256": "76e00a8e1c8668f1c3ee5df0fa3cb597538d61419d202f8ca5f45bd0a213c438",
+      "label": "tab:label-distributions",
+      "number": "A2",
+      "page": "13",
+      "tabular_count": 2
+    },
+    {
+      "aliases": [],
+      "canonical_aggregate_families": [],
+      "classification": "specification",
+      "csv": "aggregates/manuscript_tables/table_A3.csv",
+      "csv_sha256": "2165f96afa7b1a398995af1a714ad227f5c4bc4bb9611c44c1d7035ced043e66",
+      "label": "tab:weak_label_rules",
+      "number": "A3",
+      "page": "14",
+      "tabular_count": 1
+    },
+    {
+      "aliases": [],
+      "canonical_aggregate_families": [
+        "aggregates/data_training_runtime.json"
+      ],
+      "classification": "published_results_or_context_counts",
+      "csv": "aggregates/manuscript_tables/table_A4.csv",
+      "csv_sha256": "6a3e75bd3d96252748ff89ba082eb883bb293038fe6a32574c85888e7c21603c",
+      "label": "tab:data-overlap",
+      "number": "A4",
+      "page": "14",
+      "tabular_count": 1
+    },
+    {
+      "aliases": [],
+      "canonical_aggregate_families": [],
+      "classification": "specification",
+      "csv": "aggregates/manuscript_tables/table_A5.csv",
+      "csv_sha256": "2328373acb3122b4f840ceca94662338ae4f85820bc6c73e049c4176132ce888",
+      "label": "tab:stage1-stage2-bridge",
+      "number": "A5",
+      "page": "14",
+      "tabular_count": 1
+    },
+    {
+      "aliases": [],
+      "canonical_aggregate_families": [
+        "aggregates/query_interventions_and_scale.json"
+      ],
+      "classification": "published_results_or_context_counts",
+      "csv": "aggregates/manuscript_tables/table_A6.csv",
+      "csv_sha256": "602d9ef34e2b32cba1b46951aeb1e6ad590f60c94f7ede50e698e04a4579b1ae",
+      "label": "tab:query_intervention_agreement",
+      "number": "A6",
+      "page": "14",
+      "tabular_count": 1
+    },
+    {
+      "aliases": [],
+      "canonical_aggregate_families": [
+        "aggregates/temporal_details.json",
+        "aggregates/temporal_metrics.tsv"
+      ],
+      "classification": "published_results_or_context_counts",
+      "csv": "aggregates/manuscript_tables/table_A7.csv",
+      "csv_sha256": "4a6562716fd16aa00ac2d40299c7b4a08bb309a3927390a5c872dcf4bd0d4b74",
+      "label": "tab:appendix_temporal_controls_full",
+      "number": "A7",
+      "page": "15",
+      "tabular_count": 1
+    },
+    {
+      "aliases": [],
+      "canonical_aggregate_families": [
+        "aggregates/canonical_diagnostics.json"
+      ],
+      "classification": "published_results_or_context_counts",
+      "csv": "aggregates/manuscript_tables/table_A8.csv",
+      "csv_sha256": "dac06df9ed85f47693ade68ae061bc898a3339b083e0f4f18705f001c6cdd1b1",
+      "label": "tab:appendix_per_finding_controls",
+      "number": "A8",
+      "page": "15",
+      "tabular_count": 1
+    },
+    {
+      "aliases": [],
+      "canonical_aggregate_families": [
+        "aggregates/secondary_diagnostics.json"
+      ],
+      "classification": "published_results_or_context_counts",
+      "csv": "aggregates/manuscript_tables/table_A9.csv",
+      "csv_sha256": "8ed4757e86d0b479f048738fe321a76974e0eca00437257a6ba33f4e053db643",
+      "label": "tab:appendix_transfer",
+      "number": "A9",
+      "page": "15",
+      "tabular_count": 1
+    },
+    {
+      "aliases": [
+        "tab:complementarity_ensemble",
+        "tab:appendix_paired_deltas",
+        "tab:scale_ablation",
+        "tab:appendix_matched_budget"
+      ],
+      "canonical_aggregate_families": [
+        "aggregates/canonical_diagnostics.json",
+        "aggregates/baseline_comparison.json",
+        "aggregates/query_interventions_and_scale.json",
+        "aggregates/catalogue_and_frozen_heads.json"
+      ],
+      "classification": "published_results_or_context_counts",
+      "csv": "aggregates/manuscript_tables/table_A10.csv",
+      "csv_sha256": "27ce32c041189e5217a83ae2764872b2e6753c59ca579930a249cd47c75b0aa1",
+      "label": "tab:appendix_secondary_diagnostics",
+      "number": "A10",
+      "page": "16",
+      "tabular_count": 4
+    },
+    {
+      "aliases": [],
+      "canonical_aggregate_families": [
+        "aggregates/catalogue_and_frozen_heads.json"
+      ],
+      "classification": "published_results_or_context_counts",
+      "csv": "aggregates/manuscript_tables/table_A11.csv",
+      "csv_sha256": "e871c0f915b50b810562da8d5de6d8ef1172f29aaebecd1a1ddaf4b046895828",
+      "label": "tab:fixed_prompt_catalogue",
+      "number": "A11",
+      "page": "16",
+      "tabular_count": 1
+    },
+    {
+      "aliases": [],
+      "canonical_aggregate_families": [
+        "aggregates/existing_50_image_review.json"
+      ],
+      "classification": "published_results_or_context_counts",
+      "csv": "aggregates/manuscript_tables/table_A12.csv",
+      "csv_sha256": "cb34f1b04049181085cbafb6c2236b7d7494f37e126617c5090578f19d5fc038",
+      "label": "tab:existing_fifty_review",
+      "number": "A12",
+      "page": "17",
+      "tabular_count": 1
+    },
+    {
+      "aliases": [],
+      "canonical_aggregate_families": [
+        "aggregates/baseline_comparison.json"
+      ],
+      "classification": "published_results_or_context_counts",
+      "csv": "aggregates/manuscript_tables/table_A13.csv",
+      "csv_sha256": "92032b1aedceed2f6a7f4a13e7154ac2d9d26874bf0d8c073a336daa49665cc0",
+      "label": "tab:matched_finding_blind",
+      "number": "A13",
+      "page": "17",
+      "tabular_count": 1
+    },
+    {
+      "aliases": [],
+      "canonical_aggregate_families": [
+        "aggregates/canonical_diagnostics.json"
+      ],
+      "classification": "published_results_or_context_counts",
+      "csv": "aggregates/manuscript_tables/table_A14.csv",
+      "csv_sha256": "c632d91a9b040602b914ea5a4082cf719bd050777ad877f077bffc906eeb0675",
+      "label": "tab:detailed_query_swap",
+      "number": "A14",
+      "page": "17",
+      "tabular_count": 2
+    },
+    {
+      "aliases": [],
+      "canonical_aggregate_families": [
+        "aggregates/canonical_diagnostics.json"
+      ],
+      "classification": "published_results_or_context_counts",
+      "csv": "aggregates/manuscript_tables/table_A15.csv",
+      "csv_sha256": "f9ce0ba93967eb08a46b9ee391e294617c65f42aeebc284f9fd87dd086ec77a6",
+      "label": "tab:query_swap_finding_pairs",
+      "number": "A15",
+      "page": "18",
+      "tabular_count": 1
+    },
+    {
+      "aliases": [],
+      "canonical_aggregate_families": [
+        "aggregates/canonical_diagnostics.json"
+      ],
+      "classification": "published_results_or_context_counts",
+      "csv": "aggregates/manuscript_tables/table_A16.csv",
+      "csv_sha256": "cba232c287fb687737948c8ab8d635dd29be16895ec4df575da52a1a702fb656",
+      "label": "tab:finding_blind_oracle",
+      "number": "A16",
+      "page": "18",
+      "tabular_count": 1
+    },
+    {
+      "aliases": [],
+      "canonical_aggregate_families": [
+        "aggregates/baseline_comparison.json"
+      ],
+      "classification": "published_results_or_context_counts",
+      "csv": "aggregates/manuscript_tables/table_A17.csv",
+      "csv_sha256": "e3569533729405cfb38b2d8faa77704264f1ffab2976c5dc94089facb7192622",
+      "label": "tab:baseline_metric_bridge",
+      "number": "A17",
+      "page": "19",
+      "tabular_count": 1
+    },
+    {
+      "aliases": [],
+      "canonical_aggregate_families": [
+        "aggregates/temporal_details.json"
+      ],
+      "classification": "published_results_or_context_counts",
+      "csv": "aggregates/manuscript_tables/table_A18.csv",
+      "csv_sha256": "75c80e4d4db52377ecac30856a20db482a62bec7acfce64802e598da72439d47",
+      "label": "tab:appendix_nse_stress",
+      "number": "A18",
+      "page": "19",
+      "tabular_count": 1
+    },
+    {
+      "aliases": [],
+      "canonical_aggregate_families": [
+        "aggregates/secondary_diagnostics.json"
+      ],
+      "classification": "published_results_or_context_counts",
+      "csv": "aggregates/manuscript_tables/table_A19.csv",
+      "csv_sha256": "273a676a510563aa14e7d57d5c9d664c6aeb763b6ea350e3fe166bb8e195ade8",
+      "label": "tab:appendix_nse_hard_negative",
+      "number": "A19",
+      "page": "19",
+      "tabular_count": 1
+    },
+    {
+      "aliases": [],
+      "canonical_aggregate_families": [
+        "aggregates/baseline_comparison.json"
+      ],
+      "classification": "published_results_or_context_counts",
+      "csv": "aggregates/manuscript_tables/table_A20.csv",
+      "csv_sha256": "f60d0ce448ce3f8f47aa1da0c950389392c974bbcc66512847c9ed6c4844a99c",
+      "label": "tab:appendix_seed_stability",
+      "number": "A20",
+      "page": "19",
+      "tabular_count": 1
+    }
+  ]
+}

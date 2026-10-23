@@ -1,0 +1,33 @@
+tabular_number,row_number,cell_number,cell_latex,cell_text
+1,1,1,Historical fixed-prompt diagnostic,Historical fixed-prompt diagnostic
+1,1,2,No-prior/current,No-prior/current
+1,1,3,Prior/current,Prior/current
+1,1,4,Same-view,Same-view
+1,2,1,,
+1,2,2,Acc. / F1,Acc. / F1
+1,2,3,Acc. / F1,Acc. / F1
+1,2,4,Acc. / F1,Acc. / F1
+1,3,1,Qwen2.5-VL-7B,Qwen2.5-VL-7B
+1,3,2,0.097 / 0.136,0.097 / 0.136
+1,3,3,0.236 / 0.226,0.236 / 0.226
+1,3,4,0.227 / 0.217,0.227 / 0.217
+1,4,1,CheXagent side-by-side MC$^{\dagger}$,CheXagent side-by-side MC^†
+1,4,2,0.461 / 0.442,0.461 / 0.442
+1,4,3,0.441 / 0.394,0.441 / 0.394
+1,4,4,0.454 / 0.407,0.454 / 0.407
+1,5,1,Lingshu-7B,Lingshu-7B
+1,5,2,0.399 / 0.231,0.399 / 0.231
+1,5,3,0.382 / 0.227,0.382 / 0.227
+1,5,4,0.379 / 0.217,0.379 / 0.217
+1,6,1,Lingshu-I-8B,Lingshu-I-8B
+1,6,2,0.397 / 0.240,0.397 / 0.240
+1,6,3,0.388 / 0.221,0.388 / 0.221
+1,6,4,0.379 / 0.213,0.379 / 0.213
+1,7,1,HuatuoGPT-Vision-7B,HuatuoGPT-Vision-7B
+1,7,2,0.387 / 0.203,0.387 / 0.203
+1,7,3,0.405 / 0.244,0.405 / 0.244
+1,7,4,0.398 / 0.241,0.398 / 0.241
+1,8,1,SmolVLM2-2.2B,SmolVLM2-2.2B
+1,8,2,0.333 / 0.205,0.333 / 0.205
+1,8,3,0.343 / 0.196,0.343 / 0.196
+1,8,4,0.336 / 0.190,0.336 / 0.190

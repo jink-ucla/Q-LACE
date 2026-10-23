@@ -1,0 +1,14 @@
+Q-LACE
+Study authors: Jin Kim, Fereidoun Abtin, Matthew S. Brown, and Dan Ruan.
+
+This software includes source derived from Visual-RFT:
+https://github.com/Liuziyu77/Visual-RFT
+The upstream Apache License 2.0 is retained in LICENSE.
+
+Q-LACE adds longitudinal dataset construction, adaptation/evaluation utilities,
+conditional-reliability analyses, synthetic tests, and aggregate-result exports.
+Public-repository adaptations are described in PORTABILITY.md and the file
+manifest. Existing source notices remain applicable.
+
+This notice does not grant access to or redistribution rights for any source
+medical dataset, pretrained model, or trained adapter.

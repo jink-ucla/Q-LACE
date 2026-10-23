@@ -1,0 +1,43 @@
+tabular_number,row_number,cell_number,cell_latex,cell_text
+1,1,1,System,System
+1,1,2,Query rows,Query rows
+1,1,3,Patient pairs,Patient pairs
+1,1,4,Accuracy,Accuracy
+1,1,5,Supported macro-F1,Supported macro-F1
+1,1,6,Scope note,Scope note
+1,2,1,MedSigLIP current-only,MedSigLIP current-only
+1,2,2,215,215
+1,2,3,152,152
+1,2,4,0.530,0.530
+1,2,5,0.511,0.511
+1,2,6,"Projected 3-way transfer; \texttt{anatomy=""unspecified""}","Projected 3-way transfer; anatomy=""unspecified"""
+1,3,1,MedSigLIP prior/current,MedSigLIP prior/current
+1,3,2,215,215
+1,3,3,152,152
+1,3,4,0.479,0.479
+1,3,5,0.474,0.474
+1,3,6,"Projected 3-way transfer; \texttt{anatomy=""unspecified""}","Projected 3-way transfer; anatomy=""unspecified"""
+1,4,1,BioViL-T current-only,BioViL-T current-only
+1,4,2,215,215
+1,4,3,152,152
+1,4,4,0.535,0.535
+1,4,5,0.513,0.513
+1,4,6,Matched current-image frozen encoder,Matched current-image frozen encoder
+1,5,1,BioViL-T prior/current,BioViL-T prior/current
+1,5,2,215,215
+1,5,3,152,152
+1,5,4,0.558,0.558
+1,5,5,0.534,0.534
+1,5,6,Matched prior/current temporal encoder,Matched prior/current temporal encoder
+1,6,1,MedGemma prompt-only,MedGemma prompt-only
+1,6,2,215,215
+1,6,3,152,152
+1,6,4,0.330,0.330
+1,6,5,0.392,0.392
+1,6,6,Closed-set label-mode transfer baseline,Closed-set label-mode transfer baseline
+1,7,1,\textbf{Q-LACE},Q-LACE
+1,7,2,\textbf{215},215
+1,7,3,\textbf{152},152
+1,7,4,\textbf{0.577},0.577
+1,7,5,\textbf{0.534},0.534
+1,7,6,Primary prior/current Q-LACE checkpoint,Primary prior/current Q-LACE checkpoint

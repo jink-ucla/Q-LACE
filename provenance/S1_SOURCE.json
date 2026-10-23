@@ -1,0 +1,12 @@
+{
+  "schema": "qlace-public-source-v1",
+  "source_archive": "SupplementarySoftwareS1.zip",
+  "source_archive_sha256": "dde25f4a34464d406e17897a8dbc16e683656379fc9465e2ca56a5c56286d8cf",
+  "source_payload_files": 102,
+  "source_manifest": "provenance/s1_file_manifest.json",
+  "study": "Q-LACE: Separating Benchmark Performance from Conditional Reliability in Longitudinal Chest Radiograph Assessment",
+  "manuscript_revision": 13,
+  "aggregate_copy_policy": "All aggregates/ files are byte-identical to the source supplementary software payload.",
+  "public_adaptations": "PORTABILITY.md",
+  "current_payload_manifest": "FILE_MANIFEST.json"
+}

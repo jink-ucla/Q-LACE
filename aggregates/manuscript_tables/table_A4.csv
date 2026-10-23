@@ -1,0 +1,17 @@
+tabular_number,row_number,cell_number,cell_latex,cell_text
+1,1,1,Audit target,Audit target
+1,1,2,Rows checked,Rows checked
+1,1,3,Overlap evidence,Overlap evidence
+1,1,4,Interpretation,Interpretation
+1,2,1,Initial preview export,Initial preview export
+1,2,2,148,148
+1,2,3,17 overlapping preview rows,17 overlapping preview rows
+1,2,4,These rows share 9 unique identifier values with benchmark content. The preview was discarded and is not used in any reported result.,These rows share 9 unique identifier values with benchmark content. The preview was discarded and is not used in any reported result.
+1,3,1,Full Q-LACE weak pool vs. MS-CXR-T,Full Q-LACE weak pool vs. MS-CXR-T
+1,3,2,"36{,}335 weak rows / 1{,}045 benchmark pairs","36,335 weak rows / 1,045 benchmark pairs"
+1,3,3,0 shared identifiers,0 shared identifiers
+1,3,4,"Exact manifest intersection over patient, study, DICOM/image, pair, image-path, and image-basename identifiers.","Exact manifest intersection over patient, study, DICOM/image, pair, image-path, and image-basename identifiers."
+1,4,1,Stricter Q-LACE weak pool vs. MS-CXR-T,Stricter Q-LACE weak pool vs. MS-CXR-T
+1,4,2,"36{,}224 weak rows / 1{,}045 benchmark pairs","36,224 weak rows / 1,045 benchmark pairs"
+1,4,3,0 shared identifiers,0 shared identifiers
+1,4,4,Same full-manifest check after also excluding the Chest ImaGenome transfer export.,Same full-manifest check after also excluding the Chest ImaGenome transfer export.

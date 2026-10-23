@@ -1,0 +1,18 @@
+{
+  "protocol_id": "cmig-medgemma-source-informed-mcq-native-v1",
+  "provenance_status": "Source-informed reconstruction; exact author prompt and generation budget unavailable",
+  "source_reference": "MedGemma 1.5 Technical Report, arXiv:2604.05081v1; published three-option MS-CXR-T task",
+  "frozen_before_inference": true,
+  "system_prompt": "",
+  "prior_annotation": "Prior chest X-ray:",
+  "current_annotation": "Current chest X-ray:",
+  "content_layout": ["prior_annotation", "prior_image", "current_annotation", "current_image", "question"],
+  "question_template": "Compared with the prior chest X-ray, how has {finding} changed on the current chest X-ray?\n(A) Improved\n(B) Stable\n(C) Worsened\n\nChoose one option. Respond with exactly Final Answer: A, Final Answer: B, or Final Answer: C.",
+  "option_mapping": {"A": "improving", "B": "stable", "C": "worsening"},
+  "max_new_tokens": 128,
+  "generation_budget_provenance": "Study-fixed cap; published cap unavailable",
+  "external_square_padding": false,
+  "do_pan_and_scan": false,
+  "inference_role": "Primary same-backbone comparison; protocol fixed without test outcome selection",
+  "parser_contract": "Complete response must be Final Answer: A/B/C, one option, or one supported label; explanations and multiple answers invalid"
+}

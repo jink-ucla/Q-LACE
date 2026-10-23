@@ -1,0 +1,15 @@
+tabular_number,row_number,cell_number,cell_latex,cell_text
+1,1,1,Representation,Representation
+1,1,2,Output for the same image pair,Output for the same image pair
+1,1,3,Appendix-only point,Appendix-only point
+1,2,1,Query-conditioned target,Query-conditioned target
+1,2,2,\parbox[t]{3.0cm}{\texttt{Query: interval change for consolidation?}\\ \texttt{Benchmark label: stable}},"Query: interval change for consolidation?
+Benchmark label: stable"
+1,2,3,This is the benchmark contract used for the paper's quantitative claims.,This is the benchmark contract used for the paper's quantitative claims.
+1,3,1,Open tuple bridge,Open tuple bridge
+1,3,2,\parbox[t]{3.0cm}{\texttt{worsening bilateral opacity}\\ \texttt{worsening pleural effusion}},"worsening bilateral opacity
+worsening pleural effusion"
+1,3,3,Parser-valid tuple output can still be misaligned with the queried finding.,Parser-valid tuple output can still be misaligned with the queried finding.
+1,4,1,Q-LACE answer,Q-LACE answer
+1,4,2,\texttt{stable},stable
+1,4,3,Directly scored against the queried finding.,Directly scored against the queried finding.

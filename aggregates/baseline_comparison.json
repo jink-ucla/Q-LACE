@@ -1,0 +1,3824 @@
+{
+  "aggregates": {
+    "finding_blind_historical_three_runs": {
+      "arms": [
+        "historical_generic_run1",
+        "historical_generic_run2",
+        "historical_generic_run3"
+      ],
+      "ci_scope": "Patient bootstrap conditional on the three observed runs; sample SD separately describes observed run variability.",
+      "metrics": {
+        "accuracy": {
+          "ci_95": [
+            0.4869430439786391,
+            0.5376183358246138
+          ],
+          "estimate": 0.5123177476118652
+        },
+        "mean_finding_class_balanced_accuracy": {
+          "ci_95": [
+            0.4605952025620391,
+            0.501560186527427
+          ],
+          "estimate": 0.48099601612452875
+        },
+        "pooled_class_balanced_accuracy": {
+          "ci_95": [
+            0.47989711241480754,
+            0.5200568720555694
+          ],
+          "estimate": 0.5002472213072698
+        },
+        "supported_macro_f1": {
+          "ci_95": [
+            0.40688386757598327,
+            0.4492274910045008
+          ],
+          "estimate": 0.4283662952321184
+        }
+      },
+      "run_count": 3,
+      "sample_sd": {
+        "accuracy": 0.03996509073802075,
+        "mean_finding_class_balanced_accuracy": 0.02198783057070889,
+        "pooled_class_balanced_accuracy": 0.024799316936561715,
+        "supported_macro_f1": 0.0367847413812249
+      }
+    },
+    "qlace_historical_three_runs": {
+      "arms": [
+        "historical_qlace_run1",
+        "historical_qlace_run2",
+        "historical_qlace_run3"
+      ],
+      "ci_scope": "Patient bootstrap conditional on the three observed runs; sample SD separately describes observed run variability.",
+      "metrics": {
+        "accuracy": {
+          "ci_95": [
+            0.5539474250339145,
+            0.6046457071700608
+          ],
+          "estimate": 0.5794369029663148
+        },
+        "mean_finding_class_balanced_accuracy": {
+          "ci_95": [
+            0.46790925580221093,
+            0.507496138284478
+          ],
+          "estimate": 0.4876890104975528
+        },
+        "pooled_class_balanced_accuracy": {
+          "ci_95": [
+            0.5277412057689643,
+            0.577496928599478
+          ],
+          "estimate": 0.5524842700682361
+        },
+        "supported_macro_f1": {
+          "ci_95": [
+            0.5219677867643898,
+            0.5728740738493513
+          ],
+          "estimate": 0.5478192072394635
+        }
+      },
+      "run_count": 3,
+      "sample_sd": {
+        "accuracy": 0.013685930204943398,
+        "mean_finding_class_balanced_accuracy": 0.013252163170601895,
+        "pooled_class_balanced_accuracy": 0.00995369922847932,
+        "supported_macro_f1": 0.013891177694088982
+      }
+    },
+    "qlace_native_three_runs": {
+      "arms": [
+        "qlace_run1_native",
+        "qlace_run2_native",
+        "qlace_run3_native"
+      ],
+      "ci_scope": "Patient bootstrap conditional on the three observed runs; sample SD separately describes observed run variability.",
+      "metrics": {
+        "accuracy": {
+          "ci_95": [
+            0.5431625206900942,
+            0.5956814272222399
+          ],
+          "estimate": 0.5696329813976873
+        },
+        "mean_finding_class_balanced_accuracy": {
+          "ci_95": [
+            0.44575585719554117,
+            0.4858073145636385
+          ],
+          "estimate": 0.46572319068387075
+        },
+        "pooled_class_balanced_accuracy": {
+          "ci_95": [
+            0.4910811718062114,
+            0.5402799841847481
+          ],
+          "estimate": 0.5157692257355609
+        },
+        "supported_macro_f1": {
+          "ci_95": [
+            0.48858026533457344,
+            0.5410217408907563
+          ],
+          "estimate": 0.5152666783963068
+        }
+      },
+      "run_count": 3,
+      "sample_sd": {
+        "accuracy": 0.00340064083923294,
+        "mean_finding_class_balanced_accuracy": 0.023280899277455854,
+        "pooled_class_balanced_accuracy": 0.02356432393358325,
+        "supported_macro_f1": 0.021078500227782185
+      }
+    }
+  },
+  "arms": {
+    "base_native": {
+      "generation": {
+        "eos_observed_count": 1324,
+        "generated_tokens_max": 128,
+        "generated_tokens_mean": 7.091251885369532,
+        "invalid_output_count": 25,
+        "n_rows": 1326,
+        "no_eos_count": 2,
+        "parse_failure_count": 25,
+        "predicted_label_counts": {
+          "INVALID": 25,
+          "improving": 915,
+          "stable": 41,
+          "worsening": 345
+        },
+        "truncated_count": 2,
+        "unsupported_output_count": 0
+      },
+      "label": "MedGemma, fixed native MCQ",
+      "metrics": {
+        "accuracy": {
+          "ci_95": [
+            0.2774422507317244,
+            0.3333333333333333
+          ],
+          "estimate": 0.3054298642533937
+        },
+        "mean_finding_class_balanced_accuracy": {
+          "ci_95": [
+            0.3726485275997746,
+            0.41761593298078603
+          ],
+          "estimate": 0.39534948158166394
+        },
+        "pooled_class_balanced_accuracy": {
+          "ci_95": [
+            0.3746911393412058,
+            0.42133482818811996
+          ],
+          "estimate": 0.39805231521351464
+        },
+        "supported_macro_f1": {
+          "ci_95": [
+            0.252132426960742,
+            0.30199879181448747
+          ],
+          "estimate": 0.27750066041777904
+        }
+      },
+      "per_finding": {
+        "consolidation": {
+          "accuracy": 0.30845771144278605,
+          "class_balanced_accuracy": 0.3973198370257194,
+          "confusion_matrix": [
+            [
+              20,
+              1,
+              7,
+              0,
+              0
+            ],
+            [
+              57,
+              1,
+              27,
+              0,
+              0
+            ],
+            [
+              46,
+              0,
+              41,
+              0,
+              1
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 201,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.26365221755378626
+        },
+        "edema": {
+          "accuracy": 0.4548872180451128,
+          "class_balanced_accuracy": 0.43570774325371664,
+          "confusion_matrix": [
+            [
+              75,
+              0,
+              8,
+              0,
+              0
+            ],
+            [
+              53,
+              0,
+              15,
+              0,
+              1
+            ],
+            [
+              68,
+              0,
+              46,
+              0,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 266,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.346788883013103
+        },
+        "pleural effusion": {
+          "accuracy": 0.3309002433090024,
+          "class_balanced_accuracy": 0.41872773536895674,
+          "confusion_matrix": [
+            [
+              54,
+              4,
+              19,
+              0,
+              3
+            ],
+            [
+              105,
+              17,
+              68,
+              0,
+              10
+            ],
+            [
+              52,
+              9,
+              65,
+              0,
+              5
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 411,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.3261080217240839
+        },
+        "pneumonia": {
+          "accuracy": 0.2109704641350211,
+          "class_balanced_accuracy": 0.3828754275626172,
+          "confusion_matrix": [
+            [
+              18,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              43,
+              0,
+              14,
+              0,
+              2
+            ],
+            [
+              124,
+              0,
+              32,
+              0,
+              3
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 237,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.16238339996192652
+        },
+        "pneumothorax": {
+          "accuracy": 0.17061611374407584,
+          "class_balanced_accuracy": 0.3421166646973099,
+          "confusion_matrix": [
+            [
+              30,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              111,
+              5,
+              1,
+              0,
+              0
+            ],
+            [
+              59,
+              3,
+              1,
+              0,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 211,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.12329152329152328
+        }
+      }
+    },
+    "base_squarepad": {
+      "generation": {
+        "eos_observed_count": 1325,
+        "generated_tokens_max": 128,
+        "generated_tokens_mean": 7.628205128205129,
+        "invalid_output_count": 39,
+        "n_rows": 1326,
+        "no_eos_count": 1,
+        "parse_failure_count": 39,
+        "predicted_label_counts": {
+          "INVALID": 39,
+          "improving": 920,
+          "stable": 41,
+          "worsening": 326
+        },
+        "truncated_count": 1,
+        "unsupported_output_count": 0
+      },
+      "label": "MedGemma, square-padding sensitivity",
+      "metrics": {
+        "accuracy": {
+          "ci_95": [
+            0.26479237385651,
+            0.31897250987437503
+          ],
+          "estimate": 0.2918552036199095
+        },
+        "mean_finding_class_balanced_accuracy": {
+          "ci_95": [
+            0.36557049589613844,
+            0.40854292352902943
+          ],
+          "estimate": 0.3872612229305371
+        },
+        "pooled_class_balanced_accuracy": {
+          "ci_95": [
+            0.3600186068168989,
+            0.40529131585225125
+          ],
+          "estimate": 0.3825463528195854
+        },
+        "supported_macro_f1": {
+          "ci_95": [
+            0.2430205678074262,
+            0.29119302066881725
+          ],
+          "estimate": 0.2674408830814228
+        }
+      },
+      "per_finding": {
+        "consolidation": {
+          "accuracy": 0.3034825870646766,
+          "class_balanced_accuracy": 0.4097657244716068,
+          "confusion_matrix": [
+            [
+              22,
+              1,
+              5,
+              0,
+              0
+            ],
+            [
+              57,
+              1,
+              27,
+              0,
+              0
+            ],
+            [
+              49,
+              0,
+              38,
+              0,
+              1
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 201,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.2620174820087522
+        },
+        "edema": {
+          "accuracy": 0.4398496240601504,
+          "class_balanced_accuracy": 0.4218276615232861,
+          "confusion_matrix": [
+            [
+              73,
+              0,
+              9,
+              0,
+              1
+            ],
+            [
+              56,
+              0,
+              13,
+              0,
+              0
+            ],
+            [
+              68,
+              0,
+              44,
+              0,
+              2
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 266,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.3367724867724868
+        },
+        "pleural effusion": {
+          "accuracy": 0.31143552311435524,
+          "class_balanced_accuracy": 0.38776081424936387,
+          "confusion_matrix": [
+            [
+              48,
+              6,
+              21,
+              0,
+              5
+            ],
+            [
+              102,
+              18,
+              67,
+              0,
+              13
+            ],
+            [
+              53,
+              7,
+              62,
+              0,
+              9
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 411,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.3121159698250603
+        },
+        "pneumonia": {
+          "accuracy": 0.189873417721519,
+          "class_balanced_accuracy": 0.3723932472691162,
+          "confusion_matrix": [
+            [
+              18,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              48,
+              0,
+              9,
+              0,
+              2
+            ],
+            [
+              126,
+              0,
+              27,
+              0,
+              6
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 237,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.1487087726085695
+        },
+        "pneumothorax": {
+          "accuracy": 0.17061611374407584,
+          "class_balanced_accuracy": 0.3445586671393124,
+          "confusion_matrix": [
+            [
+              30,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              112,
+              4,
+              1,
+              0,
+              0
+            ],
+            [
+              58,
+              3,
+              2,
+              0,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 211,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.1281154401154401
+        }
+      }
+    },
+    "historical_biovilt": {
+      "generation": {
+        "eos_observed_count": null,
+        "generation_diagnostic_note": "Historical exports lack token IDs and EOS/truncation metadata; unavailable is not zero.",
+        "historical_parse_success_observed_rows": 0,
+        "invalid_output_count": 0,
+        "n_rows": 1326,
+        "no_eos_count": null,
+        "parse_failure_count": null,
+        "predicted_label_counts": {
+          "improving": 272,
+          "stable": 345,
+          "worsening": 709
+        },
+        "truncated_count": null,
+        "unsupported_output_count": 0
+      },
+      "label": "BioViL-T, original classifier outputs",
+      "metrics": {
+        "accuracy": {
+          "ci_95": [
+            0.5235203685872499,
+            0.5828181249550003
+          ],
+          "estimate": 0.5535444947209653
+        },
+        "mean_finding_class_balanced_accuracy": {
+          "ci_95": [
+            0.4395644689635259,
+            0.4896096418387055
+          ],
+          "estimate": 0.4645713536534347
+        },
+        "pooled_class_balanced_accuracy": {
+          "ci_95": [
+            0.5123847931620789,
+            0.5722863088577405
+          ],
+          "estimate": 0.5425025197435751
+        },
+        "supported_macro_f1": {
+          "ci_95": [
+            0.4956298869607434,
+            0.5564460155631142
+          ],
+          "estimate": 0.5268868514464783
+        }
+      },
+      "per_finding": {
+        "consolidation": {
+          "accuracy": 0.48258706467661694,
+          "class_balanced_accuracy": 0.5300292844410491,
+          "confusion_matrix": [
+            [
+              20,
+              0,
+              8,
+              0,
+              0
+            ],
+            [
+              22,
+              2,
+              61,
+              0,
+              0
+            ],
+            [
+              11,
+              2,
+              75,
+              0,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 201,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.3951075682854925
+        },
+        "edema": {
+          "accuracy": 0.6127819548872181,
+          "class_balanced_accuracy": 0.5549612638195803,
+          "confusion_matrix": [
+            [
+              70,
+              1,
+              12,
+              0,
+              0
+            ],
+            [
+              43,
+              1,
+              25,
+              0,
+              0
+            ],
+            [
+              21,
+              1,
+              92,
+              0,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 266,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.4767135713969644
+        },
+        "pleural effusion": {
+          "accuracy": 0.5206812652068127,
+          "class_balanced_accuracy": 0.5026972010178117,
+          "confusion_matrix": [
+            [
+              24,
+              44,
+              12,
+              0,
+              0
+            ],
+            [
+              18,
+              92,
+              90,
+              0,
+              0
+            ],
+            [
+              4,
+              29,
+              98,
+              0,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 411,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.4924023283664057
+        },
+        "pneumonia": {
+          "accuracy": 0.6540084388185654,
+          "class_balanced_accuracy": 0.3867372834602229,
+          "confusion_matrix": [
+            [
+              4,
+              0,
+              15,
+              0,
+              0
+            ],
+            [
+              3,
+              0,
+              56,
+              0,
+              0
+            ],
+            [
+              8,
+              0,
+              151,
+              0,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 237,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.3426483454274098
+        },
+        "pneumothorax": {
+          "accuracy": 0.4976303317535545,
+          "class_balanced_accuracy": 0.34843173552850965,
+          "confusion_matrix": [
+            [
+              5,
+              26,
+              0,
+              0,
+              0
+            ],
+            [
+              11,
+              96,
+              10,
+              0,
+              0
+            ],
+            [
+              8,
+              51,
+              4,
+              0,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 211,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.3159277504105091
+        }
+      }
+    },
+    "historical_generic_run1": {
+      "generation": {
+        "eos_observed_count": null,
+        "generation_diagnostic_note": "Historical exports lack token IDs and EOS/truncation metadata; unavailable is not zero.",
+        "historical_parse_success_observed_rows": 1326,
+        "invalid_output_count": 0,
+        "n_rows": 1326,
+        "no_eos_count": null,
+        "parse_failure_count": 0,
+        "predicted_label_counts": {
+          "improving": 69,
+          "stable": 482,
+          "worsening": 775
+        },
+        "truncated_count": null,
+        "unsupported_output_count": 0
+      },
+      "label": "Finding-blind Run 1, historical interface",
+      "metrics": {
+        "accuracy": {
+          "ci_95": [
+            0.5239450274225858,
+            0.5860501222713907
+          ],
+          "estimate": 0.555052790346908
+        },
+        "mean_finding_class_balanced_accuracy": {
+          "ci_95": [
+            0.4290724949005786,
+            0.488203149569543
+          ],
+          "estimate": 0.4579406294286786
+        },
+        "pooled_class_balanced_accuracy": {
+          "ci_95": [
+            0.4459579089563998,
+            0.5002887805935794
+          ],
+          "estimate": 0.47274200529504684
+        },
+        "supported_macro_f1": {
+          "ci_95": [
+            0.4253468057516242,
+            0.4924237662594632
+          ],
+          "estimate": 0.4585654816628464
+        }
+      },
+      "per_finding": {
+        "consolidation": {
+          "accuracy": 0.5970149253731343,
+          "class_balanced_accuracy": 0.4767952635599695,
+          "confusion_matrix": [
+            [
+              2,
+              15,
+              11,
+              0,
+              0
+            ],
+            [
+              7,
+              45,
+              33,
+              0,
+              0
+            ],
+            [
+              2,
+              13,
+              73,
+              0,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 201,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.461459825893293
+        },
+        "edema": {
+          "accuracy": 0.5375939849624061,
+          "class_balanced_accuracy": 0.49416276854174895,
+          "confusion_matrix": [
+            [
+              12,
+              41,
+              30,
+              0,
+              0
+            ],
+            [
+              5,
+              33,
+              31,
+              0,
+              0
+            ],
+            [
+              0,
+              16,
+              98,
+              0,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 266,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.4576810191904532
+        },
+        "pleural effusion": {
+          "accuracy": 0.5158150851581509,
+          "class_balanced_accuracy": 0.4815203562340968,
+          "confusion_matrix": [
+            [
+              13,
+              55,
+              12,
+              0,
+              0
+            ],
+            [
+              8,
+              90,
+              102,
+              0,
+              0
+            ],
+            [
+              3,
+              19,
+              109,
+              0,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 411,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.4534415678483475
+        },
+        "pneumonia": {
+          "accuracy": 0.7046413502109705,
+          "class_balanced_accuracy": 0.488832410415229,
+          "confusion_matrix": [
+            [
+              3,
+              8,
+              8,
+              0,
+              0
+            ],
+            [
+              5,
+              26,
+              28,
+              0,
+              0
+            ],
+            [
+              6,
+              15,
+              138,
+              0,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 237,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.4973761640428307
+        },
+        "pneumothorax": {
+          "accuracy": 0.44549763033175355,
+          "class_balanced_accuracy": 0.3483923483923484,
+          "confusion_matrix": [
+            [
+              0,
+              16,
+              15,
+              0,
+              0
+            ],
+            [
+              2,
+              61,
+              54,
+              0,
+              0
+            ],
+            [
+              1,
+              29,
+              33,
+              0,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 211,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.315695067264574
+        }
+      }
+    },
+    "historical_generic_run2": {
+      "generation": {
+        "eos_observed_count": null,
+        "generation_diagnostic_note": "Historical exports lack token IDs and EOS/truncation metadata; unavailable is not zero.",
+        "historical_parse_success_observed_rows": 1326,
+        "invalid_output_count": 0,
+        "n_rows": 1326,
+        "no_eos_count": null,
+        "parse_failure_count": 0,
+        "predicted_label_counts": {
+          "improving": 298,
+          "stable": 105,
+          "worsening": 923
+        },
+        "truncated_count": null,
+        "unsupported_output_count": 0
+      },
+      "label": "Finding-blind Run 2, historical interface",
+      "metrics": {
+        "accuracy": {
+          "ci_95": [
+            0.47484714580546444,
+            0.5368647513269053
+          ],
+          "estimate": 0.5060331825037707
+        },
+        "mean_finding_class_balanced_accuracy": {
+          "ci_95": [
+            0.454562659263648,
+            0.5114234442349613
+          ],
+          "estimate": 0.4833149336887345
+        },
+        "pooled_class_balanced_accuracy": {
+          "ci_95": [
+            0.47951648696424926,
+            0.5340260889882539
+          ],
+          "estimate": 0.5071003047202843
+        },
+        "supported_macro_f1": {
+          "ci_95": [
+            0.40936239783774075,
+            0.4676351937150887
+          ],
+          "estimate": 0.4391341342951079
+        }
+      },
+      "per_finding": {
+        "consolidation": {
+          "accuracy": 0.5074626865671642,
+          "class_balanced_accuracy": 0.48510313216195566,
+          "confusion_matrix": [
+            [
+              12,
+              3,
+              13,
+              0,
+              0
+            ],
+            [
+              20,
+              10,
+              55,
+              0,
+              0
+            ],
+            [
+              6,
+              2,
+              80,
+              0,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 201,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.41386748844375965
+        },
+        "edema": {
+          "accuracy": 0.6353383458646616,
+          "class_balanced_accuracy": 0.5621218665661885,
+          "confusion_matrix": [
+            [
+              57,
+              2,
+              24,
+              0,
+              0
+            ],
+            [
+              21,
+              3,
+              45,
+              0,
+              0
+            ],
+            [
+              4,
+              1,
+              109,
+              0,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 266,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.5058281444582814
+        },
+        "pleural effusion": {
+          "accuracy": 0.43309002433090027,
+          "class_balanced_accuracy": 0.5067430025445293,
+          "confusion_matrix": [
+            [
+              44,
+              8,
+              28,
+              0,
+              0
+            ],
+            [
+              57,
+              20,
+              123,
+              0,
+              0
+            ],
+            [
+              12,
+              5,
+              114,
+              0,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 411,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.4011299815742877
+        },
+        "pneumonia": {
+          "accuracy": 0.6708860759493671,
+          "class_balanced_accuracy": 0.5483629658305235,
+          "confusion_matrix": [
+            [
+              13,
+              2,
+              4,
+              0,
+              0
+            ],
+            [
+              15,
+              4,
+              40,
+              0,
+              0
+            ],
+            [
+              12,
+              5,
+              142,
+              0,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 237,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.45938402872817025
+        },
+        "pneumothorax": {
+          "accuracy": 0.2985781990521327,
+          "class_balanced_accuracy": 0.3142437013404755,
+          "confusion_matrix": [
+            [
+              5,
+              6,
+              20,
+              0,
+              0
+            ],
+            [
+              11,
+              19,
+              87,
+              0,
+              0
+            ],
+            [
+              9,
+              15,
+              39,
+              0,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 211,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.26460512891957744
+        }
+      }
+    },
+    "historical_generic_run3": {
+      "generation": {
+        "eos_observed_count": null,
+        "generation_diagnostic_note": "Historical exports lack token IDs and EOS/truncation metadata; unavailable is not zero.",
+        "historical_parse_success_observed_rows": 1326,
+        "invalid_output_count": 0,
+        "n_rows": 1326,
+        "no_eos_count": null,
+        "parse_failure_count": 0,
+        "predicted_label_counts": {
+          "improving": 544,
+          "stable": 12,
+          "worsening": 770
+        },
+        "truncated_count": null,
+        "unsupported_output_count": 0
+      },
+      "label": "Finding-blind Run 3, historical interface",
+      "metrics": {
+        "accuracy": {
+          "ci_95": [
+            0.4433880628486605,
+            0.508071025485814
+          ],
+          "estimate": 0.475867269984917
+        },
+        "mean_finding_class_balanced_accuracy": {
+          "ci_95": [
+            0.4744504488476433,
+            0.5291276658608696
+          ],
+          "estimate": 0.501732485256173
+        },
+        "pooled_class_balanced_accuracy": {
+          "ci_95": [
+            0.4954995965816256,
+            0.5450019879246072
+          ],
+          "estimate": 0.5208993539064783
+        },
+        "supported_macro_f1": {
+          "ci_95": [
+            0.3633635643717288,
+            0.4107718563887025
+          ],
+          "estimate": 0.387399269738401
+        }
+      },
+      "per_finding": {
+        "consolidation": {
+          "accuracy": 0.4427860696517413,
+          "class_balanced_accuracy": 0.4834924879042526,
+          "confusion_matrix": [
+            [
+              18,
+              0,
+              10,
+              0,
+              0
+            ],
+            [
+              42,
+              2,
+              41,
+              0,
+              0
+            ],
+            [
+              19,
+              0,
+              69,
+              0,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 201,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.3486290493622108
+        },
+        "edema": {
+          "accuracy": 0.6278195488721805,
+          "class_balanced_accuracy": 0.561473966039597,
+          "confusion_matrix": [
+            [
+              67,
+              0,
+              16,
+              0,
+              0
+            ],
+            [
+              33,
+              0,
+              36,
+              0,
+              0
+            ],
+            [
+              14,
+              0,
+              100,
+              0,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 266,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.4773609149777998
+        },
+        "pleural effusion": {
+          "accuracy": 0.43552311435523117,
+          "class_balanced_accuracy": 0.5534096692111959,
+          "confusion_matrix": [
+            [
+              62,
+              0,
+              18,
+              0,
+              0
+            ],
+            [
+              90,
+              3,
+              107,
+              0,
+              0
+            ],
+            [
+              16,
+              1,
+              114,
+              0,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 411,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.3818759936406995
+        },
+        "pneumonia": {
+          "accuracy": 0.6286919831223629,
+          "class_balanced_accuracy": 0.5785284552389395,
+          "confusion_matrix": [
+            [
+              17,
+              0,
+              2,
+              0,
+              0
+            ],
+            [
+              28,
+              1,
+              30,
+              0,
+              0
+            ],
+            [
+              28,
+              0,
+              131,
+              0,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 237,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.4055210489993099
+        },
+        "pneumothorax": {
+          "accuracy": 0.22274881516587677,
+          "class_balanced_accuracy": 0.3317578478868801,
+          "confusion_matrix": [
+            [
+              17,
+              0,
+              14,
+              0,
+              0
+            ],
+            [
+              57,
+              4,
+              56,
+              0,
+              0
+            ],
+            [
+              36,
+              1,
+              26,
+              0,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 211,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.21125084914069517
+        }
+      }
+    },
+    "historical_prompt": {
+      "generation": {
+        "eos_observed_count": null,
+        "generation_diagnostic_note": "Historical exports lack token IDs and EOS/truncation metadata; unavailable is not zero.",
+        "historical_parse_success_observed_rows": 1326,
+        "invalid_output_count": 0,
+        "n_rows": 1326,
+        "no_eos_count": null,
+        "parse_failure_count": 0,
+        "predicted_label_counts": {
+          "improving": 237,
+          "no_supported_evidence": 240,
+          "stable": 40,
+          "worsening": 809
+        },
+        "truncated_count": null,
+        "unsupported_output_count": 240
+      },
+      "label": "MedGemma, historical four-label interface",
+      "metrics": {
+        "accuracy": {
+          "ci_95": [
+            0.30703125,
+            0.3663673634572072
+          ],
+          "estimate": 0.33634992458521873
+        },
+        "mean_finding_class_balanced_accuracy": {
+          "ci_95": [
+            0.27406027713339587,
+            0.3250599122458634
+          ],
+          "estimate": 0.29940041841037973
+        },
+        "pooled_class_balanced_accuracy": {
+          "ci_95": [
+            0.29240352213965337,
+            0.34202988147018365
+          ],
+          "estimate": 0.3169227083499377
+        },
+        "supported_macro_f1": {
+          "ci_95": [
+            0.26204666578747615,
+            0.3121013511429602
+          ],
+          "estimate": 0.2870905028146221
+        }
+      },
+      "per_finding": {
+        "consolidation": {
+          "accuracy": 0.373134328358209,
+          "class_balanced_accuracy": 0.32521008403361346,
+          "confusion_matrix": [
+            [
+              5,
+              0,
+              23,
+              0,
+              0
+            ],
+            [
+              6,
+              4,
+              69,
+              6,
+              0
+            ],
+            [
+              9,
+              0,
+              66,
+              13,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 201,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.27826877987881005
+        },
+        "edema": {
+          "accuracy": 0.39473684210526316,
+          "class_balanced_accuracy": 0.3242137122096318,
+          "confusion_matrix": [
+            [
+              14,
+              5,
+              57,
+              7,
+              0
+            ],
+            [
+              12,
+              1,
+              47,
+              9,
+              0
+            ],
+            [
+              5,
+              5,
+              90,
+              14,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 266,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.2850098731677679
+        },
+        "pleural effusion": {
+          "accuracy": 0.31386861313868614,
+          "class_balanced_accuracy": 0.3541412213740458,
+          "confusion_matrix": [
+            [
+              23,
+              4,
+              48,
+              5,
+              0
+            ],
+            [
+              41,
+              13,
+              122,
+              24,
+              0
+            ],
+            [
+              14,
+              5,
+              93,
+              19,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 411,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.2934458586325193
+        },
+        "pneumonia": {
+          "accuracy": 0.459915611814346,
+          "class_balanced_accuracy": 0.24395895398874545,
+          "confusion_matrix": [
+            [
+              1,
+              0,
+              16,
+              2,
+              0
+            ],
+            [
+              1,
+              0,
+              46,
+              12,
+              0
+            ],
+            [
+              4,
+              0,
+              108,
+              47,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 237,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.24551165146909826
+        },
+        "pneumothorax": {
+          "accuracy": 0.13270142180094788,
+          "class_balanced_accuracy": 0.24947812044586237,
+          "confusion_matrix": [
+            [
+              19,
+              0,
+              2,
+              10,
+              0
+            ],
+            [
+              51,
+              1,
+              14,
+              51,
+              0
+            ],
+            [
+              32,
+              2,
+              8,
+              21,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 211,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.16209633278598795
+        }
+      }
+    },
+    "historical_qlace_run1": {
+      "generation": {
+        "eos_observed_count": null,
+        "generation_diagnostic_note": "Historical exports lack token IDs and EOS/truncation metadata; unavailable is not zero.",
+        "historical_parse_success_observed_rows": 1326,
+        "invalid_output_count": 0,
+        "n_rows": 1326,
+        "no_eos_count": null,
+        "parse_failure_count": 0,
+        "predicted_label_counts": {
+          "improving": 225,
+          "stable": 435,
+          "worsening": 666
+        },
+        "truncated_count": null,
+        "unsupported_output_count": 0
+      },
+      "label": "Q-LACE Run 1, historical interface",
+      "metrics": {
+        "accuracy": {
+          "ci_95": [
+            0.5630754716981131,
+            0.6204551140737631
+          ],
+          "estimate": 0.5920060331825038
+        },
+        "mean_finding_class_balanced_accuracy": {
+          "ci_95": [
+            0.4738889966769577,
+            0.5224283348761015
+          ],
+          "estimate": 0.4990768184442632
+        },
+        "pooled_class_balanced_accuracy": {
+          "ci_95": [
+            0.5345137501565256,
+            0.5929890747461996
+          ],
+          "estimate": 0.5638209492668116
+        },
+        "supported_macro_f1": {
+          "ci_95": [
+            0.5304320053664643,
+            0.590637846562861
+          ],
+          "estimate": 0.5611000114635952
+        }
+      },
+      "per_finding": {
+        "consolidation": {
+          "accuracy": 0.5074626865671642,
+          "class_balanced_accuracy": 0.4849694423223834,
+          "confusion_matrix": [
+            [
+              12,
+              3,
+              13,
+              0,
+              0
+            ],
+            [
+              22,
+              9,
+              54,
+              0,
+              0
+            ],
+            [
+              5,
+              2,
+              81,
+              0,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 201,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.40882260500272133
+        },
+        "edema": {
+          "accuracy": 0.6428571428571429,
+          "class_balanced_accuracy": 0.5881650170475954,
+          "confusion_matrix": [
+            [
+              72,
+              3,
+              8,
+              0,
+              0
+            ],
+            [
+              34,
+              5,
+              30,
+              0,
+              0
+            ],
+            [
+              17,
+              3,
+              94,
+              0,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 266,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.529418922830005
+        },
+        "pleural effusion": {
+          "accuracy": 0.5815085158150851,
+          "class_balanced_accuracy": 0.5155089058524173,
+          "confusion_matrix": [
+            [
+              10,
+              63,
+              7,
+              0,
+              0
+            ],
+            [
+              5,
+              124,
+              71,
+              0,
+              0
+            ],
+            [
+              1,
+              25,
+              105,
+              0,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 411,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.4930216299411154
+        },
+        "pneumonia": {
+          "accuracy": 0.6582278481012658,
+          "class_balanced_accuracy": 0.5587553790135716,
+          "confusion_matrix": [
+            [
+              15,
+              0,
+              4,
+              0,
+              0
+            ],
+            [
+              14,
+              0,
+              45,
+              0,
+              0
+            ],
+            [
+              18,
+              0,
+              141,
+              0,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 237,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.4208561257271859
+        },
+        "pneumothorax": {
+          "accuracy": 0.5545023696682464,
+          "class_balanced_accuracy": 0.3479853479853479,
+          "confusion_matrix": [
+            [
+              0,
+              30,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              111,
+              6,
+              0,
+              0
+            ],
+            [
+              0,
+              57,
+              6,
+              0,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 211,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.28755221386800334
+        }
+      }
+    },
+    "historical_qlace_run2": {
+      "generation": {
+        "eos_observed_count": null,
+        "generation_diagnostic_note": "Historical exports lack token IDs and EOS/truncation metadata; unavailable is not zero.",
+        "historical_parse_success_observed_rows": 1326,
+        "invalid_output_count": 0,
+        "n_rows": 1326,
+        "no_eos_count": null,
+        "parse_failure_count": 0,
+        "predicted_label_counts": {
+          "improving": 203,
+          "stable": 435,
+          "worsening": 688
+        },
+        "truncated_count": null,
+        "unsupported_output_count": 0
+      },
+      "label": "Q-LACE Run 2, historical interface",
+      "metrics": {
+        "accuracy": {
+          "ci_95": [
+            0.5517235145984491,
+            0.611283721420014
+          ],
+          "estimate": 0.581447963800905
+        },
+        "mean_finding_class_balanced_accuracy": {
+          "ci_95": [
+            0.46072389331162317,
+            0.5217281897369525
+          ],
+          "estimate": 0.49084712331851554
+        },
+        "pooled_class_balanced_accuracy": {
+          "ci_95": [
+            0.5182009775537781,
+            0.5789583087351472
+          ],
+          "estimate": 0.548454804134754
+        },
+        "supported_macro_f1": {
+          "ci_95": [
+            0.5174533456592184,
+            0.5795818918129516
+          ],
+          "estimate": 0.5489685417788496
+        }
+      },
+      "per_finding": {
+        "consolidation": {
+          "accuracy": 0.5522388059701493,
+          "class_balanced_accuracy": 0.4981856378915202,
+          "confusion_matrix": [
+            [
+              9,
+              12,
+              7,
+              0,
+              0
+            ],
+            [
+              10,
+              35,
+              40,
+              0,
+              0
+            ],
+            [
+              7,
+              14,
+              67,
+              0,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 201,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.49205057492050575
+        },
+        "edema": {
+          "accuracy": 0.6015037593984962,
+          "class_balanced_accuracy": 0.5363436966783993,
+          "confusion_matrix": [
+            [
+              54,
+              7,
+              22,
+              0,
+              0
+            ],
+            [
+              22,
+              5,
+              42,
+              0,
+              0
+            ],
+            [
+              9,
+              4,
+              101,
+              0,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 266,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.4948395128660783
+        },
+        "pleural effusion": {
+          "accuracy": 0.5742092457420924,
+          "class_balanced_accuracy": 0.5434860050890585,
+          "confusion_matrix": [
+            [
+              26,
+              42,
+              12,
+              0,
+              0
+            ],
+            [
+              19,
+              113,
+              68,
+              0,
+              0
+            ],
+            [
+              6,
+              28,
+              97,
+              0,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 411,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.5389650079124498
+        },
+        "pneumonia": {
+          "accuracy": 0.6455696202531646,
+          "class_balanced_accuracy": 0.46673848035502896,
+          "confusion_matrix": [
+            [
+              6,
+              10,
+              3,
+              0,
+              0
+            ],
+            [
+              4,
+              15,
+              40,
+              0,
+              0
+            ],
+            [
+              10,
+              17,
+              132,
+              0,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 237,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.46504705744641717
+        },
+        "pneumothorax": {
+          "accuracy": 0.5260663507109005,
+          "class_balanced_accuracy": 0.4094817965785708,
+          "confusion_matrix": [
+            [
+              5,
+              18,
+              8,
+              0,
+              0
+            ],
+            [
+              6,
+              84,
+              27,
+              0,
+              0
+            ],
+            [
+              10,
+              31,
+              22,
+              0,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 211,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.4103247863247863
+        }
+      }
+    },
+    "historical_qlace_run3": {
+      "generation": {
+        "eos_observed_count": null,
+        "generation_diagnostic_note": "Historical exports lack token IDs and EOS/truncation metadata; unavailable is not zero.",
+        "historical_parse_success_observed_rows": 1326,
+        "invalid_output_count": 0,
+        "n_rows": 1326,
+        "no_eos_count": null,
+        "parse_failure_count": 0,
+        "predicted_label_counts": {
+          "improving": 274,
+          "stable": 356,
+          "worsening": 696
+        },
+        "truncated_count": null,
+        "unsupported_output_count": 0
+      },
+      "label": "Q-LACE Run 3, historical interface",
+      "metrics": {
+        "accuracy": {
+          "ci_95": [
+            0.5343283582089552,
+            0.5945757951725694
+          ],
+          "estimate": 0.5648567119155354
+        },
+        "mean_finding_class_balanced_accuracy": {
+          "ci_95": [
+            0.4447531430148389,
+            0.5021830244070972
+          ],
+          "estimate": 0.4731430897298797
+        },
+        "pooled_class_balanced_accuracy": {
+          "ci_95": [
+            0.5144968869210905,
+            0.5752325156496217
+          ],
+          "estimate": 0.545177056803143
+        },
+        "supported_macro_f1": {
+          "ci_95": [
+            0.5015564820387137,
+            0.5633155126786265
+          ],
+          "estimate": 0.533389068475946
+        }
+      },
+      "per_finding": {
+        "consolidation": {
+          "accuracy": 0.44776119402985076,
+          "class_balanced_accuracy": 0.487681436210848,
+          "confusion_matrix": [
+            [
+              18,
+              0,
+              10,
+              0,
+              0
+            ],
+            [
+              31,
+              5,
+              49,
+              0,
+              0
+            ],
+            [
+              20,
+              1,
+              67,
+              0,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 201,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.369064118269244
+        },
+        "edema": {
+          "accuracy": 0.5939849624060151,
+          "class_balanced_accuracy": 0.5231452124286621,
+          "confusion_matrix": [
+            [
+              56,
+              1,
+              26,
+              0,
+              0
+            ],
+            [
+              33,
+              0,
+              36,
+              0,
+              0
+            ],
+            [
+              11,
+              1,
+              102,
+              0,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 266,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.4486116025212617
+        },
+        "pleural effusion": {
+          "accuracy": 0.5790754257907542,
+          "class_balanced_accuracy": 0.5543193384223919,
+          "confusion_matrix": [
+            [
+              29,
+              37,
+              14,
+              0,
+              0
+            ],
+            [
+              19,
+              112,
+              69,
+              0,
+              0
+            ],
+            [
+              2,
+              32,
+              97,
+              0,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 411,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.5526248558529491
+        },
+        "pneumonia": {
+          "accuracy": 0.6329113924050633,
+          "class_balanced_accuracy": 0.42259737393798963,
+          "confusion_matrix": [
+            [
+              7,
+              0,
+              12,
+              0,
+              0
+            ],
+            [
+              11,
+              0,
+              48,
+              0,
+              0
+            ],
+            [
+              16,
+              0,
+              143,
+              0,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 237,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.3514020640050037
+        },
+        "pneumothorax": {
+          "accuracy": 0.5355450236966824,
+          "class_balanced_accuracy": 0.37797208764950696,
+          "confusion_matrix": [
+            [
+              4,
+              25,
+              2,
+              0,
+              0
+            ],
+            [
+              7,
+              99,
+              11,
+              0,
+              0
+            ],
+            [
+              10,
+              43,
+              10,
+              0,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 211,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.36119579732419566
+        }
+      }
+    },
+    "qlace_run1_native": {
+      "generation": {
+        "eos_observed_count": 1326,
+        "generated_tokens_max": 4,
+        "generated_tokens_mean": 3.094268476621418,
+        "invalid_output_count": 0,
+        "n_rows": 1326,
+        "no_eos_count": 0,
+        "parse_failure_count": 0,
+        "predicted_label_counts": {
+          "improving": 253,
+          "stable": 474,
+          "worsening": 599
+        },
+        "truncated_count": 0,
+        "unsupported_output_count": 0
+      },
+      "label": "Q-LACE Run 1, fixed native MCQ",
+      "metrics": {
+        "accuracy": {
+          "ci_95": [
+            0.5359031522799103,
+            0.5961838737676096
+          ],
+          "estimate": 0.5663650075414781
+        },
+        "mean_finding_class_balanced_accuracy": {
+          "ci_95": [
+            0.46820391081006135,
+            0.5166386837285798
+          ],
+          "estimate": 0.49247803238405
+        },
+        "pooled_class_balanced_accuracy": {
+          "ci_95": [
+            0.5120767167805764,
+            0.5733989593252351
+          ],
+          "estimate": 0.5429013057526327
+        },
+        "supported_macro_f1": {
+          "ci_95": [
+            0.5083969799335731,
+            0.5692405135939756
+          ],
+          "estimate": 0.5395648279024925
+        }
+      },
+      "per_finding": {
+        "consolidation": {
+          "accuracy": 0.4577114427860697,
+          "class_balanced_accuracy": 0.4399096002037178,
+          "confusion_matrix": [
+            [
+              11,
+              11,
+              6,
+              0,
+              0
+            ],
+            [
+              24,
+              16,
+              45,
+              0,
+              0
+            ],
+            [
+              11,
+              12,
+              65,
+              0,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 201,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.39753890512903794
+        },
+        "edema": {
+          "accuracy": 0.6466165413533834,
+          "class_balanced_accuracy": 0.5875354966777867,
+          "confusion_matrix": [
+            [
+              67,
+              2,
+              14,
+              0,
+              0
+            ],
+            [
+              28,
+              6,
+              35,
+              0,
+              0
+            ],
+            [
+              14,
+              1,
+              99,
+              0,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 266,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.535829337117505
+        },
+        "pleural effusion": {
+          "accuracy": 0.5571776155717761,
+          "class_balanced_accuracy": 0.5037086513994911,
+          "confusion_matrix": [
+            [
+              13,
+              60,
+              7,
+              0,
+              0
+            ],
+            [
+              8,
+              114,
+              78,
+              0,
+              0
+            ],
+            [
+              1,
+              28,
+              102,
+              0,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 411,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.48785852461701845
+        },
+        "pneumonia": {
+          "accuracy": 0.5864978902953587,
+          "class_balanced_accuracy": 0.582437064839906,
+          "confusion_matrix": [
+            [
+              17,
+              0,
+              2,
+              0,
+              0
+            ],
+            [
+              25,
+              8,
+              26,
+              0,
+              0
+            ],
+            [
+              34,
+              11,
+              114,
+              0,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 237,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.44016600834226294
+        },
+        "pneumothorax": {
+          "accuracy": 0.5639810426540285,
+          "class_balanced_accuracy": 0.34879934879934876,
+          "confusion_matrix": [
+            [
+              0,
+              31,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              115,
+              2,
+              0,
+              0
+            ],
+            [
+              0,
+              59,
+              4,
+              0,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 211,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.27674258109040717
+        }
+      }
+    },
+    "qlace_run2_native": {
+      "generation": {
+        "eos_observed_count": 1326,
+        "generated_tokens_max": 4,
+        "generated_tokens_mean": 3.0497737556561084,
+        "invalid_output_count": 0,
+        "n_rows": 1326,
+        "no_eos_count": 0,
+        "parse_failure_count": 0,
+        "predicted_label_counts": {
+          "improving": 72,
+          "stable": 594,
+          "worsening": 660
+        },
+        "truncated_count": 0,
+        "unsupported_output_count": 0
+      },
+      "label": "Q-LACE Run 2, fixed native MCQ",
+      "metrics": {
+        "accuracy": {
+          "ci_95": [
+            0.5415716140023527,
+            0.60384705248023
+          ],
+          "estimate": 0.5731523378582202
+        },
+        "mean_finding_class_balanced_accuracy": {
+          "ci_95": [
+            0.42689266120475705,
+            0.4826976590601239
+          ],
+          "estimate": 0.4546116262647586
+        },
+        "pooled_class_balanced_accuracy": {
+          "ci_95": [
+            0.47203005617040156,
+            0.5294086471091463
+          ],
+          "estimate": 0.5004241303857682
+        },
+        "supported_macro_f1": {
+          "ci_95": [
+            0.46837787513408097,
+            0.5349842362307416
+          ],
+          "estimate": 0.5018915857869407
+        }
+      },
+      "per_finding": {
+        "consolidation": {
+          "accuracy": 0.5422885572139303,
+          "class_balanced_accuracy": 0.4508276037687802,
+          "confusion_matrix": [
+            [
+              4,
+              17,
+              7,
+              0,
+              0
+            ],
+            [
+              4,
+              41,
+              40,
+              0,
+              0
+            ],
+            [
+              5,
+              19,
+              64,
+              0,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 201,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.44817029037589834
+        },
+        "edema": {
+          "accuracy": 0.5939849624060151,
+          "class_balanced_accuracy": 0.5402571383933905,
+          "confusion_matrix": [
+            [
+              35,
+              25,
+              23,
+              0,
+              0
+            ],
+            [
+              8,
+              21,
+              40,
+              0,
+              0
+            ],
+            [
+              3,
+              9,
+              102,
+              0,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 266,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.5375093773443361
+        },
+        "pleural effusion": {
+          "accuracy": 0.5523114355231143,
+          "class_balanced_accuracy": 0.4751081424936387,
+          "confusion_matrix": [
+            [
+              5,
+              65,
+              10,
+              0,
+              0
+            ],
+            [
+              4,
+              126,
+              70,
+              0,
+              0
+            ],
+            [
+              0,
+              35,
+              96,
+              0,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 411,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.4431053374867413
+        },
+        "pneumonia": {
+          "accuracy": 0.6371308016877637,
+          "class_balanced_accuracy": 0.42794786775060456,
+          "confusion_matrix": [
+            [
+              1,
+              15,
+              3,
+              0,
+              0
+            ],
+            [
+              2,
+              27,
+              30,
+              0,
+              0
+            ],
+            [
+              1,
+              35,
+              123,
+              0,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 237,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.4216559087403077
+        },
+        "pneumothorax": {
+          "accuracy": 0.5450236966824644,
+          "class_balanced_accuracy": 0.3789173789173789,
+          "confusion_matrix": [
+            [
+              0,
+              23,
+              8,
+              0,
+              0
+            ],
+            [
+              0,
+              94,
+              23,
+              0,
+              0
+            ],
+            [
+              0,
+              42,
+              21,
+              0,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 211,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.348792270531401
+        }
+      }
+    },
+    "qlace_run3_native": {
+      "generation": {
+        "eos_observed_count": 1326,
+        "generated_tokens_max": 4,
+        "generated_tokens_mean": 3.1025641025641026,
+        "invalid_output_count": 0,
+        "n_rows": 1326,
+        "no_eos_count": 0,
+        "parse_failure_count": 0,
+        "predicted_label_counts": {
+          "improving": 126,
+          "stable": 532,
+          "worsening": 668
+        },
+        "truncated_count": 0,
+        "unsupported_output_count": 0
+      },
+      "label": "Q-LACE Run 3, fixed native MCQ",
+      "metrics": {
+        "accuracy": {
+          "ci_95": [
+            0.5396931437348725,
+            0.599060389197087
+          ],
+          "estimate": 0.5693815987933635
+        },
+        "mean_finding_class_balanced_accuracy": {
+          "ci_95": [
+            0.4225294936443103,
+            0.47799139258377193
+          ],
+          "estimate": 0.4500799134028034
+        },
+        "pooled_class_balanced_accuracy": {
+          "ci_95": [
+            0.47602997816311493,
+            0.5323836948276611
+          ],
+          "estimate": 0.5039822410682819
+        },
+        "supported_macro_f1": {
+          "ci_95": [
+            0.4730008192609586,
+            0.5348502042490163
+          ],
+          "estimate": 0.5043436214994873
+        }
+      },
+      "per_finding": {
+        "consolidation": {
+          "accuracy": 0.5422885572139303,
+          "class_balanced_accuracy": 0.49007512095747385,
+          "confusion_matrix": [
+            [
+              9,
+              11,
+              8,
+              0,
+              0
+            ],
+            [
+              11,
+              31,
+              43,
+              0,
+              0
+            ],
+            [
+              6,
+              13,
+              69,
+              0,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 201,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.4798840048840048
+        },
+        "edema": {
+          "accuracy": 0.556390977443609,
+          "class_balanced_accuracy": 0.4900410183832202,
+          "confusion_matrix": [
+            [
+              35,
+              16,
+              32,
+              0,
+              0
+            ],
+            [
+              18,
+              10,
+              41,
+              0,
+              0
+            ],
+            [
+              5,
+              6,
+              103,
+              0,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 266,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.4682728434252083
+        },
+        "pleural effusion": {
+          "accuracy": 0.5717761557177615,
+          "class_balanced_accuracy": 0.4765521628498728,
+          "confusion_matrix": [
+            [
+              2,
+              69,
+              9,
+              0,
+              0
+            ],
+            [
+              0,
+              142,
+              58,
+              0,
+              0
+            ],
+            [
+              1,
+              39,
+              91,
+              0,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 411,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.4363538892208589
+        },
+        "pneumonia": {
+          "accuracy": 0.6329113924050633,
+          "class_balanced_accuracy": 0.45225792335010856,
+          "confusion_matrix": [
+            [
+              8,
+              0,
+              11,
+              0,
+              0
+            ],
+            [
+              12,
+              4,
+              43,
+              0,
+              0
+            ],
+            [
+              19,
+              2,
+              138,
+              0,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 237,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.3950879261224089
+        },
+        "pneumothorax": {
+          "accuracy": 0.5355450236966824,
+          "class_balanced_accuracy": 0.34147334147334146,
+          "confusion_matrix": [
+            [
+              0,
+              29,
+              2,
+              0,
+              0
+            ],
+            [
+              0,
+              105,
+              12,
+              0,
+              0
+            ],
+            [
+              0,
+              55,
+              8,
+              0,
+              0
+            ]
+          ],
+          "gold_rows": [
+            "improving",
+            "stable",
+            "worsening"
+          ],
+          "n_rows": 211,
+          "prediction_columns": [
+            "improving",
+            "stable",
+            "worsening",
+            "no_supported_evidence",
+            "INVALID"
+          ],
+          "supported_macro_f1": 0.29150326797385623
+        }
+      }
+    }
+  },
+  "bootstrap": {
+    "confidence_level": 0.95,
+    "interval": "percentile, NumPy linear quantile",
+    "paired_across_all_arms": true,
+    "replicates": 10000,
+    "seed_uncertainty": "Conditional on observed runs; not a population-of-training-seeds interval.",
+    "unit": "patient_id"
+  },
+  "contrasts": {
+    "bridge_adapters_native_vs_historical": {
+      "left_arms": [
+        "qlace_run1_native",
+        "qlace_run2_native",
+        "qlace_run3_native"
+      ],
+      "metrics": {
+        "accuracy": {
+          "ci_95": [
+            -0.02197281197582777,
+            0.0023567770348423313
+          ],
+          "estimate": -0.009803921568627527
+        },
+        "mean_finding_class_balanced_accuracy": {
+          "ci_95": [
+            -0.036998041053536934,
+            -0.0063789382977391205
+          ],
+          "estimate": -0.021965819813682064
+        },
+        "pooled_class_balanced_accuracy": {
+          "ci_95": [
+            -0.04988302273489396,
+            -0.023726904894642475
+          ],
+          "estimate": -0.03671504433267514
+        },
+        "supported_macro_f1": {
+          "ci_95": [
+            -0.047186994578596285,
+            -0.018109236640299644
+          ],
+          "estimate": -0.032552528843156736
+        }
+      },
+      "observed_run_sample_sd": {
+        "accuracy": 0.01513941168920417,
+        "mean_finding_class_balanced_accuracy": 0.01484879803609793,
+        "pooled_class_balanced_accuracy": 0.014099760776695327,
+        "supported_macro_f1": 0.013127080869011348
+      },
+      "right_arms": [
+        "historical_qlace_run1",
+        "historical_qlace_run2",
+        "historical_qlace_run3"
+      ],
+      "uncertainty_scope": "Paired patient resampling; fixed observed model runs; no uncertainty over newly trained random seeds."
+    },
+    "historical_adaptation_original_contract": {
+      "left_arms": [
+        "historical_qlace_run1",
+        "historical_qlace_run2",
+        "historical_qlace_run3"
+      ],
+      "metrics": {
+        "accuracy": {
+          "ci_95": [
+            0.21216800988781007,
+            0.2733286262900572
+          ],
+          "estimate": 0.24308697838109605
+        },
+        "mean_finding_class_balanced_accuracy": {
+          "ci_95": [
+            0.15771574367781183,
+            0.21876714854994686
+          ],
+          "estimate": 0.18828859208717308
+        },
+        "pooled_class_balanced_accuracy": {
+          "ci_95": [
+            0.20180007333118674,
+            0.2686934799269221
+          ],
+          "estimate": 0.2355615617182984
+        },
+        "supported_macro_f1": {
+          "ci_95": [
+            0.22754570659442305,
+            0.293008291073731
+          ],
+          "estimate": 0.2607287044248414
+        }
+      },
+      "observed_run_sample_sd": {
+        "accuracy": 0.013685930204943398,
+        "mean_finding_class_balanced_accuracy": 0.013252163170601895,
+        "pooled_class_balanced_accuracy": 0.00995369922847932,
+        "supported_macro_f1": 0.013891177694088982
+      },
+      "right_arms": [
+        "historical_prompt"
+      ],
+      "uncertainty_scope": "Paired patient resampling; fixed observed model runs; no uncertainty over newly trained random seeds."
+    },
+    "historical_full_vs_biovilt": {
+      "left_arms": [
+        "historical_qlace_run1",
+        "historical_qlace_run2",
+        "historical_qlace_run3"
+      ],
+      "metrics": {
+        "accuracy": {
+          "ci_95": [
+            0.0046471117709498055,
+            0.0476907918590966
+          ],
+          "estimate": 0.02589240824534944
+        },
+        "mean_finding_class_balanced_accuracy": {
+          "ci_95": [
+            -0.003775686825107144,
+            0.05033533210554296
+          ],
+          "estimate": 0.023117656844118095
+        },
+        "pooled_class_balanced_accuracy": {
+          "ci_95": [
+            -0.013367273191889156,
+            0.0340625664161023
+          ],
+          "estimate": 0.009981750324660976
+        },
+        "supported_macro_f1": {
+          "ci_95": [
+            -0.002060765505799367,
+            0.04485358819992828
+          ],
+          "estimate": 0.020932355792985247
+        }
+      },
+      "observed_run_sample_sd": {
+        "accuracy": 0.013685930204943398,
+        "mean_finding_class_balanced_accuracy": 0.013252163170601895,
+        "pooled_class_balanced_accuracy": 0.00995369922847932,
+        "supported_macro_f1": 0.013891177694088982
+      },
+      "right_arms": [
+        "historical_biovilt"
+      ],
+      "uncertainty_scope": "Paired patient resampling; fixed observed model runs; no uncertainty over newly trained random seeds."
+    },
+    "historical_full_vs_matched_finding_blind": {
+      "left_arms": [
+        "historical_qlace_run1",
+        "historical_qlace_run2",
+        "historical_qlace_run3"
+      ],
+      "metrics": {
+        "accuracy": {
+          "ci_95": [
+            0.04543116327585793,
+            0.08927243637692546
+          ],
+          "estimate": 0.06711915535444957
+        },
+        "mean_finding_class_balanced_accuracy": {
+          "ci_95": [
+            -0.011553047638568749,
+            0.024890312919176597
+          ],
+          "estimate": 0.006692994373024064
+        },
+        "pooled_class_balanced_accuracy": {
+          "ci_95": [
+            0.0317942330892536,
+            0.07259079959005102
+          ],
+          "estimate": 0.05223704876096624
+        },
+        "supported_macro_f1": {
+          "ci_95": [
+            0.0975764233748846,
+            0.14131782144034127
+          ],
+          "estimate": 0.11945291200734515
+        }
+      },
+      "observed_run_sample_sd": {
+        "accuracy": 0.026991749876581147,
+        "mean_finding_class_balanced_accuracy": 0.03487036666620907,
+        "pooled_class_balanced_accuracy": 0.03470481036546104,
+        "supported_macro_f1": 0.023269654521398824
+      },
+      "right_arms": [
+        "historical_generic_run1",
+        "historical_generic_run2",
+        "historical_generic_run3"
+      ],
+      "uncertainty_scope": "Paired patient resampling; fixed observed model runs; no uncertainty over newly trained random seeds."
+    },
+    "primary_adaptation_same_contract": {
+      "left_arms": [
+        "qlace_run1_native",
+        "qlace_run2_native",
+        "qlace_run3_native"
+      ],
+      "metrics": {
+        "accuracy": {
+          "ci_95": [
+            0.22916548385061813,
+            0.2995005702085902
+          ],
+          "estimate": 0.26420311714429356
+        },
+        "mean_finding_class_balanced_accuracy": {
+          "ci_95": [
+            0.0436544902856308,
+            0.09736273901313203
+          ],
+          "estimate": 0.0703737091022068
+        },
+        "pooled_class_balanced_accuracy": {
+          "ci_95": [
+            0.08842640047439752,
+            0.1470459588590933
+          ],
+          "estimate": 0.1177169105220463
+        },
+        "supported_macro_f1": {
+          "ci_95": [
+            0.20538343246516408,
+            0.2692770077116723
+          ],
+          "estimate": 0.23776601797852775
+        }
+      },
+      "observed_run_sample_sd": {
+        "accuracy": 0.00340064083923294,
+        "mean_finding_class_balanced_accuracy": 0.023280899277455854,
+        "pooled_class_balanced_accuracy": 0.02356432393358325,
+        "supported_macro_f1": 0.02107850022778219
+      },
+      "right_arms": [
+        "base_native"
+      ],
+      "uncertainty_scope": "Paired patient resampling; fixed observed model runs; no uncertainty over newly trained random seeds."
+    },
+    "secondary_native_vs_historical_prompt": {
+      "left_arms": [
+        "base_native"
+      ],
+      "metrics": {
+        "accuracy": {
+          "ci_95": [
+            -0.06211203651421038,
+            0.0007264298486150993
+          ],
+          "estimate": -0.03092006033182504
+        },
+        "mean_finding_class_balanced_accuracy": {
+          "ci_95": [
+            0.06793068126726165,
+            0.12307007374705575
+          ],
+          "estimate": 0.09594906317128421
+        },
+        "pooled_class_balanced_accuracy": {
+          "ci_95": [
+            0.05400663424105875,
+            0.1081801651469876
+          ],
+          "estimate": 0.08112960686357695
+        },
+        "supported_macro_f1": {
+          "ci_95": [
+            -0.03905271414538266,
+            0.020068278207554174
+          ],
+          "estimate": -0.009589842396843073
+        }
+      },
+      "right_arms": [
+        "historical_prompt"
+      ],
+      "uncertainty_scope": "Paired patient resampling; fixed observed model runs; no uncertainty over newly trained random seeds."
+    },
+    "secondary_squarepad_vs_native": {
+      "left_arms": [
+        "base_squarepad"
+      ],
+      "metrics": {
+        "accuracy": {
+          "ci_95": [
+            -0.025954453303735258,
+            -0.0015197568389058156
+          ],
+          "estimate": -0.01357466063348417
+        },
+        "mean_finding_class_balanced_accuracy": {
+          "ci_95": [
+            -0.021030086786645634,
+            0.005446483639167523
+          ],
+          "estimate": -0.008088258651126834
+        },
+        "pooled_class_balanced_accuracy": {
+          "ci_95": [
+            -0.029587225378879055,
+            -0.0015092779021231286
+          ],
+          "estimate": -0.015505962393929262
+        },
+        "supported_macro_f1": {
+          "ci_95": [
+            -0.02278031265311059,
+            0.002461737826939563
+          ],
+          "estimate": -0.010059777336356268
+        }
+      },
+      "right_arms": [
+        "base_native"
+      ],
+      "uncertainty_scope": "Paired patient resampling; fixed observed model runs; no uncertainty over newly trained random seeds."
+    }
+  },
+  "findings": [
+    "consolidation",
+    "edema",
+    "pleural effusion",
+    "pneumonia",
+    "pneumothorax"
+  ],
+  "hardware_caveat": "GPU allocation mixes H100 NVL and L40S; native and square-padding base runs are not hardware matched. Numerical equivalence to Google's executing environment is not established.",
+  "metric_definitions": {
+    "accuracy": "Correct labels / all original row occurrences; NSE and invalid outputs are incorrect.",
+    "mean_finding_class_balanced_accuracy": "Unweighted mean of each finding's mean per-change-class recall. All five findings retained.",
+    "pooled_class_balanced_accuracy": "Mean per-change-class recall after pooling all finding rows.",
+    "published_macro_accuracy_caveat": "Neither balanced-accuracy bridge is asserted to reproduce Google's unavailable aggregation code.",
+    "supported_macro_f1": "Unweighted mean F1 across improving/stable/worsening only; no zero-support NSE class added.",
+    "zero_support_bootstrap_policy": "A zero-gold-support class is omitted from that bootstrap replicate's recall mean; macro-F1 retains the fixed three classes."
+  },
+  "n_patients": 800,
+  "n_rows": 1326,
+  "output_contracts": {
+    "bridge_limits": "Interface bridges change multiple prompt/output/preprocessing details together; they do not isolate one causal factor. Original historical generation exports lack image paths; canonical occurrence order and source/pair/patient/finding/gold were checked. BioViL-T classifier export retains source/finding/gold but lacks pair/patient fields. Historical EOS and truncation are unavailable.",
+    "historical": "Historical four-label canonical-label interface with system instruction, NSE permitted and 16-token cap for prompt-only; retain historical parsed labels. Adapter-specific historical generation provenance is in internal_manifest.json.",
+    "new_native_and_padding": "User-only, explicit prior/current image annotations, three-option MCQ, no NSE, greedy decoding, 128-token cap, strict whole-response parser."
+  },
+  "schema": "cmig-baseline-comparison-v1",
+  "selection_statement": "The prompt, both preprocessing configurations and all five passes were fixed before new outcomes; no test-outcome prompt selection."
+}
